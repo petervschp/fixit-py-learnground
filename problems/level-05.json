@@ -1,0 +1,117 @@
+[
+  {
+    "id": "L5-001",
+    "level": 5,
+    "title": "Dĺžka reťazca",
+    "statement": "Na vstupe je text. Vypíš jeho dĺžku.",
+    "mode": "solve",
+    "starter_code": "s = input()\nprint()\n",
+    "tests": [
+      { "input": "Ahoj\n", "expected_stdout": "4\n", "visible": true },
+      { "input": "\n", "expected_stdout": "0\n", "visible": false }
+    ],
+    "hints": [
+      "Použi len(s).",
+      "Dĺžka reťazca je počet znakov.",
+      "Riešenie: print(len(s))"
+    ]
+  },
+  {
+    "id": "L5-002",
+    "level": 5,
+    "title": "Prvý a posledný znak",
+    "statement": "Na vstupe je neprázdny text. Vypíš prvý a posledný znak na jeden riadok bez medzery (napr. 'aZ').",
+    "mode": "solve",
+    "starter_code": "s = input()\n# doplň\n",
+    "tests": [
+      { "input": "abc\n", "expected_stdout": "ac\n", "visible": true },
+      { "input": "Z\n", "expected_stdout": "ZZ\n", "visible": false }
+    ],
+    "hints": [
+      "Prvý znak je s[0].",
+      "Posledný znak je s[-1].",
+      "Vypíš s[0] + s[-1]."
+    ]
+  },
+  {
+    "id": "L5-003",
+    "level": 5,
+    "title": "Počet slov",
+    "statement": "Na vstupe je veta. Spočítaj počet slov (oddelené medzerami).",
+    "mode": "solve",
+    "starter_code": "text = input()\n# doplň\n",
+    "tests": [
+      { "input": "Ahoj svet\n", "expected_stdout": "2\n", "visible": true },
+      { "input": "Python je super\n", "expected_stdout": "3\n", "visible": false }
+    ],
+    "hints": [
+      "Použi split().",
+      "words = text.split()",
+      "Počet je len(words)."
+    ]
+  },
+  {
+    "id": "L5-004",
+    "level": 5,
+    "title": "Reverz slov",
+    "statement": "Na vstupe je veta. Vypíš slová v opačnom poradí, oddelené jednou medzerou.",
+    "mode": "solve",
+    "starter_code": "text = input()\n# doplň\n",
+    "tests": [
+      { "input": "Ahoj svet\n", "expected_stdout": "svet Ahoj\n", "visible": true },
+      { "input": "ja mam rad python\n", "expected_stdout": "python rad mam ja\n", "visible": false }
+    ],
+    "hints": [
+      "Rozdeľ: words = text.split()",
+      "Otoč: words[::-1]",
+      "Spoj: ' '.join(...)"
+    ]
+  },
+  {
+    "id": "L5-F01",
+    "level": 5,
+    "title": "Fix: join naopak",
+    "statement": "Kód má spojiť slová pomlčkami, ale dáva zlý výsledok. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Použije split('-') namiesto join('-')",
+        "misconceptionTag": "split_join_confusion",
+        "code": "text = input()\nwords = text.split()\nprint(words.split('-'))\n"
+      },
+      {
+        "id": "B2",
+        "title": "Vypíše list, nie text",
+        "misconceptionTag": "printing_list",
+        "code": "text = input()\nwords = text.split()\nprint(words)\n"
+      }
+    ],
+    "tests": [
+      { "input": "a b c\n", "expected_stdout": "a-b-c\n", "visible": true },
+      { "input": "Python je super\n", "expected_stdout": "Python-je-super\n", "visible": false }
+    ],
+    "hints": [
+      "split() robí zo stringu list.",
+      "join() robí z listu string.",
+      "Použi: print('-'.join(words))"
+    ]
+  },
+  {
+    "id": "L5-P01",
+    "level": 5,
+    "title": "Predict: slicing",
+    "statement": "Tipni výstup a potom Run.",
+    "mode": "predict",
+    "starter_code": "s = 'abcdef'\nprint(s[1:4])\n",
+    "tests": [
+      { "input": "", "expected_stdout": "bcd\n", "visible": true }
+    ],
+    "hints": [
+      "Slicing s[a:b] berie a..b-1.",
+      "Indexy 1,2,3 sú b,c,d.",
+      "Výstup je bcd."
+    ]
+  }
+]

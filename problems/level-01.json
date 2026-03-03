@@ -1,0 +1,111 @@
+[
+  {
+    "id": "L1-001",
+    "level": 1,
+    "title": "Pozdrav",
+    "statement": "Vypíš presne text: Ahoj, svet!",
+    "mode": "solve",
+    "starter_code": "print('')\n",
+    "tests": [
+      { "input": "", "expected_stdout": "Ahoj, svet!\n", "visible": true }
+    ],
+    "hints": [
+      "Použi print().",
+      "Text musí byť presne Ahoj, svet!",
+      "Riešenie: print('Ahoj, svet!')"
+    ]
+  },
+  {
+    "id": "L1-002",
+    "level": 1,
+    "title": "Súčet dvoch čísel",
+    "statement": "Na vstupe sú dve celé čísla (každé na vlastnom riadku). Vypíš ich súčet.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
+    "tests": [
+      { "input": "2\n3\n", "expected_stdout": "5\n", "visible": true },
+      { "input": "-10\n4\n", "expected_stdout": "-6\n", "visible": false }
+    ],
+    "hints": [
+      "Použi int(input()).",
+      "Súčet je a + b.",
+      "Riešenie: print(a + b)"
+    ]
+  },
+  {
+    "id": "L1-003",
+    "level": 1,
+    "title": "Dvojnásobok",
+    "statement": "Na vstupe je celé číslo. Vypíš jeho dvojnásobok.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nprint()\n",
+    "tests": [
+      { "input": "7\n", "expected_stdout": "14\n", "visible": true },
+      { "input": "-3\n", "expected_stdout": "-6\n", "visible": false },
+      { "input": "0\n", "expected_stdout": "0\n", "visible": false }
+    ],
+    "hints": [
+      "Načítaj číslo: n = int(input())",
+      "Dvojnásobok je 2*n.",
+      "Riešenie: print(2*n)"
+    ]
+  },
+  {
+    "id": "L1-F01",
+    "level": 1,
+    "title": "Fix: Zabudnutý int()",
+    "statement": "Kód má vypísať súčet dvoch čísel, ale má chybu. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Sčíta reťazce",
+        "misconceptionTag": "string_vs_int",
+        "code": "a = input()\nb = input()\nprint(a + b)\n"
+      }
+    ],
+    "tests": [
+      { "input": "2\n3\n", "expected_stdout": "5\n", "visible": true },
+      { "input": "10\n20\n", "expected_stdout": "30\n", "visible": false }
+    ],
+    "hints": [
+      "input() vracia reťazec.",
+      "Preveď na int: int(input()).",
+      "Riešenie: a=int(input()); b=int(input()); print(a+b)"
+    ]
+  },
+  {
+    "id": "L1-004",
+    "level": 1,
+    "title": "Priemer (2 čísla)",
+    "statement": "Na vstupe sú dve čísla (môžu byť desatinné). Vypíš ich aritmetický priemer.",
+    "mode": "solve",
+    "starter_code": "a = float(input())\nb = float(input())\nprint()\n",
+    "tests": [
+      { "input": "2\n4\n", "expected_stdout": "3.0\n", "visible": true },
+      { "input": "1.5\n2.5\n", "expected_stdout": "2.0\n", "visible": false }
+    ],
+    "hints": [
+      "Použi float(input()).",
+      "Priemer je (a+b)/2.",
+      "Riešenie: print((a+b)/2)"
+    ]
+  },
+  {
+    "id": "L1-P01",
+    "level": 1,
+    "title": "Predict: čo to vypíše?",
+    "statement": "Najprv tipni výstup. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "x = 3\nx = x + 2\nprint(x)\n",
+    "tests": [
+      { "input": "", "expected_stdout": "5\n", "visible": true }
+    ],
+    "hints": [
+      "Sleduj zmeny x.",
+      "x=3, potom x=5.",
+      "Výstup je 5."
+    ]
+  }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "L3-001",
+    "level": 3,
+    "title": "For cez položky",
+    "statement": "Použi for cez položky a vypíš každé ovocie na nový riadok: apple, banana, kiwi.",
+    "mode": "solve",
+    "starter_code": "# doplň\n",
+    "tests": [
+      { "input": "", "expected_stdout": "apple\nbanana\nkiwi\n", "visible": true }
+    ],
+    "hints": [
+      "Použi: for x in 'apple','banana','kiwi':",
+      "V cykle print(x).",
+      "Dodrž poradie."
+    ]
+  },
+  {
+    "id": "L3-002",
+    "level": 3,
+    "title": "Súčet 1..n",
+    "statement": "Na vstupe je n. Vypíš súčet 1+2+...+n.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "5\n", "expected_stdout": "15\n", "visible": true },
+      { "input": "1\n", "expected_stdout": "1\n", "visible": false },
+      { "input": "10\n", "expected_stdout": "55\n", "visible": false }
+    ],
+    "hints": [
+      "Použi range(1, n+1).",
+      "V cykle sčítaj do premennej.",
+      "Vypíš výsledok."
+    ]
+  },
+  {
+    "id": "L3-003",
+    "level": 3,
+    "title": "Počet deliteľných 3",
+    "statement": "Na vstupe je n. Spočítaj, koľko čísel od 1 do n (vrátane) je deliteľných 3.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "10\n", "expected_stdout": "3\n", "visible": true },
+      { "input": "3\n", "expected_stdout": "1\n", "visible": false }
+    ],
+    "hints": [
+      "Prechádzaj 1..n.",
+      "Testuj i % 3 == 0.",
+      "Zvyšuj počítadlo."
+    ]
+  },
+  {
+    "id": "L3-F01",
+    "level": 3,
+    "title": "Fix: off-by-one",
+    "statement": "Kód má vypočítať súčet 1..n, ale má chybu. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "range končí príliš skoro",
+        "misconceptionTag": "range_off_by_one",
+        "code": "n = int(input())\ns = 0\nfor i in range(1, n):\n    s += i\nprint(s)\n"
+      }
+    ],
+    "tests": [
+      { "input": "5\n", "expected_stdout": "15\n", "visible": true },
+      { "input": "1\n", "expected_stdout": "1\n", "visible": false }
+    ],
+    "hints": [
+      "range(a,b) ide po b-1.",
+      "Ak chceš do n vrátane, použi n+1.",
+      "Oprav range(1, n+1)."
+    ]
+  },
+  {
+    "id": "L3-004",
+    "level": 3,
+    "title": "Reťazec po znakoch",
+    "statement": "Na vstupe je text. Vypíš každý znak na nový riadok.",
+    "mode": "solve",
+    "starter_code": "s = input()\n# doplň\n",
+    "tests": [
+      { "input": "abc\n", "expected_stdout": "a\nb\nc\n", "visible": true },
+      { "input": "Ahoj\n", "expected_stdout": "A\nh\no\nj\n", "visible": false }
+    ],
+    "hints": [
+      "Použi: for ch in s:",
+      "V cykle print(ch).",
+      "Zachovaj poradie."
+    ]
+  },
+  {
+    "id": "L3-P01",
+    "level": 3,
+    "title": "Predict: koľko iterácií?",
+    "statement": "Tipni výstup a potom Run. (Stdin nechaj prázdne.)",
+    "mode": "predict",
+    "starter_code": "s = 0\nfor i in range(3):\n    s += i\nprint(s)\n",
+    "tests": [
+      { "input": "", "expected_stdout": "3\n", "visible": true }
+    ],
+    "hints": [
+      "range(3) dá i = 0,1,2.",
+      "Súčet 0+1+2 = 3.",
+      "Výstup je 3."
+    ]
+  }
+]

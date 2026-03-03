@@ -1,0 +1,114 @@
+[
+  {
+    "id": "L6-001",
+    "level": 6,
+    "title": "Funkcia: absolútna hodnota",
+    "statement": "Napíš funkciu abs_val(n), ktorá vráti absolútnu hodnotu čísla. Na vstupe je n, vypíš abs_val(n).",
+    "mode": "solve",
+    "starter_code": "def abs_val(n):\n    # doplň\n    return 0\n\nn = int(input())\nprint(abs_val(n))\n",
+    "tests": [
+      { "input": "-7\n", "expected_stdout": "7\n", "visible": true },
+      { "input": "0\n", "expected_stdout": "0\n", "visible": false },
+      { "input": "9\n", "expected_stdout": "9\n", "visible": false }
+    ],
+    "hints": [
+      "Ak n < 0, vráť -n.",
+      "Inak vráť n.",
+      "Použi if/else a return."
+    ]
+  },
+  {
+    "id": "L6-002",
+    "level": 6,
+    "title": "Funkcia: je_prvocislo",
+    "statement": "Napíš funkciu is_prime(n), ktorá vráti True/False. Na vstupe je n, vypíš PRIME alebo NOT.",
+    "mode": "solve",
+    "starter_code": "def is_prime(n):\n    # doplň\n    return False\n\nn = int(input())\nprint('PRIME' if is_prime(n) else 'NOT')\n",
+    "tests": [
+      { "input": "7\n", "expected_stdout": "PRIME\n", "visible": true },
+      { "input": "1\n", "expected_stdout": "NOT\n", "visible": false },
+      { "input": "9\n", "expected_stdout": "NOT\n", "visible": false }
+    ],
+    "hints": [
+      "n<=1 nie je prvočíslo.",
+      "Testuj deliteľnosť od 2 po sqrt(n).",
+      "Ak nájdeš deliteľa, vráť False."
+    ]
+  },
+  {
+    "id": "L6-003",
+    "level": 6,
+    "title": "Mini: kalkulačka",
+    "statement": "Na vstupe sú: a, b, op (op je + alebo - alebo *). Vypíš výsledok.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\nop = input().strip()\n# doplň\n",
+    "tests": [
+      { "input": "2\n3\n+\n", "expected_stdout": "5\n", "visible": true },
+      { "input": "10\n4\n-\n", "expected_stdout": "6\n", "visible": false },
+      { "input": "6\n7\n*\n", "expected_stdout": "42\n", "visible": false }
+    ],
+    "hints": [
+      "Použi if/elif podľa op.",
+      "Pre +: a+b, pre -: a-b, pre *: a*b.",
+      "Na konci print(vysledok)."
+    ]
+  },
+  {
+    "id": "L6-F01",
+    "level": 6,
+    "title": "Fix: funkcia nič nevracia",
+    "statement": "Funkcia má vrátiť dvojnásobok, ale vracia None. Oprav ju.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Použije print namiesto return",
+        "misconceptionTag": "print_vs_return",
+        "code": "def double(n):\n    print(2*n)\n\nn = int(input())\nprint(double(n))\n"
+      }
+    ],
+    "tests": [
+      { "input": "5\n", "expected_stdout": "10\n", "visible": true },
+      { "input": "-2\n", "expected_stdout": "-4\n", "visible": false }
+    ],
+    "hints": [
+      "return je návratová hodnota funkcie.",
+      "print len vypíše, nevracia hodnotu.",
+      "Použi: return 2*n a potom print(double(n))."
+    ]
+  },
+  {
+    "id": "L6-004",
+    "level": 6,
+    "title": "Mini: štatistika čísel",
+    "statement": "Na vstupe je n a potom n celých čísel. Vypíš: MIN, MAX, SUM (každé na vlastný riadok).",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "5\n1\n-2\n7\n7\n0\n", "expected_stdout": "-2\n7\n13\n", "visible": true },
+      { "input": "1\n42\n", "expected_stdout": "42\n42\n42\n", "visible": false }
+    ],
+    "hints": [
+      "Načítaj prvé číslo a nastav min/max/sum.",
+      "Potom pre zvyšné n-1 čísel aktualizuj.",
+      "Vypíš min, max, sum."
+    ]
+  },
+  {
+    "id": "L6-P01",
+    "level": 6,
+    "title": "Predict: return vs print",
+    "statement": "Tipni výstup a potom Run.",
+    "mode": "predict",
+    "starter_code": "def f(x):\n    return x + 1\n\nprint(f(2))\n",
+    "tests": [
+      { "input": "", "expected_stdout": "3\n", "visible": true }
+    ],
+    "hints": [
+      "f(2) vráti 3.",
+      "print vypíše návratovú hodnotu.",
+      "Výstup: 3."
+    ]
+  }
+]

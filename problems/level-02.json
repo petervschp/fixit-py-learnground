@@ -1,0 +1,113 @@
+[
+  {
+    "id": "L2-001",
+    "level": 2,
+    "title": "Kladné alebo záporné",
+    "statement": "Na vstupe je celé číslo. Vypíš: POS, NEG alebo ZERO.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "5\n", "expected_stdout": "POS\n", "visible": true },
+      { "input": "-1\n", "expected_stdout": "NEG\n", "visible": false },
+      { "input": "0\n", "expected_stdout": "ZERO\n", "visible": false }
+    ],
+    "hints": [
+      "Použi if/elif/else.",
+      "Porovnávaj n > 0, n < 0.",
+      "Vypíš POS/NEG/ZERO."
+    ]
+  },
+  {
+    "id": "L2-002",
+    "level": 2,
+    "title": "Párne alebo nepárne",
+    "statement": "Na vstupe je celé číslo. Vypíš EVEN alebo ODD.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nprint()\n",
+    "tests": [
+      { "input": "8\n", "expected_stdout": "EVEN\n", "visible": true },
+      { "input": "7\n", "expected_stdout": "ODD\n", "visible": false }
+    ],
+    "hints": [
+      "Použi modulo: n % 2.",
+      "Ak zvyšok 0 → párne.",
+      "Riešenie: print('EVEN') alebo print('ODD')"
+    ]
+  },
+  {
+    "id": "L2-003",
+    "level": 2,
+    "title": "Max z troch",
+    "statement": "Na vstupe sú tri celé čísla. Vypíš najväčšie z nich.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint()\n",
+    "tests": [
+      { "input": "1\n5\n3\n", "expected_stdout": "5\n", "visible": true },
+      { "input": "-10\n-2\n-7\n", "expected_stdout": "-2\n", "visible": false }
+    ],
+    "hints": [
+      "Môžeš použiť if alebo max().",
+      "Najväčšie je maximum z a,b,c.",
+      "Riešenie: print(max(a,b,c))"
+    ]
+  },
+  {
+    "id": "L2-F01",
+    "level": 2,
+    "title": "Fix: zamenené = a ==",
+    "statement": "Kód má zistiť, či je číslo párne, ale obsahuje chybu. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Použije = v podmienke",
+        "misconceptionTag": "equals_vs_equals",
+        "code": "n = int(input())\nif n % 2 = 0:\n    print('EVEN')\nelse:\n    print('ODD')\n"
+      }
+    ],
+    "tests": [
+      { "input": "8\n", "expected_stdout": "EVEN\n", "visible": true },
+      { "input": "7\n", "expected_stdout": "ODD\n", "visible": false }
+    ],
+    "hints": [
+      "V if podmienke sa porovnáva pomocou ==.",
+      "Jedno = je priradenie.",
+      "Použi: if n % 2 == 0:"
+    ]
+  },
+  {
+    "id": "L2-004",
+    "level": 2,
+    "title": "Kategória veku",
+    "statement": "Na vstupe je celé číslo vek. Vypíš: CHILD (0–12), TEEN (13–19), ADULT (20+).",
+    "mode": "solve",
+    "starter_code": "age = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "10\n", "expected_stdout": "CHILD\n", "visible": true },
+      { "input": "15\n", "expected_stdout": "TEEN\n", "visible": false },
+      { "input": "33\n", "expected_stdout": "ADULT\n", "visible": false }
+    ],
+    "hints": [
+      "Použi if/elif/else.",
+      "Pozor na hranice intervalov.",
+      "CHILD<=12, TEEN<=19, inak ADULT."
+    ]
+  },
+  {
+    "id": "L2-P01",
+    "level": 2,
+    "title": "Predict: vetvenie",
+    "statement": "Tipni výstup pre n=5. Potom uzamkni odhad a klikni Run. (Run vstup nastav na 5.)",
+    "mode": "predict",
+    "starter_code": "n = int(input())\nif n % 2 == 0:\n    print('EVEN')\nelse:\n    print('ODD')\n",
+    "tests": [
+      { "input": "5\n", "expected_stdout": "ODD\n", "visible": true }
+    ],
+    "hints": [
+      "5 % 2 je 1.",
+      "Nie je to 0, ide else vetva.",
+      "Výstup: ODD"
+    ]
+  }
+]

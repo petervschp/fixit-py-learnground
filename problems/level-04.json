@@ -1,0 +1,110 @@
+[
+  {
+    "id": "L4-001",
+    "level": 4,
+    "title": "While: odpočítavanie",
+    "statement": "Na vstupe je n. Vypíš n, n-1, ..., 1 (každé na nový riadok).",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "3\n", "expected_stdout": "3\n2\n1\n", "visible": true },
+      { "input": "1\n", "expected_stdout": "1\n", "visible": false }
+    ],
+    "hints": [
+      "Použi while n > 0.",
+      "Vypíš n a zníž ho o 1.",
+      "Pozor na nekonečný cyklus."
+    ]
+  },
+  {
+    "id": "L4-002",
+    "level": 4,
+    "title": "Sčítaj, kým nepríde 0",
+    "statement": "Na vstupe sú celé čísla po riadkoch. Sčítaj ich, kým nepríde 0 (0 sa nezapočítava). Vypíš súčet.",
+    "mode": "solve",
+    "starter_code": "s = 0\n# doplň\n",
+    "tests": [
+      { "input": "5\n-2\n7\n0\n", "expected_stdout": "10\n", "visible": true },
+      { "input": "0\n", "expected_stdout": "0\n", "visible": false }
+    ],
+    "hints": [
+      "Použi while True a break.",
+      "Čítaj n = int(input()).",
+      "Ak n==0: break, inak s+=n."
+    ]
+  },
+  {
+    "id": "L4-003",
+    "level": 4,
+    "title": "Preskoč záporné (continue)",
+    "statement": "Na vstupe sú čísla ukončené 0. Sčítaj iba nezáporné (>=0). Záporné preskoč. Vypíš súčet.",
+    "mode": "solve",
+    "starter_code": "s = 0\n# doplň\n",
+    "tests": [
+      { "input": "3\n-5\n2\n0\n", "expected_stdout": "5\n", "visible": true },
+      { "input": "-1\n-2\n0\n", "expected_stdout": "0\n", "visible": false }
+    ],
+    "hints": [
+      "Použi while True.",
+      "Ak n < 0: continue.",
+      "Ak n==0: break."
+    ]
+  },
+  {
+    "id": "L4-F01",
+    "level": 4,
+    "title": "Fix: nekonečný cyklus",
+    "statement": "Kód má odpočítavať, ale zamrzne. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Zabudne zmeniť n",
+        "misconceptionTag": "infinite_loop",
+        "code": "n = int(input())\nwhile n > 0:\n    print(n)\nprint('done')\n"
+      }
+    ],
+    "tests": [
+      { "input": "2\n", "expected_stdout": "2\n1\ndone\n", "visible": true }
+    ],
+    "hints": [
+      "V cykle sa musí meniť podmienková premenná.",
+      "Doplň n -= 1.",
+      "Po cykle sa vypíše 'done'."
+    ]
+  },
+  {
+    "id": "L4-004",
+    "level": 4,
+    "title": "Najväčší spoločný deliteľ (Euklid)",
+    "statement": "Na vstupe sú dve kladné celé čísla a, b. Vypíš ich NSD (GCD) pomocou Euklidovho algoritmu.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\n# doplň\n",
+    "tests": [
+      { "input": "12\n18\n", "expected_stdout": "6\n", "visible": true },
+      { "input": "20\n5\n", "expected_stdout": "5\n", "visible": false }
+    ],
+    "hints": [
+      "Použi while b != 0.",
+      "a, b = b, a % b",
+      "Vypíš a."
+    ]
+  },
+  {
+    "id": "L4-P01",
+    "level": 4,
+    "title": "Predict: break",
+    "statement": "Tipni, čo sa vypíše.",
+    "mode": "predict",
+    "starter_code": "for i in range(5):\n    if i == 3:\n        break\n    print(i)\n",
+    "tests": [
+      { "input": "", "expected_stdout": "0\n1\n2\n", "visible": true }
+    ],
+    "hints": [
+      "i ide 0..4.",
+      "Pri i==3 sa breakne a 3 sa nevypíše.",
+      "Výstup: 0,1,2."
+    ]
+  }
+]
