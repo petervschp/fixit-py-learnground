@@ -68,6 +68,8 @@ export function ensureProblemEntry(state, problemId) {
       lastResult: null,
       updatedAt: nowIso(),
       runInput: "",
+      draftCode: "",
+      lastDiag: null,
     };
   }
 
@@ -78,6 +80,8 @@ export function ensureProblemEntry(state, problemId) {
   e.hintsUsed = Number.isFinite(e.hintsUsed) ? e.hintsUsed : 0;
   e.lastResult = (e.lastResult === "PASS" || e.lastResult === "FAIL") ? e.lastResult : null;
   e.runInput = typeof e.runInput === "string" ? e.runInput : "";
+  e.draftCode = typeof e.draftCode === "string" ? e.draftCode : "";
+  e.lastDiag = (e.lastDiag && typeof e.lastDiag === "object") ? e.lastDiag : null;
   e.updatedAt = typeof e.updatedAt === "string" ? e.updatedAt : nowIso();
 
   return e;
@@ -210,5 +214,100 @@ export function setLastSelection(state, level, problemId) {
   const ui = getUiPrefs(state);
   ui.lastLevel = level;
   ui.lastProblemByLevel[String(level)] = problemId;
+  saveState(state);
+}
+
+export function getDraftCode(state, problemId) {
+  const entry = ensureProblemEntry(state, problemId);
+  return entry.draftCode ?? "";
+}
+
+export function setDraftCode(state, problemId, code) {
+  const entry = ensureProblemEntry(state, problemId);
+  entry.draftCode = String(code ?? "");
+  entry.updatedAt = nowIso();
+  saveState(state);
+}
+
+
+// --- P0: Factory reset ---
+export function resetAllState() {
+  // Vymaž všetky kľúče tejto aplikácie (nezávisle od verzie)
+  const keysToDelete = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k) continue;
+    if (k.startsWith("fixit.") || k.includes("fixit")) keysToDelete.push(k);
+  }
+  keysToDelete.forEach(k => localStorage.removeItem(k));
+
+  // Ak nič nevymazalo (napr. iný kľúč), sprav "hard reset" pre daný origin.
+  if (keysToDelete.length === 0) {
+    localStorage.clear();
+  }
+}
+
+export function importStateReplace(imported) {
+  // Minimálna validácia a “sanitize”
+  if (!imported || typeof imported !== "object") {
+    throw new Error("Import: neplatný JSON objekt.");
+  }
+
+  // podporíme priamo exportState/buildSignedExport formát aj čistý state
+  const candidate = imported.progress && imported.events ? imported : (imported.progress ? imported : null);
+
+  let state;
+  if (candidate && candidate.progress && candidate.events) {
+    // vyzerá ako náš state
+    state = candidate;
+  } else if (imported.progress && imported.app) {
+    // vyzerá ako exportObj (exportState/buildSignedExport)
+    // skonštruujeme state z exportu
+    state = {
+      schemaVersion: imported.app?.schemaVersion ?? 2,
+      contentVersion: imported.app?.contentVersion ?? "unknown",
+      user: imported.user ?? { id: "anonymous", displayName: "Anonymous" },
+      progress: imported.progress ?? { problems: {} },
+      events: { max: 300, items: [] },
+      uiPrefs: imported.uiPrefs ?? undefined,
+      createdAt: imported.exportedAt ?? new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    // eventy z exportu nemusia byť prítomné – ak chceš, môžeš ich do exportu pridať neskôr
+    // zatiaľ necháme prázdne
+  } else {
+    throw new Error("Import: súbor nemá rozpoznateľnú štruktúru FixIt exportu.");
+  }
+
+  // doplň default štruktúry
+  if (!state.progress) state.progress = { problems: {} };
+  if (!state.progress.problems) state.progress.problems = {};
+  if (!state.events) state.events = { max: 300, items: [] };
+  if (!Array.isArray(state.events.items)) state.events.items = [];
+  if (!Number.isFinite(state.events.max)) state.events.max = 300;
+
+  // UI prefs (nepovinné)
+  if (state.uiPrefs && typeof state.uiPrefs === "object") {
+    if (!Number.isFinite(state.uiPrefs.lastLevel)) state.uiPrefs.lastLevel = 1;
+    if (!state.uiPrefs.lastProblemByLevel || typeof state.uiPrefs.lastProblemByLevel !== "object") {
+      state.uiPrefs.lastProblemByLevel = {};
+    }
+  }
+
+  // zapíš do localStorage – tu použi tvoju existujúcu saveState
+  saveState(state);
+  return state;
+}
+
+export function getLastDiag(state, problemId) {
+  const entry = ensureProblemEntry(state, problemId);
+  return entry.lastDiag ?? null;
+}
+
+export function setLastDiag(state, problemId, diag) {
+  const entry = ensureProblemEntry(state, problemId);
+  entry.lastDiag = (diag && typeof diag === "object") ? diag : null;
+  entry.updatedAt = nowIso();
   saveState(state);
 }

@@ -1,0 +1,355 @@
+[
+  {
+    "id": "L7-001",
+    "level": 7,
+    "title": "UI Mindset: double(n)",
+    "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. Nepoužívaj input() ani print() na výstup – výsledok musí byť návratová hodnota.",
+    "mode": "solve",
+    "starter_code": "def double(n):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "double"
+      },
+      "cases": [
+        {
+          "args": [
+            5
+          ],
+          "expected_return": 10,
+          "visible": true
+        },
+        {
+          "args": [
+            -2
+          ],
+          "expected_return": -4,
+          "visible": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected_return": 0,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Funkcia má parameter n a má niečo vrátiť.",
+      "Dvojnásobok je 2*n.",
+      "Riešenie: return 2*n"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    }
+  },
+  {
+    "id": "L7-002",
+    "level": 7,
+    "title": "UI Mindset: sum_list(nums)",
+    "statement": "Napíš funkciu sum_list(nums), ktorá vráti súčet čísel v zozname nums.",
+    "mode": "solve",
+    "starter_code": "def sum_list(nums):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "sum_list"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected_return": 6,
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              -1,
+              5,
+              0
+            ]
+          ],
+          "expected_return": 4,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Pracuj so zoznamom nums.",
+      "Použi buď for cyklus, alebo sum(nums).",
+      "Vráť výsledok cez return."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    }
+  },
+  {
+    "id": "L7-003",
+    "level": 7,
+    "title": "UI Mindset: contains(text, sub)",
+    "statement": "Napíš funkciu contains(text, sub), ktorá vráti True/False podľa toho, či sub je podreťazec text.",
+    "mode": "solve",
+    "starter_code": "def contains(text, sub):\n    # TODO\n    return False\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "contains"
+      },
+      "cases": [
+        {
+          "args": [
+            "abrakadabra",
+            "kad"
+          ],
+          "expected_return": true,
+          "visible": true
+        },
+        {
+          "args": [
+            "python",
+            "java"
+          ],
+          "expected_return": false,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "V Pythone vieš použiť operator 'in'.",
+      "Výraz: sub in text vráti True/False.",
+      "Riešenie: return sub in text"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    }
+  },
+  {
+    "id": "L7-004",
+    "level": 7,
+    "title": "UI Mindset: filter_even(nums) bez mutácie",
+    "statement": "Napíš funkciu filter_even(nums), ktorá vráti nový zoznam iba párnych čísel z nums. Pôvodný zoznam nums sa NESMIE zmeniť. Nepoužívaj input() ani print().",
+    "mode": "solve",
+    "starter_code": "def filter_even(nums):\n    # TODO: return NEW list (do not modify nums)\n    return []\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "filter_even"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected_return": [
+            2,
+            4
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              0,
+              -1,
+              -2,
+              5
+            ]
+          ],
+          "expected_return": [
+            0,
+            -2
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam nums."
+      }
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "while\\s+True",
+          "message": "Nepoužívaj while True v tejto úlohe."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "hints": [
+      "Nepotrebuješ input(); pracuješ s parametrom nums.",
+      "Vráť nový zoznam (napr. list comprehension).",
+      "Príklad: return [x for x in nums if x%2==0]"
+    ]
+  },
+  {
+    "id": "L7-006",
+    "level": 7,
+    "title": "UI Mindset: double(n) s generovanými testami",
+    "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. V tejto úlohe sú aj generované skryté testy.",
+    "mode": "solve",
+    "starter_code": "def double(n):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "double"
+      },
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected_return": 6,
+          "visible": true
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected_return": -2,
+          "visible": false
+        }
+      ],
+      "generator": {
+        "enabled": true,
+        "seed": 1337,
+        "count": 20,
+        "args": {
+          "type": "int",
+          "min": -50,
+          "max": 50
+        },
+        "reference_py": "def ref(x):\n    return 2*x\n"
+      }
+    },
+    "checks": {
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "hints": [
+      "Funkcia má prijať n ako parameter.",
+      "Výsledok má vrátiť cez return (nie print).",
+      "return 2*n"
+    ]
+  }
+]
