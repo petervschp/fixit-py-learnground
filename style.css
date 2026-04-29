@@ -92,3 +92,16 @@ select {
 hr.sep { border:0; border-top:1px solid #eee; margin: 12px 0; }
 /* Phase2 UI clarity */
 .badge{font-weight:700;}
+
+/* First failed test summary */
+.first-fail-summary {
+  border-left: 5px solid #c2410c;
+  background: #fff7ed;
+}
+.first-fail-summary p {
+  margin: 8px 0;
+}
+.first-fail-summary pre {
+  max-height: 180px;
+  overflow: auto;
+}
