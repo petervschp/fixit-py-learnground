@@ -1,7 +1,7 @@
 // storage.js — localStorage adapter (v2) + basic validation to avoid "weird UI" after updates.
 
-const STORAGE_KEY = "fixit.userState.v2";
-export const CONTENT_VERSION = "2026-03-02";
+const STORAGE_KEY = "fixit.userState.v3";
+export const CONTENT_VERSION = "2026-04-29-fix-hints-indent-v2";
 
 function nowIso() {
   return new Date().toISOString();
@@ -115,7 +115,7 @@ export function incHints(state, problemId) {
 export function setResult(state, problemId, result) {
   const entry = ensureProblemEntry(state, problemId);
   entry.lastResult = result;
-  if (result === "PASS") entry.solved = true;
+  entry.solved = (result === "PASS");
   entry.updatedAt = nowIso();
   saveState(state);
 }

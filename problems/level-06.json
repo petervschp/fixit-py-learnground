@@ -6,28 +6,42 @@
     "statement": "Napíš funkciu abs_val(n), ktorá vráti absolútnu hodnotu čísla. Na vstupe je n, vypíš abs_val(n).",
     "mode": "solve",
     "starter_code": "def abs_val(n):\n    # doplň\n    return 0\n\nn = int(input())\nprint(abs_val(n))\n",
-    "tests": [
-      {
-        "input": "-7\n",
-        "expected_stdout": "7\n",
-        "visible": true
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      },
-      {
-        "input": "9\n",
-        "expected_stdout": "9\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Ak n < 0, vráť -n.",
       "Inak vráť n.",
       "Použi if/else a return."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "-7\n",
+        "output": "7\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "output": "9\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def abs_val(n):\n    if n < 0:\n        return -n\n    return n\n\nn = int(input())\nprint(abs_val(n))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    },
+    "concepts": [
+      "function"
+    ],
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-002",
@@ -36,28 +50,47 @@
     "statement": "Napíš funkciu is_prime(n), ktorá vráti True/False. Na vstupe je n, vypíš PRIME alebo NOT.",
     "mode": "solve",
     "starter_code": "def is_prime(n):\n    # doplň\n    return False\n\nn = int(input())\nprint('PRIME' if is_prime(n) else 'NOT')\n",
-    "tests": [
-      {
-        "input": "7\n",
-        "expected_stdout": "PRIME\n",
-        "visible": true
-      },
-      {
-        "input": "1\n",
-        "expected_stdout": "NOT\n",
-        "visible": false
-      },
-      {
-        "input": "9\n",
-        "expected_stdout": "NOT\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "n<=1 nie je prvočíslo.",
       "Testuj deliteľnosť od 2 po sqrt(n).",
       "Ak nájdeš deliteľa, vráť False."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "7\n",
+        "output": "PRIME\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "NOT\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "output": "NOT\n",
+        "visible": false
+      },
+      {
+        "input": "2\n",
+        "output": "PRIME\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, n):\n        if n % d == 0:\n            return False\n    return True\n\nn = int(input())\nprint('PRIME' if is_prime(n) else 'NOT')\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    },
+    "concepts": [
+      "function"
+    ],
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-003",
@@ -66,28 +99,43 @@
     "statement": "Na vstupe sú: a, b, op (op je + alebo - alebo *). Vypíš výsledok.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nop = input().strip()\n# doplň\n",
-    "tests": [
-      {
-        "input": "2\n3\n+\n",
-        "expected_stdout": "5\n",
-        "visible": true
-      },
-      {
-        "input": "10\n4\n-\n",
-        "expected_stdout": "6\n",
-        "visible": false
-      },
-      {
-        "input": "6\n7\n*\n",
-        "expected_stdout": "42\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if/elif podľa op.",
       "Pre +: a+b, pre -: a-b, pre *: a*b.",
       "Na konci print(vysledok)."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "2\n3\n+\n",
+        "output": "5\n",
+        "visible": true
+      },
+      {
+        "input": "10\n4\n-\n",
+        "output": "6\n",
+        "visible": false
+      },
+      {
+        "input": "6\n7\n*\n",
+        "output": "42\n",
+        "visible": false
+      },
+      {
+        "input": "8\n0\n-\n",
+        "output": "8\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a = int(input())\nb = int(input())\nop = input().strip()\nif op == '+':\n    print(a + b)\nelif op == '-':\n    print(a - b)\nelif op == '*':\n    print(a * b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-F01",
@@ -104,23 +152,37 @@
         "code": "def double(n):\n    print(2*n)\n\nn = int(input())\nprint(double(n))\n"
       }
     ],
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "10\n",
-        "visible": true
-      },
-      {
-        "input": "-2\n",
-        "expected_stdout": "-4\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "return je návratová hodnota funkcie.",
       "print len vypíše, nevracia hodnotu.",
       "Použi: return 2*n a potom print(double(n))."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "10\n",
+        "visible": true
+      },
+      {
+        "input": "-2\n",
+        "output": "-4\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def double(n):\n    return 2*n\n\nn = int(input())\nprint(double(n))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    },
+    "concepts": [
+      "function"
+    ],
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-004",
@@ -129,43 +191,56 @@
     "statement": "Na vstupe je n a potom n celých čísel. Vypíš: MIN, MAX, SUM (každé na vlastný riadok).",
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
-    "tests": [
-      {
-        "input": "5\n1\n-2\n7\n7\n0\n",
-        "expected_stdout": "-2\n7\n13\n",
-        "visible": true
-      },
-      {
-        "input": "1\n42\n",
-        "expected_stdout": "42\n42\n42\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Načítaj prvé číslo a nastav min/max/sum.",
       "Potom pre zvyšné n-1 čísel aktualizuj.",
       "Vypíš min, max, sum."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n1\n-2\n7\n7\n0\n",
+        "output": "-2\n7\n13\n",
+        "visible": true
+      },
+      {
+        "input": "1\n42\n",
+        "output": "42\n42\n42\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n = int(input())\ncisla = []\nfor i in range(n):\n    cisla.append(int(input()))\nprint(min(cisla))\nprint(max(cisla))\nprint(sum(cisla))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-P01",
     "level": 6,
     "title": "Predict: return vs print",
-    "statement": "Tipni výstup a potom Run.",
+    "statement": "Najprv napíš a uzamkni presný odhad výstupu. Táto Predict úloha sa neoznačuje za vyriešenú tlačidlom Testy, ale iba správnym odhadom po Run.",
     "mode": "predict",
     "starter_code": "def f(x):\n    return x + 1\n\nprint(f(2))\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "3\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "f(2) vráti 3.",
       "print vypíše návratovú hodnotu.",
       "Výstup: 3."
-    ]
+    ],
+    "teacher_comment": "Predict úloha: testovacie tlačidlo je v prostredí deaktivované, aby žiak neobišiel cieľ úlohy tým, že iba spustí hotový kód. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "3\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "def f(x):\n    return x + 1\n\nprint(f(2))\n",
+    "schema_version": 2
   },
   {
     "id": "L6-005",
@@ -174,18 +249,6 @@
     "statement": "Doplň funkciu stvorec(n), ktorá vráti n na druhú. Potom načítaj číslo a vypíš výsledok volania funkcie.",
     "mode": "solve",
     "starter_code": "def stvorec(n):\n    # TODO\n    return 0\n\nn = int(input())\nprint(stvorec(n))\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "25\n",
-        "visible": true
-      },
-      {
-        "input": "-3\n",
-        "expected_stdout": "9\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Funkcia má vrátiť hodnotu, nie ju iba vypísať.",
       "Druhá mocnina je n*n alebo n**2.",
@@ -196,7 +259,34 @@
       "return"
     ],
     "difficulty": 2,
-    "teacher_comment": "Jednoduchá návratová hodnota."
+    "teacher_comment": "Jednoduchá návratová hodnota. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "25\n",
+        "visible": true
+      },
+      {
+        "input": "-3\n",
+        "output": "9\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def stvorec(n):\n    return n*n\n\nn = int(input())\nprint(stvorec(n))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-006",
@@ -205,23 +295,6 @@
     "statement": "Doplň funkciu je_parne(n), ktorá vráti True, ak je n párne, inak False. Program načíta n a vypíše návratovú hodnotu.",
     "mode": "solve",
     "starter_code": "def je_parne(n):\n    # TODO\n    return False\n\nn = int(input())\nprint(je_parne(n))\n",
-    "tests": [
-      {
-        "input": "4\n",
-        "expected_stdout": "True\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "False\n",
-        "visible": false
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "True\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Párnosť: n % 2 == 0.",
       "Výraz s == už sám vracia True/False.",
@@ -233,7 +306,34 @@
       "modulo"
     ],
     "difficulty": 2,
-    "teacher_comment": "Učí vracanie boolean hodnoty."
+    "teacher_comment": "Učí vracanie boolean hodnoty. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "4\n",
+        "output": "True\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "False\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "True\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def je_parne(n):\n    return n % 2 == 0\n\nn = int(input())\nprint(je_parne(n))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-007",
@@ -242,18 +342,6 @@
     "statement": "Doplň funkciu vacsie(a,b), ktorá vráti väčšie z dvoch čísel.",
     "mode": "solve",
     "starter_code": "def vacsie(a, b):\n    # TODO\n    return a\n\na = int(input())\nb = int(input())\nprint(vacsie(a,b))\n",
-    "tests": [
-      {
-        "input": "5\n9\n",
-        "expected_stdout": "9\n",
-        "visible": true
-      },
-      {
-        "input": "7\n2\n",
-        "expected_stdout": "7\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if a > b.",
       "V jednej vetve return a, v druhej return b.",
@@ -265,30 +353,40 @@
       "return"
     ],
     "difficulty": 2,
-    "teacher_comment": "Funkcia s vetvením."
+    "teacher_comment": "Funkcia s vetvením. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "5\n9\n",
+        "output": "9\n",
+        "visible": true
+      },
+      {
+        "input": "7\n2\n",
+        "output": "7\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def vacsie(a, b):\n    if a > b:\n        return a\n    return b\n\na = int(input())\nb = int(input())\nprint(vacsie(a,b))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-008",
     "level": 6,
-    "title": "Funkcia: počet samohlások",
-    "statement": "Doplň funkciu pocet_samohlasok(text), ktorá vráti počet a,e,i,o,u v texte.",
+    "title": "Funkcia: počet samohlások vrátane y",
+    "statement": "Doplň funkciu pocet_samohlasok(text), ktorá vráti počet samohlások a,e,i,o,u,y v texte.",
     "mode": "solve",
     "starter_code": "def pocet_samohlasok(text):\n    pocet = 0\n    # TODO\n    return pocet\n\ntext = input()\nprint(pocet_samohlasok(text))\n",
-    "tests": [
-      {
-        "input": "python\n",
-        "expected_stdout": "1\n",
-        "visible": true
-      },
-      {
-        "input": "informatika\n",
-        "expected_stdout": "5\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prejdi text po znakoch.",
-      "Ak znak in \"aeiou\", zvýš pocet.",
+      "Ak znak in \"aeiouy\", zvýš pocet.",
       "Na konci return pocet."
     ],
     "concepts": [
@@ -297,7 +395,39 @@
       "counter"
     ],
     "difficulty": 3,
-    "teacher_comment": "Funkcia obsahujúca cyklus a akumulátor."
+    "teacher_comment": "Opravené: v tejto verzii sa za samohlásku počíta aj y. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "python\n",
+        "output": "2\n",
+        "visible": true
+      },
+      {
+        "input": "informatika\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "ryby\n",
+        "output": "2\n",
+        "visible": false
+      },
+      {
+        "input": "byt\n",
+        "output": "1\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def pocet_samohlasok(text):\n    pocet = 0\n    for znak in text:\n        if znak in 'aeiouy':\n            pocet += 1\n    return pocet\n\ntext = input()\nprint(pocet_samohlasok(text))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-009",
@@ -306,18 +436,6 @@
     "statement": "Doplň funkciu sucet(cisla), ktorá vráti súčet čísel v zozname. Program načíta riadok čísel, vytvorí zoznam a vypíše výsledok.",
     "mode": "solve",
     "starter_code": "def sucet(cisla):\n    s = 0\n    # TODO\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
-    "tests": [
-      {
-        "input": "1 2 3\n",
-        "expected_stdout": "6\n",
-        "visible": true
-      },
-      {
-        "input": "-1 5 0\n",
-        "expected_stdout": "4\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Funkcia dostane už hotový zoznam.",
       "Prejdi ho cyklom alebo použi sum.",
@@ -329,7 +447,34 @@
       "accumulator"
     ],
     "difficulty": 3,
-    "teacher_comment": "Oddeľuje vstup od výpočtovej funkcie."
+    "teacher_comment": "Oddeľuje vstup od výpočtovej funkcie. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "1 2 3\n",
+        "output": "6\n",
+        "visible": true
+      },
+      {
+        "input": "-1 5 0\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "10 -10 5\n",
+        "output": "5\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-010",
@@ -338,18 +483,6 @@
     "statement": "Doplň funkciu del(a,b), ktorá vráti a/b. Ak b je 0, vráti text \"chyba\".",
     "mode": "solve",
     "starter_code": "def del(a, b):\n    # TODO\n    return 0\n\na = float(input())\nb = float(input())\nprint(del(a,b))\n",
-    "tests": [
-      {
-        "input": "6\n2\n",
-        "expected_stdout": "3.0\n",
-        "visible": true
-      },
-      {
-        "input": "5\n0\n",
-        "expected_stdout": "chyba\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Najprv otestuj b == 0.",
       "Pri nule return \"chyba\".",
@@ -360,7 +493,29 @@
       "guard clause"
     ],
     "difficulty": 3,
-    "teacher_comment": "Ukazuje včasný return pre špeciálny prípad."
+    "teacher_comment": "Ukazuje včasný return pre špeciálny prípad. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "6\n2\n",
+        "output": "3.0\n",
+        "visible": true
+      },
+      {
+        "input": "5\n0\n",
+        "output": "chyba\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def del(a, b):\n    if b == 0:\n        return 'chyba'\n    return a/b\n\na = float(input())\nb = float(input())\nprint(del(a,b))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-011",
@@ -369,18 +524,6 @@
     "statement": "Doplň funkciu normalizuj(meno), ktorá odstráni medzery na okrajoch a vráti meno s prvým písmenom veľkým a ostatnými malými.",
     "mode": "solve",
     "starter_code": "def normalizuj(meno):\n    # TODO\n    return meno\n\nmeno = input()\nprint(normalizuj(meno))\n",
-    "tests": [
-      {
-        "input": "  jURAJ  \n",
-        "expected_stdout": "Juraj\n",
-        "visible": true
-      },
-      {
-        "input": "eva\n",
-        "expected_stdout": "Eva\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "strip() odstráni okrajové medzery.",
       "capitalize() upraví prvé písmeno.",
@@ -391,7 +534,34 @@
       "string methods"
     ],
     "difficulty": 3,
-    "teacher_comment": "Praktická transformácia textu."
+    "teacher_comment": "Praktická transformácia textu. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "  jURAJ  \n",
+        "output": "Juraj\n",
+        "visible": true
+      },
+      {
+        "input": "eva\n",
+        "output": "Eva\n",
+        "visible": false
+      },
+      {
+        "input": "  ADAM\n",
+        "output": "Adam\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def normalizuj(meno):\n    return meno.strip().capitalize()\n\nmeno = input()\nprint(normalizuj(meno))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-012",
@@ -400,18 +570,6 @@
     "statement": "Doplň funkciu cena(kusy), ktorá vráti kusy*5. Ak je kusov aspoň 10, uplatní zľavu 20 percent.",
     "mode": "solve",
     "starter_code": "def cena(kusy):\n    # TODO\n    return 0\n\nkusy = int(input())\nprint(cena(kusy))\n",
-    "tests": [
-      {
-        "input": "3\n",
-        "expected_stdout": "15\n",
-        "visible": true
-      },
-      {
-        "input": "10\n",
-        "expected_stdout": "40.0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Základ je kusy * 5.",
       "Ak kusy >= 10, vráť základ * 0.8.",
@@ -423,7 +581,34 @@
       "business rule"
     ],
     "difficulty": 3,
-    "teacher_comment": "Reálny pravidlový výpočet."
+    "teacher_comment": "Reálny pravidlový výpočet. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "3\n",
+        "output": "15\n",
+        "visible": true
+      },
+      {
+        "input": "10\n",
+        "output": "40.0\n",
+        "visible": false
+      },
+      {
+        "input": "11\n",
+        "output": "44.0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def cena(kusy):\n    zaklad = kusy * 5\n    if kusy >= 10:\n        return zaklad * 0.8\n    return zaklad\n\nkusy = int(input())\nprint(cena(kusy))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-013",
@@ -432,18 +617,6 @@
     "statement": "Doplň funkciu inicialy(meno, priezvisko), ktorá vráti iniciály vo formáte M.P.",
     "mode": "solve",
     "starter_code": "def inicialy(meno, priezvisko):\n    # TODO\n    return \"\"\n\nmeno = input()\npriezvisko = input()\nprint(inicialy(meno, priezvisko))\n",
-    "tests": [
-      {
-        "input": "Juraj\nĎurnek\n",
-        "expected_stdout": "J.Ď.\n",
-        "visible": true
-      },
-      {
-        "input": "Eva\nNová\n",
-        "expected_stdout": "E.N.\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prvý znak je [0].",
       "Spoj prvé znaky a bodky.",
@@ -454,7 +627,29 @@
       "string indexing"
     ],
     "difficulty": 2,
-    "teacher_comment": "Jednoduchá funkcia s dvomi parametrami."
+    "teacher_comment": "Jednoduchá funkcia s dvomi parametrami. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "Juraj\nĎurnek\n",
+        "output": "J.Ď.\n",
+        "visible": true
+      },
+      {
+        "input": "Eva\nNová\n",
+        "output": "E.N.\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def inicialy(meno, priezvisko):\n    return meno[0] + '.' + priezvisko[0] + '.'\n\nmeno = input()\npriezvisko = input()\nprint(inicialy(meno, priezvisko))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-014",
@@ -463,18 +658,6 @@
     "statement": "Doplň funkciu nad_limit(cisla, limit), ktorá vráti počet čísel väčších ako limit.",
     "mode": "solve",
     "starter_code": "def nad_limit(cisla, limit):\n    pocet = 0\n    # TODO\n    return pocet\n\ncisla = [int(x) for x in input().split()]\nlimit = int(input())\nprint(nad_limit(cisla, limit))\n",
-    "tests": [
-      {
-        "input": "1 5 9 2\n4\n",
-        "expected_stdout": "2\n",
-        "visible": true
-      },
-      {
-        "input": "10 10 9\n10\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prejdi zoznam.",
       "Ak x > limit, zvýš počítadlo.",
@@ -486,7 +669,34 @@
       "filter count"
     ],
     "difficulty": 3,
-    "teacher_comment": "Kontroluje presnosť porovnania > vs >=."
+    "teacher_comment": "Kontroluje presnosť porovnania > vs >=. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "1 5 9 2\n4\n",
+        "output": "2\n",
+        "visible": true
+      },
+      {
+        "input": "10 10 9\n10\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "-1 0 1\n-1\n",
+        "output": "2\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def nad_limit(cisla, limit):\n    pocet = 0\n    for x in cisla:\n        if x > limit:\n            pocet += 1\n    return pocet\n\ncisla = [int(x) for x in input().split()]\nlimit = int(input())\nprint(nad_limit(cisla, limit))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-015",
@@ -495,23 +705,6 @@
     "statement": "Program načíta príkaz. Ak je \"pozdrav\", vypíše \"Ahoj!\". Ak je \"koniec\", vypíše \"Koniec.\". Inak vypíše \"Neznamy prikaz.\". Použi funkciu spracuj(prikaz).",
     "mode": "solve",
     "starter_code": "def spracuj(prikaz):\n    # TODO\n    return \"\"\n\nprikaz = input()\nprint(spracuj(prikaz))\n",
-    "tests": [
-      {
-        "input": "pozdrav\n",
-        "expected_stdout": "Ahoj!\n",
-        "visible": true
-      },
-      {
-        "input": "koniec\n",
-        "expected_stdout": "Koniec.\n",
-        "visible": false
-      },
-      {
-        "input": "test\n",
-        "expected_stdout": "Neznamy prikaz.\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Funkcia má vrátiť text podľa príkazu.",
       "Použi if/elif/else.",
@@ -523,7 +716,34 @@
       "separation"
     ],
     "difficulty": 3,
-    "teacher_comment": "Prechod k CLI architektúre: spracovanie príkazu oddelené od I/O."
+    "teacher_comment": "Prechod k CLI architektúre: spracovanie príkazu oddelené od I/O. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "pozdrav\n",
+        "output": "Ahoj!\n",
+        "visible": true
+      },
+      {
+        "input": "koniec\n",
+        "output": "Koniec.\n",
+        "visible": false
+      },
+      {
+        "input": "test\n",
+        "output": "Neznamy prikaz.\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def spracuj(prikaz):\n    if prikaz == 'pozdrav':\n        return 'Ahoj!'\n    if prikaz == 'koniec':\n        return 'Koniec.'\n    return 'Neznamy prikaz.'\n\nprikaz = input()\nprint(spracuj(prikaz))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-F02",
@@ -540,18 +760,6 @@
         "code": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n        return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n"
       }
     ],
-    "tests": [
-      {
-        "input": "1 2 3\n",
-        "expected_stdout": "6\n",
-        "visible": true
-      },
-      {
-        "input": "5 5 5\n",
-        "expected_stdout": "15\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "return ukončí funkciu okamžite.",
       "Má byť až po skončení cyklu.",
@@ -560,16 +768,44 @@
     "concepts": [
       "debugging",
       "return",
-      "loop"
+      "loop",
+      "function"
     ],
     "difficulty": 4,
-    "teacher_comment": "Jedna z najčastejších chýb pri funkciách s cyklom."
+    "teacher_comment": "Jedna z najčastejších chýb pri funkciách s cyklom. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "test_cases": [
+      {
+        "input": "1 2 3\n",
+        "output": "6\n",
+        "visible": true
+      },
+      {
+        "input": "5 5 5\n",
+        "output": "15\n",
+        "visible": false
+      },
+      {
+        "input": "-1 1 10\n",
+        "output": "10\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    }
   },
   {
     "id": "L6-F03",
     "level": 6,
     "title": "Fix: zabudnutý parameter",
-    "statement": "Funkcia má vrátiť pozdrav pre meno, ale používa globálnu premennú a je zle navrhnutá. Oprav ju tak, aby meno bolo parameter.",
+    "statement": "Funkcia má vrátiť pozdrav pre meno. Oprav ju tak, aby meno bolo parameter funkcie pozdrav(meno) a aby funkcia vracala text cez return. V tejto úlohe už nepoužívaj input() ani print().",
     "mode": "fix",
     "starter_code": "",
     "buggy_solutions": [
@@ -580,29 +816,86 @@
         "code": "def pozdrav():\n    return 'Ahoj, ' + meno\n\nmeno = input()\nprint(pozdrav())\n"
       }
     ],
-    "tests": [
+    "hints": [
+      "Funkcia má mať parameter: def pozdrav(meno):",
+      "Vo funkcii poskladaj text a vráť ho cez return.",
+      "Správny tvar je napr. return \"Ahoj, \" + meno"
+    ],
+    "concepts": [
+      "debugging",
+      "parameters",
+      "function"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Opravené: pôvodný chybný kód už neprejde len preto, že globálna premenná existuje. Hodnotí sa priamo funkcia pozdrav(meno). Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "pozdrav"
+      },
+      "cases": [
+        {
+          "args": [
+            "Eva"
+          ],
+          "expected_return": "Ahoj, Eva",
+          "visible": true
+        },
+        {
+          "args": [
+            "Juraj"
+          ],
+          "expected_return": "Ahoj, Juraj",
+          "visible": false
+        },
+        {
+          "args": [
+            "Mária"
+          ],
+          "expected_return": "Ahoj, Mária",
+          "visible": false
+        }
+      ]
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Meno má prísť ako parameter funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má vrátiť text cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "test_cases": [
       {
         "input": "Eva\n",
-        "expected_stdout": "Ahoj, Eva\n",
+        "output": "Ahoj, Eva\n",
         "visible": true
       },
       {
         "input": "Juraj\n",
-        "expected_stdout": "Ahoj, Juraj\n",
+        "output": "Ahoj, Juraj\n",
         "visible": false
       }
     ],
-    "hints": [
-      "Funkcia má dostať meno ako parameter.",
-      "def pozdrav(meno): ...",
-      "Potom volaj pozdrav(meno)."
-    ],
-    "concepts": [
-      "debugging",
-      "parameters"
-    ],
-    "difficulty": 3,
-    "teacher_comment": "Učí čisté funkcie a nezávislosť od globálneho stavu."
+    "reference_solution": "def pozdrav(meno):\n    return 'Ahoj, ' + meno\n",
+    "schema_version": 2
   },
   {
     "id": "L6-P02",
@@ -611,13 +904,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "def test(x):\n    if x > 0:\n        return \"plus\"\n    return \"nie plus\"\n\nprint(test(3))\nprint(test(-1))\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "plus\nnie plus\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Pri x=3 sa vykoná prvý return.",
       "Pri x=-1 sa prvý return preskočí.",
@@ -629,7 +915,16 @@
       "trace"
     ],
     "difficulty": 2,
-    "teacher_comment": "Sleduje tok funkcie s viacerými returnmi."
+    "teacher_comment": "Sleduje tok funkcie s viacerými returnmi. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "plus\nnie plus\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "def test(x):\n    if x > 0:\n        return \"plus\"\n    return \"nie plus\"\n\nprint(test(3))\nprint(test(-1))\n",
+    "schema_version": 2
   },
   {
     "id": "L6-P03",
@@ -638,13 +933,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "def pridaj(x):\n    x = x + 1\n    return x\n\nx = 5\ny = pridaj(x)\nprint(x)\nprint(y)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "5\n6\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Parameter x vo funkcii je lokálna premenná.",
       "Pôvodné x mimo funkcie sa nezmení.",
@@ -655,6 +943,15 @@
       "function call"
     ],
     "difficulty": 3,
-    "teacher_comment": "Upevňuje rozdiel medzi argumentom a lokálnou premennou."
+    "teacher_comment": "Upevňuje rozdiel medzi argumentom a lokálnou premennou. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "5\n6\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "def pridaj(x):\n    x = x + 1\n    return x\n\nx = 5\ny = pridaj(x)\nprint(x)\nprint(y)\n",
+    "schema_version": 2
   }
 ]

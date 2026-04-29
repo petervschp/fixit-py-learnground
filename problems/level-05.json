@@ -6,23 +6,52 @@
     "statement": "Na vstupe je text. Vypíš jeho dĺžku.",
     "mode": "solve",
     "starter_code": "s = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "Ahoj\n",
-        "expected_stdout": "4\n",
-        "visible": true
-      },
-      {
-        "input": "\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi len(s).",
       "Dĺžka reťazca je počet znakov.",
       "Riešenie: print(len(s))"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "Ahoj\n",
+        "output": "4\n",
+        "visible": true
+      },
+      {
+        "input": "\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "Python\n",
+        "output": "6\n",
+        "visible": false
+      },
+      {
+        "input": "a b\n",
+        "output": "3\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "s = input()\nprint(len(s))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-002",
@@ -31,23 +60,52 @@
     "statement": "Na vstupe je neprázdny text. Vypíš prvý a posledný znak na jeden riadok bez medzery (napr. 'aZ').",
     "mode": "solve",
     "starter_code": "s = input()\n# doplň\n",
-    "tests": [
-      {
-        "input": "abc\n",
-        "expected_stdout": "ac\n",
-        "visible": true
-      },
-      {
-        "input": "Z\n",
-        "expected_stdout": "ZZ\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prvý znak je s[0].",
       "Posledný znak je s[-1].",
       "Vypíš s[0] + s[-1]."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "abc\n",
+        "output": "ac\n",
+        "visible": true
+      },
+      {
+        "input": "Z\n",
+        "output": "ZZ\n",
+        "visible": false
+      },
+      {
+        "input": "python\n",
+        "output": "pn\n",
+        "visible": false
+      },
+      {
+        "input": "ahoj\n",
+        "output": "aj\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "s = input()\nprint(s[0] + s[-1])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-003",
@@ -56,23 +114,52 @@
     "statement": "Na vstupe je veta. Spočítaj počet slov (oddelené medzerami).",
     "mode": "solve",
     "starter_code": "text = input()\n# doplň\n",
-    "tests": [
-      {
-        "input": "Ahoj svet\n",
-        "expected_stdout": "2\n",
-        "visible": true
-      },
-      {
-        "input": "Python je super\n",
-        "expected_stdout": "3\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi split().",
       "words = text.split()",
       "Počet je len(words)."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "Ahoj svet\n",
+        "output": "2\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "output": "3\n",
+        "visible": false
+      },
+      {
+        "input": "  viac   medzier tu  \n",
+        "output": "3\n",
+        "visible": false
+      },
+      {
+        "input": "jedno\n",
+        "output": "1\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nwords = text.split()\nprint(len(words))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-004",
@@ -81,23 +168,52 @@
     "statement": "Na vstupe je veta. Vypíš slová v opačnom poradí, oddelené jednou medzerou.",
     "mode": "solve",
     "starter_code": "text = input()\n# doplň\n",
-    "tests": [
-      {
-        "input": "Ahoj svet\n",
-        "expected_stdout": "svet Ahoj\n",
-        "visible": true
-      },
-      {
-        "input": "ja mam rad python\n",
-        "expected_stdout": "python rad mam ja\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Rozdeľ: words = text.split()",
       "Otoč: words[::-1]",
       "Spoj: ' '.join(...)"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "Ahoj svet\n",
+        "output": "svet Ahoj\n",
+        "visible": true
+      },
+      {
+        "input": "ja mam rad python\n",
+        "output": "python rad mam ja\n",
+        "visible": false
+      },
+      {
+        "input": "jedno\n",
+        "output": "jedno\n",
+        "visible": false
+      },
+      {
+        "input": "a b c d\n",
+        "output": "d c b a\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nwords = text.split()\nprint(' '.join(words[::-1]))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-F01",
@@ -120,23 +236,52 @@
         "code": "text = input()\nwords = text.split()\nprint(words)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "a b c\n",
-        "expected_stdout": "a-b-c\n",
-        "visible": true
-      },
-      {
-        "input": "Python je super\n",
-        "expected_stdout": "Python-je-super\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "split() robí zo stringu list.",
       "join() robí z listu string.",
       "Použi: print('-'.join(words))"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "a b c\n",
+        "output": "a-b-c\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "output": "Python-je-super\n",
+        "visible": false
+      },
+      {
+        "input": "jeden dva\n",
+        "output": "jeden-dva\n",
+        "visible": false
+      },
+      {
+        "input": "solo\n",
+        "output": "solo\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nwords = text.split()\nprint('-'.join(words))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-P01",
@@ -145,18 +290,36 @@
     "statement": "Tipni výstup a potom Run.",
     "mode": "predict",
     "starter_code": "s = 'abcdef'\nprint(s[1:4])\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "bcd\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Slicing s[a:b] berie a..b-1.",
       "Indexy 1,2,3 sú b,c,d.",
       "Výstup je bcd."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "",
+        "output": "bcd\n",
+        "visible": true
+      }
+    ],
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   },
   {
     "id": "L5-005",
@@ -165,18 +328,6 @@
     "statement": "Na vstupe je text s dĺžkou aspoň 2. Vypíš jeho druhý znak.",
     "mode": "solve",
     "starter_code": "text = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "python\n",
-        "expected_stdout": "y\n",
-        "visible": true
-      },
-      {
-        "input": "ab\n",
-        "expected_stdout": "b\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Indexovanie začína od 0.",
       "Druhý znak má index 1.",
@@ -187,7 +338,47 @@
       "string"
     ],
     "difficulty": 1,
-    "teacher_comment": "Upevňuje nulový index."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "python\n",
+        "output": "y\n",
+        "visible": true
+      },
+      {
+        "input": "ab\n",
+        "output": "b\n",
+        "visible": false
+      },
+      {
+        "input": "xy\n",
+        "output": "y\n",
+        "visible": false
+      },
+      {
+        "input": "Ahoj\n",
+        "output": "h\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint(text[1])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-006",
@@ -196,18 +387,6 @@
     "statement": "Na vstupe je text. Vypíš text bez prvého znaku.",
     "mode": "solve",
     "starter_code": "text = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "python\n",
-        "expected_stdout": "ython\n",
-        "visible": true
-      },
-      {
-        "input": "Ahoj\n",
-        "expected_stdout": "hoj\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi slicing od indexu 1.",
       "text[1:] znamená od druhého znaku po koniec.",
@@ -217,7 +396,47 @@
       "slicing"
     ],
     "difficulty": 2,
-    "teacher_comment": "Základný rez od začiatku/bez začiatku."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "python\n",
+        "output": "ython\n",
+        "visible": true
+      },
+      {
+        "input": "Ahoj\n",
+        "output": "hoj\n",
+        "visible": false
+      },
+      {
+        "input": "x\n",
+        "output": "\n",
+        "visible": false
+      },
+      {
+        "input": "test\n",
+        "output": "est\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint(text[1:])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-007",
@@ -226,18 +445,6 @@
     "statement": "Na vstupe je text. Vypíš jeho prvé tri znaky.",
     "mode": "solve",
     "starter_code": "text = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "program\n",
-        "expected_stdout": "pro\n",
-        "visible": true
-      },
-      {
-        "input": "abcde\n",
-        "expected_stdout": "abc\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Horná hranica slicingu sa nezahŕňa.",
       "Prvé tri znaky sú text[:3].",
@@ -247,7 +454,47 @@
       "slicing"
     ],
     "difficulty": 2,
-    "teacher_comment": "Cvičí exkluzívnu hornú hranicu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "program\n",
+        "output": "pro\n",
+        "visible": true
+      },
+      {
+        "input": "abcde\n",
+        "output": "abc\n",
+        "visible": false
+      },
+      {
+        "input": "xy\n",
+        "output": "xy\n",
+        "visible": false
+      },
+      {
+        "input": "abcdef\n",
+        "output": "abc\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint(text[:3])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-008",
@@ -256,18 +503,6 @@
     "statement": "Na vstupe je text. Vypíš každý druhý znak od začiatku.",
     "mode": "solve",
     "starter_code": "text = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "abcdef\n",
-        "expected_stdout": "ace\n",
-        "visible": true
-      },
-      {
-        "input": "python\n",
-        "expected_stdout": "pto\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Slicing má tvar start:end:krok.",
       "Krok 2 vyberie každý druhý znak.",
@@ -277,7 +512,47 @@
       "slicing step"
     ],
     "difficulty": 3,
-    "teacher_comment": "Rozširuje slicing o krok."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "abcdef\n",
+        "output": "ace\n",
+        "visible": true
+      },
+      {
+        "input": "python\n",
+        "output": "pto\n",
+        "visible": false
+      },
+      {
+        "input": "a\n",
+        "output": "a\n",
+        "visible": false
+      },
+      {
+        "input": "1234567\n",
+        "output": "1357\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint(text[::2])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-009",
@@ -286,18 +561,6 @@
     "statement": "Na vstupe je text. Vypíš ho odzadu.",
     "mode": "solve",
     "starter_code": "text = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "abc\n",
-        "expected_stdout": "cba\n",
-        "visible": true
-      },
-      {
-        "input": "ahoj\n",
-        "expected_stdout": "joha\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Slicing s krokom -1 otočí text.",
       "Použi text[::-1].",
@@ -307,7 +570,47 @@
       "slicing negative step"
     ],
     "difficulty": 3,
-    "teacher_comment": "Pythonovská skratka pre reverz."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "abc\n",
+        "output": "cba\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "output": "joha\n",
+        "visible": false
+      },
+      {
+        "input": "Python\n",
+        "output": "nohtyP\n",
+        "visible": false
+      },
+      {
+        "input": "a\n",
+        "output": "a\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint(text[::-1])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-010",
@@ -316,13 +619,6 @@
     "statement": "Na vstupe je veta. Vypíš každé slovo na samostatný riadok.",
     "mode": "solve",
     "starter_code": "veta = input()\nslova = veta.split()\n",
-    "tests": [
-      {
-        "input": "Ahoj svet Python\n",
-        "expected_stdout": "Ahoj\nsvet\nPython\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "split() rozdelí vetu na slová.",
       "Prejdi zoznam slov cyklom.",
@@ -333,7 +629,42 @@
       "for list"
     ],
     "difficulty": 2,
-    "teacher_comment": "Praktická práca so zoznamom slov."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "Ahoj svet Python\n",
+        "output": "Ahoj\nsvet\nPython\n",
+        "visible": true
+      },
+      {
+        "input": "jedno\n",
+        "output": "jedno\n",
+        "visible": false
+      },
+      {
+        "input": "a b\n",
+        "output": "a\nb\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "veta = input()\nslova = veta.split()\nfor slovo in slova:\n    print(slovo)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-011",
@@ -342,18 +673,6 @@
     "statement": "Na vstupe je veta aspoň s jedným slovom. Vypíš prvé slovo.",
     "mode": "solve",
     "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
-    "tests": [
-      {
-        "input": "dobré ráno trieda\n",
-        "expected_stdout": "dobré\n",
-        "visible": true
-      },
-      {
-        "input": "Python\n",
-        "expected_stdout": "Python\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "split() vráti zoznam slov.",
       "Prvý prvok má index 0.",
@@ -364,7 +683,42 @@
       "list indexing"
     ],
     "difficulty": 2,
-    "teacher_comment": "Most medzi reťazcom a zoznamom."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "dobré ráno trieda\n",
+        "output": "dobré\n",
+        "visible": true
+      },
+      {
+        "input": "Python\n",
+        "output": "Python\n",
+        "visible": false
+      },
+      {
+        "input": "  prve druhe  \n",
+        "output": "prve\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "veta = input()\nslova = veta.split()\nprint(slova[0])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-012",
@@ -373,18 +727,6 @@
     "statement": "Na vstupe je veta. Vypíš posledné slovo.",
     "mode": "solve",
     "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
-    "tests": [
-      {
-        "input": "dnes sa učíme Python\n",
-        "expected_stdout": "Python\n",
-        "visible": true
-      },
-      {
-        "input": "ahoj\n",
-        "expected_stdout": "ahoj\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Posledný prvok má index -1.",
       "Použi slova[-1].",
@@ -395,7 +737,42 @@
       "split"
     ],
     "difficulty": 2,
-    "teacher_comment": "Upevňuje záporné indexy."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "dnes sa učíme Python\n",
+        "output": "Python\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "output": "ahoj\n",
+        "visible": false
+      },
+      {
+        "input": "prve druhe tretie\n",
+        "output": "tretie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "veta = input()\nslova = veta.split()\nprint(slova[-1])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-013",
@@ -404,18 +781,6 @@
     "statement": "Na vstupe je veta. Vypíš jej slová spojené pomlčkou.",
     "mode": "solve",
     "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
-    "tests": [
-      {
-        "input": "a b c\n",
-        "expected_stdout": "a-b-c\n",
-        "visible": true
-      },
-      {
-        "input": "Python je super\n",
-        "expected_stdout": "Python-je-super\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "split() vytvorí zoznam.",
       "\"-\".join(slova) spojí zoznam pomlčkou.",
@@ -426,7 +791,47 @@
       "join"
     ],
     "difficulty": 3,
-    "teacher_comment": "Kľúčová úloha pre pochopenie join."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "a b c\n",
+        "output": "a-b-c\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "output": "Python-je-super\n",
+        "visible": false
+      },
+      {
+        "input": "jedno\n",
+        "output": "jedno\n",
+        "visible": false
+      },
+      {
+        "input": "  a   b  c \n",
+        "output": "a-b-c\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "veta = input()\nslova = veta.split()\nprint('-'.join(slova))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-014",
@@ -435,18 +840,6 @@
     "statement": "Na vstupe je jeden riadok s celými číslami oddelenými medzerou. Vypíš ich súčet.",
     "mode": "solve",
     "starter_code": "riadok = input()\ncasti = riadok.split()\ns = 0\n",
-    "tests": [
-      {
-        "input": "1 2 3 4\n",
-        "expected_stdout": "10\n",
-        "visible": true
-      },
-      {
-        "input": "-1 5 0\n",
-        "expected_stdout": "4\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "split() dá textové časti.",
       "Každú časť treba previesť cez int().",
@@ -458,7 +851,47 @@
       "accumulator"
     ],
     "difficulty": 3,
-    "teacher_comment": "Základ pre spracovanie údajov v jednom riadku."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "1 2 3 4\n",
+        "output": "10\n",
+        "visible": true
+      },
+      {
+        "input": "-1 5 0\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "0 0 0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "10 -3 2\n",
+        "output": "9\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "riadok = input()\ncasti = riadok.split()\ns = 0\nfor cast in casti:\n    s += int(cast)\nprint(s)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-015",
@@ -467,18 +900,6 @@
     "statement": "Na vstupe je jeden riadok s celými číslami oddelenými medzerou. Vypíš najväčšie číslo.",
     "mode": "solve",
     "starter_code": "cisla = input().split()\n",
-    "tests": [
-      {
-        "input": "3 9 2 5\n",
-        "expected_stdout": "9\n",
-        "visible": true
-      },
-      {
-        "input": "-5 -2 -9\n",
-        "expected_stdout": "-2\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Textové hodnoty treba meniť na int.",
       "Môžeš použiť cyklus a maximum.",
@@ -489,7 +910,47 @@
       "maximum"
     ],
     "difficulty": 3,
-    "teacher_comment": "Ukazuje, prečo nestačí max na reťazcoch."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3 9 2 5\n",
+        "output": "9\n",
+        "visible": true
+      },
+      {
+        "input": "-5 -2 -9\n",
+        "output": "-2\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "100 20 3\n",
+        "output": "100\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "cisla = input().split()\nnaj = int(cisla[0])\nfor c in cisla:\n    x = int(c)\n    if x > naj:\n        naj = x\nprint(naj)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-016",
@@ -498,18 +959,6 @@
     "statement": "Na vstupe je riadok so slovami. Vymeň prvé a posledné slovo a vypíš celý zoznam slov spojený medzerami.",
     "mode": "solve",
     "starter_code": "slova = input().split()\n",
-    "tests": [
-      {
-        "input": "jeden dva tri\n",
-        "expected_stdout": "tri dva jeden\n",
-        "visible": true
-      },
-      {
-        "input": "A B\n",
-        "expected_stdout": "B A\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prvý index je 0, posledný -1.",
       "Výmena: slova[0], slova[-1] = slova[-1], slova[0].",
@@ -520,7 +969,47 @@
       "join"
     ],
     "difficulty": 4,
-    "teacher_comment": "Učí bezpečnú výmenu prvkov v zozname."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "jeden dva tri\n",
+        "output": "tri dva jeden\n",
+        "visible": true
+      },
+      {
+        "input": "A B\n",
+        "output": "B A\n",
+        "visible": false
+      },
+      {
+        "input": "solo\n",
+        "output": "solo\n",
+        "visible": false
+      },
+      {
+        "input": "a b c d\n",
+        "output": "d b c a\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "slova = input().split()\nif len(slova) > 1:\n    slova[0], slova[-1] = slova[-1], slova[0]\nprint(' '.join(slova))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-017",
@@ -529,13 +1018,6 @@
     "statement": "Na vstupe je veta a potom nové slovo. Pridaj slovo na koniec a vypíš vetu.",
     "mode": "solve",
     "starter_code": "slova = input().split()\nnové = input()\n",
-    "tests": [
-      {
-        "input": "učíme sa\nPython\n",
-        "expected_stdout": "učíme sa Python\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "append pridá prvok na koniec zoznamu.",
       "Potom zoznam spoj medzerou.",
@@ -546,7 +1028,42 @@
       "join"
     ],
     "difficulty": 2,
-    "teacher_comment": "Jednoduchá modifikácia zoznamu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "učíme sa\nPython\n",
+        "output": "učíme sa Python\n",
+        "visible": true
+      },
+      {
+        "input": "a b\nc\n",
+        "output": "a b c\n",
+        "visible": false
+      },
+      {
+        "input": "jedno\ndruhe\n",
+        "output": "jedno druhe\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "slova = input().split()\nnové = input()\nslova.append(nové)\nprint(' '.join(slova))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-018",
@@ -555,18 +1072,6 @@
     "statement": "Na vstupe je veta aspoň s dvomi slovami. Odstráň prvé slovo a zvyšok vypíš ako vetu.",
     "mode": "solve",
     "starter_code": "slova = input().split()\n",
-    "tests": [
-      {
-        "input": "toto odstráň\n",
-        "expected_stdout": "odstráň\n",
-        "visible": true
-      },
-      {
-        "input": "A B C\n",
-        "expected_stdout": "B C\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Môžeš použiť slicing slova[1:].",
       "Potom spoj pomocou \" \".join().",
@@ -577,7 +1082,42 @@
       "join"
     ],
     "difficulty": 3,
-    "teacher_comment": "Rozlišuje slicing reťazca a slicing zoznamu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "toto odstráň\n",
+        "output": "odstráň\n",
+        "visible": true
+      },
+      {
+        "input": "A B C\n",
+        "output": "B C\n",
+        "visible": false
+      },
+      {
+        "input": "prve druhe tretie\n",
+        "output": "druhe tretie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "slova = input().split()\nslova.pop(0)\nprint(' '.join(slova))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-019",
@@ -586,18 +1126,6 @@
     "statement": "Na vstupe je veta. Vypíš iba slová dlhšie ako 3 znaky, každé na vlastnom riadku.",
     "mode": "solve",
     "starter_code": "slova = input().split()\n",
-    "tests": [
-      {
-        "input": "ja mam rad python\n",
-        "expected_stdout": "python\n",
-        "visible": true
-      },
-      {
-        "input": "toto je test\n",
-        "expected_stdout": "toto\ntest\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prejdi zoznam slov.",
       "Dĺžku zistíš cez len(slovo).",
@@ -609,7 +1137,47 @@
       "len"
     ],
     "difficulty": 3,
-    "teacher_comment": "Filtrácia zoznamu podľa vlastnosti prvku."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "ja mam rad python\n",
+        "output": "python\n",
+        "visible": true
+      },
+      {
+        "input": "toto je test\n",
+        "output": "toto\ntest\n",
+        "visible": false
+      },
+      {
+        "input": "abcd abc abcde\n",
+        "output": "abcd\nabcde\n",
+        "visible": false
+      },
+      {
+        "input": "a bb ccc\n",
+        "output": "",
+        "visible": false
+      }
+    ],
+    "reference_solution": "slova = input().split()\nfor slovo in slova:\n    if len(slovo) > 3:\n        print(slovo)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-F02",
@@ -626,18 +1194,6 @@
         "code": "casti = input().split()\nprint(max(casti))\n"
       }
     ],
-    "tests": [
-      {
-        "input": "3 20 100\n",
-        "expected_stdout": "100\n",
-        "visible": true
-      },
-      {
-        "input": "9 10\n",
-        "expected_stdout": "10\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "split() dá reťazce.",
       "Reťazce sa porovnávajú lexikograficky.",
@@ -648,7 +1204,47 @@
       "type conversion"
     ],
     "difficulty": 4,
-    "teacher_comment": "Kľúčová chyba pri práci s číslami v jednom riadku."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3 20 100\n",
+        "output": "100\n",
+        "visible": true
+      },
+      {
+        "input": "9 10\n",
+        "output": "10\n",
+        "visible": false
+      },
+      {
+        "input": "-5 -2 -9\n",
+        "output": "-2\n",
+        "visible": false
+      },
+      {
+        "input": "100 20 3\n",
+        "output": "100\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "casti = input().split()\ncisla = [int(c) for c in casti]\nprint(max(cisla))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-F03",
@@ -665,18 +1261,6 @@
         "code": "text = input()\ntext[0] = 'X'\nprint(text)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "python\n",
-        "expected_stdout": "Xython\n",
-        "visible": true
-      },
-      {
-        "input": "ahoj\n",
-        "expected_stdout": "Xhoj\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Reťazec nemožno meniť priamo cez index.",
       "Vytvor nový reťazec: \"X\" + text[1:].",
@@ -688,7 +1272,47 @@
       "slicing"
     ],
     "difficulty": 4,
-    "teacher_comment": "Dôležitá diferencia medzi reťazcom a zoznamom."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "python\n",
+        "output": "Xython\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "output": "Xhoj\n",
+        "visible": false
+      },
+      {
+        "input": "A\n",
+        "output": "X\n",
+        "visible": false
+      },
+      {
+        "input": "slovo\n",
+        "output": "Xlovo\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text = input()\nprint('X' + text[1:])\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-P02",
@@ -697,13 +1321,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "text = \"python\"\nprint(text[0])\nprint(text[-1])\nprint(text[1:4])\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "p\nn\nyth\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "text[0] je prvý znak.",
       "text[-1] je posledný znak.",
@@ -715,7 +1332,31 @@
       "trace"
     ],
     "difficulty": 2,
-    "teacher_comment": "Krátke sledovanie indexov a rezu."
+    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "p\nn\nyth\n",
+        "visible": true
+      }
+    ],
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L5-P03",
@@ -724,13 +1365,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "slova = \"a b c\".split()\nslova.append(\"d\")\nprint(\"-\".join(slova))\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "a-b-c-d\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "split vytvorí zoznam troch slov.",
       "append pridá d.",
@@ -742,6 +1376,30 @@
       "join"
     ],
     "difficulty": 2,
-    "teacher_comment": "Spája tri základné operácie so zoznamom slov."
+    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "a-b-c-d\n",
+        "visible": true
+      }
+    ],
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   }
 ]

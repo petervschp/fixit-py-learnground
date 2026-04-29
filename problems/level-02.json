@@ -6,28 +6,57 @@
     "statement": "Na vstupe je celé číslo. Vypíš: POS, NEG alebo ZERO.",
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "POS\n",
-        "visible": true
-      },
-      {
-        "input": "-1\n",
-        "expected_stdout": "NEG\n",
-        "visible": false
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "ZERO\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if/elif/else.",
       "Porovnávaj n > 0, n < 0.",
       "Vypíš POS/NEG/ZERO."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "POS\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n",
+        "output": "NEG\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "ZERO\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "output": "POS\n",
+        "visible": false
+      },
+      {
+        "input": "-100\n",
+        "output": "NEG\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n>0:\n    print(\"POS\")\nelif n<0:\n    print(\"NEG\")\nelse:\n    print(\"ZERO\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-002",
@@ -36,23 +65,57 @@
     "statement": "Na vstupe je celé číslo. Vypíš EVEN alebo ODD.",
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "EVEN\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "ODD\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi modulo: n % 2.",
       "Ak zvyšok 0 → párne.",
       "Riešenie: print('EVEN') alebo print('ODD')"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "EVEN\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "ODD\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "EVEN\n",
+        "visible": false
+      },
+      {
+        "input": "-3\n",
+        "output": "ODD\n",
+        "visible": false
+      },
+      {
+        "input": "-4\n",
+        "output": "EVEN\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n%2==0:\n    print(\"EVEN\")\nelse:\n    print(\"ODD\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-003",
@@ -61,23 +124,57 @@
     "statement": "Na vstupe sú tri celé čísla. Vypíš najväčšie z nich.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "1\n5\n3\n",
-        "expected_stdout": "5\n",
-        "visible": true
-      },
-      {
-        "input": "-10\n-2\n-7\n",
-        "expected_stdout": "-2\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Môžeš použiť if alebo max().",
       "Najväčšie je maximum z a,b,c.",
       "Riešenie: print(max(a,b,c))"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "1\n5\n3\n",
+        "output": "5\n",
+        "visible": true
+      },
+      {
+        "input": "-10\n-2\n-7\n",
+        "output": "-2\n",
+        "visible": false
+      },
+      {
+        "input": "5\n5\n5\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "9\n1\n9\n",
+        "output": "9\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n-1\n-2\n",
+        "output": "-1\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nprint(max(a,b,c))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-F01",
@@ -94,23 +191,52 @@
         "code": "n = int(input())\nif n % 2 = 0:\n    print('EVEN')\nelse:\n    print('ODD')\n"
       }
     ],
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "EVEN\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "ODD\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "V if podmienke sa porovnáva pomocou ==.",
       "Jedno = je priradenie.",
       "Použi: if n % 2 == 0:"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "EVEN\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "ODD\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "EVEN\n",
+        "visible": false
+      },
+      {
+        "input": "-3\n",
+        "output": "ODD\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n%2==0:\n    print(\"EVEN\")\nelse:\n    print(\"ODD\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-004",
@@ -119,28 +245,72 @@
     "statement": "Na vstupe je celé číslo vek. Vypíš: CHILD (0–12), TEEN (13–19), ADULT (20+).",
     "mode": "solve",
     "starter_code": "age = int(input())\n# doplň\n",
-    "tests": [
-      {
-        "input": "10\n",
-        "expected_stdout": "CHILD\n",
-        "visible": true
-      },
-      {
-        "input": "15\n",
-        "expected_stdout": "TEEN\n",
-        "visible": false
-      },
-      {
-        "input": "33\n",
-        "expected_stdout": "ADULT\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if/elif/else.",
       "Pozor na hranice intervalov.",
       "CHILD<=12, TEEN<=19, inak ADULT."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "10\n",
+        "output": "CHILD\n",
+        "visible": true
+      },
+      {
+        "input": "15\n",
+        "output": "TEEN\n",
+        "visible": false
+      },
+      {
+        "input": "33\n",
+        "output": "ADULT\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "CHILD\n",
+        "visible": false
+      },
+      {
+        "input": "12\n",
+        "output": "CHILD\n",
+        "visible": false
+      },
+      {
+        "input": "13\n",
+        "output": "TEEN\n",
+        "visible": false
+      },
+      {
+        "input": "19\n",
+        "output": "TEEN\n",
+        "visible": false
+      },
+      {
+        "input": "20\n",
+        "output": "ADULT\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "age=int(input())\nif age <= 12:\n    print(\"CHILD\")\nelif age <= 19:\n    print(\"TEEN\")\nelse:\n    print(\"ADULT\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-P01",
@@ -149,18 +319,37 @@
     "statement": "Tipni výstup pre n=5. Potom uzamkni odhad a klikni Run. (Run vstup nastav na 5.)",
     "mode": "predict",
     "starter_code": "n = int(input())\nif n % 2 == 0:\n    print('EVEN')\nelse:\n    print('ODD')\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "ODD\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "5 % 2 je 1.",
       "Nie je to 0, ide else vetva.",
       "Výstup: ODD"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "ODD\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n % 2 == 0:\n    print('EVEN')\nelse:\n    print('ODD')\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
   },
   {
     "id": "L2-005",
@@ -169,23 +358,6 @@
     "statement": "Na vstupe je celé číslo. Vypíš \"nula\", ak je číslo 0, inak vypíš \"nenula\".",
     "mode": "solve",
     "starter_code": "n = int(input())\nif ...:\n    print()\nelse:\n    print()\n",
-    "tests": [
-      {
-        "input": "0\n",
-        "expected_stdout": "nula\n",
-        "visible": true
-      },
-      {
-        "input": "5\n",
-        "expected_stdout": "nenula\n",
-        "visible": false
-      },
-      {
-        "input": "-1\n",
-        "expected_stdout": "nenula\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Porovnanie s nulou je n == 0.",
       "V else riešiš všetko ostatné.",
@@ -196,7 +368,52 @@
       "comparison"
     ],
     "difficulty": 1,
-    "teacher_comment": "Najjednoduchší prípad dvojvetvenia."
+    "teacher_comment": "Najjednoduchší prípad dvojvetvenia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "0\n",
+        "output": "nula\n",
+        "visible": true
+      },
+      {
+        "input": "5\n",
+        "output": "nenula\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n",
+        "output": "nenula\n",
+        "visible": false
+      },
+      {
+        "input": "-10\n",
+        "output": "nenula\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "output": "nenula\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n==0:\n    print(\"nula\")\nelse:\n    print(\"nenula\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-006",
@@ -205,23 +422,6 @@
     "statement": "Na vstupe sú dve celé čísla. Vypíš väčšie z nich. Ak sú rovnaké, vypíš hociktoré z nich.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\n",
-    "tests": [
-      {
-        "input": "8\n3\n",
-        "expected_stdout": "8\n",
-        "visible": true
-      },
-      {
-        "input": "2\n9\n",
-        "expected_stdout": "9\n",
-        "visible": false
-      },
-      {
-        "input": "5\n5\n",
-        "expected_stdout": "5\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Porovnaj a > b.",
       "V jednej vetve vypíš a, v druhej b.",
@@ -232,7 +432,52 @@
       "max"
     ],
     "difficulty": 1,
-    "teacher_comment": "Predstupeň k max z troch čísel."
+    "teacher_comment": "Predstupeň k max z troch čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "8\n3\n",
+        "output": "8\n",
+        "visible": true
+      },
+      {
+        "input": "2\n9\n",
+        "output": "9\n",
+        "visible": false
+      },
+      {
+        "input": "5\n5\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "-3\n-1\n",
+        "output": "-1\n",
+        "visible": false
+      },
+      {
+        "input": "0\n-5\n",
+        "output": "0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nif a>=b:\n    print(a)\nelse:\n    print(b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-007",
@@ -241,23 +486,6 @@
     "statement": "Na vstupe je vek. Vypíš \"vstup povoleny\", ak má človek aspoň 15 rokov, inak \"vstup zamietnuty\".",
     "mode": "solve",
     "starter_code": "vek = int(input())\n",
-    "tests": [
-      {
-        "input": "15\n",
-        "expected_stdout": "vstup povoleny\n",
-        "visible": true
-      },
-      {
-        "input": "14\n",
-        "expected_stdout": "vstup zamietnuty\n",
-        "visible": false
-      },
-      {
-        "input": "18\n",
-        "expected_stdout": "vstup povoleny\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Aspoň 15 znamená >= 15.",
       "Presne dodrž text výstupu.",
@@ -268,7 +496,52 @@
       "boundary"
     ],
     "difficulty": 2,
-    "teacher_comment": "Hraničná hodnota 15 je kľúčová."
+    "teacher_comment": "Hraničná hodnota 15 je kľúčová. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "15\n",
+        "output": "vstup povoleny\n",
+        "visible": true
+      },
+      {
+        "input": "14\n",
+        "output": "vstup zamietnuty\n",
+        "visible": false
+      },
+      {
+        "input": "18\n",
+        "output": "vstup povoleny\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "vstup zamietnuty\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "output": "vstup povoleny\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "vek=int(input())\nif vek>=15:\n    print(\"vstup povoleny\")\nelse:\n    print(\"vstup zamietnuty\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-008",
@@ -277,28 +550,6 @@
     "statement": "Na vstupe je počet bodov 0 až 100. Vypíš A pre aspoň 90, B pre aspoň 75, C pre aspoň 50, inak D.",
     "mode": "solve",
     "starter_code": "body = int(input())\n",
-    "tests": [
-      {
-        "input": "95\n",
-        "expected_stdout": "A\n",
-        "visible": true
-      },
-      {
-        "input": "75\n",
-        "expected_stdout": "B\n",
-        "visible": false
-      },
-      {
-        "input": "50\n",
-        "expected_stdout": "C\n",
-        "visible": false
-      },
-      {
-        "input": "49\n",
-        "expected_stdout": "D\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if/elif/elif/else.",
       "Poradie podmienok je od najvyššej hranice.",
@@ -309,7 +560,67 @@
       "boundaries"
     ],
     "difficulty": 3,
-    "teacher_comment": "Silná úloha na poradie podmienok a inkluzívne hranice."
+    "teacher_comment": "Silná úloha na poradie podmienok a inkluzívne hranice. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "95\n",
+        "output": "A\n",
+        "visible": true
+      },
+      {
+        "input": "75\n",
+        "output": "B\n",
+        "visible": false
+      },
+      {
+        "input": "50\n",
+        "output": "C\n",
+        "visible": false
+      },
+      {
+        "input": "49\n",
+        "output": "D\n",
+        "visible": false
+      },
+      {
+        "input": "90\n",
+        "output": "A\n",
+        "visible": false
+      },
+      {
+        "input": "89\n",
+        "output": "B\n",
+        "visible": false
+      },
+      {
+        "input": "74\n",
+        "output": "C\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "D\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "body=int(input())\nif body>=90:\n    print(\"A\")\nelif body>=75:\n    print(\"B\")\nelif body>=50:\n    print(\"C\")\nelse:\n    print(\"D\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-009",
@@ -318,23 +629,6 @@
     "statement": "Na vstupe je celé číslo. Vypíš \"ano\", ak je deliteľné 5, inak \"nie\".",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "20\n",
-        "expected_stdout": "ano\n",
-        "visible": true
-      },
-      {
-        "input": "22\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "ano\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Deliteľnosť zistíš cez n % 5 == 0.",
       "Nula je deliteľná 5.",
@@ -345,7 +639,52 @@
       "if"
     ],
     "difficulty": 2,
-    "teacher_comment": "Pripravuje na kombinované podmienky."
+    "teacher_comment": "Pripravuje na kombinované podmienky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "20\n",
+        "output": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "22\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "-10\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "-11\n",
+        "output": "nie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n%5==0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-010",
@@ -354,23 +693,6 @@
     "statement": "Na vstupe je celé číslo. Vypíš \"ano\", ak je číslo kladné a párne, inak \"nie\".",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "ano\n",
-        "visible": true
-      },
-      {
-        "input": "-4\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Kladné: n > 0.",
       "Párne: n % 2 == 0.",
@@ -381,7 +703,57 @@
       "modulo"
     ],
     "difficulty": 3,
-    "teacher_comment": "Kombinovaná logická podmienka."
+    "teacher_comment": "Kombinovaná logická podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "-4\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "7\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "2\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "-2\n",
+        "output": "nie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n>0 and n%2==0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-011",
@@ -390,23 +762,6 @@
     "statement": "Na vstupe je teplota. Vypíš \"mimo\", ak je menšia ako 0 alebo väčšia ako 100, inak \"ok\".",
     "mode": "solve",
     "starter_code": "t = int(input())\n",
-    "tests": [
-      {
-        "input": "-5\n",
-        "expected_stdout": "mimo\n",
-        "visible": true
-      },
-      {
-        "input": "101\n",
-        "expected_stdout": "mimo\n",
-        "visible": false
-      },
-      {
-        "input": "50\n",
-        "expected_stdout": "ok\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi or.",
       "Podmienka: t < 0 or t > 100.",
@@ -417,7 +772,57 @@
       "range check"
     ],
     "difficulty": 3,
-    "teacher_comment": "Precvičuje vonkajšok intervalu a hraničné hodnoty."
+    "teacher_comment": "Precvičuje vonkajšok intervalu a hraničné hodnoty. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "-5\n",
+        "output": "mimo\n",
+        "visible": true
+      },
+      {
+        "input": "101\n",
+        "output": "mimo\n",
+        "visible": false
+      },
+      {
+        "input": "50\n",
+        "output": "ok\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "ok\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "output": "ok\n",
+        "visible": false
+      },
+      {
+        "input": "150\n",
+        "output": "mimo\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "t=int(input())\nif t<0 or t>100:\n    print(\"mimo\")\nelse:\n    print(\"ok\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-012",
@@ -426,23 +831,6 @@
     "statement": "Na vstupe je číslo. Vypíš \"ano\", ak patrí do uzavretého intervalu 10 až 20, inak \"nie\".",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "10\n",
-        "expected_stdout": "ano\n",
-        "visible": true
-      },
-      {
-        "input": "20\n",
-        "expected_stdout": "ano\n",
-        "visible": false
-      },
-      {
-        "input": "21\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Uzavretý interval zahŕňa hranice.",
       "Použi 10 <= n <= 20 alebo and.",
@@ -453,7 +841,57 @@
       "comparison chaining"
     ],
     "difficulty": 3,
-    "teacher_comment": "Učí pythonovské reťazenie porovnaní."
+    "teacher_comment": "Učí pythonovské reťazenie porovnaní. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "10\n",
+        "output": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "20\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "21\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "15\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n",
+        "output": "nie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif 10 <= n <= 20:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-013",
@@ -462,23 +900,6 @@
     "statement": "Na vstupe sú tri kladné celé čísla a, b, c. Vypíš \"ano\", ak môžu byť stranami trojuholníka, inak \"nie\".",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\n",
-    "tests": [
-      {
-        "input": "3\n4\n5\n",
-        "expected_stdout": "ano\n",
-        "visible": true
-      },
-      {
-        "input": "1\n2\n3\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      },
-      {
-        "input": "5\n5\n9\n",
-        "expected_stdout": "ano\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Každé dve strany musia mať súčet väčší ako tretia.",
       "Spoj tri podmienky pomocou and.",
@@ -489,7 +910,52 @@
       "geometry"
     ],
     "difficulty": 4,
-    "teacher_comment": "Náročnejšia kombinovaná podmienka."
+    "teacher_comment": "Náročnejšia kombinovaná podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n4\n5\n",
+        "output": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "1\n2\n3\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "5\n5\n9\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "2\n2\n3\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "10\n1\n1\n",
+        "output": "nie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nif a+b>c and a+c>b and b+c>a:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-014",
@@ -498,18 +964,6 @@
     "statement": "Na vstupe je rok. Vypíš \"prestupny\", ak je deliteľný 4, inak \"bezny\".",
     "mode": "solve",
     "starter_code": "rok = int(input())\n",
-    "tests": [
-      {
-        "input": "2024\n",
-        "expected_stdout": "prestupny\n",
-        "visible": true
-      },
-      {
-        "input": "2023\n",
-        "expected_stdout": "bezny\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Zjednodušené pravidlo používa rok % 4 == 0.",
       "Presný text je prestupny/bezny.",
@@ -520,7 +974,47 @@
       "if"
     ],
     "difficulty": 2,
-    "teacher_comment": "Jednoduchý reálny kontext deliteľnosti."
+    "teacher_comment": "Jednoduchý reálny kontext deliteľnosti. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "2024\n",
+        "output": "prestupny\n",
+        "visible": true
+      },
+      {
+        "input": "2023\n",
+        "output": "bezny\n",
+        "visible": false
+      },
+      {
+        "input": "2000\n",
+        "output": "prestupny\n",
+        "visible": false
+      },
+      {
+        "input": "1900\n",
+        "output": "prestupny\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "rok=int(input())\nif rok%4==0:\n    print(\"prestupny\")\nelse:\n    print(\"bezny\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-015",
@@ -529,23 +1023,6 @@
     "statement": "Na vstupe je rok. Vypíš \"prestupny\", ak je deliteľný 400 alebo je deliteľný 4 a nie 100. Inak vypíš \"bezny\".",
     "mode": "solve",
     "starter_code": "rok = int(input())\n",
-    "tests": [
-      {
-        "input": "2000\n",
-        "expected_stdout": "prestupny\n",
-        "visible": true
-      },
-      {
-        "input": "1900\n",
-        "expected_stdout": "bezny\n",
-        "visible": false
-      },
-      {
-        "input": "2024\n",
-        "expected_stdout": "prestupny\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Pravidlo: deliteľný 400 alebo deliteľný 4 a nie 100.",
       "Použi zátvorky, aby bola podmienka jasná.",
@@ -557,7 +1034,57 @@
       "precedence"
     ],
     "difficulty": 4,
-    "teacher_comment": "Výborná úloha na logickú prioritu and/or."
+    "teacher_comment": "Výborná úloha na logickú prioritu and/or. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "2000\n",
+        "output": "prestupny\n",
+        "visible": true
+      },
+      {
+        "input": "1900\n",
+        "output": "bezny\n",
+        "visible": false
+      },
+      {
+        "input": "2024\n",
+        "output": "prestupny\n",
+        "visible": false
+      },
+      {
+        "input": "2023\n",
+        "output": "bezny\n",
+        "visible": false
+      },
+      {
+        "input": "2100\n",
+        "output": "bezny\n",
+        "visible": false
+      },
+      {
+        "input": "2400\n",
+        "output": "prestupny\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "rok=int(input())\nif rok%400==0 or (rok%4==0 and rok%100!=0):\n    print(\"prestupny\")\nelse:\n    print(\"bezny\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-016",
@@ -566,23 +1093,6 @@
     "statement": "Na vstupe je celé číslo. Vypíš \"male\" pre n < 10, \"stredne\" pre 10 až 99, \"velke\" pre 100 a viac.",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "male\n",
-        "visible": true
-      },
-      {
-        "input": "10\n",
-        "expected_stdout": "stredne\n",
-        "visible": false
-      },
-      {
-        "input": "100\n",
-        "expected_stdout": "velke\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi if/elif/else.",
       "Ak n < 10, už netreba testovať ďalšie vetvy.",
@@ -593,7 +1103,57 @@
       "classification"
     ],
     "difficulty": 3,
-    "teacher_comment": "Trojkategóriová klasifikácia."
+    "teacher_comment": "Trojkategóriová klasifikácia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "male\n",
+        "visible": true
+      },
+      {
+        "input": "10\n",
+        "output": "stredne\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "output": "velke\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "output": "male\n",
+        "visible": false
+      },
+      {
+        "input": "99\n",
+        "output": "stredne\n",
+        "visible": false
+      },
+      {
+        "input": "101\n",
+        "output": "velke\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif n<10:\n    print(\"male\")\nelif n<100:\n    print(\"stredne\")\nelse:\n    print(\"velke\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-F02",
@@ -610,18 +1170,6 @@
         "code": "vek = int(input())\nif vek > 15:\n    print('vstup povoleny')\nelse:\n    print('vstup zamietnuty')\n"
       }
     ],
-    "tests": [
-      {
-        "input": "15\n",
-        "expected_stdout": "vstup povoleny\n",
-        "visible": true
-      },
-      {
-        "input": "14\n",
-        "expected_stdout": "vstup zamietnuty\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Slovo aspoň znamená vrátane hranice.",
       "Použi >= 15.",
@@ -632,7 +1180,47 @@
       "boundary"
     ],
     "difficulty": 2,
-    "teacher_comment": "Typická hraničná chyba."
+    "teacher_comment": "Typická hraničná chyba. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "15\n",
+        "output": "vstup povoleny\n",
+        "visible": true
+      },
+      {
+        "input": "14\n",
+        "output": "vstup zamietnuty\n",
+        "visible": false
+      },
+      {
+        "input": "16\n",
+        "output": "vstup povoleny\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "vstup zamietnuty\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "vek=int(input())\nif vek>=15:\n    print(\"vstup povoleny\")\nelse:\n    print(\"vstup zamietnuty\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-F03",
@@ -649,23 +1237,6 @@
         "code": "n = int(input())\nif n >= 10 or n <= 20:\n    print('ano')\nelse:\n    print('nie')\n"
       }
     ],
-    "tests": [
-      {
-        "input": "15\n",
-        "expected_stdout": "ano\n",
-        "visible": true
-      },
-      {
-        "input": "5\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      },
-      {
-        "input": "25\n",
-        "expected_stdout": "nie\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Byť v intervale znamená splniť obe hranice naraz.",
       "Použi and alebo 10 <= n <= 20.",
@@ -676,7 +1247,62 @@
       "and/or"
     ],
     "difficulty": 3,
-    "teacher_comment": "Veľmi dôležitá diagnostika chápania intervalov."
+    "teacher_comment": "Veľmi dôležitá diagnostika chápania intervalov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "15\n",
+        "output": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "5\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "25\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "20\n",
+        "output": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "output": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "21\n",
+        "output": "nie\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nif 10 <= n <= 20:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-P02",
@@ -685,13 +1311,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "x = 12\nif x > 5:\n    print(\"A\")\nelif x > 10:\n    print(\"B\")\nelse:\n    print(\"C\")\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "A\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "if je pravdivé, elif sa už neskúša.",
       "Aj keď x > 10, prvá pravdivá vetva vyhrá.",
@@ -702,7 +1321,32 @@
       "trace"
     ],
     "difficulty": 2,
-    "teacher_comment": "Ukazuje, že elif nie je samostatné druhé if."
+    "teacher_comment": "Ukazuje, že elif nie je samostatné druhé if. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "A\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "x = 12\nif x > 5:\n    print(\"A\")\nelif x > 10:\n    print(\"B\")\nelse:\n    print(\"C\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L2-P03",
@@ -711,13 +1355,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "n = 6\nif n > 0 and n % 2 == 0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "ano\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Skontroluj obe časti podmienky.",
       "6 je kladné a párne.",
@@ -729,6 +1366,31 @@
       "trace"
     ],
     "difficulty": 2,
-    "teacher_comment": "Krátke sledovanie zloženej podmienky."
+    "teacher_comment": "Krátke sledovanie zloženej podmienky. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "ano\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "n = 6\nif n > 0 and n % 2 == 0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   }
 ]

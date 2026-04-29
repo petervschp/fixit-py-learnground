@@ -32,6 +32,27 @@
           ],
           "expected_return": 0,
           "visible": false
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected_return": 2,
+          "visible": false
+        },
+        {
+          "args": [
+            99
+          ],
+          "expected_return": 198,
+          "visible": false
+        },
+        {
+          "args": [
+            -10
+          ],
+          "expected_return": -20,
+          "visible": false
         }
       ]
     },
@@ -68,7 +89,9 @@
         ],
         "forbidWhileTrue": true
       }
-    }
+    },
+    "type": "function",
+    "reference_solution": "def double(n):\n    return 2*n\n"
   },
   {
     "id": "L7-002",
@@ -103,6 +126,45 @@
             ]
           ],
           "expected_return": 4,
+          "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              10
+            ]
+          ],
+          "expected_return": 10,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              1,
+              -1,
+              5,
+              -5
+            ]
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              100,
+              200,
+              300
+            ]
+          ],
+          "expected_return": 600,
           "visible": false
         }
       ]
@@ -140,7 +202,9 @@
         ],
         "forbidWhileTrue": true
       }
-    }
+    },
+    "type": "function",
+    "reference_solution": "def sum_list(nums):\n    return sum(nums)\n"
   },
   {
     "id": "L7-003",
@@ -169,6 +233,38 @@
             "java"
           ],
           "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "",
+            ""
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            "python",
+            ""
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            "Python",
+            "py"
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "hello world",
+            "world"
+          ],
+          "expected_return": true,
           "visible": false
         }
       ]
@@ -206,7 +302,9 @@
         ],
         "forbidWhileTrue": true
       }
-    }
+    },
+    "type": "function",
+    "reference_solution": "def contains(text, sub):\n    return sub in text\n"
   },
   {
     "id": "L7-004",
@@ -250,14 +348,64 @@
             -2
           ],
           "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              1,
+              3,
+              5
+            ]
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              2,
+              2,
+              4,
+              7
+            ]
+          ],
+          "expected_return": [
+            2,
+            2,
+            4
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              -4,
+              -3,
+              -2,
+              -1,
+              0
+            ]
+          ],
+          "expected_return": [
+            -4,
+            -2,
+            0
+          ],
+          "visible": false
         }
       ],
       "mutation": {
         "check": true,
         "inputsMustRemainUnchanged": [
           0
-        ],
-        "message": "Funkcia nesmie meniť pôvodný zoznam nums."
+        ]
       }
     },
     "checks": {
@@ -277,6 +425,10 @@
         {
           "pattern": "while\\s+True",
           "message": "Nepoužívaj while True v tejto úlohe."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
         }
       ],
       "ast": {
@@ -293,64 +445,9 @@
       "Nepotrebuješ input(); pracuješ s parametrom nums.",
       "Vráť nový zoznam (napr. list comprehension).",
       "Príklad: return [x for x in nums if x%2==0]"
-    ]
-  },
-  {
-    "id": "L7-006",
-    "level": 7,
-    "title": "UI Mindset: double(n) s generovanými testami",
-    "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. V tejto úlohe sú aj generované skryté testy.",
-    "mode": "solve",
-    "starter_code": "def double(n):\n    # TODO\n    return 0\n",
-    "evaluation": {
-      "kind": "function",
-      "target": {
-        "name": "double"
-      },
-      "cases": [
-        {
-          "args": [
-            3
-          ],
-          "expected_return": 6,
-          "visible": true
-        },
-        {
-          "args": [
-            -1
-          ],
-          "expected_return": -2,
-          "visible": false
-        }
-      ],
-      "generator": {
-        "enabled": true,
-        "seed": 1337,
-        "count": 20,
-        "args": {
-          "type": "int",
-          "min": -50,
-          "max": 50
-        },
-        "reference_py": "def ref(x):\n    return 2*x\n"
-      }
-    },
-    "checks": {
-      "ast": {
-        "enabled": true,
-        "forbiddenCalls": [
-          "input",
-          "print",
-          "open"
-        ],
-        "forbidWhileTrue": true
-      }
-    },
-    "hints": [
-      "Funkcia má prijať n ako parameter.",
-      "Výsledok má vrátiť cez return (nie print).",
-      "return 2*n"
-    ]
+    ],
+    "type": "function",
+    "reference_solution": "def filter_even(nums):\n    return [n for n in nums if n % 2 == 0]\n"
   },
   {
     "id": "L7-005",
@@ -382,6 +479,34 @@
         {
           "args": [
             0
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            -2
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            1001
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            1000
           ],
           "expected_return": true,
           "visible": false
@@ -428,7 +553,114 @@
       "modulo"
     ],
     "difficulty": 2,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def is_even(n):\n    return n % 2 == 0\n"
+  },
+  {
+    "id": "L7-006",
+    "level": 7,
+    "title": "UI Mindset: double(n) s generovanými testami",
+    "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. V tejto úlohe sú aj generované skryté testy.",
+    "mode": "solve",
+    "starter_code": "def double(n):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "double"
+      },
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected_return": 6,
+          "visible": true
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected_return": -2,
+          "visible": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            12
+          ],
+          "expected_return": 24,
+          "visible": false
+        },
+        {
+          "args": [
+            -7
+          ],
+          "expected_return": -14,
+          "visible": false
+        },
+        {
+          "args": [
+            101
+          ],
+          "expected_return": 202,
+          "visible": false
+        }
+      ],
+      "generator": {
+        "enabled": true,
+        "seed": 1337,
+        "count": 20,
+        "args": {
+          "type": "int",
+          "min": -50,
+          "max": 50
+        },
+        "reference_py": "def ref(x):\n    return 2*x\n"
+      }
+    },
+    "checks": {
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      },
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má hodnotu vrátiť cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ]
+    },
+    "hints": [
+      "Funkcia má prijať n ako parameter.",
+      "Výsledok má vrátiť cez return (nie print).",
+      "return 2*n"
+    ],
+    "type": "function",
+    "reference_solution": "def double(n):\n    return 2*n\n"
   },
   {
     "id": "L7-007",
@@ -465,6 +697,51 @@
           "args": [
             15,
             0,
+            10
+          ],
+          "expected_return": 10,
+          "visible": false
+        },
+        {
+          "args": [
+            0,
+            0,
+            10
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            10,
+            0,
+            10
+          ],
+          "expected_return": 10,
+          "visible": false
+        },
+        {
+          "args": [
+            5,
+            5,
+            5
+          ],
+          "expected_return": 5,
+          "visible": false
+        },
+        {
+          "args": [
+            3,
+            5,
+            10
+          ],
+          "expected_return": 5,
+          "visible": false
+        },
+        {
+          "args": [
+            30,
+            5,
             10
           ],
           "expected_return": 10,
@@ -511,7 +788,9 @@
       "boundaries"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def clamp(value, low, high):\n    if value < low:\n        return low\n    if value > high:\n        return high\n    return value\n"
   },
   {
     "id": "L7-008",
@@ -540,6 +819,30 @@
             "Nová"
           ],
           "expected_return": "Nová, Eva",
+          "visible": false
+        },
+        {
+          "args": [
+            "Adam",
+            "Novák"
+          ],
+          "expected_return": "Novák, Adam",
+          "visible": false
+        },
+        {
+          "args": [
+            "Mária",
+            "Čierna"
+          ],
+          "expected_return": "Čierna, Mária",
+          "visible": false
+        },
+        {
+          "args": [
+            "A",
+            "B"
+          ],
+          "expected_return": "B, A",
           "visible": false
         }
       ]
@@ -583,7 +886,9 @@
       "string formatting"
     ],
     "difficulty": 2,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def format_name(first, last):\n    return f\"{last}, {first}\"\n"
   },
   {
     "id": "L7-009",
@@ -610,6 +915,27 @@
             "Eva Nova"
           ],
           "expected_return": "E.N.",
+          "visible": false
+        },
+        {
+          "args": [
+            "Adam Novak"
+          ],
+          "expected_return": "A.N.",
+          "visible": false
+        },
+        {
+          "args": [
+            "maria cierna"
+          ],
+          "expected_return": "M.C.",
+          "visible": false
+        },
+        {
+          "args": [
+            "Jana Dobra"
+          ],
+          "expected_return": "J.D.",
           "visible": false
         }
       ]
@@ -654,7 +980,9 @@
       "pure function"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def initials(full_name):\n    parts = full_name.split()\n    return parts[0][0].upper() + \".\" + parts[1][0].upper() + \".\"\n"
   },
   {
     "id": "L7-010",
@@ -691,6 +1019,41 @@
             2
           ],
           "expected_return": 2,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "aa",
+              "bbb",
+              "cccc"
+            ],
+            3
+          ],
+          "expected_return": 2,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "a",
+              "bb"
+            ],
+            5
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "hello",
+              "hi",
+              "test"
+            ],
+            2
+          ],
+          "expected_return": 3,
           "visible": false
         }
       ]
@@ -735,7 +1098,9 @@
       "pure function"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def count_long(words, min_len):\n    return sum(1 for w in words if len(w) >= min_len)\n"
   },
   {
     "id": "L7-011",
@@ -779,14 +1144,48 @@
             10
           ],
           "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              10
+            ]
+          ],
+          "expected_return": [
+            20
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              1,
+              -2,
+              0,
+              5
+            ]
+          ],
+          "expected_return": [
+            2,
+            -4,
+            0,
+            10
+          ],
+          "visible": false
         }
       ],
       "mutation": {
         "check": true,
         "inputsMustRemainUnchanged": [
           0
-        ],
-        "message": "Funkcia nesmie meniť pôvodný zoznam nums."
+        ]
       }
     },
     "hints": [
@@ -829,7 +1228,9 @@
       "no mutation"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def map_double(nums):\n    return [2*n for n in nums]\n"
   },
   {
     "id": "L7-012",
@@ -868,6 +1269,55 @@
           ],
           "expected_return": [
             "x"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "",
+              "",
+              ""
+            ]
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "a",
+              " ",
+              "b"
+            ]
+          ],
+          "expected_return": [
+            "a",
+            " ",
+            "b"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "x",
+              "",
+              "y",
+              "z"
+            ]
+          ],
+          "expected_return": [
+            "x",
+            "y",
+            "z"
           ],
           "visible": false
         }
@@ -919,7 +1369,9 @@
       "no mutation"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def remove_empty(items):\n    return [x for x in items if x != \"\"]\n"
   },
   {
     "id": "L7-013",
@@ -938,11 +1390,11 @@
           "args": [
             [
               1.5,
-              2.0,
+              2,
               3.5
             ]
           ],
-          "expected_return": 7.0,
+          "expected_return": 7,
           "visible": true
         },
         {
@@ -953,6 +1405,43 @@
             ]
           ],
           "expected_return": 10.5,
+          "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              2.5,
+              2.5
+            ]
+          ],
+          "expected_return": 5.0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              100,
+              -20,
+              5
+            ]
+          ],
+          "expected_return": 85,
           "visible": false
         }
       ]
@@ -996,7 +1485,9 @@
       "pure function"
     ],
     "difficulty": 2,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def total_price(prices):\n    return sum(prices)\n"
   },
   {
     "id": "L7-014",
@@ -1040,7 +1531,58 @@
               ]
             ]
           ],
-          "expected_return": 3.0,
+          "expected_return": 3,
+          "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              [
+                3,
+                0
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          ],
+          "expected_return": 8,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              [
+                1.5,
+                2
+              ],
+              [
+                0.5,
+                4
+              ]
+            ]
+          ],
+          "expected_return": 5.0,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              [
+                10,
+                1
+              ]
+            ]
+          ],
+          "expected_return": 10,
           "visible": false
         }
       ]
@@ -1084,7 +1626,9 @@
       "accumulator"
     ],
     "difficulty": 4,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def cart_total(items):\n    return sum(price * qty for price, qty in items)\n"
   },
   {
     "id": "L7-015",
@@ -1111,6 +1655,20 @@
             false
           ],
           "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected_return": false,
           "visible": false
         }
       ]
@@ -1154,7 +1712,9 @@
       "pure function"
     ],
     "difficulty": 1,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def toggle(done):\n    return not done\n"
   },
   {
     "id": "L7-016",
@@ -1174,7 +1734,7 @@
             5,
             10
           ],
-          "expected_return": 50.0,
+          "expected_return": 50,
           "visible": true
         },
         {
@@ -1190,7 +1750,39 @@
             3,
             4
           ],
-          "expected_return": 75.0,
+          "expected_return": 75,
+          "visible": false
+        },
+        {
+          "args": [
+            1,
+            4
+          ],
+          "expected_return": 25,
+          "visible": false
+        },
+        {
+          "args": [
+            2,
+            5
+          ],
+          "expected_return": 40,
+          "visible": false
+        },
+        {
+          "args": [
+            7,
+            7
+          ],
+          "expected_return": 100,
+          "visible": false
+        },
+        {
+          "args": [
+            10,
+            0
+          ],
+          "expected_return": 0,
           "visible": false
         }
       ]
@@ -1234,7 +1826,9 @@
       "percentage"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def progress(done, total):\n    if total == 0:\n        return 0\n    return done / total * 100\n"
   },
   {
     "id": "L7-017",
@@ -1268,6 +1862,41 @@
             "eva nova"
           ],
           "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "abc"
+          ],
+          "expected_return": true,
+          "visible": false
+        },
+        {
+          "args": [
+            "a b"
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "ab "
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "abcd"
+          ],
+          "expected_return": true,
           "visible": false
         }
       ]
@@ -1312,7 +1941,9 @@
       "string membership"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def validate_username(name):\n    return len(name) >= 3 and \" \" not in name\n"
   },
   {
     "id": "L7-018",
@@ -1351,14 +1982,41 @@
             "a"
           ],
           "visible": false
+        },
+        {
+          "args": [
+            [
+              "x"
+            ],
+            "y"
+          ],
+          "expected_return": [
+            "x",
+            "y"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ],
+            2
+          ],
+          "expected_return": [
+            1,
+            2,
+            2
+          ],
+          "visible": false
         }
       ],
       "mutation": {
         "check": true,
         "inputsMustRemainUnchanged": [
           0
-        ],
-        "message": "Funkcia nesmie meniť pôvodný zoznam items."
+        ]
       }
     },
     "hints": [
@@ -1400,7 +2058,9 @@
       "list copy"
     ],
     "difficulty": 4,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def add_item(items, item):\n    return items + [item]\n"
   },
   {
     "id": "L7-019",
@@ -1438,14 +2098,55 @@
             "Juraj": 4
           },
           "visible": false
+        },
+        {
+          "args": [
+            {
+              "Eva": 5,
+              "Juraj": 2
+            },
+            "Juraj",
+            3
+          ],
+          "expected_return": {
+            "Eva": 5,
+            "Juraj": 5
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            {
+              "Eva": 5
+            },
+            "Adam",
+            1
+          ],
+          "expected_return": {
+            "Eva": 5,
+            "Adam": 1
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            {
+              "A": 0
+            },
+            "A",
+            -2
+          ],
+          "expected_return": {
+            "A": -2
+          },
+          "visible": false
         }
       ],
       "mutation": {
         "check": true,
         "inputsMustRemainUnchanged": [
           0
-        ],
-        "message": "Funkcia nesmie meniť pôvodný slovník scores."
+        ]
       }
     },
     "hints": [
@@ -1488,7 +2189,9 @@
       "no mutation"
     ],
     "difficulty": 5,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def update_score(scores, name, points):\n    new_scores = scores.copy()\n    new_scores[name] = new_scores.get(name, 0) + points\n    return new_scores\n"
   },
   {
     "id": "L7-020",
@@ -1534,6 +2237,50 @@
           ],
           "expected_return": null,
           "visible": false
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "name": "A"
+              },
+              {
+                "id": 1,
+                "name": "B"
+              }
+            ],
+            1
+          ],
+          "expected_return": {
+            "id": 1,
+            "name": "A"
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected_return": null,
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              {
+                "id": "x",
+                "v": 9
+              }
+            ],
+            "x"
+          ],
+          "expected_return": {
+            "id": "x",
+            "v": 9
+          },
+          "visible": false
         }
       ]
     },
@@ -1577,7 +2324,9 @@
       "early return"
     ],
     "difficulty": 5,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def find_by_id(items, wanted_id):\n    for item in items:\n        if item.get(\"id\") == wanted_id:\n            return item\n    return None\n"
   },
   {
     "id": "L7-021",
@@ -1619,6 +2368,60 @@
           "expected_return": {
             "done": 0,
             "total": 0
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              {
+                "done": false
+              },
+              {
+                "done": false
+              }
+            ]
+          ],
+          "expected_return": {
+            "done": 0,
+            "total": 2
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              {
+                "done": true
+              }
+            ]
+          ],
+          "expected_return": {
+            "done": 1,
+            "total": 1
+          },
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              {
+                "done": false
+              },
+              {
+                "done": true
+              },
+              {
+                "done": true
+              },
+              {
+                "done": false
+              }
+            ]
+          ],
+          "expected_return": {
+            "done": 2,
+            "total": 4
           },
           "visible": false
         }
@@ -1664,7 +2467,9 @@
       "UI state"
     ],
     "difficulty": 5,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def summarize_tasks(tasks):\n    return {\"done\": sum(1 for t in tasks if t.get(\"done\")), \"total\": len(tasks)}\n"
   },
   {
     "id": "L7-022",
@@ -1696,6 +2501,41 @@
         {
           "args": [
             500
+          ],
+          "expected_return": "expert",
+          "visible": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected_return": "beginner",
+          "visible": false
+        },
+        {
+          "args": [
+            99
+          ],
+          "expected_return": "beginner",
+          "visible": false
+        },
+        {
+          "args": [
+            101
+          ],
+          "expected_return": "advanced",
+          "visible": false
+        },
+        {
+          "args": [
+            499
+          ],
+          "expected_return": "advanced",
+          "visible": false
+        },
+        {
+          "args": [
+            999
           ],
           "expected_return": "expert",
           "visible": false
@@ -1741,7 +2581,9 @@
       "boundaries"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def next_level(xp):\n    if xp < 100:\n        return \"beginner\"\n    if xp < 500:\n        return \"advanced\"\n    return \"expert\"\n"
   },
   {
     "id": "L7-023",
@@ -1780,6 +2622,49 @@
             "x"
           ],
           "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "Python",
+              "pyodide",
+              "PY"
+            ],
+            "py"
+          ],
+          "expected_return": [
+            "pyodide"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "abc",
+              "bcd",
+              "cde"
+            ],
+            "c"
+          ],
+          "expected_return": [
+            "abc",
+            "bcd",
+            "cde"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "abc",
+              "ABC"
+            ],
+            "A"
+          ],
+          "expected_return": [
+            "ABC"
+          ],
           "visible": false
         }
       ],
@@ -1831,7 +2716,9 @@
       "no mutation"
     ],
     "difficulty": 4,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def search_text(items, query):\n    return [item for item in items if query in item]\n"
   },
   {
     "id": "L7-024",
@@ -1873,14 +2760,59 @@
             "b"
           ],
           "visible": false
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": [],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "Adam"
+            ]
+          ],
+          "expected_return": [
+            "Adam"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "c",
+              "a",
+              "b"
+            ]
+          ],
+          "expected_return": [
+            "a",
+            "b",
+            "c"
+          ],
+          "visible": false
+        },
+        {
+          "args": [
+            [
+              "aa",
+              "a"
+            ]
+          ],
+          "expected_return": [
+            "a",
+            "aa"
+          ],
+          "visible": false
         }
       ],
       "mutation": {
         "check": true,
         "inputsMustRemainUnchanged": [
           0
-        ],
-        "message": "Funkcia nesmie meniť pôvodný zoznam names."
+        ]
       }
     },
     "hints": [
@@ -1922,7 +2854,9 @@
       "no mutation"
     ],
     "difficulty": 3,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "type": "function",
+    "reference_solution": "def sort_names(names):\n    return sorted(names)\n"
   },
   {
     "id": "L7-025",
@@ -1939,16 +2873,16 @@
       "cases": [
         {
           "args": [
-            0
+            3
           ],
-          "expected_return": "",
+          "expected_return": "(3)",
           "visible": true
         },
         {
           "args": [
-            3
+            0
           ],
-          "expected_return": "(3)",
+          "expected_return": "",
           "visible": false
         },
         {
@@ -1956,6 +2890,34 @@
             12
           ],
           "expected_return": "(12)",
+          "visible": false
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected_return": "(1)",
+          "visible": false
+        },
+        {
+          "args": [
+            9
+          ],
+          "expected_return": "(9)",
+          "visible": false
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected_return": "(10)",
+          "visible": false
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected_return": "(-1)",
           "visible": false
         }
       ]
@@ -2000,6 +2962,8 @@
       "conditional"
     ],
     "difficulty": 2,
-    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+    "teacher_comment": "Opravené: viditeľný test už nie je prázdny reťazec pri count=0, aby žiak nebol zmätený neviditeľným očakávaným výstupom.",
+    "type": "function",
+    "reference_solution": "def render_badge(count):\n    if count == 0:\n        return \"\"\n    return f\"({count})\"\n"
   }
 ]

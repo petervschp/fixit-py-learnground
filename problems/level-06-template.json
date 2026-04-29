@@ -1,0 +1,165 @@
+[
+  {
+    "id": "L6-T01",
+    "level": 6,
+    "title": "TEMPLATE solve: funkcia bez input/print",
+    "statement": "Napíš funkciu stvorec(n), ktorá vráti druhú mocninu čísla n. Nepoužívaj input() ani print(); funkcia má výsledok vrátiť cez return.",
+    "mode": "solve",
+    "starter_code": "def stvorec(n):\n    # doplň\n    return 0\n",
+    "reference_solution": "def stvorec(n):\n    return n * n\n",
+    "evaluation": {
+      "kind": "function",
+      "target": { "name": "stvorec" },
+      "cases": [
+        { "args": [5], "expected_return": 25, "visible": true },
+        { "args": [0], "expected_return": 0, "visible": false },
+        { "args": [-4], "expected_return": 16, "visible": false }
+      ],
+      "generator": {
+        "enabled": true,
+        "seed": 601,
+        "count": 5,
+        "args": { "type": "int", "min": -20, "max": 20 },
+        "reference_py": "def ref(n):\n    return n * n\n"
+      }
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        { "pattern": "\\binput\\s*\\(", "message": "Nepoužívaj input(). Funkcia má dostať hodnotu cez parameter." },
+        { "pattern": "\\bprint\\s*\\(", "message": "Nepoužívaj print(). Funkcia má výsledok vrátiť cez return." },
+        { "pattern": "\\bopen\\s*\\(", "message": "V tejto úlohe nepracuj so súbormi." }
+      ],
+      "ast": { "enabled": true, "forbiddenCalls": ["input", "print", "open"], "forbidWhileTrue": true }
+    },
+    "hints": [
+      "Funkcia má iba vypočítať výsledok a vrátiť ho.",
+      "Druhá mocnina je n * n alebo n ** 2.",
+      "Vo funkcii použi: return n * n"
+    ],
+    "concepts": ["function", "return", "anti-hardcode"],
+    "difficulty": 2,
+    "teacher_comment": "Základná šablóna pre function-only úlohu. Použi ju ako vzor pre ďalšie L6 úlohy."
+  },
+  {
+    "id": "L6-T02",
+    "level": 6,
+    "title": "TEMPLATE solve: vetvenie vo funkcii",
+    "statement": "Napíš funkciu znamienko(n), ktorá vráti text 'plus', 'minus' alebo 'nula'. Nepoužívaj input() ani print().",
+    "mode": "solve",
+    "starter_code": "def znamienko(n):\n    # doplň\n    return \"\"\n",
+    "reference_solution": "def znamienko(n):\n    if n > 0:\n        return 'plus'\n    if n < 0:\n        return 'minus'\n    return 'nula'\n",
+    "evaluation": {
+      "kind": "function",
+      "target": { "name": "znamienko" },
+      "cases": [
+        { "args": [7], "expected_return": "plus", "visible": true },
+        { "args": [-3], "expected_return": "minus", "visible": true },
+        { "args": [0], "expected_return": "nula", "visible": false }
+      ]
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        { "pattern": "\\binput\\s*\\(", "message": "Nepoužívaj input()." },
+        { "pattern": "\\bprint\\s*\\(", "message": "Nepoužívaj print()." }
+      ],
+      "ast": { "enabled": true, "forbiddenCalls": ["input", "print", "open"], "forbidWhileTrue": true }
+    },
+    "hints": [
+      "Rozdeľ si tri prípady: väčšie ako 0, menšie ako 0, inak nula.",
+      "Použi if, potom ďalšie if alebo elif.",
+      "Nezabudni, že každý prípad má vrátiť text cez return."
+    ],
+    "concepts": ["function", "return", "if"],
+    "difficulty": 2,
+    "teacher_comment": "Šablóna pre funkciu s podmienkami."
+  },
+  {
+    "id": "L6-T03",
+    "level": 6,
+    "title": "TEMPLATE solve: práca s reťazcom",
+    "statement": "Napíš funkciu pocet_samohlasok(text), ktorá vráti počet samohlások v texte. Za samohlásky rátaj a, e, i, o, u, y aj s veľkými písmenami.",
+    "mode": "solve",
+    "starter_code": "def pocet_samohlasok(text):\n    # doplň\n    return 0\n",
+    "reference_solution": "def pocet_samohlasok(text):\n    pocet = 0\n    for znak in text.lower():\n        if znak in 'aeiouy':\n            pocet += 1\n    return pocet\n",
+    "evaluation": {
+      "kind": "function",
+      "target": { "name": "pocet_samohlasok" },
+      "cases": [
+        { "args": ["Python"], "expected_return": 1, "visible": true },
+        { "args": ["Ahoj"], "expected_return": 2, "visible": true },
+        { "args": ["RYTMUS"], "expected_return": 2, "visible": false },
+        { "args": ["bcdfg"], "expected_return": 0, "visible": false }
+      ]
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        { "pattern": "\\binput\\s*\\(", "message": "Nepoužívaj input(). Text má prísť ako parameter." },
+        { "pattern": "\\bprint\\s*\\(", "message": "Nepoužívaj print(). Funkcia má vrátiť číslo." }
+      ],
+      "ast": { "enabled": true, "forbiddenCalls": ["input", "print", "open"], "forbidWhileTrue": true }
+    },
+    "hints": [
+      "Prejdi text po znakoch cyklom for.",
+      "Pomôže text.lower() a test: znak in 'aeiouy'.",
+      "Zakaždým, keď nájdeš samohlásku, zvýš počítadlo o 1 a na konci ho vráť."
+    ],
+    "concepts": ["function", "string", "loop", "return"],
+    "difficulty": 3,
+    "teacher_comment": "Šablóna ukazuje aj skrytý test na y/Y."
+  },
+  {
+    "id": "L6-T04",
+    "level": 6,
+    "title": "TEMPLATE fix: globálna premenná namiesto parametra",
+    "statement": "Oprav funkciu pozdrav(meno), aby používala parameter meno a vracala text cez return. Nepoužívaj input() ani print().",
+    "mode": "fix",
+    "starter_code": "def pozdrav():\n    return 'Ahoj, ' + meno\n\nmeno = input()\nprint(pozdrav())\n",
+    "reference_solution": "def pozdrav(meno):\n    return 'Ahoj, ' + meno\n",
+    "buggy_solutions": [
+      { "id": "B1", "title": "Spolieha sa na globálnu premennú", "misconceptionTag": "global_dependency", "code": "def pozdrav():\n    return 'Ahoj, ' + meno\n\nmeno = input()\nprint(pozdrav())\n" }
+    ],
+    "evaluation": {
+      "kind": "function",
+      "target": { "name": "pozdrav" },
+      "cases": [
+        { "args": ["Eva"], "expected_return": "Ahoj, Eva", "visible": true },
+        { "args": ["Juraj"], "expected_return": "Ahoj, Juraj", "visible": false },
+        { "args": ["Mária"], "expected_return": "Ahoj, Mária", "visible": false }
+      ]
+    },
+    "checks": {
+      "forbiddenPatterns": [
+        { "pattern": "\\binput\\s*\\(", "message": "Nepoužívaj input(). Meno má prísť ako parameter funkcie." },
+        { "pattern": "\\bprint\\s*\\(", "message": "Nepoužívaj print(). Funkcia má vrátiť text cez return." }
+      ],
+      "ast": { "enabled": true, "forbiddenCalls": ["input", "print", "open"], "forbidWhileTrue": true }
+    },
+    "hints": [
+      "Funkcia má mať parameter: def pozdrav(meno):",
+      "Vo funkcii poskladaj text a vráť ho cez return.",
+      "Správny tvar je napr. return 'Ahoj, ' + meno"
+    ],
+    "concepts": ["debugging", "parameters", "return"],
+    "difficulty": 3,
+    "teacher_comment": "Šablóna pre fix úlohu, ktorú už nestačí obísť cez globálnu premennú."
+  },
+  {
+    "id": "L6-T05",
+    "level": 6,
+    "title": "TEMPLATE predict: return vs print",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "def sprava():\n    return \"hotovo\"\n    print(\"toto sa nevypíše\")\n\nprint(sprava())\n",
+    "tests": [
+      { "input": "", "expected_stdout": "hotovo\n", "visible": true }
+    ],
+    "hints": [
+      "Sleduj, čo urobí return.",
+      "Príkazy za return vo funkcii sa už nevykonajú.",
+      "Vypíše sa iba hodnota, ktorú vráti sprava()."
+    ],
+    "concepts": ["predict", "return", "print"],
+    "difficulty": 2,
+    "teacher_comment": "Predict úlohy nemajú používať funkčné testy ako solve úlohy."
+  }
+]

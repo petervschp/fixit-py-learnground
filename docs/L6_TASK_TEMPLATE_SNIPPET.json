@@ -1,0 +1,32 @@
+{
+  "id": "L6-XXX",
+  "level": 6,
+  "title": "Funkcia: názov úlohy",
+  "statement": "Napíš funkciu nazov(parametre), ktorá ... Nepoužívaj input() ani print(); výsledok vráť cez return.",
+  "mode": "solve",
+  "starter_code": "def nazov(x):\n    # doplň\n    return None\n",
+  "reference_solution": "def nazov(x):\n    return x\n",
+  "evaluation": {
+    "kind": "function",
+    "target": { "name": "nazov" },
+    "cases": [
+      { "args": [1], "expected_return": 1, "visible": true },
+      { "args": [2], "expected_return": 2, "visible": false }
+    ]
+  },
+  "checks": {
+    "forbiddenPatterns": [
+      { "pattern": "\\binput\\s*\\(", "message": "Nepoužívaj input(). Hodnota má prísť ako parameter funkcie." },
+      { "pattern": "\\bprint\\s*\\(", "message": "Nepoužívaj print(). Funkcia má výsledok vrátiť cez return." }
+    ],
+    "ast": { "enabled": true, "forbiddenCalls": ["input", "print", "open"], "forbidWhileTrue": true }
+  },
+  "hints": [
+    "Prvá rada: nasmerovanie.",
+    "Druhá rada: konkrétny nástroj.",
+    "Tretia rada: takmer riešenie, ale stále nie úplný hotový kód."
+  ],
+  "concepts": ["function", "return"],
+  "difficulty": 2,
+  "teacher_comment": "Poznámka pre učiteľa."
+}

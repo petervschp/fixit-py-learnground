@@ -6,18 +6,37 @@
     "statement": "Použi for cez položky a vypíš každé ovocie na nový riadok: apple, banana, kiwi.",
     "mode": "solve",
     "starter_code": "# doplň\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "apple\nbanana\nkiwi\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Použi: for x in 'apple','banana','kiwi':",
       "V cykle print(x).",
       "Dodrž poradie."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "",
+        "output": "apple\nbanana\nkiwi\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "for fruit in \"apple\", \"banana\", \"kiwi\":\n    print(fruit)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-002",
@@ -26,28 +45,57 @@
     "statement": "Na vstupe je n. Vypíš súčet 1+2+...+n.",
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "15\n",
-        "visible": true
-      },
-      {
-        "input": "1\n",
-        "expected_stdout": "1\n",
-        "visible": false
-      },
-      {
-        "input": "10\n",
-        "expected_stdout": "55\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi range(1, n+1).",
       "V cykle sčítaj do premennej.",
       "Vypíš výsledok."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "15\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "55\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "20\n",
+        "output": "210\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\ns=0\nfor i in range(1,n+1):\n    s+=i\nprint(s)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-003",
@@ -56,23 +104,52 @@
     "statement": "Na vstupe je n. Spočítaj, koľko čísel od 1 do n (vrátane) je deliteľných 3.",
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
-    "tests": [
-      {
-        "input": "10\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "3\n",
-        "expected_stdout": "1\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prechádzaj 1..n.",
       "Testuj i % 3 == 0.",
       "Zvyšuj počítadlo."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "10\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "3\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "30\n",
+        "output": "10\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\npocet=0\nfor i in range(1,n+1):\n    if i%3==0:\n        pocet+=1\nprint(pocet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-F01",
@@ -89,23 +166,52 @@
         "code": "n = int(input())\ns = 0\nfor i in range(1, n):\n    s += i\nprint(s)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "15\n",
-        "visible": true
-      },
-      {
-        "input": "1\n",
-        "expected_stdout": "1\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "range(a,b) ide po b-1.",
       "Ak chceš do n vrátane, použi n+1.",
       "Oprav range(1, n+1)."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "15\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "55\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\ns=0\nfor i in range(1,n+1):\n    s+=i\nprint(s)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-004",
@@ -114,23 +220,52 @@
     "statement": "Na vstupe je text. Vypíš každý znak na nový riadok.",
     "mode": "solve",
     "starter_code": "s = input()\n# doplň\n",
-    "tests": [
-      {
-        "input": "abc\n",
-        "expected_stdout": "a\nb\nc\n",
-        "visible": true
-      },
-      {
-        "input": "Ahoj\n",
-        "expected_stdout": "A\nh\no\nj\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi: for ch in s:",
       "V cykle print(ch).",
       "Zachovaj poradie."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "abc\n",
+        "output": "a\nb\nc\n",
+        "visible": true
+      },
+      {
+        "input": "Ahoj\n",
+        "output": "A\nh\no\nj\n",
+        "visible": false
+      },
+      {
+        "input": "x\n",
+        "output": "x\n",
+        "visible": false
+      },
+      {
+        "input": "ab cd\n",
+        "output": "a\nb\n \nc\nd\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "s=input()\nfor znak in s:\n    print(znak)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-P01",
@@ -139,18 +274,37 @@
     "statement": "Tipni výstup a potom Run. (Stdin nechaj prázdne.)",
     "mode": "predict",
     "starter_code": "s = 0\nfor i in range(3):\n    s += i\nprint(s)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "3\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "range(3) dá i = 0,1,2.",
       "Súčet 0+1+2 = 3.",
       "Výstup je 3."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "",
+        "output": "3\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "s = 0\nfor i in range(3):\n    s += i\nprint(s)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
   },
   {
     "id": "L3-005",
@@ -159,18 +313,6 @@
     "statement": "Na vstupe je n. Vypíš čísla od 1 po n, každé na vlastnom riadku.",
     "mode": "solve",
     "starter_code": "n = int(input())\nfor i in range(...):\n    print(i)\n",
-    "tests": [
-      {
-        "input": "4\n",
-        "expected_stdout": "1\n2\n3\n4\n",
-        "visible": true
-      },
-      {
-        "input": "1\n",
-        "expected_stdout": "1\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "range(1, n+1) obsahuje aj n.",
       "range končí pred hornou hranicou.",
@@ -182,7 +324,47 @@
       "off-by-one"
     ],
     "difficulty": 2,
-    "teacher_comment": "Základná úloha na range a hornú hranicu."
+    "teacher_comment": "Základná úloha na range a hornú hranicu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n",
+        "output": "1\n2\n3\n4\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "",
+        "visible": false
+      },
+      {
+        "input": "6\n",
+        "output": "1\n2\n3\n4\n5\n6\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    print(i)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-006",
@@ -191,18 +373,6 @@
     "statement": "Na vstupe je n. Vypíš všetky párne čísla od 2 po n vrátane, každé na vlastnom riadku.",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "2\n4\n6\n8\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "2\n4\n6\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "range môže mať krok 2.",
       "Začni na 2.",
@@ -213,7 +383,52 @@
       "for"
     ],
     "difficulty": 2,
-    "teacher_comment": "Precvičuje tretí parameter range."
+    "teacher_comment": "Precvičuje tretí parameter range. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "2\n4\n6\n8\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "2\n4\n6\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "",
+        "visible": false
+      },
+      {
+        "input": "2\n",
+        "output": "2\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "2\n4\n6\n8\n10\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(2,n+1,2):\n    print(i)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-007",
@@ -222,18 +437,6 @@
     "statement": "Na vstupe je n. Vypíš súčet všetkých párnych čísel od 2 po n vrátane.",
     "mode": "solve",
     "starter_code": "n = int(input())\ns = 0\n",
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "20\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "12\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi akumulátor s = 0.",
       "V cykle pridávaj párne hodnoty.",
@@ -244,7 +447,47 @@
       "range step"
     ],
     "difficulty": 3,
-    "teacher_comment": "Prehlbuje prácu s akumulátorom."
+    "teacher_comment": "Prehlbuje prácu s akumulátorom. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "20\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "12\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "30\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\ns=0\nfor i in range(2,n+1,2):\n    s+=i\nprint(s)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-008",
@@ -253,18 +496,6 @@
     "statement": "Na vstupe je slovo bez diakritiky. Vypíš počet znakov a, e, i, o, u.",
     "mode": "solve",
     "starter_code": "text = input()\npocet = 0\n",
-    "tests": [
-      {
-        "input": "python\n",
-        "expected_stdout": "1\n",
-        "visible": true
-      },
-      {
-        "input": "informatika\n",
-        "expected_stdout": "5\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prejdi text po znakoch.",
       "Podmienka môže byť znak in \"aeiou\".",
@@ -276,7 +507,47 @@
       "membership"
     ],
     "difficulty": 3,
-    "teacher_comment": "Kombinuje iteráciu reťazca a počítadlo."
+    "teacher_comment": "Kombinuje iteráciu reťazca a počítadlo. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "python\n",
+        "output": "1\n",
+        "visible": true
+      },
+      {
+        "input": "informatika\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "aeiou\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "bcdf\n",
+        "output": "0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "slovo=input()\npocet=0\nfor z in slovo:\n    if z in \"aeiou\":\n        pocet+=1\nprint(pocet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-009",
@@ -285,18 +556,6 @@
     "statement": "Na prvom riadku je n, potom nasleduje n celých čísel. Vypíš najväčšie z nich.",
     "mode": "solve",
     "starter_code": "n = int(input())\nmaximum = int(input())\n",
-    "tests": [
-      {
-        "input": "4\n3\n9\n2\n5\n",
-        "expected_stdout": "9\n",
-        "visible": true
-      },
-      {
-        "input": "3\n-5\n-2\n-9\n",
-        "expected_stdout": "-2\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prvé číslo môžeš použiť ako počiatočné maximum.",
       "Potom načítaj ešte n-1 čísel.",
@@ -307,7 +566,47 @@
       "maximum"
     ],
     "difficulty": 4,
-    "teacher_comment": "Dôležitý vzor hľadania maxima bez použitia zoznamu."
+    "teacher_comment": "Dôležitý vzor hľadania maxima bez použitia zoznamu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n3\n9\n2\n5\n",
+        "output": "9\n",
+        "visible": true
+      },
+      {
+        "input": "3\n-5\n-2\n-9\n",
+        "output": "-2\n",
+        "visible": false
+      },
+      {
+        "input": "1\n42\n",
+        "output": "42\n",
+        "visible": false
+      },
+      {
+        "input": "5\n-10\n-20\n-3\n-4\n-5\n",
+        "output": "-3\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nnaj=int(input())\nfor i in range(n-1):\n    x=int(input())\n    if x>naj:\n        naj=x\nprint(naj)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-010",
@@ -316,18 +615,6 @@
     "statement": "Na vstupe je n >= 0. Vypíš n! Pre n=0 vypíš 1.",
     "mode": "solve",
     "starter_code": "n = int(input())\nf = 1\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "120\n",
-        "visible": true
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "1\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Faktoriál násobí čísla 1..n.",
       "Začni s f = 1.",
@@ -338,7 +625,47 @@
       "multiplication"
     ],
     "difficulty": 3,
-    "teacher_comment": "Násobiaci akumulátor; dobrý kontrast k súčtu."
+    "teacher_comment": "Násobiaci akumulátor; dobrý kontrast k súčtu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "120\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "6\n",
+        "output": "720\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nvysledok=1\nfor i in range(1,n+1):\n    vysledok*=i\nprint(vysledok)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-011",
@@ -347,13 +674,6 @@
     "statement": "Na vstupe je číslo n. Vypíš jeho násobky n*1 až n*10, každý na vlastnom riadku.",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "3\n",
-        "expected_stdout": "3\n6\n9\n12\n15\n18\n21\n24\n27\n30\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Cyklus i od 1 po 10.",
       "Vypíš n*i.",
@@ -364,7 +684,42 @@
       "multiplication table"
     ],
     "difficulty": 2,
-    "teacher_comment": "Automatizuje opakovaný výpočet."
+    "teacher_comment": "Automatizuje opakovaný výpočet. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n",
+        "output": "3\n6\n9\n12\n15\n18\n21\n24\n27\n30\n",
+        "visible": true
+      },
+      {
+        "input": "2\n",
+        "output": "2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(1,11):\n    print(n*i)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-012",
@@ -373,18 +728,6 @@
     "statement": "Na vstupe je text. Vypíš jeho znaky odzadu, každý na vlastnom riadku. Nepouži slicing [::-1].",
     "mode": "solve",
     "starter_code": "text = input()\n",
-    "tests": [
-      {
-        "input": "abc\n",
-        "expected_stdout": "c\nb\na\n",
-        "visible": true
-      },
-      {
-        "input": "ahoj\n",
-        "expected_stdout": "j\no\nh\na\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Index posledného znaku je len(text)-1.",
       "range môže ísť nadol s krokom -1.",
@@ -393,8 +736,16 @@
     "checks": {
       "forbiddenPatterns": [
         {
-          "pattern": "\\[\\s*::\\s*-1\\s*\\]",
-          "message": "V tejto úlohe nepoužívaj slicing [::-1]; precvičujeme cyklus odzadu."
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
     },
@@ -403,7 +754,31 @@
       "range negative step"
     ],
     "difficulty": 4,
-    "teacher_comment": "Precvičuje indexy a spätný range."
+    "teacher_comment": "Precvičuje indexy a spätný range. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "abc\n",
+        "output": "c\nb\na\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "output": "j\no\nh\na\n",
+        "visible": false
+      },
+      {
+        "input": "x\n",
+        "output": "x\n",
+        "visible": false
+      },
+      {
+        "input": "Python\n",
+        "output": "n\no\nh\nt\ny\nP\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text=input()\nfor i in range(len(text)-1,-1,-1):\n    print(text[i])\n",
+    "schema_version": 2
   },
   {
     "id": "L3-013",
@@ -412,18 +787,6 @@
     "statement": "Na vstupe je reťazec zložený iba z číslic. Vypíš súčet jeho cifier.",
     "mode": "solve",
     "starter_code": "text = input()\ns = 0\n",
-    "tests": [
-      {
-        "input": "1234\n",
-        "expected_stdout": "10\n",
-        "visible": true
-      },
-      {
-        "input": "9005\n",
-        "expected_stdout": "14\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Každý znak je textová cifra.",
       "Preveď znak na int.",
@@ -435,7 +798,47 @@
       "digits"
     ],
     "difficulty": 3,
-    "teacher_comment": "Silný most medzi reťazcom a číselným spracovaním."
+    "teacher_comment": "Silný most medzi reťazcom a číselným spracovaním. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "1234\n",
+        "output": "10\n",
+        "visible": true
+      },
+      {
+        "input": "9005\n",
+        "output": "14\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "999\n",
+        "output": "27\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "s=input()\nsucet=0\nfor z in s:\n    sucet += int(z)\nprint(sucet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-014",
@@ -444,18 +847,6 @@
     "statement": "Na vstupe je text a potom jeden znak. Vypíš, koľkokrát sa znak v texte nachádza.",
     "mode": "solve",
     "starter_code": "text = input()\nhladany = input()\npocet = 0\n",
-    "tests": [
-      {
-        "input": "banana\na\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "python\nz\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Prejdi všetky znaky textu.",
       "Ak znak == hladany, zvýš počítadlo.",
@@ -466,7 +857,47 @@
       "string"
     ],
     "difficulty": 2,
-    "teacher_comment": "Základný vzor počítania výskytov."
+    "teacher_comment": "Základný vzor počítania výskytov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "banana\na\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "python\nz\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "aaaa\na\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "mississippi\ns\n",
+        "output": "4\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text=input()\nznak=input()\npocet=0\nfor z in text:\n    if z==znak:\n        pocet += 1\nprint(pocet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-015",
@@ -475,18 +906,6 @@
     "statement": "Na vstupe je n. Vypíš jeden riadok s n hviezdičkami.",
     "mode": "solve",
     "starter_code": "n = int(input())\nriadok = \"\"\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "*****\n",
-        "visible": true
-      },
-      {
-        "input": "1\n",
-        "expected_stdout": "*\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Môžeš skladať reťazec v cykle.",
       "Alebo použiť \"*\" * n.",
@@ -496,7 +915,47 @@
       "string accumulation"
     ],
     "difficulty": 2,
-    "teacher_comment": "Ukazuje skladanie reťazca aj jednoduchšiu pythonovskú alternatívu."
+    "teacher_comment": "Ukazuje skladanie reťazca aj jednoduchšiu pythonovskú alternatívu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "*****\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "*\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "\n",
+        "visible": false
+      },
+      {
+        "input": "3\n",
+        "output": "***\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nriadok=\"\"\nfor i in range(n):\n    riadok += \"*\"\nprint(riadok)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-016",
@@ -505,13 +964,6 @@
     "statement": "Na vstupe je n. Vypíš riadky s 1 až n hviezdičkami.",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "4\n",
-        "expected_stdout": "*\n**\n***\n****\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Vonkajší cyklus i od 1 po n.",
       "Riadok môže byť \"*\" * i.",
@@ -522,7 +974,42 @@
       "string repetition"
     ],
     "difficulty": 3,
-    "teacher_comment": "Príprava na vnorené cykly bez nutnosti vnoreného cyklu."
+    "teacher_comment": "Príprava na vnorené cykly bez nutnosti vnoreného cyklu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n",
+        "output": "*\n**\n***\n****\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "*\n",
+        "visible": false
+      },
+      {
+        "input": "3\n",
+        "output": "*\n**\n***\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    print(\"*\"*i)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-017",
@@ -531,13 +1018,6 @@
     "statement": "Na vstupe je n. Vypíš všetky dvojice i-j pre i od 1 po n a j od 1 po 2, každú na vlastnom riadku vo formáte i-j.",
     "mode": "solve",
     "starter_code": "n = int(input())\n",
-    "tests": [
-      {
-        "input": "3\n",
-        "expected_stdout": "1-1\n1-2\n2-1\n2-2\n3-1\n3-2\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Použi vnorený cyklus.",
       "Vonkajší cyklus je i.",
@@ -547,7 +1027,42 @@
       "nested loops"
     ],
     "difficulty": 4,
-    "teacher_comment": "Prvá explicitná úloha na vnorené cykly a poradie výstupu."
+    "teacher_comment": "Prvá explicitná úloha na vnorené cykly a poradie výstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n",
+        "output": "1-1\n1-2\n2-1\n2-2\n3-1\n3-2\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "output": "1-1\n1-2\n",
+        "visible": false
+      },
+      {
+        "input": "2\n",
+        "output": "1-1\n1-2\n2-1\n2-2\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    for j in range(1,3):\n        print(str(i)+\"-\"+str(j))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-F02",
@@ -564,18 +1079,6 @@
         "code": "text = input()\nfor znak in text:\n    pocet = 0\n    if znak == 'a':\n        pocet += 1\nprint(pocet)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "banana\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "aaaa\n",
-        "expected_stdout": "4\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Počítadlo sa má nastaviť na 0 pred cyklom.",
       "V cykle ho iba zvyšuj.",
@@ -586,7 +1089,47 @@
       "counter"
     ],
     "difficulty": 3,
-    "teacher_comment": "Veľmi častá chyba pri akumulátoroch."
+    "teacher_comment": "Veľmi častá chyba pri akumulátoroch. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "banana\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "aaaa\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "bbbb\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "abrakadabra\n",
+        "output": "5\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "text=input()\npocet=0\nfor znak in text:\n    if znak == \"a\":\n        pocet += 1\nprint(pocet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-F03",
@@ -603,18 +1146,6 @@
         "code": "n = int(input())\nfor i in range(0, n, 2):\n    print(i)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "8\n",
-        "expected_stdout": "2\n4\n6\n8\n",
-        "visible": true
-      },
-      {
-        "input": "7\n",
-        "expected_stdout": "2\n4\n6\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Má sa začať na 2, nie na 0.",
       "Horná hranica musí byť n+1.",
@@ -625,7 +1156,47 @@
       "range"
     ],
     "difficulty": 3,
-    "teacher_comment": "Precvičuje tri časti range naraz."
+    "teacher_comment": "Precvičuje tri časti range naraz. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "8\n",
+        "output": "2\n4\n6\n8\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "output": "2\n4\n6\n",
+        "visible": false
+      },
+      {
+        "input": "2\n",
+        "output": "2\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "2\n4\n6\n8\n10\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nfor i in range(2,n+1,2):\n    print(i)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L3-P02",
@@ -634,13 +1205,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "for i in range(1, 3):\n    for j in range(1, 4):\n        print(i, j)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Vonkajší cyklus ide i=1, potom i=2.",
       "Pre každé i prebehne celý vnútorný cyklus.",
@@ -651,6 +1215,31 @@
       "trace"
     ],
     "difficulty": 4,
-    "teacher_comment": "Dôležité sledovanie poradia vnorených cyklov."
+    "teacher_comment": "Dôležité sledovanie poradia vnorených cyklov. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "for i in range(1, 3):\n    for j in range(1, 4):\n        print(i, j)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   }
 ]

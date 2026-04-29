@@ -175,7 +175,62 @@ async function runGenFunctionCases(generatorCfg) {
 /** ---------- TESTS ---------- **/
 
 function normalizeStdout(s) {
-  return String(s).replaceAll("\r\n", "\n");
+  return String(s ?? "").replaceAll("\r\n", "\n");
+}
+
+function getStdoutTests(problem) {
+  // Native current format: problem.tests with expected_stdout.
+  if (Array.isArray(problem.tests) && problem.tests.length > 0) {
+    return problem.tests.map((t, i) => ({
+      ...t,
+      input: t.input ?? "",
+      expected_stdout: t.expected_stdout ?? t.output ?? t.expected ?? "",
+      accepted_stdout: t.accepted_stdout ?? t.accepted_outputs ?? t.outputs ?? null,
+      visible: t.visible ?? true,
+      _source: "tests",
+      _index: i + 1
+    }));
+  }
+
+  // Compatibility format for the L6 template / future JSONs:
+  // test_cases: [{ input: "5", output: "25" }]
+  if (Array.isArray(problem.test_cases) && problem.test_cases.length > 0) {
+    return problem.test_cases.map((t, i) => ({
+      ...t,
+      input: t.input ?? t.stdin ?? "",
+      expected_stdout: t.expected_stdout ?? t.output ?? t.expected_output ?? t.expected ?? "",
+      accepted_stdout: t.accepted_stdout ?? t.accepted_outputs ?? t.outputs ?? null,
+      visible: t.visible ?? true,
+      _source: "test_cases",
+      _index: i + 1
+    }));
+  }
+
+  // Very old / simple format fallback.
+  if (problem.expected_output != null || problem.expected_stdout != null || Array.isArray(problem.accepted_outputs)) {
+    return [{
+      input: problem.input ?? problem.stdin ?? "",
+      expected_stdout: problem.expected_stdout ?? problem.expected_output ?? "",
+      accepted_stdout: problem.accepted_outputs ?? null,
+      visible: true,
+      _source: "expected_output",
+      _index: 1
+    }];
+  }
+
+  return [];
+}
+
+function getAcceptedStdouts(test) {
+  const values = [];
+  if (test.expected_stdout != null) values.push(test.expected_stdout);
+
+  const extra = test.accepted_stdout;
+  if (Array.isArray(extra)) values.push(...extra);
+  else if (extra != null) values.push(extra);
+
+  // Deduplicate after newline normalization.
+  return [...new Set(values.map(v => normalizeStdout(v)))];
 }
 
 
@@ -294,7 +349,7 @@ async function runStructureChecks(problem, userCode) {
 
 
 async function runAllTests(problem, userCode) {
-  const tests = problem.tests ?? [];
+  const tests = getStdoutTests(problem);
   if (tests.length === 0) return { passed: true, details: [] };
 
   const details = [];
@@ -304,9 +359,10 @@ async function runAllTests(problem, userCode) {
     const t = tests[i];
     const res = await runPython(userCode, t.input ?? "");
     const got = normalizeStdout(res.stdout);
-    const exp = normalizeStdout(t.expected_stdout ?? "");
+    const accepted = getAcceptedStdouts(t);
+    const exp = accepted[0] ?? "";
 
-    const ok = res.ok && got === exp;
+    const ok = Boolean(res.ok) && accepted.includes(got);
     if (!ok) allOk = false;
 
     details.push({
@@ -314,10 +370,12 @@ async function runAllTests(problem, userCode) {
       ok,
       visible: Boolean(t.visible),
       input: t.input ?? "",
-      expected: exp,
+      expected: accepted.length > 1 ? accepted.join("\n--- alebo ---\n") : exp,
+      accepted,
       got,
       stderr: res.stderr,
       runtimeOk: res.ok,
+      source: t._source ?? "tests"
     });
 
     if (!res.ok) break;
@@ -424,7 +482,7 @@ async function copyToClipboard(text) {
 }
 
 function getSampleInput(problem) {
-  const tests = problem.tests ?? [];
+  const tests = getStdoutTests(problem);
   const firstVisible = tests.find(t => t.visible && (t.input ?? "") !== "");
   const firstAny = tests.find(t => (t.input ?? "") !== "");
   return (firstVisible?.input ?? firstAny?.input ?? "");
@@ -586,6 +644,53 @@ function render(problem, state, allProblems, currentLevel) {
   const btnClearGuess = document.querySelector("#btnClearGuess");
   const predictStatusEl = document.querySelector("#predictStatus");
 
+  function installPythonIndentation(textarea) {
+    if (!textarea) return;
+    textarea.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      e.preventDefault();
+
+      const value = textarea.value;
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const indent = "    ";
+
+      if (e.shiftKey) {
+        const lineStart = value.lastIndexOf("\n", start - 1) + 1;
+        const before = value.slice(0, lineStart);
+        const selected = value.slice(lineStart, end);
+        const after = value.slice(end);
+        const lines = selected.split("\n");
+        let removedBeforeCursor = 0;
+        const out = lines.map((line, idx) => {
+          const remove = line.startsWith(indent) ? 4 : (line.match(/^ {1,3}/)?.[0].length ?? 0);
+          if (idx === 0) removedBeforeCursor = remove;
+          return line.slice(remove);
+        }).join("\n");
+        textarea.value = before + out + after;
+        textarea.selectionStart = Math.max(lineStart, start - removedBeforeCursor);
+        textarea.selectionEnd = Math.max(textarea.selectionStart, end - (selected.length - out.length));
+        textarea.dispatchEvent(new Event("input", { bubbles: true }));
+        return;
+      }
+
+      if (start !== end && value.slice(start, end).includes("\n")) {
+        const lineStart = value.lastIndexOf("\n", start - 1) + 1;
+        const before = value.slice(0, lineStart);
+        const selected = value.slice(lineStart, end);
+        const after = value.slice(end);
+        const out = selected.split("\n").map(line => indent + line).join("\n");
+        textarea.value = before + out + after;
+        textarea.selectionStart = start + indent.length;
+        textarea.selectionEnd = end + (out.length - selected.length);
+      } else {
+        textarea.value = value.slice(0, start) + indent + value.slice(end);
+        textarea.selectionStart = textarea.selectionEnd = start + indent.length;
+      }
+      textarea.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+  }
+
 btnImport?.addEventListener("click", () => {
   fileImport?.click();
 });
@@ -709,6 +814,9 @@ btnFactoryReset?.addEventListener("click", () => {
   }
 
   setEditorInitialFromDraftOrBase();
+  installPythonIndentation(codeEl);
+  installPythonIndentation(runInputEl);
+  installPythonIndentation(predictGuessEl);
 
   // Auto-save rozpracovaného kódu (draft) – aby sa nestrácal po testoch a po refresh
   let codeDraftTimer = null;
@@ -826,7 +934,7 @@ saveState(fresh0);
     }
 
     // 0b) Everything passed
-    if (diag?.overall?.passed === true) {
+    if (diag?.overall?.passed === true || diag?.overallPassed === true) {
       const nextMsg = (problem.evaluation?.kind === "function")
         ? "Testy už prešli ✅ Skús sa pozrieť, či funkcia používa čisté parametre a return (bez vedľajších efektov), a potom pokračuj na ďalšiu úlohu."
         : "Testy už prešli ✅ Ak chceš, skús ešte raz skontrolovať formát výstupu (riadky/medzery) a pokračuj na ďalšiu úlohu.";
@@ -931,10 +1039,14 @@ saveState(fresh0);
           }
         }
 
-        // stdout-specific: whitespace/newline mismatch
-        if ((diag.evalKind === "stdout" || !problem.evaluation || problem.evaluation.kind === "stdout") && f.expected != null && f.got != null) {
-          const exp = String(f.expected);
-          const got = String(f.got);
+        // stdout-specific: output mismatch / formatting.
+        // exp/got are intentionally scoped here so the Hint button cannot crash
+        // after a failed stdout test.
+        const isStdoutEval = (diag.evalKind === "stdout" || !problem.evaluation || problem.evaluation.kind === "stdout");
+        const exp = (f.expected != null) ? String(f.expected) : null;
+        const got = (f.got != null) ? String(f.got) : null;
+
+        if (isStdoutEval && exp != null && got != null) {
           if (exp.trim() === got.trim() && exp !== got) {
             hintBox.textContent = "Výstup je skoro správny, ale nesedí presne formátovanie (medzery alebo nový riadok). Skontroluj presný počet riadkov a medzier.";
             incHints(state, problem.id);
@@ -942,9 +1054,7 @@ saveState(fresh0);
             setStatus("Hint: formátovanie výstupu.");
             return;
           }
-        }
 
-          // If nothing printed
           if (got === "" && exp !== "") {
             hintBox.textContent = "Zdá sa, že program nič nevypísal. Skontroluj, či máš na konci print(...) a či sa dostaneš do vetvy/cyklu, kde sa má vypísať výsledok.";
             incHints(state, problem.id);
@@ -953,14 +1063,20 @@ saveState(fresh0);
             return;
           }
 
-          // If likely missing newline at end
-          if (!exp.endsWith("\n") && got.endsWith("\n") === false && exp + "\n" === got + "\n") {
-            hintBox.textContent = "Pozor na koncový nový riadok. Zvyčajne print() pridá \n. Skontroluj, či nevypisuješ pomocou input()/bez print.";
+          if (exp.replace(/\s+$/g, "") === got.replace(/\s+$/g, "") && exp !== got) {
+            hintBox.textContent = "Výsledok sa líši iba koncovými medzerami alebo novým riadkom. Skontroluj, či používaš print(...) a či nepridávaš alebo neuberáš zbytočné znaky.";
             incHints(state, problem.id);
-            recordEvent(state, "hint2", { problemId: problem.id, kind: "newline" });
-            setStatus("Hint: nový riadok.");
+            recordEvent(state, "hint2", { problemId: problem.id, kind: "trailing_whitespace" });
+            setStatus("Hint: koniec výstupu / newline.");
             return;
           }
+
+          hintBox.textContent = "Výstup nesedí presne. Porovnaj expected a got v časti Testy: hľadaj chýbajúci znak, preklep, rozdiel vo veľkosti písmen alebo interpunkcii.";
+          incHints(state, problem.id);
+          recordEvent(state, "hint2", { problemId: problem.id, kind: "stdout_mismatch" });
+          setStatus("Hint: porovnaj expected vs got.");
+          return;
+        }
       }
     }
 
@@ -1011,6 +1127,23 @@ saveState(fresh0);
     btnLockGuess?.removeAttribute("disabled");
     setPredictStatus("");
   }
+
+  if (problem.mode === "predict") {
+    btnTest?.setAttribute("disabled", "disabled");
+    btnTest?.setAttribute("title", "V Predict úlohách sa nerobia testy. Uzamkni odhad a použi Run.");
+  }
+
+  function refreshHintAvailability() {
+    const diag = getLastDiag(state, problem.id);
+    if (diag) {
+      btnHint?.removeAttribute("disabled");
+      btnHint?.removeAttribute("title");
+    } else {
+      btnHint?.setAttribute("disabled", "disabled");
+      btnHint?.setAttribute("title", "Najprv spusti Run alebo Testy.");
+    }
+  }
+  refreshHintAvailability();
 
   if (problem.mode === "predict" && predictGuessEl) {
     // load last guess
@@ -1074,6 +1207,18 @@ saveState(fresh0);
       const res = await runPython(codeEl.value, stdin);
       showOutput(res.stdout, res.stderr);
 
+      setLastDiag(state, problem.id, {
+        at: new Date().toISOString(),
+        evalKind: "run",
+        overall: { passed: Boolean(res.ok) },
+        functional: {
+          passed: Boolean(res.ok),
+          firstFail: res.ok ? null : { runtimeOk: false, stderr: res.stderr, got: res.stdout, expected: null }
+        },
+        run: { ok: Boolean(res.ok), stdin, stdout: res.stdout, stderr: res.stderr }
+      });
+      refreshHintAvailability();
+
       // Predict: compare guess vs stdout and DO NOT overwrite status with generic one
       if (problem.mode === "predict") {
         if (!res.ok) {
@@ -1088,6 +1233,12 @@ saveState(fresh0);
 
         const ok = guess === got;
         recordEvent(state, "predict_result", { problemId: problem.id, ok });
+        if (ok) {
+          setResult(state, problem.id, "PASS");
+          recordEvent(state, "pass", { problemId: problem.id, mode: problem.mode, via: "predict_run" });
+        } else {
+          setResult(state, problem.id, "FAIL");
+        }
 
         testsEl.innerHTML = `
           <p>${ok ? `<span class="badge ok">PREDICT OK</span>` : `<span class="badge no">PREDICT ZLE</span>`}
@@ -1100,7 +1251,18 @@ saveState(fresh0);
           </div>
         `;
 
-        setStatus(ok ? "Odhad sedel ✅" : "Odhad nesedel ❌");
+        setStatus(ok ? "Odhad sedel ✅ Úloha je označená ako SOLVED." : "Odhad nesedel ❌");
+        const fresh = loadState();
+        const e = ensureProblemEntry(fresh, problem.id);
+        const attemptsEl = document.querySelector("#attemptsVal");
+        const hintsEl = document.querySelector("#hintsVal");
+        const lastResEl = document.querySelector("#lastResultVal");
+        const solvedSlot = document.querySelector("#solvedBadgeSlot");
+        if (attemptsEl) attemptsEl.textContent = String(e.attempts);
+        if (hintsEl) hintsEl.textContent = String(e.hintsUsed);
+        if (lastResEl) lastResEl.textContent = String(e.lastResult ?? "—");
+        if (solvedSlot) solvedSlot.innerHTML = e.solved ? '<span class="badge ok" style="margin-left:8px;">SOLVED</span>' : '';
+        try { if (typeof renderMap === "function") renderMap(); } catch {}
         return; // IMPORTANT: do not fall-through to generic status
       }
 
@@ -1111,6 +1273,15 @@ saveState(fresh0);
 
     } catch (e) {
       setStatus("Chyba: " + String(e));
+      setLastDiag(state, problem.id, {
+        at: new Date().toISOString(),
+        evalKind: "run",
+        overall: { passed: false },
+        timeout: String(e).includes("TIMEOUT"),
+        errorMessage: String(e),
+        functional: { passed: false, firstFail: { runtimeOk: false, stderr: String(e), got: "", expected: null } }
+      });
+      refreshHintAvailability();
       showOutput("", String(e));
       if (String(e).includes("TIMEOUT")) setStatus("Chyba: Časový limit prekročený – pravdepodobne nekonečný cyklus.")
 
@@ -1120,6 +1291,10 @@ saveState(fresh0);
   /** --- Tests (visible + hidden) --- **/
   btnTest.addEventListener("click", async () => {
     try {
+      if (problem.mode === "predict") {
+        setStatus("Predict úloha sa nerieši tlačidlom Testy. Uzamkni odhad a použi Run.");
+        return;
+      }
       incAttempts(state, problem.id, "test");
       recordEvent(state, "test", { problemId: problem.id });
 
@@ -1152,6 +1327,7 @@ saveState(fresh0);
         }
       };
       setLastDiag(state, problem.id, diag);
+      refreshHintAvailability();
 
 
       const overallBadge = overallPassed
@@ -1295,6 +1471,7 @@ if (overallPassed) {
         timeout: msg.includes("TIMEOUT"),
         errorMessage: msg
       });
+      refreshHintAvailability();
 
       if (msg.includes("TIMEOUT")) {
         setStatus("⏱️ Časový limit prekročený – pravdepodobne nekonečný cyklus.");

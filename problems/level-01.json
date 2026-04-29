@@ -6,18 +6,37 @@
     "statement": "Vypíš presne text: Ahoj, svet!",
     "mode": "solve",
     "starter_code": "print('')\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "Ahoj, svet!\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Použi print().",
       "Text musí byť presne Ahoj, svet!",
       "Riešenie: print('Ahoj, svet!')"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "",
+        "output": "Ahoj, svet!\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "print('Ahoj, svet!')\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-002",
@@ -26,23 +45,52 @@
     "statement": "Na vstupe sú dve celé čísla (každé na vlastnom riadku). Vypíš ich súčet.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "2\n3\n",
-        "expected_stdout": "5\n",
-        "visible": true
-      },
-      {
-        "input": "-10\n4\n",
-        "expected_stdout": "-6\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi int(input()).",
       "Súčet je a + b.",
       "Riešenie: print(a + b)"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "2\n3\n",
+        "output": "5\n",
+        "visible": true
+      },
+      {
+        "input": "-10\n4\n",
+        "output": "-6\n",
+        "visible": false
+      },
+      {
+        "input": "0\n0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "100\n-30\n",
+        "output": "70\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-003",
@@ -51,28 +99,57 @@
     "statement": "Na vstupe je celé číslo. Vypíš jeho dvojnásobok.",
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "7\n",
-        "expected_stdout": "14\n",
-        "visible": true
-      },
-      {
-        "input": "-3\n",
-        "expected_stdout": "-6\n",
-        "visible": false
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Načítaj číslo: n = int(input())",
       "Dvojnásobok je 2*n.",
       "Riešenie: print(2*n)"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "7\n",
+        "output": "14\n",
+        "visible": true
+      },
+      {
+        "input": "-3\n",
+        "output": "-6\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "11\n",
+        "output": "22\n",
+        "visible": false
+      },
+      {
+        "input": "-100\n",
+        "output": "-200\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nprint(n*2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-F01",
@@ -89,23 +166,52 @@
         "code": "a = input()\nb = input()\nprint(a + b)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "2\n3\n",
-        "expected_stdout": "5\n",
-        "visible": true
-      },
-      {
-        "input": "10\n20\n",
-        "expected_stdout": "30\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "input() vracia reťazec.",
       "Preveď na int: int(input()).",
       "Riešenie: a=int(input()); b=int(input()); print(a+b)"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "2\n3\n",
+        "output": "5\n",
+        "visible": true
+      },
+      {
+        "input": "10\n20\n",
+        "output": "30\n",
+        "visible": false
+      },
+      {
+        "input": "-5\n2\n",
+        "output": "-3\n",
+        "visible": false
+      },
+      {
+        "input": "100\n-30\n",
+        "output": "70\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-004",
@@ -114,23 +220,52 @@
     "statement": "Na vstupe sú dve čísla (môžu byť desatinné). Vypíš ich aritmetický priemer.",
     "mode": "solve",
     "starter_code": "a = float(input())\nb = float(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "2\n4\n",
-        "expected_stdout": "3.0\n",
-        "visible": true
-      },
-      {
-        "input": "1.5\n2.5\n",
-        "expected_stdout": "2.0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi float(input()).",
       "Priemer je (a+b)/2.",
       "Riešenie: print((a+b)/2)"
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "2\n4\n",
+        "output": "3.0\n",
+        "visible": true
+      },
+      {
+        "input": "1.5\n2.5\n",
+        "output": "2.0\n",
+        "visible": false
+      },
+      {
+        "input": "0\n0\n",
+        "output": "0.0\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n3\n",
+        "output": "1.0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=float(input())\nb=float(input())\nprint((a+b)/2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-P01",
@@ -139,18 +274,37 @@
     "statement": "Najprv tipni výstup. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "x = 3\nx = x + 2\nprint(x)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "5\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Sleduj zmeny x.",
       "x=3, potom x=5.",
       "Výstup je 5."
-    ]
+    ],
+    "test_cases": [
+      {
+        "input": "",
+        "output": "5\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "x = 3\nx = x + 2\nprint(x)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
   },
   {
     "id": "L1-005",
@@ -159,18 +313,6 @@
     "statement": "Na vstupe sú dve celé čísla. Vypíš rozdiel prvého a druhého čísla.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "9\n4\n",
-        "expected_stdout": "5\n",
-        "visible": true
-      },
-      {
-        "input": "3\n10\n",
-        "expected_stdout": "-7\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Rozdiel zapisujeme a - b.",
       "Poradie čísel je dôležité.",
@@ -182,7 +324,47 @@
       "subtraction"
     ],
     "difficulty": 1,
-    "teacher_comment": "Precvičuje, že odčítanie nie je komutatívne a záleží na poradí vstupov."
+    "teacher_comment": "Precvičuje, že odčítanie nie je komutatívne a záleží na poradí vstupov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "9\n4\n",
+        "output": "5\n",
+        "visible": true
+      },
+      {
+        "input": "3\n10\n",
+        "output": "-7\n",
+        "visible": false
+      },
+      {
+        "input": "0\n5\n",
+        "output": "-5\n",
+        "visible": false
+      },
+      {
+        "input": "-4\n-9\n",
+        "output": "5\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a-b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-006",
@@ -191,23 +373,6 @@
     "statement": "Na vstupe sú tri celé čísla. Vypíš ich súčin.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "2\n3\n4\n",
-        "expected_stdout": "24\n",
-        "visible": true
-      },
-      {
-        "input": "-2\n5\n3\n",
-        "expected_stdout": "-30\n",
-        "visible": false
-      },
-      {
-        "input": "0\n9\n8\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Súčin tvoríme operátorom *.",
       "Vynásob všetky tri premenné.",
@@ -217,7 +382,52 @@
       "multiplication"
     ],
     "difficulty": 1,
-    "teacher_comment": "Vhodné po súčte a rozdiele; kontroluje aj nulu a záporné čísla."
+    "teacher_comment": "Vhodné po súčte a rozdiele; kontroluje aj nulu a záporné čísla. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "2\n3\n4\n",
+        "output": "24\n",
+        "visible": true
+      },
+      {
+        "input": "-2\n5\n3\n",
+        "output": "-30\n",
+        "visible": false
+      },
+      {
+        "input": "0\n9\n8\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "1\n1\n1\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n-2\n-3\n",
+        "output": "-6\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nprint(a*b*c)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-007",
@@ -226,18 +436,6 @@
     "statement": "Na vstupe sú dve celé čísla a, b. Vypíš zvyšok po delení a číslom b.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "17\n5\n",
-        "expected_stdout": "2\n",
-        "visible": true
-      },
-      {
-        "input": "20\n4\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Zvyšok po delení je %.",
       "Nepouži /, to je delenie.",
@@ -247,7 +445,47 @@
       "modulo"
     ],
     "difficulty": 2,
-    "teacher_comment": "Základ pre párnosť, deliteľnosť a algoritmické myslenie."
+    "teacher_comment": "Základ pre párnosť, deliteľnosť a algoritmické myslenie. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "17\n5\n",
+        "output": "2\n",
+        "visible": true
+      },
+      {
+        "input": "20\n4\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "10\n3\n",
+        "output": "1\n",
+        "visible": false
+      },
+      {
+        "input": "99\n10\n",
+        "output": "9\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a%b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-008",
@@ -256,18 +494,6 @@
     "statement": "Na vstupe sú dve celé čísla a, b. Vypíš výsledok celého delenia a // b.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "17\n5\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "20\n4\n",
-        "expected_stdout": "5\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Celé delenie používa //.",
       "Nemiešaj ho s /.",
@@ -277,7 +503,47 @@
       "integer division"
     ],
     "difficulty": 2,
-    "teacher_comment": "Dopĺňa modulo; žiaci vidia rozdiel medzi /, // a %."
+    "teacher_comment": "Dopĺňa modulo; žiaci vidia rozdiel medzi /, // a %. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "17\n5\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "20\n4\n",
+        "output": "5\n",
+        "visible": false
+      },
+      {
+        "input": "10\n3\n",
+        "output": "3\n",
+        "visible": false
+      },
+      {
+        "input": "99\n10\n",
+        "output": "9\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a//b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-009",
@@ -286,18 +552,6 @@
     "statement": "Na vstupe je cena jedného kusu a počet kusov. Vypíš celkovú cenu ako celé číslo.",
     "mode": "solve",
     "starter_code": "cena = int(input())\npocet = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "7\n4\n",
-        "expected_stdout": "28\n",
-        "visible": true
-      },
-      {
-        "input": "12\n0\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Celok je cena * počet.",
       "Použi premenné s významným názvom.",
@@ -308,7 +562,47 @@
       "multiplication"
     ],
     "difficulty": 1,
-    "teacher_comment": "Jednoduchý slovný kontext, ktorý núti mapovať význam na premenné."
+    "teacher_comment": "Jednoduchý slovný kontext, ktorý núti mapovať význam na premenné. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "7\n4\n",
+        "output": "28\n",
+        "visible": true
+      },
+      {
+        "input": "12\n0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "0\n100\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "9\n9\n",
+        "output": "81\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "cena=int(input())\npocet=int(input())\nprint(cena*pocet)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-010",
@@ -317,18 +611,6 @@
     "statement": "Na vstupe sú dĺžky strán obdĺžnika a, b. Vypíš jeho obvod.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "3\n5\n",
-        "expected_stdout": "16\n",
-        "visible": true
-      },
-      {
-        "input": "10\n2\n",
-        "expected_stdout": "24\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Obvod obdĺžnika je 2*(a+b).",
       "Zátvorky pomáhajú zachovať poradie výpočtu.",
@@ -339,7 +621,47 @@
       "precedence"
     ],
     "difficulty": 2,
-    "teacher_comment": "Precvičuje preklad vzorca do výrazu a zátvorky."
+    "teacher_comment": "Precvičuje preklad vzorca do výrazu a zátvorky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n5\n",
+        "output": "16\n",
+        "visible": true
+      },
+      {
+        "input": "10\n2\n",
+        "output": "24\n",
+        "visible": false
+      },
+      {
+        "input": "1\n1\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "7\n8\n",
+        "output": "30\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(2*(a+b))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-011",
@@ -348,18 +670,6 @@
     "statement": "Na vstupe je základňa a výška trojuholníka ako desatinné čísla. Vypíš obsah.",
     "mode": "solve",
     "starter_code": "a = float(input())\nv = float(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "6\n4\n",
-        "expected_stdout": "12.0\n",
-        "visible": true
-      },
-      {
-        "input": "5\n2.5\n",
-        "expected_stdout": "6.25\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Použi float(input()).",
       "Obsah je a*v/2.",
@@ -370,7 +680,47 @@
       "formula"
     ],
     "difficulty": 2,
-    "teacher_comment": "Dobré na rozlíšenie int a float a akceptovanie výstupu typu 12.0."
+    "teacher_comment": "Dobré na rozlíšenie int a float a akceptovanie výstupu typu 12.0. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "6\n4\n",
+        "output": "12.0\n",
+        "visible": true
+      },
+      {
+        "input": "5\n2.5\n",
+        "output": "6.25\n",
+        "visible": false
+      },
+      {
+        "input": "10\n3\n",
+        "output": "15.0\n",
+        "visible": false
+      },
+      {
+        "input": "0\n5\n",
+        "output": "0.0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=float(input())\nv=float(input())\nprint(a*v/2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-012",
@@ -379,18 +729,6 @@
     "statement": "Na vstupe je meno. Vypíš text: Ahoj, MENO!",
     "mode": "solve",
     "starter_code": "meno = input()\nprint()\n",
-    "tests": [
-      {
-        "input": "Eva\n",
-        "expected_stdout": "Ahoj, Eva!\n",
-        "visible": true
-      },
-      {
-        "input": "Juraj\n",
-        "expected_stdout": "Ahoj, Juraj!\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Meno je reťazec, netreba int().",
       "Môžeš použiť f-string.",
@@ -401,7 +739,47 @@
       "f-string"
     ],
     "difficulty": 1,
-    "teacher_comment": "Prechod od čísel k textu a skladaniu výstupu."
+    "teacher_comment": "Prechod od čísel k textu a skladaniu výstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "Eva\n",
+        "output": "Ahoj, Eva!\n",
+        "visible": true
+      },
+      {
+        "input": "Juraj\n",
+        "output": "Ahoj, Juraj!\n",
+        "visible": false
+      },
+      {
+        "input": "Adam\n",
+        "output": "Ahoj, Adam!\n",
+        "visible": false
+      },
+      {
+        "input": "Mária\n",
+        "output": "Ahoj, Mária!\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "meno=input()\nprint(\"Ahoj, \" + meno + \"!\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-013",
@@ -410,18 +788,6 @@
     "statement": "Na vstupe sú dva riadky textu. Vypíš ich v opačnom poradí, každý na vlastnom riadku.",
     "mode": "solve",
     "starter_code": "prvy = input()\ndruhy = input()\nprint()\nprint()\n",
-    "tests": [
-      {
-        "input": "pes\nmačka\n",
-        "expected_stdout": "mačka\npes\n",
-        "visible": true
-      },
-      {
-        "input": "A\nB\n",
-        "expected_stdout": "B\nA\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Najprv vypíš druhý text.",
       "Potom vypíš prvý text.",
@@ -432,7 +798,42 @@
       "print"
     ],
     "difficulty": 1,
-    "teacher_comment": "Výborné na pochopenie, že premenné si pamätajú hodnoty nezávisle od poradia výpisu."
+    "teacher_comment": "Výborné na pochopenie, že premenné si pamätajú hodnoty nezávisle od poradia výpisu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "pes\nmačka\n",
+        "output": "mačka\npes\n",
+        "visible": true
+      },
+      {
+        "input": "A\nB\n",
+        "output": "B\nA\n",
+        "visible": false
+      },
+      {
+        "input": "prvy\ndruhy\n",
+        "output": "druhy\nprvy\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=input()\nb=input()\nprint(b)\nprint(a)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-014",
@@ -441,18 +842,6 @@
     "statement": "Na vstupe je počet minút ako celé číslo. Vypíš počet sekúnd.",
     "mode": "solve",
     "starter_code": "minuty = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "3\n",
-        "expected_stdout": "180\n",
-        "visible": true
-      },
-      {
-        "input": "0\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Jedna minúta má 60 sekúnd.",
       "Vynásob minúty číslom 60.",
@@ -462,7 +851,47 @@
       "unit conversion"
     ],
     "difficulty": 1,
-    "teacher_comment": "Jednoduchý prevod jednotiek; vhodné aj pre slabších žiakov."
+    "teacher_comment": "Jednoduchý prevod jednotiek; vhodné aj pre slabších žiakov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n",
+        "output": "180\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "output": "600\n",
+        "visible": false
+      },
+      {
+        "input": "1\n",
+        "output": "60\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "m=int(input())\nprint(m*60)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-015",
@@ -471,18 +900,6 @@
     "statement": "Na vstupe sú hodiny a minúty. Vypíš celkový počet minút.",
     "mode": "solve",
     "starter_code": "h = int(input())\nm = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "2\n15\n",
-        "expected_stdout": "135\n",
-        "visible": true
-      },
-      {
-        "input": "0\n45\n",
-        "expected_stdout": "45\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Hodiny preveď na minúty.",
       "Celok je h*60 + m.",
@@ -493,7 +910,47 @@
       "unit conversion"
     ],
     "difficulty": 2,
-    "teacher_comment": "Kombinuje dve vstupné hodnoty do jedného výsledku."
+    "teacher_comment": "Kombinuje dve vstupné hodnoty do jedného výsledku. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "2\n15\n",
+        "output": "135\n",
+        "visible": true
+      },
+      {
+        "input": "0\n45\n",
+        "output": "45\n",
+        "visible": false
+      },
+      {
+        "input": "1\n0\n",
+        "output": "60\n",
+        "visible": false
+      },
+      {
+        "input": "3\n5\n",
+        "output": "185\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "h=int(input())\nm=int(input())\nprint(h*60+m)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-016",
@@ -502,18 +959,6 @@
     "statement": "Na vstupe je celé číslo n. Vypíš číslo o 10 väčšie.",
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "5\n",
-        "expected_stdout": "15\n",
-        "visible": true
-      },
-      {
-        "input": "-12\n",
-        "expected_stdout": "-2\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "O 10 väčšie znamená n + 10.",
       "Pozor na záporné čísla.",
@@ -524,7 +969,47 @@
       "negative numbers"
     ],
     "difficulty": 1,
-    "teacher_comment": "Cvičí jednoduchý výraz aj so zápornou hodnotou."
+    "teacher_comment": "Cvičí jednoduchý výraz aj so zápornou hodnotou. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "5\n",
+        "output": "15\n",
+        "visible": true
+      },
+      {
+        "input": "-12\n",
+        "output": "-2\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "10\n",
+        "visible": false
+      },
+      {
+        "input": "-10\n",
+        "output": "0\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nprint(n+10)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-017",
@@ -533,18 +1018,6 @@
     "statement": "Na vstupe je celé číslo n. Vypíš n na druhú.",
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "6\n",
-        "expected_stdout": "36\n",
-        "visible": true
-      },
-      {
-        "input": "-4\n",
-        "expected_stdout": "16\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Druhá mocnina je n*n alebo n**2.",
       "Záporné číslo na druhú je kladné.",
@@ -554,7 +1027,47 @@
       "power"
     ],
     "difficulty": 2,
-    "teacher_comment": "Ukazuje operátor ** a rozdiel medzi -4**2 a premennou n**2."
+    "teacher_comment": "Ukazuje operátor ** a rozdiel medzi -4**2 a premennou n**2. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "6\n",
+        "output": "36\n",
+        "visible": true
+      },
+      {
+        "input": "-4\n",
+        "output": "16\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "11\n",
+        "output": "121\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nprint(n*n)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-018",
@@ -563,18 +1076,6 @@
     "statement": "Na vstupe je nezáporné celé číslo. Vypíš jeho poslednú cifru.",
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "123\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "90\n",
-        "expected_stdout": "0\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Poslednú cifru získaš zvyškom po delení 10.",
       "Použi n % 10.",
@@ -585,7 +1086,47 @@
       "digits"
     ],
     "difficulty": 2,
-    "teacher_comment": "Pripravuje na prácu s ciframi a algoritmické rozklady čísel."
+    "teacher_comment": "Pripravuje na prácu s ciframi a algoritmické rozklady čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "123\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "90\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "1007\n",
+        "output": "7\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nprint(n%10)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-019",
@@ -594,18 +1135,6 @@
     "statement": "Na vstupe je desatinné číslo. Vypíš jeho celú časť pomocou int().",
     "mode": "solve",
     "starter_code": "x = float(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "3.8\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "12.0\n",
-        "expected_stdout": "12\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "float(input()) načíta desatinné číslo.",
       "int(x) odstráni desatinnú časť smerom k nule.",
@@ -616,7 +1145,47 @@
       "int conversion"
     ],
     "difficulty": 2,
-    "teacher_comment": "Dôležité na pochopenie konverzie typov, nie zaokrúhľovania."
+    "teacher_comment": "Dôležité na pochopenie konverzie typov, nie zaokrúhľovania. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3.8\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "12.0\n",
+        "output": "12\n",
+        "visible": false
+      },
+      {
+        "input": "0.9\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "-3.8\n",
+        "output": "-3\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "x=float(input())\nprint(int(x))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-020",
@@ -625,13 +1194,6 @@
     "statement": "Vypíš presne tri riadky: *, **, ***.",
     "mode": "solve",
     "starter_code": "print()\nprint()\nprint()\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "*\n**\n***\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Každý print() vypíše jeden riadok.",
       "Text daj do úvodzoviek.",
@@ -642,7 +1204,32 @@
       "exact output"
     ],
     "difficulty": 1,
-    "teacher_comment": "Cvičí presný výstup a nové riadky bez vstupu."
+    "teacher_comment": "Cvičí presný výstup a nové riadky bez vstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "*\n**\n***\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "print(\"*\")\nprint(\"**\")\nprint(\"***\")\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-F02",
@@ -659,18 +1246,6 @@
         "code": "a = int(input())\nb = int(input())\nprint(2*a + b)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "3\n5\n",
-        "expected_stdout": "16\n",
-        "visible": true
-      },
-      {
-        "input": "10\n2\n",
-        "expected_stdout": "24\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Porovnaj 2*a + b a 2*(a+b).",
       "Zátvorky menia poradie výpočtu.",
@@ -681,7 +1256,47 @@
       "precedence"
     ],
     "difficulty": 2,
-    "teacher_comment": "Diagnostická úloha na jednu z najčastejších chýb vo vzorcoch."
+    "teacher_comment": "Diagnostická úloha na jednu z najčastejších chýb vo vzorcoch. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "3\n5\n",
+        "output": "16\n",
+        "visible": true
+      },
+      {
+        "input": "10\n2\n",
+        "output": "24\n",
+        "visible": false
+      },
+      {
+        "input": "1\n1\n",
+        "output": "4\n",
+        "visible": false
+      },
+      {
+        "input": "7\n8\n",
+        "output": "30\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(2*(a+b))\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-F03",
@@ -698,18 +1313,6 @@
         "code": "n = input()\nprint(n * 2)\n"
       }
     ],
-    "tests": [
-      {
-        "input": "7\n",
-        "expected_stdout": "14\n",
-        "visible": true
-      },
-      {
-        "input": "12\n",
-        "expected_stdout": "24\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "input() vracia text.",
       "Text * 2 znamená zopakovanie textu.",
@@ -720,7 +1323,47 @@
       "type conversion"
     ],
     "difficulty": 2,
-    "teacher_comment": "Konfrontuje rozdiel medzi aritmetikou a operáciami s reťazcom."
+    "teacher_comment": "Konfrontuje rozdiel medzi aritmetikou a operáciami s reťazcom. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "7\n",
+        "output": "14\n",
+        "visible": true
+      },
+      {
+        "input": "12\n",
+        "output": "24\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "-4\n",
+        "output": "-8\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "n=int(input())\nprint(n*2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-P02",
@@ -729,13 +1372,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "x = 4\ny = x + 3\nx = y * 2\nprint(x)\nprint(y)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "14\n7\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Sleduj hodnoty po riadkoch.",
       "y vznikne z pôvodného x.",
@@ -746,7 +1382,32 @@
       "variables"
     ],
     "difficulty": 2,
-    "teacher_comment": "Cvičí sledovanie stavu premenných."
+    "teacher_comment": "Cvičí sledovanie stavu premenných. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "14\n7\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "x = 4\ny = x + 3\nx = y * 2\nprint(x)\nprint(y)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-P03",
@@ -755,13 +1416,6 @@
     "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
     "mode": "predict",
     "starter_code": "a = \"2\"\nb = \"3\"\nprint(a + b)\n",
-    "tests": [
-      {
-        "input": "",
-        "expected_stdout": "23\n",
-        "visible": true
-      }
-    ],
     "hints": [
       "Úvodzovky znamenajú text.",
       "Texty sa pri + spoja.",
@@ -772,7 +1426,32 @@
       "prediction"
     ],
     "difficulty": 2,
-    "teacher_comment": "Pomáha odhaliť mylnú predstavu, že každé + je číselný súčet."
+    "teacher_comment": "Pomáha odhaliť mylnú predstavu, že každé + je číselný súčet. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "23\n",
+        "visible": true
+      }
+    ],
+    "reference_solution": "a = \"2\"\nb = \"3\"\nprint(a + b)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-021",
@@ -781,18 +1460,6 @@
     "statement": "Na vstupe sú čísla a, b. Vypíš hodnotu výrazu a + b + 2.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "4\n3\n",
-        "expected_stdout": "9\n",
-        "visible": true
-      },
-      {
-        "input": "-1\n5\n",
-        "expected_stdout": "6\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Doplň výraz do print().",
       "Skontroluj poradie operácií.",
@@ -803,7 +1470,47 @@
       "expression"
     ],
     "difficulty": 2,
-    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi."
+    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n3\n",
+        "output": "9\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n5\n",
+        "output": "6\n",
+        "visible": false
+      },
+      {
+        "input": "0\n0\n",
+        "output": "2\n",
+        "visible": false
+      },
+      {
+        "input": "10\n-2\n",
+        "output": "10\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b+2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-022",
@@ -812,18 +1519,6 @@
     "statement": "Na vstupe sú čísla a, b. Vypíš hodnotu výrazu a - b + 2.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "4\n3\n",
-        "expected_stdout": "3\n",
-        "visible": true
-      },
-      {
-        "input": "-1\n5\n",
-        "expected_stdout": "-4\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Doplň výraz do print().",
       "Skontroluj poradie operácií.",
@@ -834,7 +1529,47 @@
       "expression"
     ],
     "difficulty": 2,
-    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi."
+    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n3\n",
+        "output": "3\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n5\n",
+        "output": "-4\n",
+        "visible": false
+      },
+      {
+        "input": "0\n0\n",
+        "output": "2\n",
+        "visible": false
+      },
+      {
+        "input": "10\n-2\n",
+        "output": "14\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a-b+2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   },
   {
     "id": "L1-023",
@@ -843,18 +1578,6 @@
     "statement": "Na vstupe sú čísla a, b. Vypíš hodnotu výrazu a * b * 2.",
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nprint()\n",
-    "tests": [
-      {
-        "input": "4\n3\n",
-        "expected_stdout": "24\n",
-        "visible": true
-      },
-      {
-        "input": "-1\n5\n",
-        "expected_stdout": "-10\n",
-        "visible": false
-      }
-    ],
     "hints": [
       "Doplň výraz do print().",
       "Skontroluj poradie operácií.",
@@ -865,6 +1588,46 @@
       "expression"
     ],
     "difficulty": 2,
-    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi."
+    "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "test_cases": [
+      {
+        "input": "4\n3\n",
+        "output": "24\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n5\n",
+        "output": "-10\n",
+        "visible": false
+      },
+      {
+        "input": "0\n99\n",
+        "output": "0\n",
+        "visible": false
+      },
+      {
+        "input": "2\n-3\n",
+        "output": "-12\n",
+        "visible": false
+      }
+    ],
+    "reference_solution": "a=int(input())\nb=int(input())\nprint(a*b*2)\n",
+    "schema_version": 2,
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval(). Rieš úlohu bežným kódom."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    }
   }
 ]
