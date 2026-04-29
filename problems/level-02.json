@@ -7,9 +7,21 @@
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
     "tests": [
-      { "input": "5\n", "expected_stdout": "POS\n", "visible": true },
-      { "input": "-1\n", "expected_stdout": "NEG\n", "visible": false },
-      { "input": "0\n", "expected_stdout": "ZERO\n", "visible": false }
+      {
+        "input": "5\n",
+        "expected_stdout": "POS\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n",
+        "expected_stdout": "NEG\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "ZERO\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi if/elif/else.",
@@ -25,8 +37,16 @@
     "mode": "solve",
     "starter_code": "n = int(input())\nprint()\n",
     "tests": [
-      { "input": "8\n", "expected_stdout": "EVEN\n", "visible": true },
-      { "input": "7\n", "expected_stdout": "ODD\n", "visible": false }
+      {
+        "input": "8\n",
+        "expected_stdout": "EVEN\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "ODD\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi modulo: n % 2.",
@@ -42,8 +62,16 @@
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\nprint()\n",
     "tests": [
-      { "input": "1\n5\n3\n", "expected_stdout": "5\n", "visible": true },
-      { "input": "-10\n-2\n-7\n", "expected_stdout": "-2\n", "visible": false }
+      {
+        "input": "1\n5\n3\n",
+        "expected_stdout": "5\n",
+        "visible": true
+      },
+      {
+        "input": "-10\n-2\n-7\n",
+        "expected_stdout": "-2\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Môžeš použiť if alebo max().",
@@ -67,8 +95,16 @@
       }
     ],
     "tests": [
-      { "input": "8\n", "expected_stdout": "EVEN\n", "visible": true },
-      { "input": "7\n", "expected_stdout": "ODD\n", "visible": false }
+      {
+        "input": "8\n",
+        "expected_stdout": "EVEN\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "ODD\n",
+        "visible": false
+      }
     ],
     "hints": [
       "V if podmienke sa porovnáva pomocou ==.",
@@ -84,9 +120,21 @@
     "mode": "solve",
     "starter_code": "age = int(input())\n# doplň\n",
     "tests": [
-      { "input": "10\n", "expected_stdout": "CHILD\n", "visible": true },
-      { "input": "15\n", "expected_stdout": "TEEN\n", "visible": false },
-      { "input": "33\n", "expected_stdout": "ADULT\n", "visible": false }
+      {
+        "input": "10\n",
+        "expected_stdout": "CHILD\n",
+        "visible": true
+      },
+      {
+        "input": "15\n",
+        "expected_stdout": "TEEN\n",
+        "visible": false
+      },
+      {
+        "input": "33\n",
+        "expected_stdout": "ADULT\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi if/elif/else.",
@@ -102,12 +150,585 @@
     "mode": "predict",
     "starter_code": "n = int(input())\nif n % 2 == 0:\n    print('EVEN')\nelse:\n    print('ODD')\n",
     "tests": [
-      { "input": "5\n", "expected_stdout": "ODD\n", "visible": true }
+      {
+        "input": "5\n",
+        "expected_stdout": "ODD\n",
+        "visible": true
+      }
     ],
     "hints": [
       "5 % 2 je 1.",
       "Nie je to 0, ide else vetva.",
       "Výstup: ODD"
     ]
+  },
+  {
+    "id": "L2-005",
+    "level": 2,
+    "title": "Nula alebo nenula",
+    "statement": "Na vstupe je celé číslo. Vypíš \"nula\", ak je číslo 0, inak vypíš \"nenula\".",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nif ...:\n    print()\nelse:\n    print()\n",
+    "tests": [
+      {
+        "input": "0\n",
+        "expected_stdout": "nula\n",
+        "visible": true
+      },
+      {
+        "input": "5\n",
+        "expected_stdout": "nenula\n",
+        "visible": false
+      },
+      {
+        "input": "-1\n",
+        "expected_stdout": "nenula\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Porovnanie s nulou je n == 0.",
+      "V else riešiš všetko ostatné.",
+      "Použi presné texty."
+    ],
+    "concepts": [
+      "if-else",
+      "comparison"
+    ],
+    "difficulty": 1,
+    "teacher_comment": "Najjednoduchší prípad dvojvetvenia."
+  },
+  {
+    "id": "L2-006",
+    "level": 2,
+    "title": "Väčšie z dvoch",
+    "statement": "Na vstupe sú dve celé čísla. Vypíš väčšie z nich. Ak sú rovnaké, vypíš hociktoré z nich.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\n",
+    "tests": [
+      {
+        "input": "8\n3\n",
+        "expected_stdout": "8\n",
+        "visible": true
+      },
+      {
+        "input": "2\n9\n",
+        "expected_stdout": "9\n",
+        "visible": false
+      },
+      {
+        "input": "5\n5\n",
+        "expected_stdout": "5\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Porovnaj a > b.",
+      "V jednej vetve vypíš a, v druhej b.",
+      "Pri rovnosti môžeš vypísať b alebo a."
+    ],
+    "concepts": [
+      "if-else",
+      "max"
+    ],
+    "difficulty": 1,
+    "teacher_comment": "Predstupeň k max z troch čísel."
+  },
+  {
+    "id": "L2-007",
+    "level": 2,
+    "title": "Prístup podľa veku",
+    "statement": "Na vstupe je vek. Vypíš \"vstup povoleny\", ak má človek aspoň 15 rokov, inak \"vstup zamietnuty\".",
+    "mode": "solve",
+    "starter_code": "vek = int(input())\n",
+    "tests": [
+      {
+        "input": "15\n",
+        "expected_stdout": "vstup povoleny\n",
+        "visible": true
+      },
+      {
+        "input": "14\n",
+        "expected_stdout": "vstup zamietnuty\n",
+        "visible": false
+      },
+      {
+        "input": "18\n",
+        "expected_stdout": "vstup povoleny\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Aspoň 15 znamená >= 15.",
+      "Presne dodrž text výstupu.",
+      "Riešenie je if vek >= 15."
+    ],
+    "concepts": [
+      "comparison",
+      "boundary"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Hraničná hodnota 15 je kľúčová."
+  },
+  {
+    "id": "L2-008",
+    "level": 2,
+    "title": "Známka zo skóre",
+    "statement": "Na vstupe je počet bodov 0 až 100. Vypíš A pre aspoň 90, B pre aspoň 75, C pre aspoň 50, inak D.",
+    "mode": "solve",
+    "starter_code": "body = int(input())\n",
+    "tests": [
+      {
+        "input": "95\n",
+        "expected_stdout": "A\n",
+        "visible": true
+      },
+      {
+        "input": "75\n",
+        "expected_stdout": "B\n",
+        "visible": false
+      },
+      {
+        "input": "50\n",
+        "expected_stdout": "C\n",
+        "visible": false
+      },
+      {
+        "input": "49\n",
+        "expected_stdout": "D\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi if/elif/elif/else.",
+      "Poradie podmienok je od najvyššej hranice.",
+      "Použi >=, nie >."
+    ],
+    "concepts": [
+      "elif",
+      "boundaries"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Silná úloha na poradie podmienok a inkluzívne hranice."
+  },
+  {
+    "id": "L2-009",
+    "level": 2,
+    "title": "Deliteľné piatimi",
+    "statement": "Na vstupe je celé číslo. Vypíš \"ano\", ak je deliteľné 5, inak \"nie\".",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "20\n",
+        "expected_stdout": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "22\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "ano\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Deliteľnosť zistíš cez n % 5 == 0.",
+      "Nula je deliteľná 5.",
+      "Presný výstup: ano/nie."
+    ],
+    "concepts": [
+      "modulo",
+      "if"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Pripravuje na kombinované podmienky."
+  },
+  {
+    "id": "L2-010",
+    "level": 2,
+    "title": "Kladné párne",
+    "statement": "Na vstupe je celé číslo. Vypíš \"ano\", ak je číslo kladné a párne, inak \"nie\".",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "8\n",
+        "expected_stdout": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "-4\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Kladné: n > 0.",
+      "Párne: n % 2 == 0.",
+      "Spoj podmienky pomocou and."
+    ],
+    "concepts": [
+      "and",
+      "modulo"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Kombinovaná logická podmienka."
+  },
+  {
+    "id": "L2-011",
+    "level": 2,
+    "title": "Mimo rozsahu",
+    "statement": "Na vstupe je teplota. Vypíš \"mimo\", ak je menšia ako 0 alebo väčšia ako 100, inak \"ok\".",
+    "mode": "solve",
+    "starter_code": "t = int(input())\n",
+    "tests": [
+      {
+        "input": "-5\n",
+        "expected_stdout": "mimo\n",
+        "visible": true
+      },
+      {
+        "input": "101\n",
+        "expected_stdout": "mimo\n",
+        "visible": false
+      },
+      {
+        "input": "50\n",
+        "expected_stdout": "ok\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi or.",
+      "Podmienka: t < 0 or t > 100.",
+      "Hodnoty 0 a 100 sú ok."
+    ],
+    "concepts": [
+      "or",
+      "range check"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Precvičuje vonkajšok intervalu a hraničné hodnoty."
+  },
+  {
+    "id": "L2-012",
+    "level": 2,
+    "title": "V intervale",
+    "statement": "Na vstupe je číslo. Vypíš \"ano\", ak patrí do uzavretého intervalu 10 až 20, inak \"nie\".",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "10\n",
+        "expected_stdout": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "20\n",
+        "expected_stdout": "ano\n",
+        "visible": false
+      },
+      {
+        "input": "21\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Uzavretý interval zahŕňa hranice.",
+      "Použi 10 <= n <= 20 alebo and.",
+      "Pozor na 10 a 20."
+    ],
+    "concepts": [
+      "range check",
+      "comparison chaining"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Učí pythonovské reťazenie porovnaní."
+  },
+  {
+    "id": "L2-013",
+    "level": 2,
+    "title": "Trojuholník existuje",
+    "statement": "Na vstupe sú tri kladné celé čísla a, b, c. Vypíš \"ano\", ak môžu byť stranami trojuholníka, inak \"nie\".",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nb = int(input())\nc = int(input())\n",
+    "tests": [
+      {
+        "input": "3\n4\n5\n",
+        "expected_stdout": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "1\n2\n3\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "5\n5\n9\n",
+        "expected_stdout": "ano\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Každé dve strany musia mať súčet väčší ako tretia.",
+      "Spoj tri podmienky pomocou and.",
+      "Použi >, nie >=."
+    ],
+    "concepts": [
+      "compound condition",
+      "geometry"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Náročnejšia kombinovaná podmienka."
+  },
+  {
+    "id": "L2-014",
+    "level": 2,
+    "title": "Prestupný rok zjednodušene",
+    "statement": "Na vstupe je rok. Vypíš \"prestupny\", ak je deliteľný 4, inak \"bezny\".",
+    "mode": "solve",
+    "starter_code": "rok = int(input())\n",
+    "tests": [
+      {
+        "input": "2024\n",
+        "expected_stdout": "prestupny\n",
+        "visible": true
+      },
+      {
+        "input": "2023\n",
+        "expected_stdout": "bezny\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Zjednodušené pravidlo používa rok % 4 == 0.",
+      "Presný text je prestupny/bezny.",
+      "Nepotrebujeme ešte pravidlo storočí."
+    ],
+    "concepts": [
+      "modulo",
+      "if"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Jednoduchý reálny kontext deliteľnosti."
+  },
+  {
+    "id": "L2-015",
+    "level": 2,
+    "title": "Prestupný rok úplne",
+    "statement": "Na vstupe je rok. Vypíš \"prestupny\", ak je deliteľný 400 alebo je deliteľný 4 a nie 100. Inak vypíš \"bezny\".",
+    "mode": "solve",
+    "starter_code": "rok = int(input())\n",
+    "tests": [
+      {
+        "input": "2000\n",
+        "expected_stdout": "prestupny\n",
+        "visible": true
+      },
+      {
+        "input": "1900\n",
+        "expected_stdout": "bezny\n",
+        "visible": false
+      },
+      {
+        "input": "2024\n",
+        "expected_stdout": "prestupny\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Pravidlo: deliteľný 400 alebo deliteľný 4 a nie 100.",
+      "Použi zátvorky, aby bola podmienka jasná.",
+      "(rok%400==0) or (rok%4==0 and rok%100!=0)"
+    ],
+    "concepts": [
+      "and",
+      "or",
+      "precedence"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Výborná úloha na logickú prioritu and/or."
+  },
+  {
+    "id": "L2-016",
+    "level": 2,
+    "title": "Triedenie čísla",
+    "statement": "Na vstupe je celé číslo. Vypíš \"male\" pre n < 10, \"stredne\" pre 10 až 99, \"velke\" pre 100 a viac.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "5\n",
+        "expected_stdout": "male\n",
+        "visible": true
+      },
+      {
+        "input": "10\n",
+        "expected_stdout": "stredne\n",
+        "visible": false
+      },
+      {
+        "input": "100\n",
+        "expected_stdout": "velke\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi if/elif/else.",
+      "Ak n < 10, už netreba testovať ďalšie vetvy.",
+      "Hranice 10 a 100 sú dôležité."
+    ],
+    "concepts": [
+      "elif",
+      "classification"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Trojkategóriová klasifikácia."
+  },
+  {
+    "id": "L2-F02",
+    "level": 2,
+    "title": "Fix: hranica veku",
+    "statement": "Kód má povoliť vstup od 15 rokov vrátane, ale má chybu na hranici. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Použije > namiesto >=",
+        "misconceptionTag": "boundary_condition",
+        "code": "vek = int(input())\nif vek > 15:\n    print('vstup povoleny')\nelse:\n    print('vstup zamietnuty')\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "15\n",
+        "expected_stdout": "vstup povoleny\n",
+        "visible": true
+      },
+      {
+        "input": "14\n",
+        "expected_stdout": "vstup zamietnuty\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Slovo aspoň znamená vrátane hranice.",
+      "Použi >= 15.",
+      "Oprav iba operátor porovnania."
+    ],
+    "concepts": [
+      "debugging",
+      "boundary"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Typická hraničná chyba."
+  },
+  {
+    "id": "L2-F03",
+    "level": 2,
+    "title": "Fix: zlé or namiesto and",
+    "statement": "Kód má overiť, či je číslo v intervale 10 až 20, ale prepustí priveľa hodnôt. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Použije or medzi hranicami",
+        "misconceptionTag": "logic_operator",
+        "code": "n = int(input())\nif n >= 10 or n <= 20:\n    print('ano')\nelse:\n    print('nie')\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "15\n",
+        "expected_stdout": "ano\n",
+        "visible": true
+      },
+      {
+        "input": "5\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      },
+      {
+        "input": "25\n",
+        "expected_stdout": "nie\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Byť v intervale znamená splniť obe hranice naraz.",
+      "Použi and alebo 10 <= n <= 20.",
+      "or je vhodné skôr pre hodnoty mimo intervalu."
+    ],
+    "concepts": [
+      "debugging",
+      "and/or"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Veľmi dôležitá diagnostika chápania intervalov."
+  },
+  {
+    "id": "L2-P02",
+    "level": 2,
+    "title": "Predict: elif zastaví ďalšie vetvy",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "x = 12\nif x > 5:\n    print(\"A\")\nelif x > 10:\n    print(\"B\")\nelse:\n    print(\"C\")\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "A\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "if je pravdivé, elif sa už neskúša.",
+      "Aj keď x > 10, prvá pravdivá vetva vyhrá.",
+      "Výstup je iba A."
+    ],
+    "concepts": [
+      "elif",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Ukazuje, že elif nie je samostatné druhé if."
+  },
+  {
+    "id": "L2-P03",
+    "level": 2,
+    "title": "Predict: and a or",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "n = 6\nif n > 0 and n % 2 == 0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "ano\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Skontroluj obe časti podmienky.",
+      "6 je kladné a párne.",
+      "Preto sa vykoná prvá vetva."
+    ],
+    "concepts": [
+      "and",
+      "modulo",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Krátke sledovanie zloženej podmienky."
   }
 ]

@@ -7,9 +7,21 @@
     "mode": "solve",
     "starter_code": "def abs_val(n):\n    # doplň\n    return 0\n\nn = int(input())\nprint(abs_val(n))\n",
     "tests": [
-      { "input": "-7\n", "expected_stdout": "7\n", "visible": true },
-      { "input": "0\n", "expected_stdout": "0\n", "visible": false },
-      { "input": "9\n", "expected_stdout": "9\n", "visible": false }
+      {
+        "input": "-7\n",
+        "expected_stdout": "7\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "expected_stdout": "9\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Ak n < 0, vráť -n.",
@@ -25,9 +37,21 @@
     "mode": "solve",
     "starter_code": "def is_prime(n):\n    # doplň\n    return False\n\nn = int(input())\nprint('PRIME' if is_prime(n) else 'NOT')\n",
     "tests": [
-      { "input": "7\n", "expected_stdout": "PRIME\n", "visible": true },
-      { "input": "1\n", "expected_stdout": "NOT\n", "visible": false },
-      { "input": "9\n", "expected_stdout": "NOT\n", "visible": false }
+      {
+        "input": "7\n",
+        "expected_stdout": "PRIME\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "NOT\n",
+        "visible": false
+      },
+      {
+        "input": "9\n",
+        "expected_stdout": "NOT\n",
+        "visible": false
+      }
     ],
     "hints": [
       "n<=1 nie je prvočíslo.",
@@ -43,9 +67,21 @@
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\nop = input().strip()\n# doplň\n",
     "tests": [
-      { "input": "2\n3\n+\n", "expected_stdout": "5\n", "visible": true },
-      { "input": "10\n4\n-\n", "expected_stdout": "6\n", "visible": false },
-      { "input": "6\n7\n*\n", "expected_stdout": "42\n", "visible": false }
+      {
+        "input": "2\n3\n+\n",
+        "expected_stdout": "5\n",
+        "visible": true
+      },
+      {
+        "input": "10\n4\n-\n",
+        "expected_stdout": "6\n",
+        "visible": false
+      },
+      {
+        "input": "6\n7\n*\n",
+        "expected_stdout": "42\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi if/elif podľa op.",
@@ -69,8 +105,16 @@
       }
     ],
     "tests": [
-      { "input": "5\n", "expected_stdout": "10\n", "visible": true },
-      { "input": "-2\n", "expected_stdout": "-4\n", "visible": false }
+      {
+        "input": "5\n",
+        "expected_stdout": "10\n",
+        "visible": true
+      },
+      {
+        "input": "-2\n",
+        "expected_stdout": "-4\n",
+        "visible": false
+      }
     ],
     "hints": [
       "return je návratová hodnota funkcie.",
@@ -86,8 +130,16 @@
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
     "tests": [
-      { "input": "5\n1\n-2\n7\n7\n0\n", "expected_stdout": "-2\n7\n13\n", "visible": true },
-      { "input": "1\n42\n", "expected_stdout": "42\n42\n42\n", "visible": false }
+      {
+        "input": "5\n1\n-2\n7\n7\n0\n",
+        "expected_stdout": "-2\n7\n13\n",
+        "visible": true
+      },
+      {
+        "input": "1\n42\n",
+        "expected_stdout": "42\n42\n42\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Načítaj prvé číslo a nastav min/max/sum.",
@@ -103,12 +155,506 @@
     "mode": "predict",
     "starter_code": "def f(x):\n    return x + 1\n\nprint(f(2))\n",
     "tests": [
-      { "input": "", "expected_stdout": "3\n", "visible": true }
+      {
+        "input": "",
+        "expected_stdout": "3\n",
+        "visible": true
+      }
     ],
     "hints": [
       "f(2) vráti 3.",
       "print vypíše návratovú hodnotu.",
       "Výstup: 3."
     ]
+  },
+  {
+    "id": "L6-005",
+    "level": 6,
+    "title": "Funkcia: štvorec",
+    "statement": "Doplň funkciu stvorec(n), ktorá vráti n na druhú. Potom načítaj číslo a vypíš výsledok volania funkcie.",
+    "mode": "solve",
+    "starter_code": "def stvorec(n):\n    # TODO\n    return 0\n\nn = int(input())\nprint(stvorec(n))\n",
+    "tests": [
+      {
+        "input": "5\n",
+        "expected_stdout": "25\n",
+        "visible": true
+      },
+      {
+        "input": "-3\n",
+        "expected_stdout": "9\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Funkcia má vrátiť hodnotu, nie ju iba vypísať.",
+      "Druhá mocnina je n*n alebo n**2.",
+      "return n*n"
+    ],
+    "concepts": [
+      "function",
+      "return"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Jednoduchá návratová hodnota."
+  },
+  {
+    "id": "L6-006",
+    "level": 6,
+    "title": "Funkcia: je_parne",
+    "statement": "Doplň funkciu je_parne(n), ktorá vráti True, ak je n párne, inak False. Program načíta n a vypíše návratovú hodnotu.",
+    "mode": "solve",
+    "starter_code": "def je_parne(n):\n    # TODO\n    return False\n\nn = int(input())\nprint(je_parne(n))\n",
+    "tests": [
+      {
+        "input": "4\n",
+        "expected_stdout": "True\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "False\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "True\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Párnosť: n % 2 == 0.",
+      "Výraz s == už sám vracia True/False.",
+      "return n % 2 == 0"
+    ],
+    "concepts": [
+      "function",
+      "boolean",
+      "modulo"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Učí vracanie boolean hodnoty."
+  },
+  {
+    "id": "L6-007",
+    "level": 6,
+    "title": "Funkcia: väčšie z dvoch",
+    "statement": "Doplň funkciu vacsie(a,b), ktorá vráti väčšie z dvoch čísel.",
+    "mode": "solve",
+    "starter_code": "def vacsie(a, b):\n    # TODO\n    return a\n\na = int(input())\nb = int(input())\nprint(vacsie(a,b))\n",
+    "tests": [
+      {
+        "input": "5\n9\n",
+        "expected_stdout": "9\n",
+        "visible": true
+      },
+      {
+        "input": "7\n2\n",
+        "expected_stdout": "7\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi if a > b.",
+      "V jednej vetve return a, v druhej return b.",
+      "Môžeš použiť aj max(a,b)."
+    ],
+    "concepts": [
+      "function",
+      "if",
+      "return"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Funkcia s vetvením."
+  },
+  {
+    "id": "L6-008",
+    "level": 6,
+    "title": "Funkcia: počet samohlások",
+    "statement": "Doplň funkciu pocet_samohlasok(text), ktorá vráti počet a,e,i,o,u v texte.",
+    "mode": "solve",
+    "starter_code": "def pocet_samohlasok(text):\n    pocet = 0\n    # TODO\n    return pocet\n\ntext = input()\nprint(pocet_samohlasok(text))\n",
+    "tests": [
+      {
+        "input": "python\n",
+        "expected_stdout": "1\n",
+        "visible": true
+      },
+      {
+        "input": "informatika\n",
+        "expected_stdout": "5\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prejdi text po znakoch.",
+      "Ak znak in \"aeiou\", zvýš pocet.",
+      "Na konci return pocet."
+    ],
+    "concepts": [
+      "function",
+      "for string",
+      "counter"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Funkcia obsahujúca cyklus a akumulátor."
+  },
+  {
+    "id": "L6-009",
+    "level": 6,
+    "title": "Funkcia: súčet zoznamu",
+    "statement": "Doplň funkciu sucet(cisla), ktorá vráti súčet čísel v zozname. Program načíta riadok čísel, vytvorí zoznam a vypíše výsledok.",
+    "mode": "solve",
+    "starter_code": "def sucet(cisla):\n    s = 0\n    # TODO\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
+    "tests": [
+      {
+        "input": "1 2 3\n",
+        "expected_stdout": "6\n",
+        "visible": true
+      },
+      {
+        "input": "-1 5 0\n",
+        "expected_stdout": "4\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Funkcia dostane už hotový zoznam.",
+      "Prejdi ho cyklom alebo použi sum.",
+      "Vráť s, nie print(s) vo funkcii."
+    ],
+    "concepts": [
+      "function",
+      "list",
+      "accumulator"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Oddeľuje vstup od výpočtovej funkcie."
+  },
+  {
+    "id": "L6-010",
+    "level": 6,
+    "title": "Funkcia: bezpečné delenie",
+    "statement": "Doplň funkciu del(a,b), ktorá vráti a/b. Ak b je 0, vráti text \"chyba\".",
+    "mode": "solve",
+    "starter_code": "def del(a, b):\n    # TODO\n    return 0\n\na = float(input())\nb = float(input())\nprint(del(a,b))\n",
+    "tests": [
+      {
+        "input": "6\n2\n",
+        "expected_stdout": "3.0\n",
+        "visible": true
+      },
+      {
+        "input": "5\n0\n",
+        "expected_stdout": "chyba\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Najprv otestuj b == 0.",
+      "Pri nule return \"chyba\".",
+      "Inak return a / b."
+    ],
+    "concepts": [
+      "function",
+      "guard clause"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Ukazuje včasný return pre špeciálny prípad."
+  },
+  {
+    "id": "L6-011",
+    "level": 6,
+    "title": "Funkcia: normalizuj meno",
+    "statement": "Doplň funkciu normalizuj(meno), ktorá odstráni medzery na okrajoch a vráti meno s prvým písmenom veľkým a ostatnými malými.",
+    "mode": "solve",
+    "starter_code": "def normalizuj(meno):\n    # TODO\n    return meno\n\nmeno = input()\nprint(normalizuj(meno))\n",
+    "tests": [
+      {
+        "input": "  jURAJ  \n",
+        "expected_stdout": "Juraj\n",
+        "visible": true
+      },
+      {
+        "input": "eva\n",
+        "expected_stdout": "Eva\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "strip() odstráni okrajové medzery.",
+      "capitalize() upraví prvé písmeno.",
+      "Môžeš reťaziť metódy: meno.strip().capitalize()."
+    ],
+    "concepts": [
+      "function",
+      "string methods"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Praktická transformácia textu."
+  },
+  {
+    "id": "L6-012",
+    "level": 6,
+    "title": "Funkcia: cenník",
+    "statement": "Doplň funkciu cena(kusy), ktorá vráti kusy*5. Ak je kusov aspoň 10, uplatní zľavu 20 percent.",
+    "mode": "solve",
+    "starter_code": "def cena(kusy):\n    # TODO\n    return 0\n\nkusy = int(input())\nprint(cena(kusy))\n",
+    "tests": [
+      {
+        "input": "3\n",
+        "expected_stdout": "15\n",
+        "visible": true
+      },
+      {
+        "input": "10\n",
+        "expected_stdout": "40.0\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Základ je kusy * 5.",
+      "Ak kusy >= 10, vráť základ * 0.8.",
+      "Inak vráť základ."
+    ],
+    "concepts": [
+      "function",
+      "if",
+      "business rule"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Reálny pravidlový výpočet."
+  },
+  {
+    "id": "L6-013",
+    "level": 6,
+    "title": "Funkcia: formátuj iniciály",
+    "statement": "Doplň funkciu inicialy(meno, priezvisko), ktorá vráti iniciály vo formáte M.P.",
+    "mode": "solve",
+    "starter_code": "def inicialy(meno, priezvisko):\n    # TODO\n    return \"\"\n\nmeno = input()\npriezvisko = input()\nprint(inicialy(meno, priezvisko))\n",
+    "tests": [
+      {
+        "input": "Juraj\nĎurnek\n",
+        "expected_stdout": "J.Ď.\n",
+        "visible": true
+      },
+      {
+        "input": "Eva\nNová\n",
+        "expected_stdout": "E.N.\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prvý znak je [0].",
+      "Spoj prvé znaky a bodky.",
+      "return meno[0] + \".\" + priezvisko[0] + \".\""
+    ],
+    "concepts": [
+      "function",
+      "string indexing"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Jednoduchá funkcia s dvomi parametrami."
+  },
+  {
+    "id": "L6-014",
+    "level": 6,
+    "title": "Funkcia: filtrovací limit",
+    "statement": "Doplň funkciu nad_limit(cisla, limit), ktorá vráti počet čísel väčších ako limit.",
+    "mode": "solve",
+    "starter_code": "def nad_limit(cisla, limit):\n    pocet = 0\n    # TODO\n    return pocet\n\ncisla = [int(x) for x in input().split()]\nlimit = int(input())\nprint(nad_limit(cisla, limit))\n",
+    "tests": [
+      {
+        "input": "1 5 9 2\n4\n",
+        "expected_stdout": "2\n",
+        "visible": true
+      },
+      {
+        "input": "10 10 9\n10\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prejdi zoznam.",
+      "Ak x > limit, zvýš počítadlo.",
+      "Väčšie ako neznamená väčšie alebo rovné."
+    ],
+    "concepts": [
+      "function",
+      "list",
+      "filter count"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Kontroluje presnosť porovnania > vs >=."
+  },
+  {
+    "id": "L6-015",
+    "level": 6,
+    "title": "Mini menu: pozdrav alebo koniec",
+    "statement": "Program načíta príkaz. Ak je \"pozdrav\", vypíše \"Ahoj!\". Ak je \"koniec\", vypíše \"Koniec.\". Inak vypíše \"Neznamy prikaz.\". Použi funkciu spracuj(prikaz).",
+    "mode": "solve",
+    "starter_code": "def spracuj(prikaz):\n    # TODO\n    return \"\"\n\nprikaz = input()\nprint(spracuj(prikaz))\n",
+    "tests": [
+      {
+        "input": "pozdrav\n",
+        "expected_stdout": "Ahoj!\n",
+        "visible": true
+      },
+      {
+        "input": "koniec\n",
+        "expected_stdout": "Koniec.\n",
+        "visible": false
+      },
+      {
+        "input": "test\n",
+        "expected_stdout": "Neznamy prikaz.\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Funkcia má vrátiť text podľa príkazu.",
+      "Použi if/elif/else.",
+      "Hlavný program iba načíta a vypíše výsledok."
+    ],
+    "concepts": [
+      "function",
+      "menu",
+      "separation"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Prechod k CLI architektúre: spracovanie príkazu oddelené od I/O."
+  },
+  {
+    "id": "L6-F02",
+    "level": 6,
+    "title": "Fix: return je príliš skoro",
+    "statement": "Funkcia má spočítať súčet zoznamu, ale skončí po prvom prvku. Oprav ju.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "return vnútri cyklu",
+        "misconceptionTag": "early_return",
+        "code": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n        return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "1 2 3\n",
+        "expected_stdout": "6\n",
+        "visible": true
+      },
+      {
+        "input": "5 5 5\n",
+        "expected_stdout": "15\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "return ukončí funkciu okamžite.",
+      "Má byť až po skončení cyklu.",
+      "Posuň return s mimo cyklu."
+    ],
+    "concepts": [
+      "debugging",
+      "return",
+      "loop"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Jedna z najčastejších chýb pri funkciách s cyklom."
+  },
+  {
+    "id": "L6-F03",
+    "level": 6,
+    "title": "Fix: zabudnutý parameter",
+    "statement": "Funkcia má vrátiť pozdrav pre meno, ale používa globálnu premennú a je zle navrhnutá. Oprav ju tak, aby meno bolo parameter.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Spolieha sa na premennú mimo funkcie",
+        "misconceptionTag": "global_dependency",
+        "code": "def pozdrav():\n    return 'Ahoj, ' + meno\n\nmeno = input()\nprint(pozdrav())\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "Eva\n",
+        "expected_stdout": "Ahoj, Eva\n",
+        "visible": true
+      },
+      {
+        "input": "Juraj\n",
+        "expected_stdout": "Ahoj, Juraj\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Funkcia má dostať meno ako parameter.",
+      "def pozdrav(meno): ...",
+      "Potom volaj pozdrav(meno)."
+    ],
+    "concepts": [
+      "debugging",
+      "parameters"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Učí čisté funkcie a nezávislosť od globálneho stavu."
+  },
+  {
+    "id": "L6-P02",
+    "level": 6,
+    "title": "Predict: dva returny",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "def test(x):\n    if x > 0:\n        return \"plus\"\n    return \"nie plus\"\n\nprint(test(3))\nprint(test(-1))\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "plus\nnie plus\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Pri x=3 sa vykoná prvý return.",
+      "Pri x=-1 sa prvý return preskočí.",
+      "Každé volanie funkcie začína od začiatku."
+    ],
+    "concepts": [
+      "return",
+      "if",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Sleduje tok funkcie s viacerými returnmi."
+  },
+  {
+    "id": "L6-P03",
+    "level": 6,
+    "title": "Predict: lokálna premenná",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "def pridaj(x):\n    x = x + 1\n    return x\n\nx = 5\ny = pridaj(x)\nprint(x)\nprint(y)\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "5\n6\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Parameter x vo funkcii je lokálna premenná.",
+      "Pôvodné x mimo funkcie sa nezmení.",
+      "y dostane návratovú hodnotu."
+    ],
+    "concepts": [
+      "local variable",
+      "function call"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Upevňuje rozdiel medzi argumentom a lokálnou premennou."
   }
 ]

@@ -7,8 +7,16 @@
     "mode": "solve",
     "starter_code": "s = input()\nprint()\n",
     "tests": [
-      { "input": "Ahoj\n", "expected_stdout": "4\n", "visible": true },
-      { "input": "\n", "expected_stdout": "0\n", "visible": false }
+      {
+        "input": "Ahoj\n",
+        "expected_stdout": "4\n",
+        "visible": true
+      },
+      {
+        "input": "\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi len(s).",
@@ -24,8 +32,16 @@
     "mode": "solve",
     "starter_code": "s = input()\n# doplň\n",
     "tests": [
-      { "input": "abc\n", "expected_stdout": "ac\n", "visible": true },
-      { "input": "Z\n", "expected_stdout": "ZZ\n", "visible": false }
+      {
+        "input": "abc\n",
+        "expected_stdout": "ac\n",
+        "visible": true
+      },
+      {
+        "input": "Z\n",
+        "expected_stdout": "ZZ\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Prvý znak je s[0].",
@@ -41,8 +57,16 @@
     "mode": "solve",
     "starter_code": "text = input()\n# doplň\n",
     "tests": [
-      { "input": "Ahoj svet\n", "expected_stdout": "2\n", "visible": true },
-      { "input": "Python je super\n", "expected_stdout": "3\n", "visible": false }
+      {
+        "input": "Ahoj svet\n",
+        "expected_stdout": "2\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "expected_stdout": "3\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi split().",
@@ -58,8 +82,16 @@
     "mode": "solve",
     "starter_code": "text = input()\n# doplň\n",
     "tests": [
-      { "input": "Ahoj svet\n", "expected_stdout": "svet Ahoj\n", "visible": true },
-      { "input": "ja mam rad python\n", "expected_stdout": "python rad mam ja\n", "visible": false }
+      {
+        "input": "Ahoj svet\n",
+        "expected_stdout": "svet Ahoj\n",
+        "visible": true
+      },
+      {
+        "input": "ja mam rad python\n",
+        "expected_stdout": "python rad mam ja\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Rozdeľ: words = text.split()",
@@ -89,8 +121,16 @@
       }
     ],
     "tests": [
-      { "input": "a b c\n", "expected_stdout": "a-b-c\n", "visible": true },
-      { "input": "Python je super\n", "expected_stdout": "Python-je-super\n", "visible": false }
+      {
+        "input": "a b c\n",
+        "expected_stdout": "a-b-c\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "expected_stdout": "Python-je-super\n",
+        "visible": false
+      }
     ],
     "hints": [
       "split() robí zo stringu list.",
@@ -106,12 +146,602 @@
     "mode": "predict",
     "starter_code": "s = 'abcdef'\nprint(s[1:4])\n",
     "tests": [
-      { "input": "", "expected_stdout": "bcd\n", "visible": true }
+      {
+        "input": "",
+        "expected_stdout": "bcd\n",
+        "visible": true
+      }
     ],
     "hints": [
       "Slicing s[a:b] berie a..b-1.",
       "Indexy 1,2,3 sú b,c,d.",
       "Výstup je bcd."
     ]
+  },
+  {
+    "id": "L5-005",
+    "level": 5,
+    "title": "Druhý znak",
+    "statement": "Na vstupe je text s dĺžkou aspoň 2. Vypíš jeho druhý znak.",
+    "mode": "solve",
+    "starter_code": "text = input()\nprint()\n",
+    "tests": [
+      {
+        "input": "python\n",
+        "expected_stdout": "y\n",
+        "visible": true
+      },
+      {
+        "input": "ab\n",
+        "expected_stdout": "b\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Indexovanie začína od 0.",
+      "Druhý znak má index 1.",
+      "Riešenie: print(text[1])"
+    ],
+    "concepts": [
+      "indexing",
+      "string"
+    ],
+    "difficulty": 1,
+    "teacher_comment": "Upevňuje nulový index."
+  },
+  {
+    "id": "L5-006",
+    "level": 5,
+    "title": "Bez prvého znaku",
+    "statement": "Na vstupe je text. Vypíš text bez prvého znaku.",
+    "mode": "solve",
+    "starter_code": "text = input()\nprint()\n",
+    "tests": [
+      {
+        "input": "python\n",
+        "expected_stdout": "ython\n",
+        "visible": true
+      },
+      {
+        "input": "Ahoj\n",
+        "expected_stdout": "hoj\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi slicing od indexu 1.",
+      "text[1:] znamená od druhého znaku po koniec.",
+      "Riešenie: print(text[1:])"
+    ],
+    "concepts": [
+      "slicing"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Základný rez od začiatku/bez začiatku."
+  },
+  {
+    "id": "L5-007",
+    "level": 5,
+    "title": "Prvé tri znaky",
+    "statement": "Na vstupe je text. Vypíš jeho prvé tri znaky.",
+    "mode": "solve",
+    "starter_code": "text = input()\nprint()\n",
+    "tests": [
+      {
+        "input": "program\n",
+        "expected_stdout": "pro\n",
+        "visible": true
+      },
+      {
+        "input": "abcde\n",
+        "expected_stdout": "abc\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Horná hranica slicingu sa nezahŕňa.",
+      "Prvé tri znaky sú text[:3].",
+      "Riešenie: print(text[:3])"
+    ],
+    "concepts": [
+      "slicing"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Cvičí exkluzívnu hornú hranicu."
+  },
+  {
+    "id": "L5-008",
+    "level": 5,
+    "title": "Každý druhý znak",
+    "statement": "Na vstupe je text. Vypíš každý druhý znak od začiatku.",
+    "mode": "solve",
+    "starter_code": "text = input()\nprint()\n",
+    "tests": [
+      {
+        "input": "abcdef\n",
+        "expected_stdout": "ace\n",
+        "visible": true
+      },
+      {
+        "input": "python\n",
+        "expected_stdout": "pto\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Slicing má tvar start:end:krok.",
+      "Krok 2 vyberie každý druhý znak.",
+      "Riešenie: print(text[::2])"
+    ],
+    "concepts": [
+      "slicing step"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Rozširuje slicing o krok."
+  },
+  {
+    "id": "L5-009",
+    "level": 5,
+    "title": "Otoč text",
+    "statement": "Na vstupe je text. Vypíš ho odzadu.",
+    "mode": "solve",
+    "starter_code": "text = input()\nprint()\n",
+    "tests": [
+      {
+        "input": "abc\n",
+        "expected_stdout": "cba\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "expected_stdout": "joha\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Slicing s krokom -1 otočí text.",
+      "Použi text[::-1].",
+      "Riešenie: print(text[::-1])"
+    ],
+    "concepts": [
+      "slicing negative step"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Pythonovská skratka pre reverz."
+  },
+  {
+    "id": "L5-010",
+    "level": 5,
+    "title": "Slová na riadkoch",
+    "statement": "Na vstupe je veta. Vypíš každé slovo na samostatný riadok.",
+    "mode": "solve",
+    "starter_code": "veta = input()\nslova = veta.split()\n",
+    "tests": [
+      {
+        "input": "Ahoj svet Python\n",
+        "expected_stdout": "Ahoj\nsvet\nPython\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "split() rozdelí vetu na slová.",
+      "Prejdi zoznam slov cyklom.",
+      "Každé slovo vypíš."
+    ],
+    "concepts": [
+      "split",
+      "for list"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Praktická práca so zoznamom slov."
+  },
+  {
+    "id": "L5-011",
+    "level": 5,
+    "title": "Prvé slovo",
+    "statement": "Na vstupe je veta aspoň s jedným slovom. Vypíš prvé slovo.",
+    "mode": "solve",
+    "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
+    "tests": [
+      {
+        "input": "dobré ráno trieda\n",
+        "expected_stdout": "dobré\n",
+        "visible": true
+      },
+      {
+        "input": "Python\n",
+        "expected_stdout": "Python\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "split() vráti zoznam slov.",
+      "Prvý prvok má index 0.",
+      "Riešenie: print(slova[0])"
+    ],
+    "concepts": [
+      "split",
+      "list indexing"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Most medzi reťazcom a zoznamom."
+  },
+  {
+    "id": "L5-012",
+    "level": 5,
+    "title": "Posledné slovo",
+    "statement": "Na vstupe je veta. Vypíš posledné slovo.",
+    "mode": "solve",
+    "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
+    "tests": [
+      {
+        "input": "dnes sa učíme Python\n",
+        "expected_stdout": "Python\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "expected_stdout": "ahoj\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Posledný prvok má index -1.",
+      "Použi slova[-1].",
+      "Riešenie: print(slova[-1])"
+    ],
+    "concepts": [
+      "negative index",
+      "split"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Upevňuje záporné indexy."
+  },
+  {
+    "id": "L5-013",
+    "level": 5,
+    "title": "Spoj slov pomlčkou",
+    "statement": "Na vstupe je veta. Vypíš jej slová spojené pomlčkou.",
+    "mode": "solve",
+    "starter_code": "veta = input()\nslova = veta.split()\nprint()\n",
+    "tests": [
+      {
+        "input": "a b c\n",
+        "expected_stdout": "a-b-c\n",
+        "visible": true
+      },
+      {
+        "input": "Python je super\n",
+        "expected_stdout": "Python-je-super\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "split() vytvorí zoznam.",
+      "\"-\".join(slova) spojí zoznam pomlčkou.",
+      "Pozor: join voláme na oddeľovači."
+    ],
+    "concepts": [
+      "split",
+      "join"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Kľúčová úloha pre pochopenie join."
+  },
+  {
+    "id": "L5-014",
+    "level": 5,
+    "title": "Zoznam čísel: súčet",
+    "statement": "Na vstupe je jeden riadok s celými číslami oddelenými medzerou. Vypíš ich súčet.",
+    "mode": "solve",
+    "starter_code": "riadok = input()\ncasti = riadok.split()\ns = 0\n",
+    "tests": [
+      {
+        "input": "1 2 3 4\n",
+        "expected_stdout": "10\n",
+        "visible": true
+      },
+      {
+        "input": "-1 5 0\n",
+        "expected_stdout": "4\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "split() dá textové časti.",
+      "Každú časť treba previesť cez int().",
+      "Pridávaj do súčtu."
+    ],
+    "concepts": [
+      "split",
+      "int conversion",
+      "accumulator"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Základ pre spracovanie údajov v jednom riadku."
+  },
+  {
+    "id": "L5-015",
+    "level": 5,
+    "title": "Zoznam čísel: maximum",
+    "statement": "Na vstupe je jeden riadok s celými číslami oddelenými medzerou. Vypíš najväčšie číslo.",
+    "mode": "solve",
+    "starter_code": "cisla = input().split()\n",
+    "tests": [
+      {
+        "input": "3 9 2 5\n",
+        "expected_stdout": "9\n",
+        "visible": true
+      },
+      {
+        "input": "-5 -2 -9\n",
+        "expected_stdout": "-2\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Textové hodnoty treba meniť na int.",
+      "Môžeš použiť cyklus a maximum.",
+      "Alebo max(map(int, cisla))."
+    ],
+    "concepts": [
+      "split",
+      "maximum"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Ukazuje, prečo nestačí max na reťazcoch."
+  },
+  {
+    "id": "L5-016",
+    "level": 5,
+    "title": "Vymeň prvý a posledný prvok",
+    "statement": "Na vstupe je riadok so slovami. Vymeň prvé a posledné slovo a vypíš celý zoznam slov spojený medzerami.",
+    "mode": "solve",
+    "starter_code": "slova = input().split()\n",
+    "tests": [
+      {
+        "input": "jeden dva tri\n",
+        "expected_stdout": "tri dva jeden\n",
+        "visible": true
+      },
+      {
+        "input": "A B\n",
+        "expected_stdout": "B A\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prvý index je 0, posledný -1.",
+      "Výmena: slova[0], slova[-1] = slova[-1], slova[0].",
+      "Na výpis použi \" \".join(slova)."
+    ],
+    "concepts": [
+      "list mutation",
+      "join"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Učí bezpečnú výmenu prvkov v zozname."
+  },
+  {
+    "id": "L5-017",
+    "level": 5,
+    "title": "Pridaj slovo na koniec",
+    "statement": "Na vstupe je veta a potom nové slovo. Pridaj slovo na koniec a vypíš vetu.",
+    "mode": "solve",
+    "starter_code": "slova = input().split()\nnové = input()\n",
+    "tests": [
+      {
+        "input": "učíme sa\nPython\n",
+        "expected_stdout": "učíme sa Python\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "append pridá prvok na koniec zoznamu.",
+      "Potom zoznam spoj medzerou.",
+      "slova.append(nové)"
+    ],
+    "concepts": [
+      "list append",
+      "join"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Jednoduchá modifikácia zoznamu."
+  },
+  {
+    "id": "L5-018",
+    "level": 5,
+    "title": "Odstráň prvé slovo",
+    "statement": "Na vstupe je veta aspoň s dvomi slovami. Odstráň prvé slovo a zvyšok vypíš ako vetu.",
+    "mode": "solve",
+    "starter_code": "slova = input().split()\n",
+    "tests": [
+      {
+        "input": "toto odstráň\n",
+        "expected_stdout": "odstráň\n",
+        "visible": true
+      },
+      {
+        "input": "A B C\n",
+        "expected_stdout": "B C\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Môžeš použiť slicing slova[1:].",
+      "Potom spoj pomocou \" \".join().",
+      "Nemeň znaky, ale slová."
+    ],
+    "concepts": [
+      "list slicing",
+      "join"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Rozlišuje slicing reťazca a slicing zoznamu."
+  },
+  {
+    "id": "L5-019",
+    "level": 5,
+    "title": "Len dlhé slová",
+    "statement": "Na vstupe je veta. Vypíš iba slová dlhšie ako 3 znaky, každé na vlastnom riadku.",
+    "mode": "solve",
+    "starter_code": "slova = input().split()\n",
+    "tests": [
+      {
+        "input": "ja mam rad python\n",
+        "expected_stdout": "python\n",
+        "visible": true
+      },
+      {
+        "input": "toto je test\n",
+        "expected_stdout": "toto\ntest\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prejdi zoznam slov.",
+      "Dĺžku zistíš cez len(slovo).",
+      "Podmienka je len(slovo) > 3."
+    ],
+    "concepts": [
+      "split",
+      "filter",
+      "len"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Filtrácia zoznamu podľa vlastnosti prvku."
+  },
+  {
+    "id": "L5-F02",
+    "level": 5,
+    "title": "Fix: max textov namiesto čísel",
+    "statement": "Kód má nájsť najväčšie číslo v riadku, ale porovnáva texty. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Neprevádza na int",
+        "misconceptionTag": "string_vs_number_order",
+        "code": "casti = input().split()\nprint(max(casti))\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "3 20 100\n",
+        "expected_stdout": "100\n",
+        "visible": true
+      },
+      {
+        "input": "9 10\n",
+        "expected_stdout": "10\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "split() dá reťazce.",
+      "Reťazce sa porovnávajú lexikograficky.",
+      "Preveď prvky na int."
+    ],
+    "concepts": [
+      "debugging",
+      "type conversion"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Kľúčová chyba pri práci s číslami v jednom riadku."
+  },
+  {
+    "id": "L5-F03",
+    "level": 5,
+    "title": "Fix: nemožno meniť znak reťazca",
+    "statement": "Kód má zmeniť prvý znak textu na X a vypísať výsledok, ale reťazce sú nemenné. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Pokúša sa meniť reťazec cez index",
+        "misconceptionTag": "string_immutable",
+        "code": "text = input()\ntext[0] = 'X'\nprint(text)\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "python\n",
+        "expected_stdout": "Xython\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "expected_stdout": "Xhoj\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Reťazec nemožno meniť priamo cez index.",
+      "Vytvor nový reťazec: \"X\" + text[1:].",
+      "Potom ho vypíš."
+    ],
+    "concepts": [
+      "debugging",
+      "immutability",
+      "slicing"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Dôležitá diferencia medzi reťazcom a zoznamom."
+  },
+  {
+    "id": "L5-P02",
+    "level": 5,
+    "title": "Predict: indexy",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "text = \"python\"\nprint(text[0])\nprint(text[-1])\nprint(text[1:4])\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "p\nn\nyth\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "text[0] je prvý znak.",
+      "text[-1] je posledný znak.",
+      "text[1:4] obsahuje indexy 1,2,3."
+    ],
+    "concepts": [
+      "indexing",
+      "slicing",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Krátke sledovanie indexov a rezu."
+  },
+  {
+    "id": "L5-P03",
+    "level": 5,
+    "title": "Predict: split a join",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "slova = \"a b c\".split()\nslova.append(\"d\")\nprint(\"-\".join(slova))\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "a-b-c-d\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "split vytvorí zoznam troch slov.",
+      "append pridá d.",
+      "join ich spojí pomlčkou."
+    ],
+    "concepts": [
+      "split",
+      "append",
+      "join"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Spája tri základné operácie so zoznamom slov."
   }
 ]

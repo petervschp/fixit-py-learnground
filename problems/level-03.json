@@ -7,7 +7,11 @@
     "mode": "solve",
     "starter_code": "# doplň\n",
     "tests": [
-      { "input": "", "expected_stdout": "apple\nbanana\nkiwi\n", "visible": true }
+      {
+        "input": "",
+        "expected_stdout": "apple\nbanana\nkiwi\n",
+        "visible": true
+      }
     ],
     "hints": [
       "Použi: for x in 'apple','banana','kiwi':",
@@ -23,9 +27,21 @@
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
     "tests": [
-      { "input": "5\n", "expected_stdout": "15\n", "visible": true },
-      { "input": "1\n", "expected_stdout": "1\n", "visible": false },
-      { "input": "10\n", "expected_stdout": "55\n", "visible": false }
+      {
+        "input": "5\n",
+        "expected_stdout": "15\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      },
+      {
+        "input": "10\n",
+        "expected_stdout": "55\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi range(1, n+1).",
@@ -41,8 +57,16 @@
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
     "tests": [
-      { "input": "10\n", "expected_stdout": "3\n", "visible": true },
-      { "input": "3\n", "expected_stdout": "1\n", "visible": false }
+      {
+        "input": "10\n",
+        "expected_stdout": "3\n",
+        "visible": true
+      },
+      {
+        "input": "3\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Prechádzaj 1..n.",
@@ -66,8 +90,16 @@
       }
     ],
     "tests": [
-      { "input": "5\n", "expected_stdout": "15\n", "visible": true },
-      { "input": "1\n", "expected_stdout": "1\n", "visible": false }
+      {
+        "input": "5\n",
+        "expected_stdout": "15\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
     ],
     "hints": [
       "range(a,b) ide po b-1.",
@@ -83,8 +115,16 @@
     "mode": "solve",
     "starter_code": "s = input()\n# doplň\n",
     "tests": [
-      { "input": "abc\n", "expected_stdout": "a\nb\nc\n", "visible": true },
-      { "input": "Ahoj\n", "expected_stdout": "A\nh\no\nj\n", "visible": false }
+      {
+        "input": "abc\n",
+        "expected_stdout": "a\nb\nc\n",
+        "visible": true
+      },
+      {
+        "input": "Ahoj\n",
+        "expected_stdout": "A\nh\no\nj\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi: for ch in s:",
@@ -100,12 +140,517 @@
     "mode": "predict",
     "starter_code": "s = 0\nfor i in range(3):\n    s += i\nprint(s)\n",
     "tests": [
-      { "input": "", "expected_stdout": "3\n", "visible": true }
+      {
+        "input": "",
+        "expected_stdout": "3\n",
+        "visible": true
+      }
     ],
     "hints": [
       "range(3) dá i = 0,1,2.",
       "Súčet 0+1+2 = 3.",
       "Výstup je 3."
     ]
+  },
+  {
+    "id": "L3-005",
+    "level": 3,
+    "title": "Vypíš 1 až n",
+    "statement": "Na vstupe je n. Vypíš čísla od 1 po n, každé na vlastnom riadku.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nfor i in range(...):\n    print(i)\n",
+    "tests": [
+      {
+        "input": "4\n",
+        "expected_stdout": "1\n2\n3\n4\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "range(1, n+1) obsahuje aj n.",
+      "range končí pred hornou hranicou.",
+      "Riešenie: for i in range(1,n+1)."
+    ],
+    "concepts": [
+      "for",
+      "range",
+      "off-by-one"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Základná úloha na range a hornú hranicu."
+  },
+  {
+    "id": "L3-006",
+    "level": 3,
+    "title": "Vypíš párne do n",
+    "statement": "Na vstupe je n. Vypíš všetky párne čísla od 2 po n vrátane, každé na vlastnom riadku.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "8\n",
+        "expected_stdout": "2\n4\n6\n8\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "2\n4\n6\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "range môže mať krok 2.",
+      "Začni na 2.",
+      "Horná hranica bude n+1."
+    ],
+    "concepts": [
+      "range step",
+      "for"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Precvičuje tretí parameter range."
+  },
+  {
+    "id": "L3-007",
+    "level": 3,
+    "title": "Súčet párnych do n",
+    "statement": "Na vstupe je n. Vypíš súčet všetkých párnych čísel od 2 po n vrátane.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\ns = 0\n",
+    "tests": [
+      {
+        "input": "8\n",
+        "expected_stdout": "20\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "12\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi akumulátor s = 0.",
+      "V cykle pridávaj párne hodnoty.",
+      "Po cykle vypíš s."
+    ],
+    "concepts": [
+      "accumulator",
+      "range step"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Prehlbuje prácu s akumulátorom."
+  },
+  {
+    "id": "L3-008",
+    "level": 3,
+    "title": "Počet samohlások",
+    "statement": "Na vstupe je slovo bez diakritiky. Vypíš počet znakov a, e, i, o, u.",
+    "mode": "solve",
+    "starter_code": "text = input()\npocet = 0\n",
+    "tests": [
+      {
+        "input": "python\n",
+        "expected_stdout": "1\n",
+        "visible": true
+      },
+      {
+        "input": "informatika\n",
+        "expected_stdout": "5\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prejdi text po znakoch.",
+      "Podmienka môže byť znak in \"aeiou\".",
+      "Pri zhode zvýš počítadlo."
+    ],
+    "concepts": [
+      "for string",
+      "counter",
+      "membership"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Kombinuje iteráciu reťazca a počítadlo."
+  },
+  {
+    "id": "L3-009",
+    "level": 3,
+    "title": "Najväčšie z n čísel",
+    "statement": "Na prvom riadku je n, potom nasleduje n celých čísel. Vypíš najväčšie z nich.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nmaximum = int(input())\n",
+    "tests": [
+      {
+        "input": "4\n3\n9\n2\n5\n",
+        "expected_stdout": "9\n",
+        "visible": true
+      },
+      {
+        "input": "3\n-5\n-2\n-9\n",
+        "expected_stdout": "-2\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prvé číslo môžeš použiť ako počiatočné maximum.",
+      "Potom načítaj ešte n-1 čísel.",
+      "Ak je nové číslo väčšie, prepíš maximum."
+    ],
+    "concepts": [
+      "loop",
+      "maximum"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Dôležitý vzor hľadania maxima bez použitia zoznamu."
+  },
+  {
+    "id": "L3-010",
+    "level": 3,
+    "title": "Faktoriál",
+    "statement": "Na vstupe je n >= 0. Vypíš n! Pre n=0 vypíš 1.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nf = 1\n",
+    "tests": [
+      {
+        "input": "5\n",
+        "expected_stdout": "120\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Faktoriál násobí čísla 1..n.",
+      "Začni s f = 1.",
+      "Použi range(1,n+1)."
+    ],
+    "concepts": [
+      "accumulator",
+      "multiplication"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Násobiaci akumulátor; dobrý kontrast k súčtu."
+  },
+  {
+    "id": "L3-011",
+    "level": 3,
+    "title": "Násobilka",
+    "statement": "Na vstupe je číslo n. Vypíš jeho násobky n*1 až n*10, každý na vlastnom riadku.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "3\n",
+        "expected_stdout": "3\n6\n9\n12\n15\n18\n21\n24\n27\n30\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Cyklus i od 1 po 10.",
+      "Vypíš n*i.",
+      "range(1,11) dá 1 až 10."
+    ],
+    "concepts": [
+      "for",
+      "multiplication table"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Automatizuje opakovaný výpočet."
+  },
+  {
+    "id": "L3-012",
+    "level": 3,
+    "title": "Reťazec odzadu bez slicing-u",
+    "statement": "Na vstupe je text. Vypíš jeho znaky odzadu, každý na vlastnom riadku. Nepouži slicing [::-1].",
+    "mode": "solve",
+    "starter_code": "text = input()\n",
+    "tests": [
+      {
+        "input": "abc\n",
+        "expected_stdout": "c\nb\na\n",
+        "visible": true
+      },
+      {
+        "input": "ahoj\n",
+        "expected_stdout": "j\no\nh\na\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Index posledného znaku je len(text)-1.",
+      "range môže ísť nadol s krokom -1.",
+      "range(len(text)-1, -1, -1)"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\[\\s*::\\s*-1\\s*\\]",
+          "message": "V tejto úlohe nepoužívaj slicing [::-1]; precvičujeme cyklus odzadu."
+        }
+      ]
+    },
+    "concepts": [
+      "indexing",
+      "range negative step"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Precvičuje indexy a spätný range."
+  },
+  {
+    "id": "L3-013",
+    "level": 3,
+    "title": "Súčet cifier textu",
+    "statement": "Na vstupe je reťazec zložený iba z číslic. Vypíš súčet jeho cifier.",
+    "mode": "solve",
+    "starter_code": "text = input()\ns = 0\n",
+    "tests": [
+      {
+        "input": "1234\n",
+        "expected_stdout": "10\n",
+        "visible": true
+      },
+      {
+        "input": "9005\n",
+        "expected_stdout": "14\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Každý znak je textová cifra.",
+      "Preveď znak na int.",
+      "Pridaj do akumulátora."
+    ],
+    "concepts": [
+      "for string",
+      "int conversion",
+      "digits"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Silný most medzi reťazcom a číselným spracovaním."
+  },
+  {
+    "id": "L3-014",
+    "level": 3,
+    "title": "Počet výskytov znaku",
+    "statement": "Na vstupe je text a potom jeden znak. Vypíš, koľkokrát sa znak v texte nachádza.",
+    "mode": "solve",
+    "starter_code": "text = input()\nhladany = input()\npocet = 0\n",
+    "tests": [
+      {
+        "input": "banana\na\n",
+        "expected_stdout": "3\n",
+        "visible": true
+      },
+      {
+        "input": "python\nz\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Prejdi všetky znaky textu.",
+      "Ak znak == hladany, zvýš počítadlo.",
+      "Na konci vypíš pocet."
+    ],
+    "concepts": [
+      "counter",
+      "string"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Základný vzor počítania výskytov."
+  },
+  {
+    "id": "L3-015",
+    "level": 3,
+    "title": "Hviezdičkový riadok",
+    "statement": "Na vstupe je n. Vypíš jeden riadok s n hviezdičkami.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nriadok = \"\"\n",
+    "tests": [
+      {
+        "input": "5\n",
+        "expected_stdout": "*****\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "*\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Môžeš skladať reťazec v cykle.",
+      "Alebo použiť \"*\" * n.",
+      "Ak chceš cyklus: riadok += \"*\"."
+    ],
+    "concepts": [
+      "string accumulation"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Ukazuje skladanie reťazca aj jednoduchšiu pythonovskú alternatívu."
+  },
+  {
+    "id": "L3-016",
+    "level": 3,
+    "title": "Stupne hviezdičiek",
+    "statement": "Na vstupe je n. Vypíš riadky s 1 až n hviezdičkami.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "4\n",
+        "expected_stdout": "*\n**\n***\n****\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Vonkajší cyklus i od 1 po n.",
+      "Riadok môže byť \"*\" * i.",
+      "range(1,n+1)."
+    ],
+    "concepts": [
+      "nested thinking",
+      "string repetition"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Príprava na vnorené cykly bez nutnosti vnoreného cyklu."
+  },
+  {
+    "id": "L3-017",
+    "level": 3,
+    "title": "Dvojice i j",
+    "statement": "Na vstupe je n. Vypíš všetky dvojice i-j pre i od 1 po n a j od 1 po 2, každú na vlastnom riadku vo formáte i-j.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\n",
+    "tests": [
+      {
+        "input": "3\n",
+        "expected_stdout": "1-1\n1-2\n2-1\n2-2\n3-1\n3-2\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Použi vnorený cyklus.",
+      "Vonkajší cyklus je i.",
+      "Vnútorný cyklus je j od 1 po 2."
+    ],
+    "concepts": [
+      "nested loops"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Prvá explicitná úloha na vnorené cykly a poradie výstupu."
+  },
+  {
+    "id": "L3-F02",
+    "level": 3,
+    "title": "Fix: počítadlo sa nuluje v cykle",
+    "statement": "Kód má spočítať počet písmen a v texte, ale vždy vypíše nesprávne číslo. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Nuluje počítadlo vnútri cyklu",
+        "misconceptionTag": "counter_scope",
+        "code": "text = input()\nfor znak in text:\n    pocet = 0\n    if znak == 'a':\n        pocet += 1\nprint(pocet)\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "banana\n",
+        "expected_stdout": "3\n",
+        "visible": true
+      },
+      {
+        "input": "aaaa\n",
+        "expected_stdout": "4\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Počítadlo sa má nastaviť na 0 pred cyklom.",
+      "V cykle ho iba zvyšuj.",
+      "Ak ho nuluješ v cykle, stratíš predchádzajúce nálezy."
+    ],
+    "concepts": [
+      "debugging",
+      "counter"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Veľmi častá chyba pri akumulátoroch."
+  },
+  {
+    "id": "L3-F03",
+    "level": 3,
+    "title": "Fix: nesprávny krok range",
+    "statement": "Kód má vypísať párne čísla od 2 po n, ale nevypíše všetky správne hodnoty. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Začína od nuly",
+        "misconceptionTag": "range_start",
+        "code": "n = int(input())\nfor i in range(0, n, 2):\n    print(i)\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "8\n",
+        "expected_stdout": "2\n4\n6\n8\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "2\n4\n6\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Má sa začať na 2, nie na 0.",
+      "Horná hranica musí byť n+1.",
+      "Použi range(2, n+1, 2)."
+    ],
+    "concepts": [
+      "debugging",
+      "range"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Precvičuje tri časti range naraz."
+  },
+  {
+    "id": "L3-P02",
+    "level": 3,
+    "title": "Predict: vnorený cyklus",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "for i in range(1, 3):\n    for j in range(1, 4):\n        print(i, j)\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Vonkajší cyklus ide i=1, potom i=2.",
+      "Pre každé i prebehne celý vnútorný cyklus.",
+      "print(i, j) vloží medzi hodnoty medzeru."
+    ],
+    "concepts": [
+      "nested loops",
+      "trace"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Dôležité sledovanie poradia vnorených cyklov."
   }
 ]

@@ -7,8 +7,16 @@
     "mode": "solve",
     "starter_code": "n = int(input())\n# doplň\n",
     "tests": [
-      { "input": "3\n", "expected_stdout": "3\n2\n1\n", "visible": true },
-      { "input": "1\n", "expected_stdout": "1\n", "visible": false }
+      {
+        "input": "3\n",
+        "expected_stdout": "3\n2\n1\n",
+        "visible": true
+      },
+      {
+        "input": "1\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi while n > 0.",
@@ -24,8 +32,16 @@
     "mode": "solve",
     "starter_code": "s = 0\n# doplň\n",
     "tests": [
-      { "input": "5\n-2\n7\n0\n", "expected_stdout": "10\n", "visible": true },
-      { "input": "0\n", "expected_stdout": "0\n", "visible": false }
+      {
+        "input": "5\n-2\n7\n0\n",
+        "expected_stdout": "10\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi while True a break.",
@@ -41,8 +57,16 @@
     "mode": "solve",
     "starter_code": "s = 0\n# doplň\n",
     "tests": [
-      { "input": "3\n-5\n2\n0\n", "expected_stdout": "5\n", "visible": true },
-      { "input": "-1\n-2\n0\n", "expected_stdout": "0\n", "visible": false }
+      {
+        "input": "3\n-5\n2\n0\n",
+        "expected_stdout": "5\n",
+        "visible": true
+      },
+      {
+        "input": "-1\n-2\n0\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi while True.",
@@ -66,7 +90,11 @@
       }
     ],
     "tests": [
-      { "input": "2\n", "expected_stdout": "2\n1\ndone\n", "visible": true }
+      {
+        "input": "2\n",
+        "expected_stdout": "2\n1\ndone\n",
+        "visible": true
+      }
     ],
     "hints": [
       "V cykle sa musí meniť podmienková premenná.",
@@ -82,8 +110,16 @@
     "mode": "solve",
     "starter_code": "a = int(input())\nb = int(input())\n# doplň\n",
     "tests": [
-      { "input": "12\n18\n", "expected_stdout": "6\n", "visible": true },
-      { "input": "20\n5\n", "expected_stdout": "5\n", "visible": false }
+      {
+        "input": "12\n18\n",
+        "expected_stdout": "6\n",
+        "visible": true
+      },
+      {
+        "input": "20\n5\n",
+        "expected_stdout": "5\n",
+        "visible": false
+      }
     ],
     "hints": [
       "Použi while b != 0.",
@@ -99,12 +135,465 @@
     "mode": "predict",
     "starter_code": "for i in range(5):\n    if i == 3:\n        break\n    print(i)\n",
     "tests": [
-      { "input": "", "expected_stdout": "0\n1\n2\n", "visible": true }
+      {
+        "input": "",
+        "expected_stdout": "0\n1\n2\n",
+        "visible": true
+      }
     ],
     "hints": [
       "i ide 0..4.",
       "Pri i==3 sa breakne a 3 sa nevypíše.",
       "Výstup: 0,1,2."
     ]
+  },
+  {
+    "id": "L4-005",
+    "level": 4,
+    "title": "Počítaj do n pomocou while",
+    "statement": "Na vstupe je n. Pomocou while vypíš čísla od 1 po n.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\ni = 1\nwhile ...:\n    print(i)\n    ...\n",
+    "tests": [
+      {
+        "input": "4\n",
+        "expected_stdout": "1\n2\n3\n4\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Začni i = 1.",
+      "Podmienka je i <= n.",
+      "V tele cyklu nezabudni i += 1."
+    ],
+    "concepts": [
+      "while",
+      "counter"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Základný riadený while cyklus."
+  },
+  {
+    "id": "L4-006",
+    "level": 4,
+    "title": "Počet cifier čísla",
+    "statement": "Na vstupe je kladné celé číslo. Vypíš počet jeho cifier.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\npocet = 0\n",
+    "tests": [
+      {
+        "input": "12345\n",
+        "expected_stdout": "5\n",
+        "visible": true
+      },
+      {
+        "input": "7\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Opakovane del n //= 10.",
+      "Po každom delení zvýš počítadlo.",
+      "Cyklus beží, kým n > 0."
+    ],
+    "concepts": [
+      "while",
+      "digits"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Klasický algoritmus rozkladu čísla."
+  },
+  {
+    "id": "L4-007",
+    "level": 4,
+    "title": "Súčet cifier čísla",
+    "statement": "Na vstupe je nezáporné celé číslo. Vypíš súčet jeho cifier.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\ns = 0\n",
+    "tests": [
+      {
+        "input": "1234\n",
+        "expected_stdout": "10\n",
+        "visible": true
+      },
+      {
+        "input": "9005\n",
+        "expected_stdout": "14\n",
+        "visible": false
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Posledná cifra je n % 10.",
+      "Potom odstráň poslednú cifru n //= 10.",
+      "Pri n=0 má výsledok ostať 0."
+    ],
+    "concepts": [
+      "while",
+      "modulo",
+      "digits"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Prehlbuje modulo a celočíselné delenie."
+  },
+  {
+    "id": "L4-008",
+    "level": 4,
+    "title": "Čítaj do STOP",
+    "statement": "Na vstupe sú riadky textu. Vypisuj ich, kým nepríde riadok STOP. STOP už nevypisuj.",
+    "mode": "solve",
+    "starter_code": "while True:\n    riadok = input()\n    ...\n",
+    "tests": [
+      {
+        "input": "ahoj\npython\nSTOP\nkoniec\n",
+        "expected_stdout": "ahoj\npython\n",
+        "visible": true
+      },
+      {
+        "input": "STOP\n",
+        "expected_stdout": "",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Použi while True a break.",
+      "Najprv načítaj riadok.",
+      "Ak riadok == \"STOP\", break."
+    ],
+    "concepts": [
+      "while True",
+      "break",
+      "sentinel"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Praktický sentinel vzor so slovom STOP."
+  },
+  {
+    "id": "L4-009",
+    "level": 4,
+    "title": "Priemer do nuly",
+    "statement": "Na vstupe sú celé čísla ukončené nulou. Vypíš priemer nenulových čísel. Ak nepríde žiadne nenulové číslo, vypíš 0.",
+    "mode": "solve",
+    "starter_code": "s = 0\npocet = 0\nwhile True:\n    x = int(input())\n    ...\n",
+    "tests": [
+      {
+        "input": "2\n4\n6\n0\n",
+        "expected_stdout": "4.0\n",
+        "visible": true
+      },
+      {
+        "input": "0\n",
+        "expected_stdout": "0\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Nula ukončuje vstup a nezapočíta sa.",
+      "Potrebuješ súčet aj počet.",
+      "Pred delením otestuj, či pocet > 0."
+    ],
+    "concepts": [
+      "sentinel",
+      "average",
+      "division by zero"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Náročnejší sentinel s ošetrením prázdneho vstupu."
+  },
+  {
+    "id": "L4-010",
+    "level": 4,
+    "title": "Hľadaj prvé záporné",
+    "statement": "Na vstupe je najprv n a potom n čísel. Vypíš prvé záporné číslo. Ak žiadne nie je, vypíš \"ziadne\".",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nnasiel = False\n",
+    "tests": [
+      {
+        "input": "5\n3\n2\n-7\n-1\n4\n",
+        "expected_stdout": "-7\n",
+        "visible": true
+      },
+      {
+        "input": "3\n1\n2\n3\n",
+        "expected_stdout": "ziadne\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Po nájdení prvého záporného môžeš použiť break.",
+      "Potrebuješ premennú nasiel.",
+      "Ak sa nič nenašlo, vypíš ziadne."
+    ],
+    "concepts": [
+      "break",
+      "flag"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Učí vzor hľadania s príznakom."
+  },
+  {
+    "id": "L4-011",
+    "level": 4,
+    "title": "Preskoč nuly",
+    "statement": "Na prvom riadku je n, potom n čísel. Vypíš len nenulové čísla, každé na vlastnom riadku.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nfor i in range(n):\n    x = int(input())\n    ...\n",
+    "tests": [
+      {
+        "input": "5\n3\n0\n-1\n0\n2\n",
+        "expected_stdout": "3\n-1\n2\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Ak x == 0, použi continue.",
+      "Nenulové čísla vypíš.",
+      "Dá sa to aj bez continue, ale tu ho precvičujeme."
+    ],
+    "concepts": [
+      "continue",
+      "for"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Jednoduché použitie continue."
+  },
+  {
+    "id": "L4-012",
+    "level": 4,
+    "title": "Heslo na tri pokusy",
+    "statement": "Na vstupe sú tri pokusy o heslo. Správne heslo je python. Ak ho používateľ zadá, vypíš \"vitaj\" a skonči. Ak nie, po troch pokusoch vypíš \"blokovane\".",
+    "mode": "solve",
+    "starter_code": "spravne = \"python\"\n",
+    "tests": [
+      {
+        "input": "java\npython\nnieco\n",
+        "expected_stdout": "vitaj\n",
+        "visible": true
+      },
+      {
+        "input": "a\nb\nc\n",
+        "expected_stdout": "blokovane\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Cyklus môže ísť najviac 3-krát.",
+      "Pri správnom hesle vypíš vitaj a break.",
+      "Po cykle potrebuješ vedieť, či sa heslo našlo."
+    ],
+    "concepts": [
+      "break",
+      "flag",
+      "limited attempts"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Reálny scenár kombinujúci for, break a príznak."
+  },
+  {
+    "id": "L4-013",
+    "level": 4,
+    "title": "Mocnina opakovaným násobením",
+    "statement": "Na vstupe sú celé čísla a a n >= 0. Vypíš a na n-tú bez použitia operátora **.",
+    "mode": "solve",
+    "starter_code": "a = int(input())\nn = int(input())\nvysledok = 1\n",
+    "tests": [
+      {
+        "input": "2\n5\n",
+        "expected_stdout": "32\n",
+        "visible": true
+      },
+      {
+        "input": "7\n0\n",
+        "expected_stdout": "1\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Začni výsledkom 1.",
+      "Násob a presne n-krát.",
+      "Nepouži **."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\*\\*",
+          "message": "V tejto úlohe nepoužívaj operátor **; precvičujeme opakovanie."
+        }
+      ]
+    },
+    "concepts": [
+      "loop",
+      "power"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Ukazuje algoritmickú náhradu za operátor mocniny."
+  },
+  {
+    "id": "L4-014",
+    "level": 4,
+    "title": "Najmenší deliteľ",
+    "statement": "Na vstupe je celé číslo n > 1. Vypíš jeho najmenšieho deliteľa väčšieho ako 1.",
+    "mode": "solve",
+    "starter_code": "n = int(input())\nd = 2\n",
+    "tests": [
+      {
+        "input": "15\n",
+        "expected_stdout": "3\n",
+        "visible": true
+      },
+      {
+        "input": "13\n",
+        "expected_stdout": "13\n",
+        "visible": false
+      },
+      {
+        "input": "49\n",
+        "expected_stdout": "7\n",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Skúšaj d od 2 vyššie.",
+      "Keď n % d == 0, našiel si deliteľa.",
+      "Môžeš použiť while a break."
+    ],
+    "concepts": [
+      "while",
+      "modulo",
+      "search"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Príprava na test prvočíselnosti a efektívnejšie vyhľadávanie."
+  },
+  {
+    "id": "L4-F02",
+    "level": 4,
+    "title": "Fix: break pred výpisom",
+    "statement": "Kód má čítať riadky do STOP a vypisovať iba riadky pred STOP. Teraz sa správa zle. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Vypíše STOP pred ukončením",
+        "misconceptionTag": "break_order",
+        "code": "while True:\n    riadok = input()\n    print(riadok)\n    if riadok == 'STOP':\n        break\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "a\nb\nSTOP\n",
+        "expected_stdout": "a\nb\n",
+        "visible": true
+      },
+      {
+        "input": "STOP\n",
+        "expected_stdout": "",
+        "visible": false
+      }
+    ],
+    "hints": [
+      "Najprv otestuj, či je riadok STOP.",
+      "Až potom vypisuj bežné riadky.",
+      "Poradie príkazov v cykle je rozhodujúce."
+    ],
+    "concepts": [
+      "debugging",
+      "break"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Ukazuje, že správny príkaz na nesprávnom mieste je stále chyba."
+  },
+  {
+    "id": "L4-F03",
+    "level": 4,
+    "title": "Fix: continue preskočí zvýšenie",
+    "statement": "Kód má prejsť čísla 1 až n a vypísať iba nepárne. Má však riziko nekonečného cyklu. Oprav ho.",
+    "mode": "fix",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "continue pred zmenou i",
+        "misconceptionTag": "continue_infinite_loop",
+        "code": "n = int(input())\ni = 1\nwhile i <= n:\n    if i % 2 == 0:\n        continue\n    print(i)\n    i += 1\n"
+      }
+    ],
+    "tests": [
+      {
+        "input": "5\n",
+        "expected_stdout": "1\n3\n5\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Pri while sa musí i zmeniť aj pred continue.",
+      "Jedna možnosť: zvýš i ešte pred continue.",
+      "Alebo použi if bez continue."
+    ],
+    "concepts": [
+      "debugging",
+      "continue",
+      "while"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Veľmi dobrá úloha na riziko nekonečného cyklu."
+  },
+  {
+    "id": "L4-P02",
+    "level": 4,
+    "title": "Predict: continue",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "for x in [1, 2, 3, 4]:\n    if x % 2 == 0:\n        continue\n    print(x)\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "1\n3\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Párne čísla preskočí continue.",
+      "Vypíšu sa iba nepárne.",
+      "Zoznam sa prejde celý."
+    ],
+    "concepts": [
+      "continue",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Krátke sledovanie continue."
+  },
+  {
+    "id": "L4-P03",
+    "level": 4,
+    "title": "Predict: break",
+    "statement": "Najprv tipni presný výstup programu. Potom uzamkni odhad a klikni Run.",
+    "mode": "predict",
+    "starter_code": "for x in [2, 4, 5, 6]:\n    if x % 2 == 1:\n        break\n    print(x)\n",
+    "tests": [
+      {
+        "input": "",
+        "expected_stdout": "2\n4\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Pri prvom nepárnom čísle cyklus skončí.",
+      "5 sa už nevypíše.",
+      "6 sa už ani nespracuje."
+    ],
+    "concepts": [
+      "break",
+      "trace"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Kontrast k continue."
   }
 ]

@@ -351,5 +351,1655 @@
       "Výsledok má vrátiť cez return (nie print).",
       "return 2*n"
     ]
+  },
+  {
+    "id": "L7-005",
+    "level": 7,
+    "title": "UI Mindset: is_even(n)",
+    "statement": "Napíš čistú funkciu is_even(n), ktorá vráti True, ak je n párne, inak False.",
+    "mode": "solve",
+    "starter_code": "def is_even(n):\n    # TODO\n    return False\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "is_even"
+      },
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected_return": true,
+          "visible": true
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected_return": true,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Nepoužívaj input ani print.",
+      "Párnosť: n % 2 == 0.",
+      "return n % 2 == 0"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "pure function",
+      "boolean",
+      "modulo"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-007",
+    "level": 7,
+    "title": "UI Mindset: clamp(value, low, high)",
+    "statement": "Napíš funkciu clamp(value, low, high), ktorá vráti value obmedzené do intervalu low..high.",
+    "mode": "solve",
+    "starter_code": "def clamp(value, low, high):\n    # TODO\n    return value\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "clamp"
+      },
+      "cases": [
+        {
+          "args": [
+            5,
+            0,
+            10
+          ],
+          "expected_return": 5,
+          "visible": true
+        },
+        {
+          "args": [
+            -3,
+            0,
+            10
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            15,
+            0,
+            10
+          ],
+          "expected_return": 10,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Ak je value menšie ako low, vráť low.",
+      "Ak je väčšie ako high, vráť high.",
+      "Inak vráť value."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "pure function",
+      "boundaries"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-008",
+    "level": 7,
+    "title": "UI Mindset: format_name(first, last)",
+    "statement": "Napíš funkciu format_name(first, last), ktorá vráti text \"Priezvisko, Meno\".",
+    "mode": "solve",
+    "starter_code": "def format_name(first, last):\n    # TODO\n    return \"\"\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "format_name"
+      },
+      "cases": [
+        {
+          "args": [
+            "Juraj",
+            "Ďurnek"
+          ],
+          "expected_return": "Ďurnek, Juraj",
+          "visible": true
+        },
+        {
+          "args": [
+            "Eva",
+            "Nová"
+          ],
+          "expected_return": "Nová, Eva",
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Parametre sú už texty.",
+      "Spoj ich v správnom poradí.",
+      "return last + \", \" + first"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "pure function",
+      "string formatting"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-009",
+    "level": 7,
+    "title": "UI Mindset: initials(full_name)",
+    "statement": "Napíš funkciu initials(full_name), ktorá z mena a priezviska vráti iniciály napr. \"J.D.\".",
+    "mode": "solve",
+    "starter_code": "def initials(full_name):\n    # TODO\n    return \"\"\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "initials"
+      },
+      "cases": [
+        {
+          "args": [
+            "Juraj Durnek"
+          ],
+          "expected_return": "J.D.",
+          "visible": true
+        },
+        {
+          "args": [
+            "Eva Nova"
+          ],
+          "expected_return": "E.N.",
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Rozdeľ full_name pomocou split().",
+      "Zober prvé písmeno z prvých dvoch slov.",
+      "Vráť s bodkami."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "split",
+      "string indexing",
+      "pure function"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-010",
+    "level": 7,
+    "title": "UI Mindset: count_long(words, min_len)",
+    "statement": "Napíš funkciu count_long(words, min_len), ktorá vráti počet slov dlhších alebo rovných min_len.",
+    "mode": "solve",
+    "starter_code": "def count_long(words, min_len):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "count_long"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              "ja",
+              "python",
+              "test"
+            ],
+            4
+          ],
+          "expected_return": 2,
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              "a",
+              "bb",
+              "ccc"
+            ],
+            2
+          ],
+          "expected_return": 2,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "words je zoznam slov.",
+      "Použi počítadlo.",
+      "Podmienka: len(w) >= min_len."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "list",
+      "counter",
+      "pure function"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-011",
+    "level": 7,
+    "title": "UI Mindset: map_double(nums)",
+    "statement": "Napíš funkciu map_double(nums), ktorá vráti nový zoznam dvojnásobkov. Pôvodný zoznam nesmie meniť.",
+    "mode": "solve",
+    "starter_code": "def map_double(nums):\n    # TODO\n    return []\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "map_double"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected_return": [
+            2,
+            4,
+            6
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              -1,
+              0,
+              5
+            ]
+          ],
+          "expected_return": [
+            -2,
+            0,
+            10
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam nums."
+      }
+    },
+    "hints": [
+      "Vytvor nový zoznam.",
+      "List comprehension: [2*x for x in nums].",
+      "Nepoužívaj append do pôvodného nums."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "map",
+      "list comprehension",
+      "no mutation"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-012",
+    "level": 7,
+    "title": "UI Mindset: remove_empty(items)",
+    "statement": "Napíš funkciu remove_empty(items), ktorá vráti nový zoznam bez prázdnych reťazcov \"\".",
+    "mode": "solve",
+    "starter_code": "def remove_empty(items):\n    # TODO\n    return []\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "remove_empty"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              "a",
+              "",
+              "b",
+              ""
+            ]
+          ],
+          "expected_return": [
+            "a",
+            "b"
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              "",
+              "x"
+            ]
+          ],
+          "expected_return": [
+            "x"
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam items."
+      }
+    },
+    "hints": [
+      "Prejdi prvky zoznamu.",
+      "Nechaj iba prvky, ktoré nie sú \"\".",
+      "Vráť nový zoznam."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "filter",
+      "no mutation"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-013",
+    "level": 7,
+    "title": "UI Mindset: total_price(prices)",
+    "statement": "Napíš funkciu total_price(prices), ktorá vráti súčet cien v zozname.",
+    "mode": "solve",
+    "starter_code": "def total_price(prices):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "total_price"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              1.5,
+              2.0,
+              3.5
+            ]
+          ],
+          "expected_return": 7.0,
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              10,
+              0.5
+            ]
+          ],
+          "expected_return": 10.5,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Použi sum alebo cyklus.",
+      "Funkcia len vráti hodnotu.",
+      "Nepíš print."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "sum",
+      "pure function"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-014",
+    "level": 7,
+    "title": "UI Mindset: cart_total(items)",
+    "statement": "items je zoznam dvojíc [cena, kusy]. Vráť celkovú cenu nákupu.",
+    "mode": "solve",
+    "starter_code": "def cart_total(items):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "cart_total"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              [
+                2,
+                3
+              ],
+              [
+                5,
+                1
+              ]
+            ]
+          ],
+          "expected_return": 11,
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              [
+                1.5,
+                2
+              ],
+              [
+                10,
+                0
+              ]
+            ]
+          ],
+          "expected_return": 3.0,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Každá položka má cenu a počet kusov.",
+      "Sčítaj cena * kusy.",
+      "Vráť výsledok."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "list of lists",
+      "accumulator"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-015",
+    "level": 7,
+    "title": "UI Mindset: toggle(done)",
+    "statement": "Napíš funkciu toggle(done), ktorá vráti opačnú boolean hodnotu.",
+    "mode": "solve",
+    "starter_code": "def toggle(done):\n    # TODO\n    return done\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "toggle"
+      },
+      "cases": [
+        {
+          "args": [
+            true
+          ],
+          "expected_return": false,
+          "visible": true
+        },
+        {
+          "args": [
+            false
+          ],
+          "expected_return": true,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Opačná hodnota je not done.",
+      "Boolean netreba porovnávať s True.",
+      "return not done"
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "boolean",
+      "pure function"
+    ],
+    "difficulty": 1,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-016",
+    "level": 7,
+    "title": "UI Mindset: progress(done, total)",
+    "statement": "Napíš funkciu progress(done, total), ktorá vráti percento dokončenia. Ak total je 0, vráti 0.",
+    "mode": "solve",
+    "starter_code": "def progress(done, total):\n    # TODO\n    return 0\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "progress"
+      },
+      "cases": [
+        {
+          "args": [
+            5,
+            10
+          ],
+          "expected_return": 50.0,
+          "visible": true
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected_return": 0,
+          "visible": false
+        },
+        {
+          "args": [
+            3,
+            4
+          ],
+          "expected_return": 75.0,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Najprv ošetri total == 0.",
+      "Percento je done / total * 100.",
+      "Vráť číslo."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "guard clause",
+      "percentage"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-017",
+    "level": 7,
+    "title": "UI Mindset: validate_username(name)",
+    "statement": "Napíš funkciu validate_username(name), ktorá vráti True, ak má meno aspoň 3 znaky a neobsahuje medzeru.",
+    "mode": "solve",
+    "starter_code": "def validate_username(name):\n    # TODO\n    return False\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "validate_username"
+      },
+      "cases": [
+        {
+          "args": [
+            "juraj"
+          ],
+          "expected_return": true,
+          "visible": true
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected_return": false,
+          "visible": false
+        },
+        {
+          "args": [
+            "eva nova"
+          ],
+          "expected_return": false,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Dĺžka: len(name) >= 3.",
+      "Medzera nesmie byť v name.",
+      "Spoj podmienky pomocou and."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "validation",
+      "and",
+      "string membership"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-018",
+    "level": 7,
+    "title": "UI Mindset: add_item(items, item)",
+    "statement": "Napíš funkciu add_item(items, item), ktorá vráti nový zoznam s item pridaným na koniec. Pôvodný zoznam nesmie zmeniť.",
+    "mode": "solve",
+    "starter_code": "def add_item(items, item):\n    # TODO\n    return items\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "add_item"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ],
+            3
+          ],
+          "expected_return": [
+            1,
+            2,
+            3
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [],
+            "a"
+          ],
+          "expected_return": [
+            "a"
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam items."
+      }
+    },
+    "hints": [
+      "Nevracaj pôvodný zoznam po mutácii.",
+      "Použi items + [item].",
+      "Alebo skopíruj zoznam a pridaj prvok."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "immutability mindset",
+      "list copy"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-019",
+    "level": 7,
+    "title": "UI Mindset: update_score(scores, name, points)",
+    "statement": "scores je slovník. Vráť nový slovník, kde hráč name má skóre zvýšené o points. Pôvodný slovník nemeň.",
+    "mode": "solve",
+    "starter_code": "def update_score(scores, name, points):\n    # TODO\n    return scores\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "update_score"
+      },
+      "cases": [
+        {
+          "args": [
+            {
+              "Eva": 5
+            },
+            "Eva",
+            3
+          ],
+          "expected_return": {
+            "Eva": 8
+          },
+          "visible": true
+        },
+        {
+          "args": [
+            {},
+            "Juraj",
+            4
+          ],
+          "expected_return": {
+            "Juraj": 4
+          },
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný slovník scores."
+      }
+    },
+    "hints": [
+      "Vytvor kópiu slovníka: new = scores.copy().",
+      "Aktuálne skóre získaj cez get(name, 0).",
+      "Vráť nový slovník."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "dict",
+      "copy",
+      "no mutation"
+    ],
+    "difficulty": 5,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-020",
+    "level": 7,
+    "title": "UI Mindset: find_by_id(items, wanted_id)",
+    "statement": "items je zoznam slovníkov s kľúčom id. Vráť prvý slovník s daným id, alebo None.",
+    "mode": "solve",
+    "starter_code": "def find_by_id(items, wanted_id):\n    # TODO\n    return None\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "find_by_id"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "name": "A"
+              },
+              {
+                "id": 2,
+                "name": "B"
+              }
+            ],
+            2
+          ],
+          "expected_return": {
+            "id": 2,
+            "name": "B"
+          },
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1
+              }
+            ],
+            9
+          ],
+          "expected_return": null,
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Prejdi položky v items.",
+      "Ak item[\"id\"] == wanted_id, vráť item.",
+      "Ak sa nič nenájde, return None po cykle."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "list of dicts",
+      "search",
+      "early return"
+    ],
+    "difficulty": 5,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-021",
+    "level": 7,
+    "title": "UI Mindset: summarize_tasks(tasks)",
+    "statement": "tasks je zoznam slovníkov s kľúčom done. Vráť slovník {\"done\": počet hotových, \"total\": počet všetkých}.",
+    "mode": "solve",
+    "starter_code": "def summarize_tasks(tasks):\n    # TODO\n    return {}\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "summarize_tasks"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              {
+                "done": true
+              },
+              {
+                "done": false
+              },
+              {
+                "done": true
+              }
+            ]
+          ],
+          "expected_return": {
+            "done": 2,
+            "total": 3
+          },
+          "visible": true
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected_return": {
+            "done": 0,
+            "total": 0
+          },
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "total je len(tasks).",
+      "Spočítaj tasky, kde task[\"done\"] je True.",
+      "Vráť slovník s dvomi kľúčmi."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "dict",
+      "summary",
+      "UI state"
+    ],
+    "difficulty": 5,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-022",
+    "level": 7,
+    "title": "UI Mindset: next_level(xp)",
+    "statement": "Napíš funkciu next_level(xp), ktorá vráti \"beginner\" pre xp < 100, \"advanced\" pre xp < 500, inak \"expert\".",
+    "mode": "solve",
+    "starter_code": "def next_level(xp):\n    # TODO\n    return \"\"\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "next_level"
+      },
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected_return": "beginner",
+          "visible": true
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected_return": "advanced",
+          "visible": false
+        },
+        {
+          "args": [
+            500
+          ],
+          "expected_return": "expert",
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Použi if/elif/else.",
+      "Hranica 100 už nie je beginner.",
+      "Hranica 500 už je expert."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "classification",
+      "boundaries"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-023",
+    "level": 7,
+    "title": "UI Mindset: search_text(items, query)",
+    "statement": "items je zoznam textov. Vráť nový zoznam položiek, ktoré obsahujú query.",
+    "mode": "solve",
+    "starter_code": "def search_text(items, query):\n    # TODO\n    return []\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "search_text"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              "python",
+              "java",
+              "pyodide"
+            ],
+            "py"
+          ],
+          "expected_return": [
+            "python",
+            "pyodide"
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b"
+            ],
+            "x"
+          ],
+          "expected_return": [],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam items."
+      }
+    },
+    "hints": [
+      "Použi operátor in.",
+      "Vráť nový filtrovaný zoznam.",
+      "Nepoužívaj print."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "search",
+      "filter",
+      "no mutation"
+    ],
+    "difficulty": 4,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-024",
+    "level": 7,
+    "title": "UI Mindset: sort_names(names)",
+    "statement": "Napíš funkciu sort_names(names), ktorá vráti nový abecedne zoradený zoznam mien. Pôvodný zoznam nemeň.",
+    "mode": "solve",
+    "starter_code": "def sort_names(names):\n    # TODO\n    return names\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "sort_names"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              "Zuzana",
+              "Adam",
+              "Eva"
+            ]
+          ],
+          "expected_return": [
+            "Adam",
+            "Eva",
+            "Zuzana"
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a"
+            ]
+          ],
+          "expected_return": [
+            "a",
+            "b"
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ],
+        "message": "Funkcia nesmie meniť pôvodný zoznam names."
+      }
+    },
+    "hints": [
+      "sorted(names) vracia nový zoznam.",
+      "names.sort() mení pôvodný zoznam.",
+      "Použi return sorted(names)."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "sorting",
+      "no mutation"
+    ],
+    "difficulty": 3,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
+  },
+  {
+    "id": "L7-025",
+    "level": 7,
+    "title": "UI Mindset: render_badge(count)",
+    "statement": "Napíš funkciu render_badge(count), ktorá vráti \"\" pri count 0, inak vráti text v tvare \"(count)\".",
+    "mode": "solve",
+    "starter_code": "def render_badge(count):\n    # TODO\n    return \"\"\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "render_badge"
+      },
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected_return": "",
+          "visible": true
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected_return": "(3)",
+          "visible": false
+        },
+        {
+          "args": [
+            12
+          ],
+          "expected_return": "(12)",
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Ak count == 0, vráť prázdny text.",
+      "Inak použi f-string.",
+      "return f\"({count})\""
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "Nepoužívaj input(). Údaje prídu ako parameter."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "Nepoužívaj print() ako hlavný výstup. Funkcia má return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\bwhile\\s+True\\b",
+          "message": "Nepoužívaj while True v tomto type úlohy."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "concepts": [
+      "UI display",
+      "string formatting",
+      "conditional"
+    ],
+    "difficulty": 2,
+    "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   }
 ]
