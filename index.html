@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <title>FixIt – Python Learnground</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,7 +12,11 @@
   <div class="container">
     <header class="header">
       <h1>FixIt – Python Learnground</h1>
-      <p class="muted">Python judge + Fix/Predict + localStorage + export</p>
+      <p class="muted">kurátorské trasy + mikroobhajoba + anonymné zhrnutie / súkromná záloha</p>
+      <div id="pwaStatus" class="pwa-status pwa-idle" aria-live="polite">
+        <strong>Offline shell</strong>
+        <span>Pripravuje sa…</span>
+      </div>
     </header>
 
     <main id="app">
@@ -18,8 +24,7 @@
     </main>
   </div>
 
-  <!-- Pyodide MUST be loaded before app.js -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+  <!-- Pyodide sa načítava iba vo Web Workeri (py-worker.js), nie na hlavnom vlákne. -->
   <script type="module" src="app.js"></script>
 </body>
 </html>

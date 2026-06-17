@@ -34,7 +34,7 @@
       }
     ],
     "reference_solution": "n = int(input())\nwhile n > 0:\n    print(n)\n    n -= 1\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -51,7 +51,20 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "state_in_loop",
+    "concepts": [
+      "loop"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-002",
@@ -88,7 +101,7 @@
       }
     ],
     "reference_solution": "s = 0\nwhile True:\n    n = int(input())\n    if n == 0:\n        break\n    s += n\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -105,7 +118,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-003",
@@ -142,7 +165,7 @@
       }
     ],
     "reference_solution": "s = 0\nwhile True:\n    n = int(input())\n    if n == 0:\n        break\n    if n < 0:\n        continue\n    s += n\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -159,7 +182,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-F01",
@@ -199,7 +232,7 @@
       }
     ],
     "reference_solution": "n = int(input())\nwhile n > 0:\n    print(n)\n    n -= 1\nprint('done')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -216,7 +249,19 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "concepts": [
+      "debugging"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-004",
@@ -258,7 +303,7 @@
       }
     ],
     "reference_solution": "a = int(input())\nb = int(input())\nwhile b != 0:\n    a, b = b, a % b\nprint(a)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -275,7 +320,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-P01",
@@ -296,7 +351,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -313,7 +368,18 @@
         }
       ]
     },
-    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
+    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   },
   {
     "id": "L4-005",
@@ -328,8 +394,9 @@
       "V tele cyklu nezabudni i += 1."
     ],
     "concepts": [
-      "while",
-      "counter"
+      "counter",
+      "loop",
+      "while"
     ],
     "difficulty": 2,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -351,7 +418,7 @@
       }
     ],
     "reference_solution": "n = int(input())\ni = 1\nwhile i <= n:\n    print(i)\n    i += 1\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -367,7 +434,17 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_in_loop",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-006",
@@ -382,8 +459,9 @@
       "Cyklus beží, kým n > 0."
     ],
     "concepts": [
-      "while",
-      "digits"
+      "condition",
+      "digits",
+      "while"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -410,7 +488,7 @@
       }
     ],
     "reference_solution": "n = int(input())\npocet = 0\nwhile n > 0:\n    pocet += 1\n    n //= 10\nprint(pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -426,7 +504,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "branching_state",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-007",
@@ -441,9 +526,10 @@
       "Pri n=0 má výsledok ostať 0."
     ],
     "concepts": [
-      "while",
+      "condition",
+      "digits",
       "modulo",
-      "digits"
+      "while"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -480,7 +566,7 @@
       }
     ],
     "reference_solution": "n = int(input())\ns = 0\nif n == 0:\n    print(0)\nelse:\n    while n > 0:\n        s += n % 10\n        n //= 10\n    print(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -496,7 +582,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "branching_state",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-008",
@@ -511,9 +604,10 @@
       "Ak riadok == \"STOP\", break."
     ],
     "concepts": [
-      "while True",
       "break",
-      "sentinel"
+      "program_reading",
+      "sentinel",
+      "while True"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -540,7 +634,7 @@
       }
     ],
     "reference_solution": "while True:\n    riadok = input()\n    if riadok == 'STOP':\n        break\n    print(riadok)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -556,7 +650,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-009",
@@ -571,9 +672,10 @@
       "Pred delením otestuj, či pocet > 0."
     ],
     "concepts": [
-      "sentinel",
       "average",
-      "division by zero"
+      "division by zero",
+      "program_reading",
+      "sentinel"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -600,7 +702,7 @@
       }
     ],
     "reference_solution": "s = 0\npocet = 0\nwhile True:\n    x = int(input())\n    if x == 0:\n        break\n    s += x\n    pocet += 1\nif pocet == 0:\n    print(0)\nelse:\n    print(s / pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -616,7 +718,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-010",
@@ -632,7 +741,8 @@
     ],
     "concepts": [
       "break",
-      "flag"
+      "flag",
+      "program_reading"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -659,7 +769,7 @@
       }
     ],
     "reference_solution": "n = int(input())\nnasiel = False\nfor i in range(n):\n    x = int(input())\n    if x < 0 and not nasiel:\n        print(x)\n        nasiel = True\n        break\nif not nasiel:\n    print('ziadne')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -675,7 +785,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-011",
@@ -691,7 +808,8 @@
     ],
     "concepts": [
       "continue",
-      "for"
+      "for",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -713,7 +831,7 @@
       }
     ],
     "reference_solution": "n = int(input())\nfor i in range(n):\n    x = int(input())\n    if x == 0:\n        continue\n    print(x)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -729,7 +847,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-012",
@@ -746,7 +871,8 @@
     "concepts": [
       "break",
       "flag",
-      "limited attempts"
+      "limited attempts",
+      "program_reading"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -773,7 +899,7 @@
       }
     ],
     "reference_solution": "spravne = \"python\"\nnasiel = False\nfor i in range(3):\n    pokus = input()\n    if pokus == spravne:\n        print('vitaj')\n        nasiel = True\n        break\nif not nasiel:\n    print('blokovane')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -789,7 +915,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-013",
@@ -825,7 +958,8 @@
     },
     "concepts": [
       "loop",
-      "power"
+      "power",
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -857,7 +991,17 @@
       }
     ],
     "reference_solution": "a = int(input())\nn = int(input())\nvysledok = 1\nfor i in range(n):\n    vysledok *= a\nprint(vysledok)\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-014",
@@ -872,9 +1016,10 @@
       "Môžeš použiť while a break."
     ],
     "concepts": [
-      "while",
       "modulo",
-      "search"
+      "program_reading",
+      "search",
+      "while"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -911,7 +1056,7 @@
       }
     ],
     "reference_solution": "n = int(input())\nd = 2\nwhile n % d != 0:\n    d += 1\nprint(d)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -927,7 +1072,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-F02",
@@ -950,8 +1102,8 @@
       "Poradie príkazov v cykle je rozhodujúce."
     ],
     "concepts": [
-      "debugging",
-      "break"
+      "break",
+      "debugging"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -978,7 +1130,7 @@
       }
     ],
     "reference_solution": "while True:\n    riadok = input()\n    if riadok == 'STOP':\n        break\n    print(riadok)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -994,7 +1146,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-F03",
@@ -1017,8 +1178,8 @@
       "Alebo použi if bez continue."
     ],
     "concepts": [
-      "debugging",
       "continue",
+      "debugging",
       "while"
     ],
     "difficulty": 4,
@@ -1041,7 +1202,7 @@
       }
     ],
     "reference_solution": "n = int(input())\ni = 1\nwhile i <= n:\n    if i % 2 == 1:\n        print(i)\n    i += 1\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1057,7 +1218,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L4-P02",
@@ -1073,6 +1243,8 @@
     ],
     "concepts": [
       "continue",
+      "dict_as_state",
+      "predict",
       "trace"
     ],
     "difficulty": 2,
@@ -1084,7 +1256,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1100,7 +1272,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   },
   {
     "id": "L4-P03",
@@ -1116,6 +1295,8 @@
     ],
     "concepts": [
       "break",
+      "dict_as_state",
+      "predict",
       "trace"
     ],
     "difficulty": 2,
@@ -1127,7 +1308,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1143,6 +1324,13 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   }
 ]

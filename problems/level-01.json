@@ -19,7 +19,7 @@
       }
     ],
     "reference_solution": "print('Ahoj, svet!')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -36,7 +36,36 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_start"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L1-002",
@@ -73,7 +102,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -90,7 +119,36 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_start"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L1-003",
@@ -132,7 +190,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nprint(n*2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -149,7 +207,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-F01",
@@ -194,7 +262,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -211,7 +279,38 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_start"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "concepts": [
+      "debugging"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L1-004",
@@ -248,7 +347,7 @@
       }
     ],
     "reference_solution": "a=float(input())\nb=float(input())\nprint((a+b)/2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -265,7 +364,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-P01",
@@ -287,7 +396,7 @@
       }
     ],
     "reference_solution": "x = 3\nx = x + 2\nprint(x)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -304,7 +413,37 @@
         }
       ]
     },
-    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "phaseTags": [
+      "Y1_citanie_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Kde bol stav programu a čo bolo iba vypísané?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L1-005",
@@ -321,6 +460,7 @@
     "concepts": [
       "input",
       "int",
+      "program_reading",
       "subtraction"
     ],
     "difficulty": 1,
@@ -348,7 +488,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a-b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -364,7 +504,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Precvičuje, že odčítanie nie je komutatívne a záleží na poradí vstupov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-006",
@@ -379,7 +526,8 @@
       "Riešenie: print(a*b*c)"
     ],
     "concepts": [
-      "multiplication"
+      "multiplication",
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Vhodné po súčte a rozdiele; kontroluje aj nulu a záporné čísla. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -411,7 +559,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nprint(a*b*c)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -427,7 +575,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Vhodné po súčte a rozdiele; kontroluje aj nulu a záporné čísla. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-007",
@@ -442,7 +597,8 @@
       "Riešenie: print(a % b)"
     ],
     "concepts": [
-      "modulo"
+      "modulo",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Základ pre párnosť, deliteľnosť a algoritmické myslenie. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -469,7 +625,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a%b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -485,7 +641,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Základ pre párnosť, deliteľnosť a algoritmické myslenie. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-008",
@@ -500,7 +663,8 @@
       "Riešenie: print(a // b)"
     ],
     "concepts": [
-      "integer division"
+      "integer division",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Dopĺňa modulo; žiaci vidia rozdiel medzi /, // a %. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -527,7 +691,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a//b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -543,7 +707,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Dopĺňa modulo; žiaci vidia rozdiel medzi /, // a %. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-009",
@@ -558,8 +729,9 @@
       "Riešenie: print(cena * pocet)"
     ],
     "concepts": [
-      "variables",
-      "multiplication"
+      "multiplication",
+      "program_reading",
+      "variables"
     ],
     "difficulty": 1,
     "teacher_comment": "Jednoduchý slovný kontext, ktorý núti mapovať význam na premenné. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -586,7 +758,7 @@
       }
     ],
     "reference_solution": "cena=int(input())\npocet=int(input())\nprint(cena*pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -602,7 +774,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Jednoduchý slovný kontext, ktorý núti mapovať význam na premenné. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-010",
@@ -618,7 +797,8 @@
     ],
     "concepts": [
       "formula",
-      "precedence"
+      "precedence",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Precvičuje preklad vzorca do výrazu a zátvorky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -645,7 +825,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(2*(a+b))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -661,7 +841,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Precvičuje preklad vzorca do výrazu a zátvorky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-011",
@@ -677,7 +864,8 @@
     ],
     "concepts": [
       "float",
-      "formula"
+      "formula",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Dobré na rozlíšenie int a float a akceptovanie výstupu typu 12.0. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -704,7 +892,7 @@
       }
     ],
     "reference_solution": "a=float(input())\nv=float(input())\nprint(a*v/2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -720,7 +908,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Dobré na rozlíšenie int a float a akceptovanie výstupu typu 12.0. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-012",
@@ -735,8 +930,9 @@
       "Riešenie: print(f\"Ahoj, {meno}!\")"
     ],
     "concepts": [
-      "string",
-      "f-string"
+      "f-string",
+      "program_reading",
+      "string"
     ],
     "difficulty": 1,
     "teacher_comment": "Prechod od čísel k textu a skladaniu výstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -763,7 +959,7 @@
       }
     ],
     "reference_solution": "meno=input()\nprint(\"Ahoj, \" + meno + \"!\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -779,7 +975,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Prechod od čísel k textu a skladaniu výstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-013",
@@ -795,7 +998,8 @@
     ],
     "concepts": [
       "input order",
-      "print"
+      "print",
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Výborné na pochopenie, že premenné si pamätajú hodnoty nezávisle od poradia výpisu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -817,7 +1021,7 @@
       }
     ],
     "reference_solution": "a=input()\nb=input()\nprint(b)\nprint(a)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -833,7 +1037,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Výborné na pochopenie, že premenné si pamätajú hodnoty nezávisle od poradia výpisu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-014",
@@ -848,6 +1059,7 @@
       "Riešenie: print(minuty * 60)"
     ],
     "concepts": [
+      "program_reading",
       "unit conversion"
     ],
     "difficulty": 1,
@@ -875,7 +1087,7 @@
       }
     ],
     "reference_solution": "m=int(input())\nprint(m*60)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -891,7 +1103,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Jednoduchý prevod jednotiek; vhodné aj pre slabších žiakov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-015",
@@ -907,6 +1126,7 @@
     ],
     "concepts": [
       "formula",
+      "program_reading",
       "unit conversion"
     ],
     "difficulty": 2,
@@ -934,7 +1154,7 @@
       }
     ],
     "reference_solution": "h=int(input())\nm=int(input())\nprint(h*60+m)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -950,7 +1170,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Kombinuje dve vstupné hodnoty do jedného výsledku. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-016",
@@ -966,7 +1193,8 @@
     ],
     "concepts": [
       "addition",
-      "negative numbers"
+      "negative numbers",
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Cvičí jednoduchý výraz aj so zápornou hodnotou. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -993,7 +1221,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nprint(n+10)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1009,7 +1237,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Cvičí jednoduchý výraz aj so zápornou hodnotou. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-017",
@@ -1024,7 +1259,8 @@
       "Riešenie: print(n**2)"
     ],
     "concepts": [
-      "power"
+      "power",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Ukazuje operátor ** a rozdiel medzi -4**2 a premennou n**2. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1051,7 +1287,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nprint(n*n)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1067,7 +1303,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Ukazuje operátor ** a rozdiel medzi -4**2 a premennou n**2. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-018",
@@ -1082,8 +1325,9 @@
       "Riešenie: print(n % 10)"
     ],
     "concepts": [
-      "modulo",
-      "digits"
+      "condition",
+      "digits",
+      "modulo"
     ],
     "difficulty": 2,
     "teacher_comment": "Pripravuje na prácu s ciframi a algoritmické rozklady čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1110,7 +1354,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nprint(n%10)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1126,7 +1370,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "branching_state",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Pripravuje na prácu s ciframi a algoritmické rozklady čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-019",
@@ -1142,7 +1393,8 @@
     ],
     "concepts": [
       "float",
-      "int conversion"
+      "int conversion",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Dôležité na pochopenie konverzie typov, nie zaokrúhľovania. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1169,7 +1421,7 @@
       }
     ],
     "reference_solution": "x=float(input())\nprint(int(x))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1185,7 +1437,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Dôležité na pochopenie konverzie typov, nie zaokrúhľovania. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-020",
@@ -1200,8 +1459,9 @@
       "Riešenie: print(\"*\"); print(\"**\"); print(\"***\")"
     ],
     "concepts": [
+      "exact output",
       "print",
-      "exact output"
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Cvičí presný výstup a nové riadky bez vstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1213,7 +1473,7 @@
       }
     ],
     "reference_solution": "print(\"*\")\nprint(\"**\")\nprint(\"***\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1229,7 +1489,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Cvičí presný výstup a nové riadky bez vstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-F02",
@@ -1280,7 +1547,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(2*(a+b))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1296,7 +1563,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Diagnostická úloha na jednu z najčastejších chýb vo vzorcoch. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-F03",
@@ -1347,7 +1623,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nprint(n*2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1361,6 +1637,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_citanie_stav"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Konfrontuje rozdiel medzi aritmetikou a operáciami s reťazcom. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Kde bol stav programu a čo bolo iba vypísané?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1378,6 +1682,8 @@
       "Najprv sa vypíše x, potom y."
     ],
     "concepts": [
+      "dict_as_state",
+      "predict",
       "trace",
       "variables"
     ],
@@ -1391,7 +1697,7 @@
       }
     ],
     "reference_solution": "x = 4\ny = x + 3\nx = y * 2\nprint(x)\nprint(y)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1405,6 +1711,33 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_citanie_stav",
+      "Y1_start"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Cvičí sledovanie stavu premenných. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1422,8 +1755,10 @@
       "Výstup nebude 5, ale 23."
     ],
     "concepts": [
-      "strings",
-      "prediction"
+      "dict_as_state",
+      "predict",
+      "prediction",
+      "strings"
     ],
     "difficulty": 2,
     "teacher_comment": "Pomáha odhaliť mylnú predstavu, že každé + je číselný súčet. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
@@ -1435,7 +1770,7 @@
       }
     ],
     "reference_solution": "a = \"2\"\nb = \"3\"\nprint(a + b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1449,6 +1784,32 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_start"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Pomáha odhaliť mylnú predstavu, že každé + je číselný súčet. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1467,7 +1828,8 @@
     ],
     "concepts": [
       "arithmetic",
-      "expression"
+      "expression",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1494,7 +1856,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a+b+2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1510,7 +1872,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-022",
@@ -1526,7 +1895,8 @@
     ],
     "concepts": [
       "arithmetic",
-      "expression"
+      "expression",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1553,7 +1923,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a-b+2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1569,7 +1939,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L1-023",
@@ -1585,7 +1962,8 @@
     ],
     "concepts": [
       "arithmetic",
-      "expression"
+      "expression",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1612,7 +1990,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nprint(a*b*2)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1628,6 +2006,13 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Variabilný tréning výrazu s dvomi vstupmi. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   }
 ]

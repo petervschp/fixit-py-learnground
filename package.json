@@ -1,0 +1,30 @@
+{
+  "name": "fixit-student-path",
+  "version": "0.9.0",
+  "private": false,
+  "type": "module",
+  "description": "Standalone local classroom Python practice app with curated Y1/Y2 learning paths, anonymous summaries, browser smoke tests, PWA/offline shell hardening, configurable Pyodide runtime base URL, and documented optional local vendor Pyodide deployment.",
+  "scripts": {
+    "audit": "node scripts/audit-level.mjs",
+    "validate": "node scripts/validate-fixit-content.mjs && node --check app.js && node --check storage.js && node --check py-worker.js && find src -maxdepth 1 -name \"*.js\" -print0 | xargs -0 -n1 node --check && npm run pwa:check",
+    "smoke:manual": "node scripts/print-smoke-test.mjs",
+    "smoke:browser": "node tests/browser-smoke.mjs",
+    "smoke:modules": "node tests/module-import-smoke.mjs",
+    "ci": "npm run validate && npm run audit && npm run smoke:modules && npm run smoke:browser && npm run smoke:local-pyodide && npm run release:check",
+    "release:check": "node scripts/check-release-package.mjs",
+    "release:zip": "bash scripts/make-release-zip.sh",
+    "smoke:browser:cdp": "node tests/browser-smoke.mjs",
+    "smoke:browser:playwright": "node tests/browser-smoke-playwright.mjs",
+    "pwa:check": "node scripts/check-pwa-cache-manifest.mjs",
+    "vendor:check": "node scripts/check-vendor-pyodide.mjs",
+    "smoke:local-pyodide": "node tests/local-pyodide-runtime-smoke.mjs"
+  },
+  "keywords": [
+    "education",
+    "python",
+    "pyodide",
+    "informatics",
+    "classroom"
+  ],
+  "license": "MIT"
+}

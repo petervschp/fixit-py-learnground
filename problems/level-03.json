@@ -19,7 +19,7 @@
       }
     ],
     "reference_solution": "for fruit in \"apple\", \"banana\", \"kiwi\":\n    print(fruit)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -36,7 +36,39 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "state_in_loop",
+    "concepts": [
+      "loop"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L3-002",
@@ -78,7 +110,7 @@
       }
     ],
     "reference_solution": "n=int(input())\ns=0\nfor i in range(1,n+1):\n    s+=i\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -95,7 +127,36 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L3-003",
@@ -132,7 +193,7 @@
       }
     ],
     "reference_solution": "n=int(input())\npocet=0\nfor i in range(1,n+1):\n    if i%3==0:\n        pocet+=1\nprint(pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -149,7 +210,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-F01",
@@ -194,7 +265,7 @@
       }
     ],
     "reference_solution": "n=int(input())\ns=0\nfor i in range(1,n+1):\n    s+=i\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -211,7 +282,38 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "concepts": [
+      "debugging"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L3-004",
@@ -248,7 +350,7 @@
       }
     ],
     "reference_solution": "s=input()\nfor znak in s:\n    print(znak)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -265,7 +367,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-P01",
@@ -287,7 +399,7 @@
       }
     ],
     "reference_solution": "s = 0\nfor i in range(3):\n    s += i\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -304,7 +416,37 @@
         }
       ]
     },
-    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "phaseTags": [
+      "Y1_citanie_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict"
+    ],
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Kde bol stav programu a čo bolo iba vypísané?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L3-005",
@@ -320,8 +462,9 @@
     ],
     "concepts": [
       "for",
-      "range",
-      "off-by-one"
+      "off-by-one",
+      "program_reading",
+      "range"
     ],
     "difficulty": 2,
     "teacher_comment": "Základná úloha na range a hornú hranicu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -348,7 +491,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    print(i)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -364,7 +507,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Základná úloha na range a hornú hranicu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-006",
@@ -379,8 +529,9 @@
       "Horná hranica bude n+1."
     ],
     "concepts": [
-      "range step",
-      "for"
+      "for",
+      "program_reading",
+      "range step"
     ],
     "difficulty": 2,
     "teacher_comment": "Precvičuje tretí parameter range. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -412,7 +563,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(2,n+1,2):\n    print(i)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -428,7 +579,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Precvičuje tretí parameter range. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-007",
@@ -444,6 +602,7 @@
     ],
     "concepts": [
       "accumulator",
+      "program_reading",
       "range step"
     ],
     "difficulty": 3,
@@ -471,7 +630,7 @@
       }
     ],
     "reference_solution": "n=int(input())\ns=0\nfor i in range(2,n+1,2):\n    s+=i\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -487,7 +646,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Prehlbuje prácu s akumulátorom. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-008",
@@ -502,9 +668,10 @@
       "Pri zhode zvýš počítadlo."
     ],
     "concepts": [
-      "for string",
       "counter",
-      "membership"
+      "for string",
+      "membership",
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Kombinuje iteráciu reťazca a počítadlo. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -531,7 +698,7 @@
       }
     ],
     "reference_solution": "slovo=input()\npocet=0\nfor z in slovo:\n    if z in \"aeiou\":\n        pocet+=1\nprint(pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -547,7 +714,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Kombinuje iteráciu reťazca a počítadlo. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-009",
@@ -563,7 +737,8 @@
     ],
     "concepts": [
       "loop",
-      "maximum"
+      "maximum",
+      "program_reading"
     ],
     "difficulty": 4,
     "teacher_comment": "Dôležitý vzor hľadania maxima bez použitia zoznamu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -590,7 +765,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nnaj=int(input())\nfor i in range(n-1):\n    x=int(input())\n    if x>naj:\n        naj=x\nprint(naj)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -606,7 +781,17 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Dôležitý vzor hľadania maxima bez použitia zoznamu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-010",
@@ -622,7 +807,8 @@
     ],
     "concepts": [
       "accumulator",
-      "multiplication"
+      "multiplication",
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Násobiaci akumulátor; dobrý kontrast k súčtu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -649,7 +835,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nvysledok=1\nfor i in range(1,n+1):\n    vysledok*=i\nprint(vysledok)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -665,7 +851,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Násobiaci akumulátor; dobrý kontrast k súčtu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-011",
@@ -681,7 +874,8 @@
     ],
     "concepts": [
       "for",
-      "multiplication table"
+      "multiplication table",
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Automatizuje opakovaný výpočet. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -703,7 +897,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(1,11):\n    print(n*i)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -719,7 +913,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Automatizuje opakovaný výpočet. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-012",
@@ -751,6 +952,7 @@
     },
     "concepts": [
       "indexing",
+      "program_reading",
       "range negative step"
     ],
     "difficulty": 4,
@@ -778,7 +980,14 @@
       }
     ],
     "reference_solution": "text=input()\nfor i in range(len(text)-1,-1,-1):\n    print(text[i])\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Precvičuje indexy a spätný range. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-013",
@@ -793,9 +1002,10 @@
       "Pridaj do akumulátora."
     ],
     "concepts": [
+      "condition",
+      "digits",
       "for string",
-      "int conversion",
-      "digits"
+      "int conversion"
     ],
     "difficulty": 3,
     "teacher_comment": "Silný most medzi reťazcom a číselným spracovaním. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -822,7 +1032,7 @@
       }
     ],
     "reference_solution": "s=input()\nsucet=0\nfor z in s:\n    sucet += int(z)\nprint(sucet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -838,7 +1048,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "branching_state",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Silný most medzi reťazcom a číselným spracovaním. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-014",
@@ -854,6 +1071,7 @@
     ],
     "concepts": [
       "counter",
+      "program_reading",
       "string"
     ],
     "difficulty": 2,
@@ -881,7 +1099,7 @@
       }
     ],
     "reference_solution": "text=input()\nznak=input()\npocet=0\nfor z in text:\n    if z==znak:\n        pocet += 1\nprint(pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -897,7 +1115,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Základný vzor počítania výskytov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-015",
@@ -912,6 +1137,7 @@
       "Ak chceš cyklus: riadok += \"*\"."
     ],
     "concepts": [
+      "program_reading",
       "string accumulation"
     ],
     "difficulty": 2,
@@ -939,7 +1165,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nriadok=\"\"\nfor i in range(n):\n    riadok += \"*\"\nprint(riadok)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -955,7 +1181,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Ukazuje skladanie reťazca aj jednoduchšiu pythonovskú alternatívu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-016",
@@ -971,6 +1204,7 @@
     ],
     "concepts": [
       "nested thinking",
+      "program_reading",
       "string repetition"
     ],
     "difficulty": 3,
@@ -993,7 +1227,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    print(\"*\"*i)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1009,7 +1243,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Príprava na vnorené cykly bez nutnosti vnoreného cyklu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-017",
@@ -1024,6 +1265,7 @@
       "Vnútorný cyklus je j od 1 po 2."
     ],
     "concepts": [
+      "loop",
       "nested loops"
     ],
     "difficulty": 4,
@@ -1046,7 +1288,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(1,n+1):\n    for j in range(1,3):\n        print(str(i)+\"-\"+str(j))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1062,7 +1304,17 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_in_loop",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Prvá explicitná úloha na vnorené cykly a poradie výstupu. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-F02",
@@ -1085,8 +1337,8 @@
       "Ak ho nuluješ v cykle, stratíš predchádzajúce nálezy."
     ],
     "concepts": [
-      "debugging",
-      "counter"
+      "counter",
+      "debugging"
     ],
     "difficulty": 3,
     "teacher_comment": "Veľmi častá chyba pri akumulátoroch. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1113,7 +1365,7 @@
       }
     ],
     "reference_solution": "text=input()\npocet=0\nfor znak in text:\n    if znak == \"a\":\n        pocet += 1\nprint(pocet)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1127,6 +1379,35 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_podmienky_cykly",
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Veľmi častá chyba pri akumulátoroch. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1153,6 +1434,7 @@
     ],
     "concepts": [
       "debugging",
+      "loop",
       "range"
     ],
     "difficulty": 3,
@@ -1180,7 +1462,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nfor i in range(2,n+1,2):\n    print(i)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1196,7 +1478,18 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_in_loop",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception",
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Precvičuje tri časti range naraz. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L3-P02",
@@ -1211,7 +1504,9 @@
       "print(i, j) vloží medzi hodnoty medzeru."
     ],
     "concepts": [
+      "dict_as_state",
       "nested loops",
+      "predict",
       "trace"
     ],
     "difficulty": 4,
@@ -1224,7 +1519,7 @@
       }
     ],
     "reference_solution": "for i in range(1, 3):\n    for j in range(1, 4):\n        print(i, j)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1240,6 +1535,13 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Dôležité sledovanie poradia vnorených cyklov. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
   }
 ]

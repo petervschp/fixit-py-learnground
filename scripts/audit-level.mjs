@@ -1,45 +1,70 @@
-import fs from 'node:fs';
+#!/usr/bin/env node
+import fs from "node:fs";
+import path from "node:path";
 
-const file = process.argv[2];
-if (!file) {
-  console.error('Použitie: node scripts/audit-level.mjs problems/level-06.json');
-  process.exit(1);
-}
+const root = process.cwd();
+const files = process.argv.slice(2).length
+  ? process.argv.slice(2)
+  : fs.readdirSync(path.join(root, "problems"))
+      .filter(x => /^level-\d+\.json$/.test(x))
+      .map(x => path.join("problems", x));
 
-const tasks = JSON.parse(fs.readFileSync(file, 'utf8'));
 let errors = 0;
+let warnings = 0;
+let total = 0;
 
-for (const task of tasks) {
-  const prefix = `[${task.id ?? 'NO-ID'}]`;
-  if (!task.id) { console.log(`${prefix} chýba id`); errors++; }
-  if (!task.mode) { console.log(`${prefix} chýba mode`); errors++; }
-  if (!Array.isArray(task.hints) || task.hints.length < 3) {
-    console.log(`${prefix} má menej ako 3 hinty`); errors++;
+function fail(file, id, msg) {
+  errors += 1;
+  console.error(`ERROR ${file} ${id || ""}: ${msg}`);
+}
+function warn(file, id, msg) {
+  warnings += 1;
+  console.warn(`WARN  ${file} ${id || ""}: ${msg}`);
+}
+
+function hasStdoutCases(p) {
+  return Array.isArray(p.tests) || Array.isArray(p.test_cases) || p.expected_output != null || p.expected_stdout != null;
+}
+
+for (const file of files) {
+  const full = path.join(root, file);
+  let arr;
+  try {
+    arr = JSON.parse(fs.readFileSync(full, "utf8"));
+  } catch (e) {
+    fail(file, "", `neplatný JSON: ${e.message}`);
+    continue;
   }
-
-  if ((task.mode === 'solve' || task.mode === 'fix') && task.evaluation?.kind === 'function') {
-    if (!task.evaluation?.target?.name) {
-      console.log(`${prefix} function evaluation nemá target.name`); errors++;
-    }
-    if (!Array.isArray(task.evaluation?.cases) || task.evaluation.cases.length < 2) {
-      console.log(`${prefix} function evaluation má málo test cases`); errors++;
-    }
-    const hasVisible = task.evaluation.cases?.some(c => c.visible === true);
-    const hasHidden = task.evaluation.cases?.some(c => c.visible === false);
-    if (!hasVisible || !hasHidden) {
-      console.log(`${prefix} odporúčanie: maj aspoň jeden visible aj hidden case`);
-    }
+  if (!Array.isArray(arr)) {
+    fail(file, "", "level súbor musí byť pole úloh");
+    continue;
   }
-
-  if (task.mode === 'predict') {
-    if (!Array.isArray(task.tests) || task.tests.length === 0) {
-      console.log(`${prefix} predict úloha nemá tests/expected_stdout`); errors++;
+  const seen = new Set();
+  for (const p of arr) {
+    total += 1;
+    const id = p.id || "<missing-id>";
+    if (!p.id) fail(file, id, "chýba id");
+    if (seen.has(p.id)) fail(file, id, "duplicitné id v leveli");
+    seen.add(p.id);
+    if (!Number.isFinite(p.level)) fail(file, id, "chýba číselný level");
+    if (!p.title) warn(file, id, "chýba title");
+    if (!p.statement) warn(file, id, "chýba statement");
+    if (!p.mode) warn(file, id, "chýba mode");
+    if (p.mode === "predict") {
+      if (!hasStdoutCases(p)) fail(file, id, "predict úloha potrebuje test_cases/tests/expected_output");
+    } else if (p.evaluation?.kind === "function") {
+      if (!p.evaluation?.target?.name) fail(file, id, "function evaluation chýba target.name");
+      if (!Array.isArray(p.evaluation?.cases) || p.evaluation.cases.length === 0) fail(file, id, "function evaluation potrebuje cases");
+      for (const [i, c] of (p.evaluation.cases || []).entries()) {
+        if (!Array.isArray(c.args)) fail(file, id, `case ${i+1} chýba args pole`);
+        if (!("expected_return" in c)) fail(file, id, `case ${i+1} chýba expected_return`);
+      }
+    } else if (!hasStdoutCases(p)) {
+      fail(file, id, "stdout úloha potrebuje test_cases/tests/expected_output");
     }
+    if (p.schema_version && p.schema_version < 2) warn(file, id, "staršia schema_version");
   }
 }
 
-if (errors) {
-  console.error(`Audit skončil s počtom problémov: ${errors}`);
-  process.exit(1);
-}
-console.log(`OK: ${tasks.length} úloh prešlo základným auditom.`);
+console.log(`Audit OK: ${total} úloh, errors=${errors}, warnings=${warnings}`);
+process.exit(errors ? 1 : 0);

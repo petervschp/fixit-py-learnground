@@ -29,7 +29,7 @@
       }
     ],
     "reference_solution": "def abs_val(n):\n    if n < 0:\n        return -n\n    return n\n\nn = int(input())\nprint(abs_val(n))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -41,7 +41,33 @@
     "concepts": [
       "function"
     ],
-    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "phaseTags": [
+      "Y1_funkcie_uvod"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L6-002",
@@ -78,7 +104,7 @@
       }
     ],
     "reference_solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, n):\n        if n % d == 0:\n            return False\n    return True\n\nn = int(input())\nprint('PRIME' if is_prime(n) else 'NOT')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -90,7 +116,14 @@
     "concepts": [
       "function"
     ],
-    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-003",
@@ -127,7 +160,7 @@
       }
     ],
     "reference_solution": "a = int(input())\nb = int(input())\nop = input().strip()\nif op == '+':\n    print(a + b)\nelif op == '-':\n    print(a - b)\nelif op == '*':\n    print(a * b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -135,7 +168,17 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": ""
   },
   {
     "id": "L6-F01",
@@ -170,7 +213,7 @@
       }
     ],
     "reference_solution": "def double(n):\n    return 2*n\n\nn = int(input())\nprint(double(n))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -180,9 +223,39 @@
       ]
     },
     "concepts": [
+      "debugging",
       "function"
     ],
-    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
+    "teacher_comment": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "phaseTags": [
+      "Y1_funkcie_uvod",
+      "Y1_json_cli_final"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L6-004",
@@ -209,7 +282,7 @@
       }
     ],
     "reference_solution": "n = int(input())\ncisla = []\nfor i in range(n):\n    cisla.append(int(input()))\nprint(min(cisla))\nprint(max(cisla))\nprint(sum(cisla))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -217,7 +290,17 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": ""
   },
   {
     "id": "L6-P01",
@@ -240,7 +323,41 @@
       }
     ],
     "reference_solution": "def f(x):\n    return x + 1\n\nprint(f(2))\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_funkcie_uvod",
+      "Y1_json_cli_final"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict",
+      "print",
+      "return",
+      "tasks_domain"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: testovacie tlačidlo je v prostredí deaktivované, aby žiak neobišiel cieľ úlohy tým, že iba spustí hotový kód. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L6-005",
@@ -278,12 +395,38 @@
       }
     ],
     "reference_solution": "def stvorec(n):\n    return n*n\n\nn = int(input())\nprint(stvorec(n))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
           "pattern": "\\bopen\\s*\\(",
           "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_funkcie_uvod"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Jednoduchá návratová hodnota. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -301,8 +444,8 @@
       "return n % 2 == 0"
     ],
     "concepts": [
-      "function",
       "boolean",
+      "function",
       "modulo"
     ],
     "difficulty": 2,
@@ -325,12 +468,38 @@
       }
     ],
     "reference_solution": "def je_parne(n):\n    return n % 2 == 0\n\nn = int(input())\nprint(je_parne(n))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
           "pattern": "\\bopen\\s*\\(",
           "message": "V tejto úlohe nepracuj so súbormi."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_funkcie_uvod"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Učí vracanie boolean hodnoty. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -367,7 +536,7 @@
       }
     ],
     "reference_solution": "def vacsie(a, b):\n    if a > b:\n        return a\n    return b\n\na = int(input())\nb = int(input())\nprint(vacsie(a,b))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -375,7 +544,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Funkcia s vetvením. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-008",
@@ -390,9 +566,9 @@
       "Na konci return pocet."
     ],
     "concepts": [
-      "function",
+      "counter",
       "for string",
-      "counter"
+      "function"
     ],
     "difficulty": 3,
     "teacher_comment": "Opravené: v tejto verzii sa za samohlásku počíta aj y. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -419,7 +595,7 @@
       }
     ],
     "reference_solution": "def pocet_samohlasok(text):\n    pocet = 0\n    for znak in text:\n        if znak in 'aeiouy':\n            pocet += 1\n    return pocet\n\ntext = input()\nprint(pocet_samohlasok(text))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -427,7 +603,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Opravené: v tejto verzii sa za samohlásku počíta aj y. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-009",
@@ -442,9 +625,10 @@
       "Vráť s, nie print(s) vo funkcii."
     ],
     "concepts": [
+      "accumulator",
       "function",
       "list",
-      "accumulator"
+      "list_as_state"
     ],
     "difficulty": 3,
     "teacher_comment": "Oddeľuje vstup od výpočtovej funkcie. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -466,7 +650,7 @@
       }
     ],
     "reference_solution": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -474,7 +658,16 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "list_state_change"
+    ],
+    "teacherNote": "Oddeľuje vstup od výpočtovej funkcie. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-010",
@@ -507,7 +700,7 @@
       }
     ],
     "reference_solution": "def del(a, b):\n    if b == 0:\n        return 'chyba'\n    return a/b\n\na = float(input())\nb = float(input())\nprint(del(a,b))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -515,7 +708,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Ukazuje včasný return pre špeciálny prípad. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-011",
@@ -553,7 +753,7 @@
       }
     ],
     "reference_solution": "def normalizuj(meno):\n    return meno.strip().capitalize()\n\nmeno = input()\nprint(normalizuj(meno))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -561,7 +761,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Praktická transformácia textu. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-012",
@@ -576,9 +783,9 @@
       "Inak vráť základ."
     ],
     "concepts": [
+      "business rule",
       "function",
-      "if",
-      "business rule"
+      "if"
     ],
     "difficulty": 3,
     "teacher_comment": "Reálny pravidlový výpočet. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -600,7 +807,7 @@
       }
     ],
     "reference_solution": "def cena(kusy):\n    zaklad = kusy * 5\n    if kusy >= 10:\n        return zaklad * 0.8\n    return zaklad\n\nkusy = int(input())\nprint(cena(kusy))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -608,7 +815,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Reálny pravidlový výpočet. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-013",
@@ -624,6 +838,7 @@
     ],
     "concepts": [
       "function",
+      "loop",
       "string indexing"
     ],
     "difficulty": 2,
@@ -641,7 +856,7 @@
       }
     ],
     "reference_solution": "def inicialy(meno, priezvisko):\n    return meno[0] + '.' + priezvisko[0] + '.'\n\nmeno = input()\npriezvisko = input()\nprint(inicialy(meno, priezvisko))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -649,7 +864,17 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Jednoduchá funkcia s dvomi parametrami. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-014",
@@ -664,9 +889,9 @@
       "Väčšie ako neznamená väčšie alebo rovné."
     ],
     "concepts": [
+      "filter count",
       "function",
-      "list",
-      "filter count"
+      "list"
     ],
     "difficulty": 3,
     "teacher_comment": "Kontroluje presnosť porovnania > vs >=. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -688,7 +913,7 @@
       }
     ],
     "reference_solution": "def nad_limit(cisla, limit):\n    pocet = 0\n    for x in cisla:\n        if x > limit:\n            pocet += 1\n    return pocet\n\ncisla = [int(x) for x in input().split()]\nlimit = int(input())\nprint(nad_limit(cisla, limit))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -696,7 +921,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Kontroluje presnosť porovnania > vs >=. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-015",
@@ -735,7 +967,7 @@
       }
     ],
     "reference_solution": "def spracuj(prikaz):\n    if prikaz == 'pozdrav':\n        return 'Ahoj!'\n    if prikaz == 'koniec':\n        return 'Koniec.'\n    return 'Neznamy prikaz.'\n\nprikaz = input()\nprint(spracuj(prikaz))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -743,7 +975,14 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Prechod k CLI architektúre: spracovanie príkazu oddelené od I/O. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-F02",
@@ -767,9 +1006,10 @@
     ],
     "concepts": [
       "debugging",
-      "return",
+      "function",
+      "list_as_state",
       "loop",
-      "function"
+      "return"
     ],
     "difficulty": 4,
     "teacher_comment": "Jedna z najčastejších chýb pri funkciách s cyklom. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -791,7 +1031,7 @@
       }
     ],
     "reference_solution": "def sucet(cisla):\n    s = 0\n    for x in cisla:\n        s += x\n    return s\n\ncisla = [int(x) for x in input().split()]\nprint(sucet(cisla))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -799,7 +1039,19 @@
           "message": "V tejto úlohe nepracuj so súbormi."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception",
+      "list_state_change",
+      "off_by_one",
+      "state_not_updated"
+    ],
+    "teacherNote": "Jedna z najčastejších chýb pri funkciách s cyklom. Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov."
   },
   {
     "id": "L6-F03",
@@ -823,8 +1075,12 @@
     ],
     "concepts": [
       "debugging",
+      "function",
+      "input",
       "parameters",
-      "function"
+      "print",
+      "return",
+      "tasks_domain"
     ],
     "difficulty": 3,
     "teacher_comment": "Opravené: pôvodný chybný kód už neprejde len preto, že globálna premenná existuje. Hodnotí sa priamo funkcia pozdrav(meno). Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
@@ -895,7 +1151,37 @@
       }
     ],
     "reference_solution": "def pozdrav(meno):\n    return 'Ahoj, ' + meno\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_funkcie_uvod"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Opravené: pôvodný chybný kód už neprejde len preto, že globálna premenná existuje. Hodnotí sa priamo funkcia pozdrav(meno). Verzia v2: úloha používa test_cases; referenčné riešenie je doplnené pre audit a budúce generovanie skrytých prípadov.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L6-P02",
@@ -910,8 +1196,10 @@
       "Každé volanie funkcie začína od začiatku."
     ],
     "concepts": [
-      "return",
+      "dict_as_state",
       "if",
+      "predict",
+      "return",
       "trace"
     ],
     "difficulty": 2,
@@ -924,7 +1212,14 @@
       }
     ],
     "reference_solution": "def test(x):\n    if x > 0:\n        return \"plus\"\n    return \"nie plus\"\n\nprint(test(3))\nprint(test(-1))\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Sleduje tok funkcie s viacerými returnmi. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run."
   },
   {
     "id": "L6-P03",
@@ -939,8 +1234,10 @@
       "y dostane návratovú hodnotu."
     ],
     "concepts": [
+      "dict_as_state",
+      "function call",
       "local variable",
-      "function call"
+      "predict"
     ],
     "difficulty": 3,
     "teacher_comment": "Upevňuje rozdiel medzi argumentom a lokálnou premennou. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
@@ -952,6 +1249,32 @@
       }
     ],
     "reference_solution": "def pridaj(x):\n    x = x + 1\n    return x\n\nx = 5\ny = pridaj(x)\nprint(x)\nprint(y)\n",
-    "schema_version": 2
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_funkcie_uvod"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Upevňuje rozdiel medzi argumentom a lokálnou premennou. Predict úloha: Testy majú zostať v UI deaktivované; správnosť sa overuje uzamknutým odhadom po Run.",
+    "microDefense": {
+      "prompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   }
 ]

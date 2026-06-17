@@ -39,7 +39,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n>0:\n    print(\"POS\")\nelif n<0:\n    print(\"NEG\")\nelse:\n    print(\"ZERO\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -56,7 +56,36 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L2-002",
@@ -98,7 +127,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n%2==0:\n    print(\"EVEN\")\nelse:\n    print(\"ODD\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -115,7 +144,36 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L2-003",
@@ -157,7 +215,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nprint(max(a,b,c))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -174,7 +232,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-F01",
@@ -219,7 +287,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n%2==0:\n    print(\"EVEN\")\nelse:\n    print(\"ODD\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -236,7 +304,38 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "concepts": [
+      "debugging"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L2-004",
@@ -293,7 +392,7 @@
       }
     ],
     "reference_solution": "age=int(input())\nif age <= 12:\n    print(\"CHILD\")\nelif age <= 19:\n    print(\"TEEN\")\nelse:\n    print(\"ADULT\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -310,7 +409,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-P01",
@@ -332,7 +441,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n % 2 == 0:\n    print('EVEN')\nelse:\n    print('ODD')\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -349,7 +458,37 @@
         }
       ]
     },
-    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
+    "teacher_comment": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "phaseTags": [
+      "Y1_citanie_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Kde bol stav programu a čo bolo iba vypísané?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L2-005",
@@ -364,8 +503,9 @@
       "Použi presné texty."
     ],
     "concepts": [
+      "comparison",
       "if-else",
-      "comparison"
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Najjednoduchší prípad dvojvetvenia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -397,7 +537,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n==0:\n    print(\"nula\")\nelse:\n    print(\"nenula\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -413,7 +553,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Najjednoduchší prípad dvojvetvenia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-006",
@@ -429,7 +576,8 @@
     ],
     "concepts": [
       "if-else",
-      "max"
+      "max",
+      "program_reading"
     ],
     "difficulty": 1,
     "teacher_comment": "Predstupeň k max z troch čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -461,7 +609,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nif a>=b:\n    print(a)\nelse:\n    print(b)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -477,7 +625,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predstupeň k max z troch čísel. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-007",
@@ -492,8 +647,9 @@
       "Riešenie je if vek >= 15."
     ],
     "concepts": [
+      "boundary",
       "comparison",
-      "boundary"
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Hraničná hodnota 15 je kľúčová. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -525,7 +681,7 @@
       }
     ],
     "reference_solution": "vek=int(input())\nif vek>=15:\n    print(\"vstup povoleny\")\nelse:\n    print(\"vstup zamietnuty\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -541,7 +697,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Hraničná hodnota 15 je kľúčová. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-008",
@@ -556,8 +719,9 @@
       "Použi >=, nie >."
     ],
     "concepts": [
+      "boundaries",
       "elif",
-      "boundaries"
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Silná úloha na poradie podmienok a inkluzívne hranice. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -604,7 +768,7 @@
       }
     ],
     "reference_solution": "body=int(input())\nif body>=90:\n    print(\"A\")\nelif body>=75:\n    print(\"B\")\nelif body>=50:\n    print(\"C\")\nelse:\n    print(\"D\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -620,7 +784,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Silná úloha na poradie podmienok a inkluzívne hranice. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-009",
@@ -635,8 +806,9 @@
       "Presný výstup: ano/nie."
     ],
     "concepts": [
+      "if",
       "modulo",
-      "if"
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Pripravuje na kombinované podmienky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -668,7 +840,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n%5==0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -684,7 +856,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Pripravuje na kombinované podmienky. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-010",
@@ -700,7 +879,8 @@
     ],
     "concepts": [
       "and",
-      "modulo"
+      "modulo",
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Kombinovaná logická podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -737,7 +917,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n>0 and n%2==0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -753,7 +933,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Kombinovaná logická podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-011",
@@ -769,6 +956,7 @@
     ],
     "concepts": [
       "or",
+      "program_reading",
       "range check"
     ],
     "difficulty": 3,
@@ -806,7 +994,7 @@
       }
     ],
     "reference_solution": "t=int(input())\nif t<0 or t>100:\n    print(\"mimo\")\nelse:\n    print(\"ok\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -822,7 +1010,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Precvičuje vonkajšok intervalu a hraničné hodnoty. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-012",
@@ -837,8 +1032,9 @@
       "Pozor na 10 a 20."
     ],
     "concepts": [
-      "range check",
-      "comparison chaining"
+      "comparison chaining",
+      "program_reading",
+      "range check"
     ],
     "difficulty": 3,
     "teacher_comment": "Učí pythonovské reťazenie porovnaní. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -875,7 +1071,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif 10 <= n <= 20:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -891,7 +1087,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Učí pythonovské reťazenie porovnaní. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-013",
@@ -907,7 +1110,8 @@
     ],
     "concepts": [
       "compound condition",
-      "geometry"
+      "geometry",
+      "program_reading"
     ],
     "difficulty": 4,
     "teacher_comment": "Náročnejšia kombinovaná podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -939,7 +1143,7 @@
       }
     ],
     "reference_solution": "a=int(input())\nb=int(input())\nc=int(input())\nif a+b>c and a+c>b and b+c>a:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -955,7 +1159,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Náročnejšia kombinovaná podmienka. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-014",
@@ -970,8 +1181,9 @@
       "Nepotrebujeme ešte pravidlo storočí."
     ],
     "concepts": [
+      "if",
       "modulo",
-      "if"
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Jednoduchý reálny kontext deliteľnosti. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -998,7 +1210,7 @@
       }
     ],
     "reference_solution": "rok=int(input())\nif rok%4==0:\n    print(\"prestupny\")\nelse:\n    print(\"bezny\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1014,7 +1226,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Jednoduchý reálny kontext deliteľnosti. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-015",
@@ -1031,7 +1250,8 @@
     "concepts": [
       "and",
       "or",
-      "precedence"
+      "precedence",
+      "program_reading"
     ],
     "difficulty": 4,
     "teacher_comment": "Výborná úloha na logickú prioritu and/or. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1068,7 +1288,7 @@
       }
     ],
     "reference_solution": "rok=int(input())\nif rok%400==0 or (rok%4==0 and rok%100!=0):\n    print(\"prestupny\")\nelse:\n    print(\"bezny\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1084,7 +1304,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Výborná úloha na logickú prioritu and/or. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-016",
@@ -1099,8 +1326,9 @@
       "Hranice 10 a 100 sú dôležité."
     ],
     "concepts": [
+      "classification",
       "elif",
-      "classification"
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Trojkategóriová klasifikácia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1137,7 +1365,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif n<10:\n    print(\"male\")\nelif n<100:\n    print(\"stredne\")\nelse:\n    print(\"velke\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1153,7 +1381,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Trojkategóriová klasifikácia. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-F02",
@@ -1176,8 +1411,8 @@
       "Oprav iba operátor porovnania."
     ],
     "concepts": [
-      "debugging",
-      "boundary"
+      "boundary",
+      "debugging"
     ],
     "difficulty": 2,
     "teacher_comment": "Typická hraničná chyba. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1204,7 +1439,7 @@
       }
     ],
     "reference_solution": "vek=int(input())\nif vek>=15:\n    print(\"vstup povoleny\")\nelse:\n    print(\"vstup zamietnuty\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1220,7 +1455,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Typická hraničná chyba. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-F03",
@@ -1243,8 +1487,8 @@
       "or je vhodné skôr pre hodnoty mimo intervalu."
     ],
     "concepts": [
-      "debugging",
-      "and/or"
+      "and/or",
+      "debugging"
     ],
     "difficulty": 3,
     "teacher_comment": "Veľmi dôležitá diagnostika chápania intervalov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1286,7 +1530,7 @@
       }
     ],
     "reference_solution": "n=int(input())\nif 10 <= n <= 20:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1302,7 +1546,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Veľmi dôležitá diagnostika chápania intervalov. Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L2-P02",
@@ -1317,7 +1570,10 @@
       "Výstup je iba A."
     ],
     "concepts": [
+      "condition",
+      "dict_as_state",
       "elif",
+      "predict",
       "trace"
     ],
     "difficulty": 2,
@@ -1330,7 +1586,7 @@
       }
     ],
     "reference_solution": "x = 12\nif x > 5:\n    print(\"A\")\nelif x > 10:\n    print(\"B\")\nelse:\n    print(\"C\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1346,7 +1602,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Ukazuje, že elif nie je samostatné druhé if. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode."
   },
   {
     "id": "L2-P03",
@@ -1362,7 +1625,9 @@
     ],
     "concepts": [
       "and",
+      "dict_as_state",
       "modulo",
+      "predict",
       "trace"
     ],
     "difficulty": 2,
@@ -1375,7 +1640,7 @@
       }
     ],
     "reference_solution": "n = 6\nif n > 0 and n % 2 == 0:\n    print(\"ano\")\nelse:\n    print(\"nie\")\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1389,6 +1654,32 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_podmienky_cykly"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Krátke sledovanie zloženej podmienky. Predict úloha: ponechaná ako jednoprípadové overenie výstupu; test_cases tu neslúžia na anti-hardcode.",
+    "microDefense": {
+      "prompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }

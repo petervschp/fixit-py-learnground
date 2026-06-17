@@ -2,15 +2,44 @@
 // The main thread can terminate this worker on timeout to stop infinite loops.
 
 let pyodideReady = null;
+let pyodideBaseUrl = "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/";
+
+function normalizeBaseUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/";
+  return raw.endsWith("/") ? raw : raw + "/";
+}
+
+function resolvePyodideScriptUrl(baseUrl) {
+  try { return new URL("pyodide.js", baseUrl).href; }
+  catch { return normalizeBaseUrl(baseUrl) + "pyodide.js"; }
+}
+
+function postRuntimeStatus(state, message, detail = "") {
+  try {
+    self.postMessage({ type: "runtime_status", state, message, detail });
+  } catch {}
+}
 
 async function initPyodide() {
   if (pyodideReady) return pyodideReady;
 
   pyodideReady = (async () => {
-    importScripts("https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js");
-    const py = await loadPyodide({
-      indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/",
-    });
+    try {
+      const pyodideScriptUrl = resolvePyodideScriptUrl(pyodideBaseUrl);
+      const isDefaultCdn = pyodideBaseUrl === "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/";
+      postRuntimeStatus(
+        "loading",
+        isDefaultCdn ? "Sťahujem Pyodide z CDN…" : "Sťahujem Pyodide z nastavenej runtime cesty…",
+        isDefaultCdn
+          ? "Ak je školská sieť alebo CDN blokovaná, Run/Testy nebudú dostupné. App shell a zadania môžu zostať dostupné offline."
+          : `Používa sa PYODIDE_BASE_URL: ${pyodideBaseUrl}. Táto cesta musí obsahovať pyodide.js a súvisiace runtime súbory.`
+      );
+      importScripts(pyodideScriptUrl);
+      postRuntimeStatus("loading", "Inicializujem Python runtime…", "Prvé spustenie môže byť pomalšie na slabších školských zariadeniach.");
+      const py = await loadPyodide({
+        indexURL: pyodideBaseUrl,
+      });
 
     // IMPORTANT: sem vlož bootstrap z tvojho app.js (Python multi-line string)
     // Nájdeš ho v app.js ako: const bootstrap = ` ... `;
@@ -205,7 +234,13 @@ def __gen_function_cases(gen_cfg_json: str):
 `;
 
     await py.runPythonAsync(bootstrap);
-    return py;
+      postRuntimeStatus("ready", "Python runtime je pripravený.", "Run/Testy sú dostupné v tomto otvorenom okne. Plný offline Pyodide runtime zatiaľ nie je pribalený.");
+      return py;
+    } catch (err) {
+      pyodideReady = null;
+      postRuntimeStatus("unavailable", "Pyodide runtime sa nepodarilo načítať.", String(err && err.message ? err.message : err));
+      throw err;
+    }
   })();
 
   return pyodideReady;
@@ -286,6 +321,10 @@ async function handle(msg) {
 
 self.onmessage = async (e) => {
   const msg = e.data || {};
+  if (msg.type === "config") {
+    pyodideBaseUrl = normalizeBaseUrl(msg.pyodideBaseUrl);
+    return;
+  }
   const id = msg.id;
   try {
     const result = await handle(msg);

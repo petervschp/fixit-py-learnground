@@ -105,3 +105,163 @@ hr.sep { border:0; border-top:1px solid #eee; margin: 12px 0; }
   max-height: 180px;
   overflow: auto;
 }
+
+/* Student path v0.1 */
+.route-context {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #d7dde8;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.route-context h3 { margin: 2px 0 6px 0; }
+.muted-context { color: #46566f; }
+.microdefense-card { border-left: 4px solid #6b7280; }
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.route-card {
+  display: block;
+  padding: 14px;
+  border: 1px solid #d7dde8;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+}
+.route-card:hover { border-color: #64748b; background: #f8fafc; }
+.route-card h3 { margin: 4px 0 8px; }
+.linkbtn { text-decoration: none; display: inline-block; }
+.compact-row { gap: 6px; margin: 0; }
+.btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+/* Student Path v0.2 classroom-pilot cleanup */
+.action-section {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fbfdff;
+}
+.action-section h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+.advanced-actions summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn.danger {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+.next-step-card {
+  border-left: 4px solid #64748b;
+  background: #f8fafc;
+}
+.next-step-card.needs-defense {
+  border-left-color: #2563eb;
+  background: #eff6ff;
+}
+.next-step-card.needs-explain {
+  border-left-color: #c2410c;
+  background: #fff7ed;
+}
+.next-step-card.done {
+  border-left-color: #15803d;
+  background: #f0fdf4;
+}
+.simple-note {
+  background: #f8fafc;
+}
+.tile {
+  text-align: left;
+  font: inherit;
+}
+.tile:focus-visible,
+.route-main-link:focus-visible,
+.btn:focus-visible,
+.linkbtn:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+.route-card {
+  display: block;
+}
+.route-main-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.teacher-card {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+.teacher-card summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+@media (max-width: 720px) {
+  .container { padding: 12px; }
+  .kv { grid-template-columns: 1fr !important; }
+  .code { font-size: 13px; }
+  .btn, .linkbtn { width: 100%; text-align: center; }
+  .row { flex-direction: column; }
+  .compact-row { flex-direction: row; }
+  .map { grid-template-columns: 1fr; }
+}
+
+/* Student Path v0.7 PWA/offline shell + runtime status */
+.pwa-status {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #f8fafc;
+  display: grid;
+  gap: 3px;
+  font-size: 14px;
+}
+.pwa-status strong { margin-right: 6px; }
+.pwa-ok { border-color: #86efac; background: #f0fdf4; }
+.pwa-loading { border-color: #bfdbfe; background: #eff6ff; }
+.pwa-warn, .pwa-offline { border-color: #fde68a; background: #fffbeb; }
+.pwa-error { border-color: #fecaca; background: #fef2f2; }
+
+.runtime-panel {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.runtime-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.runtime-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #d1d5db;
+  background: #fff;
+}
+.runtime-detail { margin-top: 4px; }
+.runtime-ok { border-color: #86efac; background: #f0fdf4; }
+.runtime-loading { border-color: #bfdbfe; background: #eff6ff; }
+.runtime-error { border-color: #fecaca; background: #fef2f2; }
+.runtime-idle { border-color: #e5e7eb; background: #f9fafb; }
+.runtime-ok .runtime-pill { border-color: #22c55e; }
+.runtime-loading .runtime-pill { border-color: #3b82f6; }
+.runtime-error .runtime-pill { border-color: #ef4444; }

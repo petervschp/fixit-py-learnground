@@ -2,7 +2,7 @@
   {
     "id": "L7-001",
     "level": 7,
-    "title": "UI Mindset: double(n)",
+    "title": "Funkcia bez input/print: double(n)",
     "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. Nepoužívaj input() ani print() na výstup – výsledok musí byť návratová hodnota.",
     "mode": "solve",
     "starter_code": "def double(n):\n    # TODO\n    return 0\n",
@@ -91,12 +91,49 @@
       }
     },
     "type": "function",
-    "reference_solution": "def double(n):\n    return 2*n\n"
+    "reference_solution": "def double(n):\n    return 2*n\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_diagnostika_html_css"
+    ],
+    "dramaturgyNode": "function_return",
+    "concepts": [
+      "function",
+      "input",
+      "print",
+      "return"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-002",
     "level": 7,
-    "title": "UI Mindset: sum_list(nums)",
+    "title": "Funkcia bez input/print: sum_list(nums)",
     "statement": "Napíš funkciu sum_list(nums), ktorá vráti súčet čísel v zozname nums.",
     "mode": "solve",
     "starter_code": "def sum_list(nums):\n    # TODO\n    return 0\n",
@@ -204,12 +241,49 @@
       }
     },
     "type": "function",
-    "reference_solution": "def sum_list(nums):\n    return sum(nums)\n"
+    "reference_solution": "def sum_list(nums):\n    return sum(nums)\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_diagnostika_html_css"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "function",
+      "list_as_state",
+      "return"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-003",
     "level": 7,
-    "title": "UI Mindset: contains(text, sub)",
+    "title": "Funkcia bez input/print: contains(text, sub)",
     "statement": "Napíš funkciu contains(text, sub), ktorá vráti True/False podľa toho, či sub je podreťazec text.",
     "mode": "solve",
     "starter_code": "def contains(text, sub):\n    # TODO\n    return False\n",
@@ -304,12 +378,27 @@
       }
     },
     "type": "function",
-    "reference_solution": "def contains(text, sub):\n    return sub in text\n"
+    "reference_solution": "def contains(text, sub):\n    return sub in text\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "concepts": [
+      "function",
+      "return"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": ""
   },
   {
     "id": "L7-004",
     "level": 7,
-    "title": "UI Mindset: filter_even(nums) bez mutácie",
+    "title": "Funkcia bez input/print: filter_even(nums) bez mutácie",
     "statement": "Napíš funkciu filter_even(nums), ktorá vráti nový zoznam iba párnych čísel z nums. Pôvodný zoznam nums sa NESMIE zmeniť. Nepoužívaj input() ani print().",
     "mode": "solve",
     "starter_code": "def filter_even(nums):\n    # TODO: return NEW list (do not modify nums)\n    return []\n",
@@ -447,12 +536,51 @@
       "Príklad: return [x for x in nums if x%2==0]"
     ],
     "type": "function",
-    "reference_solution": "def filter_even(nums):\n    return [n for n in nums if n % 2 == 0]\n"
+    "reference_solution": "def filter_even(nums):\n    return [n for n in nums if n % 2 == 0]\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_diagnostika_html_css"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "function",
+      "input",
+      "list_as_state",
+      "print",
+      "return"
+    ],
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-005",
     "level": 7,
-    "title": "UI Mindset: is_even(n)",
+    "title": "Funkcia bez input/print: is_even(n)",
     "statement": "Napíš čistú funkciu is_even(n), ktorá vráti True, ak je n párne, inak False.",
     "mode": "solve",
     "starter_code": "def is_even(n):\n    # TODO\n    return False\n",
@@ -548,19 +676,32 @@
       }
     },
     "concepts": [
-      "pure function",
       "boolean",
-      "modulo"
+      "function",
+      "modulo",
+      "pure function",
+      "return"
     ],
     "difficulty": 2,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def is_even(n):\n    return n % 2 == 0\n"
+    "reference_solution": "def is_even(n):\n    return n % 2 == 0\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-006",
     "level": 7,
-    "title": "UI Mindset: double(n) s generovanými testami",
+    "title": "Funkcia bez input/print: double(n) s generovanými testami",
     "statement": "Napíš funkciu double(n), ktorá vráti dvojnásobok čísla n. V tejto úlohe sú aj generované skryté testy.",
     "mode": "solve",
     "starter_code": "def double(n):\n    # TODO\n    return 0\n",
@@ -660,12 +801,28 @@
       "return 2*n"
     ],
     "type": "function",
-    "reference_solution": "def double(n):\n    return 2*n\n"
+    "reference_solution": "def double(n):\n    return 2*n\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "function",
+      "return",
+      "tasks_domain"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": ""
   },
   {
     "id": "L7-007",
     "level": 7,
-    "title": "UI Mindset: clamp(value, low, high)",
+    "title": "Funkcia bez input/print: clamp(value, low, high)",
     "statement": "Napíš funkciu clamp(value, low, high), ktorá vráti value obmedzené do intervalu low..high.",
     "mode": "solve",
     "starter_code": "def clamp(value, low, high):\n    # TODO\n    return value\n",
@@ -784,18 +941,31 @@
       }
     },
     "concepts": [
+      "boundaries",
+      "function",
       "pure function",
-      "boundaries"
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def clamp(value, low, high):\n    if value < low:\n        return low\n    if value > high:\n        return high\n    return value\n"
+    "reference_solution": "def clamp(value, low, high):\n    if value < low:\n        return low\n    if value > high:\n        return high\n    return value\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-008",
     "level": 7,
-    "title": "UI Mindset: format_name(first, last)",
+    "title": "Funkcia bez input/print: format_name(first, last)",
     "statement": "Napíš funkciu format_name(first, last), ktorá vráti text \"Priezvisko, Meno\".",
     "mode": "solve",
     "starter_code": "def format_name(first, last):\n    # TODO\n    return \"\"\n",
@@ -882,18 +1052,34 @@
       }
     },
     "concepts": [
+      "function",
+      "loop",
       "pure function",
+      "return",
       "string formatting"
     ],
     "difficulty": 2,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def format_name(first, last):\n    return f\"{last}, {first}\"\n"
+    "reference_solution": "def format_name(first, last):\n    return f\"{last}, {first}\"\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "off_by_one",
+      "return_vs_print",
+      "state_not_updated",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-009",
     "level": 7,
-    "title": "UI Mindset: initials(full_name)",
+    "title": "Funkcia bez input/print: initials(full_name)",
     "statement": "Napíš funkciu initials(full_name), ktorá z mena a priezviska vráti iniciály napr. \"J.D.\".",
     "mode": "solve",
     "starter_code": "def initials(full_name):\n    # TODO\n    return \"\"\n",
@@ -975,19 +1161,32 @@
       }
     },
     "concepts": [
+      "function",
+      "pure function",
+      "return",
       "split",
-      "string indexing",
-      "pure function"
+      "string indexing"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def initials(full_name):\n    parts = full_name.split()\n    return parts[0][0].upper() + \".\" + parts[1][0].upper() + \".\"\n"
+    "reference_solution": "def initials(full_name):\n    parts = full_name.split()\n    return parts[0][0].upper() + \".\" + parts[1][0].upper() + \".\"\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-010",
     "level": 7,
-    "title": "UI Mindset: count_long(words, min_len)",
+    "title": "Funkcia bez input/print: count_long(words, min_len)",
     "statement": "Napíš funkciu count_long(words, min_len), ktorá vráti počet slov dlhších alebo rovných min_len.",
     "mode": "solve",
     "starter_code": "def count_long(words, min_len):\n    # TODO\n    return 0\n",
@@ -1093,19 +1292,32 @@
       }
     },
     "concepts": [
-      "list",
       "counter",
-      "pure function"
+      "function",
+      "list",
+      "pure function",
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def count_long(words, min_len):\n    return sum(1 for w in words if len(w) >= min_len)\n"
+    "reference_solution": "def count_long(words, min_len):\n    return sum(1 for w in words if len(w) >= min_len)\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-011",
     "level": 7,
-    "title": "UI Mindset: map_double(nums)",
+    "title": "Funkcia bez input/print: map_double(nums)",
     "statement": "Napíš funkciu map_double(nums), ktorá vráti nový zoznam dvojnásobkov. Pôvodný zoznam nesmie meniť.",
     "mode": "solve",
     "starter_code": "def map_double(nums):\n    # TODO\n    return []\n",
@@ -1223,19 +1435,34 @@
       }
     },
     "concepts": [
-      "map",
+      "function",
       "list comprehension",
-      "no mutation"
+      "list_as_state",
+      "map",
+      "no mutation",
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def map_double(nums):\n    return [2*n for n in nums]\n"
+    "reference_solution": "def map_double(nums):\n    return [2*n for n in nums]\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-012",
     "level": 7,
-    "title": "UI Mindset: remove_empty(items)",
+    "title": "Funkcia bez input/print: remove_empty(items)",
     "statement": "Napíš funkciu remove_empty(items), ktorá vráti nový zoznam bez prázdnych reťazcov \"\".",
     "mode": "solve",
     "starter_code": "def remove_empty(items):\n    # TODO\n    return []\n",
@@ -1366,17 +1593,32 @@
     },
     "concepts": [
       "filter",
-      "no mutation"
+      "function",
+      "list_as_state",
+      "no mutation",
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def remove_empty(items):\n    return [x for x in items if x != \"\"]\n"
+    "reference_solution": "def remove_empty(items):\n    return [x for x in items if x != \"\"]\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-013",
     "level": 7,
-    "title": "UI Mindset: total_price(prices)",
+    "title": "Funkcia bez input/print: total_price(prices)",
     "statement": "Napíš funkciu total_price(prices), ktorá vráti súčet cien v zozname.",
     "mode": "solve",
     "starter_code": "def total_price(prices):\n    # TODO\n    return 0\n",
@@ -1481,18 +1723,33 @@
       }
     },
     "concepts": [
-      "sum",
-      "pure function"
+      "function",
+      "list_as_state",
+      "pure function",
+      "return",
+      "sum"
     ],
     "difficulty": 2,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def total_price(prices):\n    return sum(prices)\n"
+    "reference_solution": "def total_price(prices):\n    return sum(prices)\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-014",
     "level": 7,
-    "title": "UI Mindset: cart_total(items)",
+    "title": "Funkcia bez input/print: cart_total(items)",
     "statement": "items je zoznam dvojíc [cena, kusy]. Vráť celkovú cenu nákupu.",
     "mode": "solve",
     "starter_code": "def cart_total(items):\n    # TODO\n    return 0\n",
@@ -1622,18 +1879,33 @@
       }
     },
     "concepts": [
+      "accumulator",
+      "function",
       "list of lists",
-      "accumulator"
+      "list_as_state",
+      "return"
     ],
     "difficulty": 4,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def cart_total(items):\n    return sum(price * qty for price, qty in items)\n"
+    "reference_solution": "def cart_total(items):\n    return sum(price * qty for price, qty in items)\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-015",
     "level": 7,
-    "title": "UI Mindset: toggle(done)",
+    "title": "Funkcia bez input/print: toggle(done)",
     "statement": "Napíš funkciu toggle(done), ktorá vráti opačnú boolean hodnotu.",
     "mode": "solve",
     "starter_code": "def toggle(done):\n    # TODO\n    return done\n",
@@ -1709,17 +1981,51 @@
     },
     "concepts": [
       "boolean",
-      "pure function"
+      "function",
+      "pure function",
+      "return"
     ],
     "difficulty": 1,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def toggle(done):\n    return not done\n"
+    "reference_solution": "def toggle(done):\n    return not done\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_diagnostika_html_css",
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-016",
     "level": 7,
-    "title": "UI Mindset: progress(done, total)",
+    "title": "Render zo stavu: progress(done, total)",
     "statement": "Napíš funkciu progress(done, total), ktorá vráti percento dokončenia. Ak total je 0, vráti 0.",
     "mode": "solve",
     "starter_code": "def progress(done, total):\n    # TODO\n    return 0\n",
@@ -1822,18 +2128,31 @@
       }
     },
     "concepts": [
+      "function",
       "guard clause",
-      "percentage"
+      "percentage",
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def progress(done, total):\n    if total == 0:\n        return 0\n    return done / total * 100\n"
+    "reference_solution": "def progress(done, total):\n    if total == 0:\n        return 0\n    return done / total * 100\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-017",
     "level": 7,
-    "title": "UI Mindset: validate_username(name)",
+    "title": "Funkcia bez input/print: validate_username(name)",
     "statement": "Napíš funkciu validate_username(name), ktorá vráti True, ak má meno aspoň 3 znaky a neobsahuje medzeru.",
     "mode": "solve",
     "starter_code": "def validate_username(name):\n    # TODO\n    return False\n",
@@ -1936,19 +2255,32 @@
       }
     },
     "concepts": [
-      "validation",
       "and",
-      "string membership"
+      "function",
+      "return",
+      "string membership",
+      "validation"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def validate_username(name):\n    return len(name) >= 3 and \" \" not in name\n"
+    "reference_solution": "def validate_username(name):\n    return len(name) >= 3 and \" \" not in name\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-018",
     "level": 7,
-    "title": "UI Mindset: add_item(items, item)",
+    "title": "Stavová funkcia: add_item(items, item)",
     "statement": "Napíš funkciu add_item(items, item), ktorá vráti nový zoznam s item pridaným na koniec. Pôvodný zoznam nesmie zmeniť.",
     "mode": "solve",
     "starter_code": "def add_item(items, item):\n    # TODO\n    return items\n",
@@ -2054,18 +2386,55 @@
       }
     },
     "concepts": [
-      "immutability mindset",
-      "list copy"
+      "function",
+      "immutability stavová funkcia",
+      "list copy",
+      "list_as_state",
+      "return"
     ],
     "difficulty": 4,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def add_item(items, item):\n    return items + [item]\n"
+    "reference_solution": "def add_item(items, item):\n    return items + [item]\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_brython_event_render",
+      "Y2_diagnostika_html_css",
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-019",
     "level": 7,
-    "title": "UI Mindset: update_score(scores, name, points)",
+    "title": "Stavová funkcia: update_score(scores, name, points)",
     "statement": "scores je slovník. Vráť nový slovník, kde hráč name má skóre zvýšené o points. Pôvodný slovník nemeň.",
     "mode": "solve",
     "starter_code": "def update_score(scores, name, points):\n    # TODO\n    return scores\n",
@@ -2184,19 +2553,33 @@
       }
     },
     "concepts": [
-      "dict",
       "copy",
-      "no mutation"
+      "dict",
+      "dict_as_state",
+      "function",
+      "no mutation",
+      "return"
     ],
     "difficulty": 5,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def update_score(scores, name, points):\n    new_scores = scores.copy()\n    new_scores[name] = new_scores.get(name, 0) + points\n    return new_scores\n"
+    "reference_solution": "def update_score(scores, name, points):\n    new_scores = scores.copy()\n    new_scores[name] = new_scores.get(name, 0) + points\n    return new_scores\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-020",
     "level": 7,
-    "title": "UI Mindset: find_by_id(items, wanted_id)",
+    "title": "Stavová funkcia: find_by_id(items, wanted_id)",
     "statement": "items je zoznam slovníkov s kľúčom id. Vráť prvý slovník s daným id, alebo None.",
     "mode": "solve",
     "starter_code": "def find_by_id(items, wanted_id):\n    # TODO\n    return None\n",
@@ -2319,19 +2702,56 @@
       }
     },
     "concepts": [
+      "dict_as_state",
+      "early return",
+      "function",
       "list of dicts",
-      "search",
-      "early return"
+      "list_as_state",
+      "return",
+      "search"
     ],
     "difficulty": 5,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def find_by_id(items, wanted_id):\n    for item in items:\n        if item.get(\"id\") == wanted_id:\n            return item\n    return None\n"
+    "reference_solution": "def find_by_id(items, wanted_id):\n    for item in items:\n        if item.get(\"id\") == wanted_id:\n            return item\n    return None\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_brython_event_render",
+      "Y2_diagnostika_html_css",
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "Toto je oficiálny bezpečnostný most pred renderom: žiak nepoužíva input/print, ale vracia hodnoty a pracuje so stavom.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-021",
     "level": 7,
-    "title": "UI Mindset: summarize_tasks(tasks)",
+    "title": "Stavová funkcia: summarize_tasks(tasks)",
     "statement": "tasks je zoznam slovníkov s kľúčom done. Vráť slovník {\"done\": počet hotových, \"total\": počet všetkých}.",
     "mode": "solve",
     "starter_code": "def summarize_tasks(tasks):\n    # TODO\n    return {}\n",
@@ -2462,19 +2882,59 @@
       }
     },
     "concepts": [
+      "UI state",
       "dict",
+      "dict_as_state",
+      "function",
+      "list_as_state",
+      "return",
       "summary",
-      "UI state"
+      "tasks_domain"
     ],
     "difficulty": 5,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def summarize_tasks(tasks):\n    return {\"done\": sum(1 for t in tasks if t.get(\"done\")), \"total\": len(tasks)}\n"
+    "reference_solution": "def summarize_tasks(tasks):\n    return {\"done\": sum(1 for t in tasks if t.get(\"done\")), \"total\": len(tasks)}\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y1_json_cli_final",
+      "Y2_brython_event_render",
+      "Y2_diagnostika_html_css",
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core",
+      "reserve"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-022",
     "level": 7,
-    "title": "UI Mindset: next_level(xp)",
+    "title": "Funkcia bez input/print: next_level(xp)",
     "statement": "Napíš funkciu next_level(xp), ktorá vráti \"beginner\" pre xp < 100, \"advanced\" pre xp < 500, inak \"expert\".",
     "mode": "solve",
     "starter_code": "def next_level(xp):\n    # TODO\n    return \"\"\n",
@@ -2577,18 +3037,31 @@
       }
     },
     "concepts": [
+      "boundaries",
       "classification",
-      "boundaries"
+      "function",
+      "return"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def next_level(xp):\n    if xp < 100:\n        return \"beginner\"\n    if xp < 500:\n        return \"advanced\"\n    return \"expert\"\n"
+    "reference_solution": "def next_level(xp):\n    if xp < 100:\n        return \"beginner\"\n    if xp < 500:\n        return \"advanced\"\n    return \"expert\"\n",
+    "schema_version": 3,
+    "phaseTags": [],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print()."
   },
   {
     "id": "L7-023",
     "level": 7,
-    "title": "UI Mindset: search_text(items, query)",
+    "title": "Stavová funkcia: search_text(items, query)",
     "statement": "items je zoznam textov. Vráť nový zoznam položiek, ktoré obsahujú query.",
     "mode": "solve",
     "starter_code": "def search_text(items, query):\n    # TODO\n    return []\n",
@@ -2711,19 +3184,54 @@
       }
     },
     "concepts": [
-      "search",
       "filter",
-      "no mutation"
+      "function",
+      "list_as_state",
+      "no mutation",
+      "return",
+      "search"
     ],
     "difficulty": 4,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def search_text(items, query):\n    return [item for item in items if query in item]\n"
+    "reference_solution": "def search_text(items, query):\n    return [item for item in items if query in item]\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_brython_event_render",
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "Pýtať sa: čo je zdroj pravdy - zoznam tasks alebo text na obrazovke?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-024",
     "level": 7,
-    "title": "UI Mindset: sort_names(names)",
+    "title": "Stavová funkcia: sort_names(names)",
     "statement": "Napíš funkciu sort_names(names), ktorá vráti nový abecedne zoradený zoznam mien. Pôvodný zoznam nemeň.",
     "mode": "solve",
     "starter_code": "def sort_names(names):\n    # TODO\n    return names\n",
@@ -2850,18 +3358,52 @@
       }
     },
     "concepts": [
-      "sorting",
-      "no mutation"
+      "function",
+      "list_as_state",
+      "no mutation",
+      "return",
+      "sorting"
     ],
     "difficulty": 3,
     "teacher_comment": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
     "type": "function",
-    "reference_solution": "def sort_names(names):\n    return sorted(names)\n"
+    "reference_solution": "def sort_names(names):\n    return sorted(names)\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [
+      "list_state_change",
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+    "microDefense": {
+      "prompt": "FixIt je návrat k logike. Po ňom treba znova ukázať handler a render v Y2 appke.",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   },
   {
     "id": "L7-025",
     "level": 7,
-    "title": "UI Mindset: render_badge(count)",
+    "title": "Render zo stavu: render_badge(count)",
     "statement": "Napíš funkciu render_badge(count), ktorá vráti \"\" pri count 0, inak vráti text v tvare \"(count)\".",
     "mode": "solve",
     "starter_code": "def render_badge(count):\n    # TODO\n    return \"\"\n",
@@ -2958,12 +3500,817 @@
     },
     "concepts": [
       "UI display",
-      "string formatting",
-      "conditional"
+      "conditional",
+      "function",
+      "return",
+      "string formatting"
     ],
     "difficulty": 2,
     "teacher_comment": "Opravené: viditeľný test už nie je prázdny reťazec pri count=0, aby žiak nebol zmätený neviditeľným očakávaným výstupom.",
     "type": "function",
-    "reference_solution": "def render_badge(count):\n    if count == 0:\n        return \"\"\n    return f\"({count})\"\n"
+    "reference_solution": "def render_badge(count):\n    if count == 0:\n        return \"\"\n    return f\"({count})\"\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom"
+    ],
+    "dramaturgyNode": "function_return",
+    "routeRole": [
+      "reserve"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "wrong_return_value"
+    ],
+    "teacherNote": "Opravené: viditeľný test už nie je prázdny reťazec pri count=0, aby žiak nebol zmätený neviditeľným očakávaným výstupom.",
+    "microDefense": {
+      "prompt": "Pýtať sa: čo je zdroj pravdy - zoznam tasks alebo text na obrazovke?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
+  },
+  {
+    "id": "L7-026",
+    "level": 7,
+    "title": "Y2 most: add_task(tasks, text)",
+    "statement": "Napíš funkciu add_task(tasks, text), ktorá vráti nový zoznam úloh s pridanou úlohou. Pôvodný zoznam nemeň. Nová úloha je slovník {\"id\": ďalšie_id, \"text\": text, \"done\": False}. Ďalšie id je o 1 väčšie ako najväčšie existujúce id, pri prázdnom zozname 1. Nepoužívaj input() ani print().",
+    "mode": "solve",
+    "type": "function",
+    "starter_code": "def add_task(tasks, text):\n    # TODO: vráť nový zoznam, pôvodný tasks nemeň\n    return tasks\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "add_task"
+      },
+      "cases": [
+        {
+          "args": [
+            [],
+            "Kúpiť mlieko"
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "Kúpiť mlieko",
+              "done": false
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              }
+            ],
+            "B"
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": false
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "done": false
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 2,
+                "text": "X",
+                "done": true
+              },
+              {
+                "id": 5,
+                "text": "Y",
+                "done": false
+              }
+            ],
+            "Z"
+          ],
+          "expected_return": [
+            {
+              "id": 2,
+              "text": "X",
+              "done": true
+            },
+            {
+              "id": 5,
+              "text": "Y",
+              "done": false
+            },
+            {
+              "id": 6,
+              "text": "Z",
+              "done": false
+            }
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ]
+      }
+    },
+    "hints": [
+      "Najprv zisti najväčšie id v tasks.",
+      "Novú úlohu vytvor ako slovník s done False.",
+      "Vráť nový zoznam: tasks + [new_task]."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj input(); pracuj s parametrami funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj print(); výsledok vráť cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval()."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec()."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open",
+          "eval",
+          "exec"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom",
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "function",
+      "return",
+      "list_as_state",
+      "dict_as_state",
+      "tasks_domain",
+      "no_input_print"
+    ],
+    "routeRole": [
+      "bridge",
+      "reserve"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "list_state_change",
+      "state_mutation"
+    ],
+    "teacherNote": "Priamy most k Y2: handler zoberie text, zavolá add_task, render zobrazí nový stav.",
+    "microDefense": {
+      "prompt": "Čo je zdroj pravdy po pridaní úlohy: zoznam tasks alebo text v inpute/na obrazovke?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
+  },
+  {
+    "id": "L7-027",
+    "level": 7,
+    "title": "Y2 most: toggle_task(tasks, wanted_id)",
+    "statement": "Napíš funkciu toggle_task(tasks, wanted_id), ktorá vráti nový zoznam úloh. Úloha so zadaným id má preklopené done. Ostatné úlohy zostanú rovnaké. Ak id neexistuje, vráť zoznam bez zmeny. Pôvodný zoznam nemeň.",
+    "mode": "solve",
+    "type": "function",
+    "starter_code": "def toggle_task(tasks, wanted_id):\n    # TODO\n    return tasks\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "toggle_task"
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              }
+            ],
+            1
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": true
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              },
+              {
+                "id": 2,
+                "text": "B",
+                "done": true
+              }
+            ],
+            2
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": false
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "done": false
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              }
+            ],
+            99
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": false
+            }
+          ],
+          "visible": false
+        }
+      ],
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ]
+      }
+    },
+    "hints": [
+      "Prejdi zoznam úloh a hľadaj wanted_id.",
+      "Pri nájdenej úlohe vytvor nový slovník s opačnou hodnotou done.",
+      "Nemutuj pôvodný zoznam ani pôvodné slovníky."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj input(); pracuj s parametrami funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj print(); výsledok vráť cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval()."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec()."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open",
+          "eval",
+          "exec"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom",
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "function",
+      "return",
+      "list_as_state",
+      "dict_as_state",
+      "tasks_domain",
+      "no_input_print"
+    ],
+    "routeRole": [
+      "bridge",
+      "reserve"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "list_state_change",
+      "state_mutation"
+    ],
+    "teacherNote": "Priamy most k Y2: click handler zavolá toggle_task a potom render.",
+    "microDefense": {
+      "prompt": "Ktorá akcia mení stav a prečo render iba zobrazuje výsledok?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
+  },
+  {
+    "id": "L7-028",
+    "level": 7,
+    "title": "Y2 most: render_task_count(tasks)",
+    "statement": "Napíš funkciu render_task_count(tasks), ktorá vráti text vo formáte \"Hotové: X/Y\", kde X je počet hotových úloh a Y je počet všetkých úloh. Toto ešte nie je DOM render, ale príprava na myšlienku: obrazovka sa odvodí zo stavu.",
+    "mode": "solve",
+    "type": "function",
+    "starter_code": "def render_task_count(tasks):\n    # TODO\n    return \"Hotové: 0/0\"\n",
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "render_task_count"
+      },
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected_return": "Hotové: 0/0",
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": true
+              },
+              {
+                "id": 2,
+                "text": "B",
+                "done": false
+              }
+            ]
+          ],
+          "expected_return": "Hotové: 1/2",
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": true
+              },
+              {
+                "id": 2,
+                "text": "B",
+                "done": true
+              },
+              {
+                "id": 3,
+                "text": "C",
+                "done": false
+              }
+            ]
+          ],
+          "expected_return": "Hotové: 2/3",
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Spočítaj úlohy, kde done je True.",
+      "Y je len dĺžka zoznamu tasks.",
+      "Vráť presný text pomocou f-stringu."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj input(); pracuj s parametrami funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj print(); výsledok vráť cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval()."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec()."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open",
+          "eval",
+          "exec"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom",
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "render_from_state",
+    "concepts": [
+      "function",
+      "return",
+      "list_as_state",
+      "tasks_domain",
+      "render",
+      "no_input_print"
+    ],
+    "routeRole": [
+      "bridge",
+      "reserve"
+    ],
+    "failureKinds": [
+      "return_vs_print",
+      "render_from_state"
+    ],
+    "teacherNote": "Jemný most k Y2 renderu: text/HTML sa odvodí zo stavu, nie naopak.",
+    "microDefense": {
+      "prompt": "Prečo táto funkcia stav nemení, ale iba z neho vyrába text pre obrazovku?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
+  },
+  {
+    "id": "L7-P29",
+    "level": 7,
+    "title": "Predict-state: úlohy ako stav",
+    "statement": "Najprv predpovedz výstup. Program vytvorí zoznam tasks, zmení jeden stav done a vypíše dve hodnoty. Cieľom je čítať stav, nie písať riešenie.",
+    "mode": "predict",
+    "type": "predict_state",
+    "starter_code": "tasks = [\n    {\"id\": 1, \"text\": \"Učiť sa\", \"done\": False},\n    {\"id\": 2, \"text\": \"Oddych\", \"done\": True},\n]\n\ntasks[0][\"done\"] = True\nprint(tasks[0][\"done\"])\nprint(sum(1 for task in tasks if task[\"done\"]))\n",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "True\n2\n",
+        "visible": true
+      }
+    ],
+    "hints": [
+      "Sleduj zoznam tasks ako zdroj pravdy.",
+      "Prvá úloha sa zmení z False na True.",
+      "Na konci sú hotové obe úlohy."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval()."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec()."
+        }
+      ]
+    },
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom",
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "predict_state",
+    "concepts": [
+      "predict",
+      "state",
+      "list_as_state",
+      "dict_as_state",
+      "tasks_domain"
+    ],
+    "routeRole": [
+      "bridge",
+      "core"
+    ],
+    "failureKinds": [
+      "state_vs_output",
+      "list_as_state"
+    ],
+    "teacherNote": "Predict-state most: žiak číta zmenu stavu v dátach pred renderom.",
+    "microDefense": {
+      "prompt": "Ktorá hodnota v zozname tasks sa zmenila a čo sa iba vypísalo?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
+  },
+  {
+    "id": "L7-F30",
+    "level": 7,
+    "title": "Fix-state: toggle_task bez mutácie vstupu",
+    "statement": "Oprav funkciu toggle_task(tasks, wanted_id). Má vrátiť nový zoznam úloh, v ktorom je preklopené done iba pri úlohe so zadaným id. Pôvodný zoznam nemeň. Nepoužívaj input() ani print().",
+    "mode": "fix",
+    "type": "function",
+    "starter_code": "",
+    "buggy_solutions": [
+      {
+        "id": "B1",
+        "title": "Mení pôvodný zoznam namiesto vrátenia nového",
+        "misconceptionTag": "state_mutation",
+        "code": "def toggle_task(tasks, wanted_id):\n    for task in tasks:\n        if task[\"id\"] == wanted_id:\n            task[\"done\"] = not task[\"done\"]\n    return tasks\n"
+      },
+      {
+        "id": "B2",
+        "title": "Preklopí všetky úlohy",
+        "misconceptionTag": "wrong_state_target",
+        "code": "def toggle_task(tasks, wanted_id):\n    result = []\n    for task in tasks:\n        new_task = task.copy()\n        new_task[\"done\"] = not new_task[\"done\"]\n        result.append(new_task)\n    return result\n"
+      }
+    ],
+    "evaluation": {
+      "kind": "function",
+      "target": {
+        "name": "toggle_task"
+      },
+      "mutation": {
+        "check": true,
+        "inputsMustRemainUnchanged": [
+          0
+        ]
+      },
+      "cases": [
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              },
+              {
+                "id": 2,
+                "text": "B",
+                "done": true
+              }
+            ],
+            1
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": true
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "done": true
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              },
+              {
+                "id": 2,
+                "text": "B",
+                "done": true
+              }
+            ],
+            2
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": false
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "done": false
+            }
+          ],
+          "visible": true
+        },
+        {
+          "args": [
+            [
+              {
+                "id": 1,
+                "text": "A",
+                "done": false
+              }
+            ],
+            99
+          ],
+          "expected_return": [
+            {
+              "id": 1,
+              "text": "A",
+              "done": false
+            }
+          ],
+          "visible": false
+        }
+      ]
+    },
+    "hints": [
+      "Nerob zmenu priamo v pôvodnom task slovníku.",
+      "Pre každý task vytvor kópiu cez task.copy().",
+      "Done zmeň iba tam, kde task['id'] == wanted_id."
+    ],
+    "checks": {
+      "forbiddenPatterns": [
+        {
+          "pattern": "\\binput\\s*\\(",
+          "message": "V L7/Y2 moste nepoužívaj input(); pracuj s parametrami funkcie."
+        },
+        {
+          "pattern": "\\bprint\\s*\\(",
+          "message": "V L7/Y2 funkčnej úlohe nepoužívaj print() ako hlavný výstup; výsledok vráť cez return."
+        },
+        {
+          "pattern": "\\bopen\\s*\\(",
+          "message": "V tejto úlohe nepracuj so súbormi."
+        },
+        {
+          "pattern": "\\beval\\s*\\(",
+          "message": "Nepoužívaj eval()."
+        },
+        {
+          "pattern": "\\bexec\\s*\\(",
+          "message": "Nepoužívaj exec()."
+        }
+      ],
+      "ast": {
+        "enabled": true,
+        "forbiddenCalls": [
+          "input",
+          "print",
+          "open",
+          "eval",
+          "exec"
+        ],
+        "forbidWhileTrue": true
+      }
+    },
+    "reference_solution": "def toggle_task(tasks, wanted_id):\n    result = []\n    for task in tasks:\n        new_task = task.copy()\n        if new_task[\"id\"] == wanted_id:\n            new_task[\"done\"] = not new_task[\"done\"]\n        result.append(new_task)\n    return result\n",
+    "schema_version": 3,
+    "phaseTags": [
+      "Y2_most_cli_dom",
+      "Y2_brython_event_render"
+    ],
+    "dramaturgyNode": "fix_state_transform",
+    "concepts": [
+      "fix",
+      "state_transform",
+      "list_as_state",
+      "dict_as_state",
+      "tasks_domain",
+      "no_mutation",
+      "return"
+    ],
+    "routeRole": [
+      "bridge",
+      "core"
+    ],
+    "failureKinds": [
+      "state_mutation",
+      "wrong_state_target",
+      "return_vs_print"
+    ],
+    "teacherNote": "Fix-state úloha: dobrá mikroobhajoba je rozdiel medzi stavom v dátach a renderom.",
+    "microDefense": {
+      "prompt": "Prečo je problém meniť pôvodný zoznam tasks priamo a čo má funkcia vrátiť?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,868 @@
+[
+  {
+    "id": "Y1_start",
+    "phase": "Y1_start",
+    "title": "FixIt minimum: prvý kontakt s programom",
+    "purpose": "Krátky tréning vstupu, výstupu, premennej a predikcie; nemení hlavnú líniu Y1.",
+    "recommendedUse": "10-15 min na začiatku alebo konci hodiny. Po dvoch úlohách žiadať žiaka povedať, čo je hodnota premennej.",
+    "coreTasks": [
+      {
+        "id": "L1-001",
+        "level": 1,
+        "title": "Pozdrav",
+        "mode": "solve",
+        "why": "prvý úspech s input/print",
+        "role": "core"
+      },
+      {
+        "id": "L1-002",
+        "level": 1,
+        "title": "Súčet dvoch čísel",
+        "mode": "solve",
+        "why": "číselný vstup a int()",
+        "role": "core"
+      },
+      {
+        "id": "L1-F01",
+        "level": 1,
+        "title": "Fix: Zabudnutý int()",
+        "mode": "fix",
+        "why": "oprava zabudnutého int(); práca s chybou",
+        "role": "core"
+      },
+      {
+        "id": "L1-P02",
+        "level": 1,
+        "title": "Predict: premenná sa zmení",
+        "mode": "predict",
+        "why": "predikcia zmeny premennej",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L1-P03",
+        "level": 1,
+        "title": "Predict: textové sčítanie",
+        "mode": "predict",
+        "why": "rozlíšenie textového a číselného sčítania",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Ukáž jednu konkrétnu hodnotu premennej tesne pred výpisom.",
+      "teacherPrompt": "Nech žiak po jednej úlohe ukáže konkrétnu hodnotu premennej pred výpisom."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L1-001",
+        "level": 1
+      },
+      {
+        "id": "L1-002",
+        "level": 1
+      },
+      {
+        "id": "L1-F01",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "id": "Y1_citanie_stav",
+    "phase": "Y1_citanie_stav",
+    "title": "FixIt minimum: čítanie programu a stav",
+    "purpose": "Posilniť predikciu a rozlíšenie medzi tým, čo si program pamätá, a tým, čo vypíše.",
+    "recommendedUse": "Použiť ako návratový blok pri slabom trasovaní alebo ako rýchlu diferenciáciu.",
+    "coreTasks": [
+      {
+        "id": "L1-P01",
+        "level": 1,
+        "title": "Predict: čo to vypíše?",
+        "mode": "predict",
+        "why": "predikcia výstupu",
+        "role": "core"
+      },
+      {
+        "id": "L1-P02",
+        "level": 1,
+        "title": "Predict: premenná sa zmení",
+        "mode": "predict",
+        "why": "zmena premennej počas programu",
+        "role": "core"
+      },
+      {
+        "id": "L1-F03",
+        "level": 1,
+        "title": "Fix: Text namiesto čísla",
+        "mode": "fix",
+        "why": "text namiesto čísla; význam typu",
+        "role": "core"
+      },
+      {
+        "id": "L2-P01",
+        "level": 2,
+        "title": "Predict: vetvenie",
+        "mode": "predict",
+        "why": "predikcia vetvenia",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L3-P01",
+        "level": 3,
+        "title": "Predict: koľko iterácií?",
+        "mode": "predict",
+        "why": "predikcia počtu iterácií",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Kde bol stav programu a čo bolo iba vypísané?",
+      "teacherPrompt": "Zelený výsledok nestačí: žiak jednou vetou vysvetlí, kde bol stav programu."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L1-P01",
+        "level": 1
+      },
+      {
+        "id": "L1-P02",
+        "level": 1
+      },
+      {
+        "id": "L1-F03",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "id": "Y1_podmienky_cykly",
+    "phase": "Y1_podmienky_cykly",
+    "title": "FixIt minimum: podmienky a cykly",
+    "purpose": "Nácvik vetvy if, počítadla, hranice range a jednoduchého trasovania cyklu.",
+    "recommendedUse": "Použiť po spoločnom papierovom trasovaní; nie ako samostatný skok do množstva úloh.",
+    "coreTasks": [
+      {
+        "id": "L2-001",
+        "level": 2,
+        "title": "Kladné alebo záporné",
+        "mode": "solve",
+        "why": "kladné/záporné; základná podmienka",
+        "role": "core"
+      },
+      {
+        "id": "L2-002",
+        "level": 2,
+        "title": "Párne alebo nepárne",
+        "mode": "solve",
+        "why": "párnosť a modulo",
+        "role": "core"
+      },
+      {
+        "id": "L2-F01",
+        "level": 2,
+        "title": "Fix: zamenené = a ==",
+        "mode": "fix",
+        "why": "oprava = vs ==",
+        "role": "core"
+      },
+      {
+        "id": "L2-P03",
+        "level": 2,
+        "title": "Predict: and a or",
+        "mode": "predict",
+        "why": "and/or v rozhodovaní",
+        "role": "core"
+      },
+      {
+        "id": "L3-001",
+        "level": 3,
+        "title": "For cez položky",
+        "mode": "solve",
+        "why": "for cez položky",
+        "role": "core"
+      },
+      {
+        "id": "L3-002",
+        "level": 3,
+        "title": "Súčet 1..n",
+        "mode": "solve",
+        "why": "akumulátor v cykle",
+        "role": "core"
+      },
+      {
+        "id": "L3-F01",
+        "level": 3,
+        "title": "Fix: off-by-one",
+        "mode": "fix",
+        "why": "off-by-one chyba",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L3-F02",
+        "level": 3,
+        "title": "Fix: počítadlo sa nuluje v cykle",
+        "mode": "fix",
+        "why": "počítadlo sa nuluje v cykle",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Ktorá vetva alebo iterácia zmenila stav?",
+      "teacherPrompt": "Pri jednej úlohe nech žiak označí, ktorá vetva/cyklový krok práve mení stav."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L2-001",
+        "level": 2
+      },
+      {
+        "id": "L2-002",
+        "level": 2
+      },
+      {
+        "id": "L2-F01",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "id": "Y1_zoznamy_stav",
+    "phase": "Y1_zoznamy_stav",
+    "title": "FixIt minimum: zoznamy a zmena stavu",
+    "purpose": "Podpora prechodového bodu: zoznam ako stav, zmena položiek, split/join ako príprava na úlohovník.",
+    "recommendedUse": "Použiť pred návratovou hodinou na stav zoznamu alebo ako rozšírenie pre rýchlejších.",
+    "coreTasks": [
+      {
+        "id": "L5-014",
+        "level": 5,
+        "title": "Zoznam čísel: súčet",
+        "mode": "solve",
+        "why": "súčet zoznamu čísel",
+        "role": "core"
+      },
+      {
+        "id": "L5-015",
+        "level": 5,
+        "title": "Zoznam čísel: maximum",
+        "mode": "solve",
+        "why": "maximum v zozname",
+        "role": "core"
+      },
+      {
+        "id": "L5-016",
+        "level": 5,
+        "title": "Vymeň prvý a posledný prvok",
+        "mode": "solve",
+        "why": "výmena prvého a posledného prvku",
+        "role": "core"
+      },
+      {
+        "id": "L5-017",
+        "level": 5,
+        "title": "Pridaj slovo na koniec",
+        "mode": "solve",
+        "why": "pridanie slova na koniec",
+        "role": "core"
+      },
+      {
+        "id": "L5-F02",
+        "level": 5,
+        "title": "Fix: max textov namiesto čísel",
+        "mode": "fix",
+        "why": "texty namiesto čísel; typová chyba",
+        "role": "core"
+      },
+      {
+        "id": "L5-P03",
+        "level": 5,
+        "title": "Predict: split a join",
+        "mode": "predict",
+        "why": "predikcia split/join",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L3-F02",
+        "level": 3,
+        "title": "Fix: počítadlo sa nuluje v cykle",
+        "mode": "fix",
+        "why": "chyba akumulátora v cykle",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "teacherPrompt": "Pýtať sa: čo je uložené v zozname pred zmenou a čo po zmene?"
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L5-014",
+        "level": 5
+      },
+      {
+        "id": "L5-015",
+        "level": 5
+      },
+      {
+        "id": "L5-016",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "id": "Y1_funkcie_uvod",
+    "phase": "Y1_funkcie_uvod",
+    "title": "FixIt minimum: funkcie, parameter, return",
+    "purpose": "Cielený tréning funkcie ako pomenovanej logiky; rozlíšenie return/print ako príprava na Y2.",
+    "recommendedUse": "Použiť po prvom vysvetlení funkcie; Fix a Predict úlohy majú prednosť pred veľkým množstvom Solve úloh.",
+    "coreTasks": [
+      {
+        "id": "L6-001",
+        "level": 6,
+        "title": "Funkcia: absolútna hodnota",
+        "mode": "solve",
+        "why": "funkcia s parametrom a return",
+        "role": "core"
+      },
+      {
+        "id": "L6-005",
+        "level": 6,
+        "title": "Funkcia: štvorec",
+        "mode": "solve",
+        "why": "jednoduchá čistá funkcia",
+        "role": "core"
+      },
+      {
+        "id": "L6-006",
+        "level": 6,
+        "title": "Funkcia: je_parne",
+        "mode": "solve",
+        "why": "funkcia vracia True/False",
+        "role": "core"
+      },
+      {
+        "id": "L6-F01",
+        "level": 6,
+        "title": "Fix: funkcia nič nevracia",
+        "mode": "fix",
+        "why": "funkcia nič nevracia",
+        "role": "core"
+      },
+      {
+        "id": "L6-P01",
+        "level": 6,
+        "title": "Predict: return vs print",
+        "mode": "predict",
+        "why": "return vs print",
+        "role": "core"
+      },
+      {
+        "id": "L6-F03",
+        "level": 6,
+        "title": "Fix: zabudnutý parameter",
+        "mode": "fix",
+        "why": "zabudnutý parameter",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L6-P03",
+        "level": 6,
+        "title": "Predict: lokálna premenná",
+        "mode": "predict",
+        "why": "lokálna premenná",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje.",
+      "teacherPrompt": "Nech žiak povie, čo funkcia dostáva, čo vracia a čo iba vypisuje."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L6-001",
+        "level": 6
+      },
+      {
+        "id": "L6-005",
+        "level": 6
+      },
+      {
+        "id": "L6-006",
+        "level": 6
+      }
+    ]
+  },
+  {
+    "id": "Y1_json_cli_final",
+    "phase": "Y1_json_cli_final",
+    "title": "FixIt most: z CLI logiky k aplikačnej logike",
+    "purpose": "Pred Y2 vyčistiť return/parameter/zoznam pred prácou s handlerom a renderom.",
+    "recommendedUse": "Použiť ako 20-30 min mostový blok po CLI úlohovníku alebo na začiatku Y2 bez opakovania celej Y1.",
+    "coreTasks": [
+      {
+        "id": "L6-P01",
+        "level": 6,
+        "title": "Predict: return vs print",
+        "mode": "predict",
+        "why": "return vs print",
+        "role": "core"
+      },
+      {
+        "id": "L6-F01",
+        "level": 6,
+        "title": "Fix: funkcia nič nevracia",
+        "mode": "fix",
+        "why": "funkcia nič nevracia",
+        "role": "core"
+      },
+      {
+        "id": "L7-001",
+        "level": 7,
+        "title": "Funkcia bez input/print: double(n)",
+        "mode": "solve",
+        "why": "čistá funkcia bez input/print",
+        "role": "core"
+      },
+      {
+        "id": "L7-002",
+        "level": 7,
+        "title": "Funkcia bez input/print: sum_list(nums)",
+        "mode": "solve",
+        "why": "zoznam ako vstupná hodnota",
+        "role": "core"
+      },
+      {
+        "id": "L7-004",
+        "level": 7,
+        "title": "Funkcia bez input/print: filter_even(nums) bez mutácie",
+        "mode": "solve",
+        "why": "filter bez mutácie",
+        "role": "core"
+      },
+      {
+        "id": "L7-015",
+        "level": 7,
+        "title": "Funkcia bez input/print: toggle(done)",
+        "mode": "solve",
+        "why": "toggle ako aplikačná akcia",
+        "role": "core"
+      },
+      {
+        "id": "L7-018",
+        "level": 7,
+        "title": "Stavová funkcia: add_item(items, item)",
+        "mode": "solve",
+        "why": "add_item ako príprava na úlohovník",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L7-021",
+        "level": 7,
+        "title": "Stavová funkcia: summarize_tasks(tasks)",
+        "mode": "solve",
+        "why": "summarize_tasks ako most k renderu",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí.",
+      "teacherPrompt": "Spájajte jazyk: handler zavolá funkciu, funkcia zmení/vráti dáta, render zobrazí."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min"
+    },
+    "minimumTasks": [
+      {
+        "id": "L6-P01",
+        "level": 6
+      },
+      {
+        "id": "L6-F01",
+        "level": 6
+      },
+      {
+        "id": "L7-001",
+        "level": 7
+      }
+    ]
+  },
+  {
+    "id": "Y2_diagnostika_html_css",
+    "phase": "Y2_diagnostika_html_css",
+    "title": "FixIt L7: stavové funkcie pred prvou Brython/web hodinou",
+    "purpose": "Y2 nezačína len HTML/CSS. Žiaci potrebujú funkcie bez input/print, return, zoznam ako stav a render zo stavu.",
+    "recommendedUse": "Ak skupina nemá Y1 históriu alebo je neistá, zaradiť pred PV02. Pri slabej HTML/CSS diagnostike kombinovať s MS01/MS02.",
+    "coreTasks": [
+      {
+        "id": "L7-001",
+        "level": 7,
+        "title": "Funkcia bez input/print: double(n)",
+        "mode": "solve",
+        "why": "double(n): čistý return",
+        "role": "core"
+      },
+      {
+        "id": "L7-002",
+        "level": 7,
+        "title": "Funkcia bez input/print: sum_list(nums)",
+        "mode": "solve",
+        "why": "sum_list(nums): práca so zoznamom",
+        "role": "core"
+      },
+      {
+        "id": "L7-004",
+        "level": 7,
+        "title": "Funkcia bez input/print: filter_even(nums) bez mutácie",
+        "mode": "solve",
+        "why": "filter_even(nums): nemutovať vstup",
+        "role": "core"
+      },
+      {
+        "id": "L7-015",
+        "level": 7,
+        "title": "Funkcia bez input/print: toggle(done)",
+        "mode": "solve",
+        "why": "toggle(done): model stavu splnené/nesplnené",
+        "role": "core"
+      },
+      {
+        "id": "L7-018",
+        "level": 7,
+        "title": "Stavová funkcia: add_item(items, item)",
+        "mode": "solve",
+        "why": "add_item(items, item): pridanie položky úlohovníka",
+        "role": "core"
+      },
+      {
+        "id": "L7-020",
+        "level": 7,
+        "title": "Stavová funkcia: find_by_id(items, wanted_id)",
+        "mode": "solve",
+        "why": "find_by_id(items, wanted_id): vyhľadanie položky",
+        "role": "core"
+      },
+      {
+        "id": "L7-021",
+        "level": 7,
+        "title": "Stavová funkcia: summarize_tasks(tasks)",
+        "mode": "solve",
+        "why": "summarize_tasks(tasks): príprava na zobrazenie stavu",
+        "role": "core"
+      },
+      {
+        "id": "L7-026",
+        "level": 7,
+        "title": "Y2 most: add_task(tasks, text)",
+        "mode": "solve",
+        "why": "úlohovník ako stav pred renderom",
+        "role": "core"
+      },
+      {
+        "id": "L7-027",
+        "level": 7,
+        "title": "Y2 most: toggle_task(tasks, wanted_id)",
+        "mode": "solve",
+        "why": "úlohovník ako stav pred renderom",
+        "role": "core"
+      },
+      {
+        "id": "L7-028",
+        "level": 7,
+        "title": "Y2 most: render_task_count(tasks)",
+        "mode": "solve",
+        "why": "úlohovník ako stav pred renderom",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [],
+    "microDefense": {
+      "defaultPrompt": "Bezpečnostný most pred renderom: funkcia dostáva stav, vráti nový stav alebo text pre obrazovku; nepoužíva input/print.",
+      "teacherPrompt": "Nech žiak povie: čo funkcia dostáva, čo vracia, čo sa mení v stave a čo sa iba renderuje."
+    },
+    "teacherCard": {
+      "minutes": "15–20 min",
+      "when": "Pred prvou Brython/web hodinou alebo pri Y2 skupine bez istej Y1 histórie."
+    },
+    "minimumTasks": [
+      {
+        "id": "L7-001",
+        "level": 7
+      },
+      {
+        "id": "L7-002",
+        "level": 7
+      },
+      {
+        "id": "L7-004",
+        "level": 7
+      }
+    ]
+  },
+  {
+    "id": "Y2_most_cli_dom",
+    "phase": "Y2_most_cli_dom",
+    "title": "FixIt L7: handler → stavová funkcia → render",
+    "purpose": "Upevniť aplikačné jadro pred DOM/Brython udalosťami: akcia zavolá funkciu, funkcia pracuje so stavom, render zobrazí odvodený výsledok.",
+    "recommendedUse": "Krátky návratový blok pri probléme, že žiaci miešajú obrazovku a stav.",
+    "coreTasks": [
+      {
+        "id": "L7-018",
+        "level": 7,
+        "title": "Stavová funkcia: add_item(items, item)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "core"
+      },
+      {
+        "id": "L7-020",
+        "level": 7,
+        "title": "Stavová funkcia: find_by_id(items, wanted_id)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "core"
+      },
+      {
+        "id": "L7-026",
+        "level": 7,
+        "title": "Y2 most: add_task(tasks, text)",
+        "mode": "solve",
+        "why": "akcia pridá úlohu a vráti nový stav",
+        "role": "core"
+      },
+      {
+        "id": "L7-027",
+        "level": 7,
+        "title": "Y2 most: toggle_task(tasks, wanted_id)",
+        "mode": "solve",
+        "why": "akcia preklopí hotovo a vráti nový stav",
+        "role": "core"
+      },
+      {
+        "id": "L7-028",
+        "level": 7,
+        "title": "Y2 most: render_task_count(tasks)",
+        "mode": "solve",
+        "why": "renderovací výstup sa odvodí zo stavu",
+        "role": "core"
+      },
+      {
+        "id": "L7-P29",
+        "level": 7,
+        "title": "Predict-state: úlohy ako stav",
+        "mode": "predict",
+        "why": "predikcia zmeny stavu v tasks",
+        "role": "core"
+      },
+      {
+        "id": "L7-F30",
+        "level": 7,
+        "title": "Fix-state: toggle_task bez mutácie vstupu",
+        "mode": "fix",
+        "why": "oprava zmeny stavu bez mutácie vstupu",
+        "role": "core"
+      },
+      {
+        "id": "L7-021",
+        "level": 7,
+        "title": "Stavová funkcia: summarize_tasks(tasks)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L7-015",
+        "level": 7,
+        "title": "Funkcia bez input/print: toggle(done)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-023",
+        "level": 7,
+        "title": "Stavová funkcia: search_text(items, query)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-024",
+        "level": 7,
+        "title": "Stavová funkcia: sort_names(names)",
+        "mode": "solve",
+        "why": "Úloha je v štýle UI/main + logika: funkcia dostane vstup ako parameter a výsledok vracia cez return bez input()/print().",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-025",
+        "level": 7,
+        "title": "Render zo stavu: render_badge(count)",
+        "mode": "solve",
+        "why": "Opravené: viditeľný test už nie je prázdny reťazec pri count=0, aby žiak nebol zmätený neviditeľným očakávaným výstupom.",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Čo je zdroj pravdy: zoznam tasks alebo text na obrazovke? Ktorá funkcia stav mení a ktorá ho iba renderuje?",
+      "teacherPrompt": "Pýtaj sa: čo je zdroj pravdy, čo mení stav, čo vracia funkcia a čo sa má iba prekresliť."
+    },
+    "teacherCard": {
+      "minutes": "15–20 min",
+      "when": "Tesne pred DOM eventmi alebo po prvej kolízii žiakov so stav/render modelom."
+    },
+    "minimumTasks": [
+      {
+        "id": "L7-018",
+        "level": 7
+      },
+      {
+        "id": "L7-020",
+        "level": 7
+      },
+      {
+        "id": "L7-026",
+        "level": 7
+      }
+    ]
+  },
+  {
+    "id": "Y2_brython_event_render",
+    "phase": "Y2_brython_event_render",
+    "title": "FixIt L7 návrat: event, stav a render zo stavu",
+    "purpose": "Keď žiaci nerozumejú, prečo render nie je zdroj pravdy, vrátiť ich k čistým funkciám nad dátami.",
+    "recommendedUse": "Použiť len ako krátku návratovú intervenciu, nie ako hlavnú Y2 hodinu.",
+    "coreTasks": [
+      {
+        "id": "L7-018",
+        "level": 7,
+        "title": "Stavová funkcia: add_item(items, item)",
+        "mode": "solve",
+        "why": "add_item: zmena dátového stavu",
+        "role": "core"
+      },
+      {
+        "id": "L7-020",
+        "level": 7,
+        "title": "Stavová funkcia: find_by_id(items, wanted_id)",
+        "mode": "solve",
+        "why": "find_by_id: identifikácia položky",
+        "role": "core"
+      },
+      {
+        "id": "L7-021",
+        "level": 7,
+        "title": "Stavová funkcia: summarize_tasks(tasks)",
+        "mode": "solve",
+        "why": "summarize_tasks: súhrn zo stavu",
+        "role": "core"
+      },
+      {
+        "id": "L7-P29",
+        "level": 7,
+        "title": "Predict-state: úlohy ako stav",
+        "mode": "predict",
+        "why": "Predict-state most: žiak číta zmenu stavu v dátach pred renderom.",
+        "role": "core"
+      },
+      {
+        "id": "L7-F30",
+        "level": 7,
+        "title": "Fix-state: toggle_task bez mutácie vstupu",
+        "mode": "fix",
+        "why": "Fix-state úloha: dobrá mikroobhajoba je rozdiel medzi stavom v dátach a renderom.",
+        "role": "core"
+      },
+      {
+        "id": "L7-028",
+        "level": 7,
+        "title": "Y2 most: render_task_count(tasks)",
+        "mode": "solve",
+        "why": "Jemný most k Y2 renderu: text/HTML sa odvodí zo stavu, nie naopak.",
+        "role": "core"
+      }
+    ],
+    "reserveTasks": [
+      {
+        "id": "L7-023",
+        "level": 7,
+        "title": "Stavová funkcia: search_text(items, query)",
+        "mode": "solve",
+        "why": "search_text: filtrovanie pred renderom",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-024",
+        "level": 7,
+        "title": "Stavová funkcia: sort_names(names)",
+        "mode": "solve",
+        "why": "sort_names: usporiadanie dát",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-026",
+        "level": 7,
+        "title": "Y2 most: add_task(tasks, text)",
+        "mode": "solve",
+        "why": "mini doména úlohovníka ako most k handler → stav → render",
+        "role": "reserve"
+      },
+      {
+        "id": "L7-027",
+        "level": 7,
+        "title": "Y2 most: toggle_task(tasks, wanted_id)",
+        "mode": "solve",
+        "why": "mini doména úlohovníka ako most k handler → stav → render",
+        "role": "reserve"
+      }
+    ],
+    "microDefense": {
+      "defaultPrompt": "Ak render nefunguje, vráť sa k otázke: čo je stav, ktorá akcia ho mení a čo sa iba vypočítava pre obrazovku?",
+      "teacherPrompt": "Nech žiak ukáže: handler → funkcia nad tasks → render z tasks."
+    },
+    "teacherCard": {
+      "minutes": "10–15 min",
+      "when": "Návratový blok, keď žiaci používajú obrazovku ako zdroj pravdy."
+    },
+    "minimumTasks": [
+      {
+        "id": "L7-018",
+        "level": 7
+      },
+      {
+        "id": "L7-020",
+        "level": 7
+      },
+      {
+        "id": "L7-021",
+        "level": 7
+      }
+    ]
+  }
+]

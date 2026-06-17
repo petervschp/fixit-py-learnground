@@ -1,7 +1,8 @@
-// storage.js — localStorage adapter (v2) + basic validation to avoid "weird UI" after updates.
+// storage.js — namespaced localStorage adapter + private backup/anonymized summary exports.
 
-const STORAGE_KEY = "fixit.userState.v3";
-export const CONTENT_VERSION = "2026-04-29-fix-hints-indent-v2";
+export const STORAGE_KEY = "fixit.student.v3";
+const LEGACY_STORAGE_KEYS = ["fixit.userState.v3", "fixit.userState.v2", "fixit.userState"];
+export const CONTENT_VERSION = "2026-06-17-student-path-v0.9-vendor-pyodide-deployment";
 
 function nowIso() {
   return new Date().toISOString();
@@ -9,7 +10,7 @@ function nowIso() {
 
 export function defaultState() {
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     contentVersion: CONTENT_VERSION,
     user: {
       id: "anonymous",
@@ -29,19 +30,28 @@ export function defaultState() {
 
 export function loadState() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    let raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      for (const legacyKey of LEGACY_STORAGE_KEYS) {
+        raw = localStorage.getItem(legacyKey);
+        if (raw) break;
+      }
+    }
     if (!raw) return defaultState();
 
     const parsed = JSON.parse(raw);
     if (!parsed || typeof parsed !== "object") return defaultState();
 
-    // minimal schema sanity
-    if (!parsed.schemaVersion) parsed.schemaVersion = 2;
+    // minimal schema sanity + v2 -> v3 migration
+    if (!parsed.schemaVersion) parsed.schemaVersion = 3;
+    if (parsed.schemaVersion < 3) parsed.schemaVersion = 3;
     if (!parsed.progress) parsed.progress = { problems: {} };
     if (!parsed.progress.problems) parsed.progress.problems = {};
     if (!parsed.events) parsed.events = { max: 300, items: [] };
     if (!Array.isArray(parsed.events.items)) parsed.events.items = [];
     if (!Number.isFinite(parsed.events.max)) parsed.events.max = 300;
+    if (!parsed.routes || typeof parsed.routes !== "object") parsed.routes = { currentRouteId: null, history: [] };
+    if (!Array.isArray(parsed.routes.history)) parsed.routes.history = [];
 
     // content version can change; keep state but update marker
     parsed.contentVersion = CONTENT_VERSION;
@@ -66,6 +76,9 @@ export function ensureProblemEntry(state, problemId) {
       attempts: 0,
       hintsUsed: 0,
       lastResult: null,
+      status: "new",
+      microDefenseStatus: null,
+      selfRating: null,
       updatedAt: nowIso(),
       runInput: "",
       draftCode: "",
@@ -79,6 +92,11 @@ export function ensureProblemEntry(state, problemId) {
   e.attempts = Number.isFinite(e.attempts) ? e.attempts : 0;
   e.hintsUsed = Number.isFinite(e.hintsUsed) ? e.hintsUsed : 0;
   e.lastResult = (e.lastResult === "PASS" || e.lastResult === "FAIL") ? e.lastResult : null;
+  e.status = ["new", "attempted", "tests_passed", "explained"].includes(e.status)
+    ? e.status
+    : (e.solved ? "tests_passed" : (e.attempts > 0 ? "attempted" : "new"));
+  e.microDefenseStatus = typeof e.microDefenseStatus === "string" ? e.microDefenseStatus : null;
+  e.selfRating = Number.isFinite(e.selfRating) ? e.selfRating : null;
   e.runInput = typeof e.runInput === "string" ? e.runInput : "";
   e.draftCode = typeof e.draftCode === "string" ? e.draftCode : "";
   e.lastDiag = (e.lastDiag && typeof e.lastDiag === "object") ? e.lastDiag : null;
@@ -116,7 +134,40 @@ export function setResult(state, problemId, result) {
   const entry = ensureProblemEntry(state, problemId);
   entry.lastResult = result;
   entry.solved = (result === "PASS");
+  if (result === "PASS") {
+    entry.status = entry.status === "explained" ? "explained" : "tests_passed";
+  } else {
+    entry.status = "attempted";
+    entry.microDefenseStatus = null;
+    entry.selfRating = null;
+  }
   entry.updatedAt = nowIso();
+  saveState(state);
+}
+
+export function setMicroDefenseStatus(state, problemId, rating) {
+  const entry = ensureProblemEntry(state, problemId);
+  const n = Number(rating);
+  entry.selfRating = Number.isFinite(n) ? n : null;
+  entry.microDefenseStatus = n >= 3 ? "explained" : (n === 2 ? "explained_with_help" : "not_explained");
+  if (entry.lastResult === "PASS" && n >= 3) {
+    entry.status = "explained";
+  } else if (entry.lastResult === "PASS") {
+    entry.status = "tests_passed";
+  } else {
+    entry.status = "attempted";
+  }
+  entry.updatedAt = nowIso();
+  saveState(state);
+}
+
+export function setCurrentRoute(state, routeId) {
+  if (!state.routes || typeof state.routes !== "object") state.routes = { currentRouteId: null, history: [] };
+  state.routes.currentRouteId = routeId || null;
+  if (routeId) {
+    state.routes.history = Array.isArray(state.routes.history) ? state.routes.history : [];
+    state.routes.history = [routeId, ...state.routes.history.filter(x => x !== routeId)].slice(0, 20);
+  }
   saveState(state);
 }
 
@@ -162,6 +213,78 @@ export async function buildSignedExport(state, problemsMeta = {}) {
     ...base,
     submission: { code, algorithm: "SHA-256", codeLength: 12 }
   };
+}
+
+export async function buildPrivateBackupExport(state, problemsMeta = {}) {
+  const out = {
+    type: "fixit-private-backup",
+    schemaVersion: 1,
+    contentVersion: state.contentVersion ?? CONTENT_VERSION,
+    exportedAt: nowIso(),
+    privacy: {
+      containsName: Boolean(state.user?.displayName && state.user.displayName !== "Anonymous"),
+      containsCode: true,
+      containsRunInput: true,
+      containsFreeText: false,
+      note: "Private backup is for the student only. It may include draft code and stdin. Do not submit it as an anonymous teacher summary."
+    },
+    problemsMeta,
+    state
+  };
+  const code = await submissionCodeFromExport(out);
+  return { ...out, submission: { code, algorithm: "SHA-256", codeLength: 12 } };
+}
+
+export async function buildAnonymousSummaryExport(state, route = null, problemsMeta = {}) {
+  const problems = state.progress?.problems ?? {};
+  const taskStatus = Object.entries(problems).map(([id, e]) => ({
+    id,
+    status: e?.status ?? (e?.solved ? "tests_passed" : "new"),
+    lastResult: e?.lastResult ?? null,
+    attempts: Number.isFinite(e?.attempts) ? e.attempts : 0,
+    hintsUsed: Number.isFinite(e?.hintsUsed) ? e.hintsUsed : 0,
+    selfRating: Number.isFinite(e?.selfRating) ? e.selfRating : null
+  })).sort((a, b) => a.id.localeCompare(b.id));
+
+  const summary = {
+    tasksTouched: taskStatus.filter(x => x.attempts > 0 || x.hintsUsed > 0 || x.lastResult).length,
+    testsPassed: taskStatus.filter(x => x.lastResult === "PASS").length,
+    explained: taskStatus.filter(x => x.status === "explained").length,
+    attempts: taskStatus.reduce((acc, x) => acc + x.attempts, 0),
+    hintsUsed: taskStatus.reduce((acc, x) => acc + x.hintsUsed, 0),
+  };
+
+  const events = state.events?.items ?? [];
+  const failureCounts = new Map();
+  for (const ev of events) {
+    const kind = ev.payload?.kind || ev.payload?.misconceptionTag || ev.payload?.failureKind || null;
+    if (!kind) continue;
+    if (["run_input_change", "no_diag", "passed"].includes(kind)) continue;
+    failureCounts.set(kind, (failureCounts.get(kind) ?? 0) + 1);
+  }
+  summary.topFailureKinds = [...failureCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([kind, n]) => ({ kind, n }));
+
+  const out = {
+    type: "fixit-anonymous-summary",
+    schemaVersion: 1,
+    contentVersion: state.contentVersion ?? CONTENT_VERSION,
+    exportedAt: nowIso(),
+    route: route ? { id: route.id, title: route.title, phase: route.phase } : { id: state.routes?.currentRouteId ?? null },
+    summary,
+    taskStatus,
+    problemsMeta,
+    privacy: {
+      containsName: false,
+      containsCode: false,
+      containsFreeText: false,
+      note: "Anonymous teacher summary intentionally excludes user identity, draft code, run input and free-text microdefense. It is not a private backup and cannot restore student work."
+    }
+  };
+  const code = await submissionCodeFromExport(out);
+  return { ...out, submission: { code, algorithm: "SHA-256", codeLength: 12 } };
 }
 export function computeSummaryFromState(state) {
   const problems = state.progress?.problems ?? {};
@@ -237,57 +360,63 @@ export function resetAllState() {
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
     if (!k) continue;
-    if (k.startsWith("fixit.") || k.includes("fixit")) keysToDelete.push(k);
+    if (k.startsWith("fixit.")) keysToDelete.push(k);
   }
   keysToDelete.forEach(k => localStorage.removeItem(k));
 
-  // Ak nič nevymazalo (napr. iný kľúč), sprav "hard reset" pre daný origin.
-  if (keysToDelete.length === 0) {
-    localStorage.clear();
-  }
+  // Bez fallback localStorage.clear(): FixIt nesmie mazať Teacher Companion ani iné dáta na rovnakom origine.
 }
 
 export function importStateReplace(imported) {
-  // Minimálna validácia a “sanitize”
+  // Import je určený iba pre súkromnú zálohu žiaka.
+  // Anonymný teacher summary zámerne neobsahuje kód ani stdin, preto sa nedá použiť na obnovu práce.
   if (!imported || typeof imported !== "object") {
     throw new Error("Import: neplatný JSON objekt.");
   }
-
-  // podporíme priamo exportState/buildSignedExport formát aj čistý state
-  const candidate = imported.progress && imported.events ? imported : (imported.progress ? imported : null);
+  if (imported.type === "fixit-anonymous-summary") {
+    throw new Error("Toto je anonymné zhrnutie pre učiteľa, nie súkromná záloha. Nedá sa importovať späť ako práca žiaka.");
+  }
 
   let state;
-  if (candidate && candidate.progress && candidate.events) {
-    // vyzerá ako náš state
-    state = candidate;
+  if (imported.type === "fixit-private-backup" && imported.state) {
+    state = imported.state;
+  } else if (imported.progress && imported.events) {
+    // legacy/raw state fallback
+    state = imported;
   } else if (imported.progress && imported.app) {
-    // vyzerá ako exportObj (exportState/buildSignedExport)
-    // skonštruujeme state z exportu
+    // legacy signed export fallback
     state = {
-      schemaVersion: imported.app?.schemaVersion ?? 2,
+      schemaVersion: imported.app?.schemaVersion ?? 3,
       contentVersion: imported.app?.contentVersion ?? "unknown",
       user: imported.user ?? { id: "anonymous", displayName: "Anonymous" },
       progress: imported.progress ?? { problems: {} },
       events: { max: 300, items: [] },
+      routes: imported.routes ?? { currentRouteId: null, history: [] },
       uiPrefs: imported.uiPrefs ?? undefined,
       createdAt: imported.exportedAt ?? new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-
-    // eventy z exportu nemusia byť prítomné – ak chceš, môžeš ich do exportu pridať neskôr
-    // zatiaľ necháme prázdne
   } else {
-    throw new Error("Import: súbor nemá rozpoznateľnú štruktúru FixIt exportu.");
+    throw new Error("Import: súbor nemá štruktúru súkromnej FixIt zálohy.");
   }
 
-  // doplň default štruktúry
+  if (!state || typeof state !== "object") {
+    throw new Error("Import: chýba vnútorný stav aplikácie.");
+  }
+  state.schemaVersion = Number.isFinite(state.schemaVersion) ? state.schemaVersion : 3;
   if (!state.progress) state.progress = { problems: {} };
   if (!state.progress.problems) state.progress.problems = {};
   if (!state.events) state.events = { max: 300, items: [] };
   if (!Array.isArray(state.events.items)) state.events.items = [];
   if (!Number.isFinite(state.events.max)) state.events.max = 300;
+  if (!state.routes || typeof state.routes !== "object") state.routes = { currentRouteId: null, history: [] };
+  if (!Array.isArray(state.routes.history)) state.routes.history = [];
+  if (!state.user || typeof state.user !== "object") state.user = { id: "anonymous", displayName: "Anonymous" };
+  // V žiackej appke nepoužívame mená. Pri importe starších exportov ich neutralizujeme.
+  state.user.id = "anonymous";
+  state.user.displayName = "Anonymous";
+  state.contentVersion = CONTENT_VERSION;
 
-  // UI prefs (nepovinné)
   if (state.uiPrefs && typeof state.uiPrefs === "object") {
     if (!Number.isFinite(state.uiPrefs.lastLevel)) state.uiPrefs.lastLevel = 1;
     if (!state.uiPrefs.lastProblemByLevel || typeof state.uiPrefs.lastProblemByLevel !== "object") {
@@ -295,7 +424,6 @@ export function importStateReplace(imported) {
     }
   }
 
-  // zapíš do localStorage – tu použi tvoju existujúcu saveState
   saveState(state);
   return state;
 }

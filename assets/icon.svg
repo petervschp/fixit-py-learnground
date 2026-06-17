@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FixIt Student Path icon">
+  <rect width="512" height="512" rx="96" fill="#111827"/>
+  <path d="M132 152h248v48H132zM132 232h156v48H132zM132 312h248v48H132z" fill="#f9fafb"/>
+  <circle cx="360" cy="256" r="64" fill="#22c55e"/>
+  <path d="M330 256l20 20 42-48" fill="none" stroke="#052e16" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

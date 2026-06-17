@@ -34,7 +34,7 @@
       }
     ],
     "reference_solution": "s = input()\nprint(len(s))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -51,7 +51,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-002",
@@ -88,7 +98,7 @@
       }
     ],
     "reference_solution": "s = input()\nprint(s[0] + s[-1])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -105,7 +115,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-003",
@@ -142,7 +162,7 @@
       }
     ],
     "reference_solution": "text = input()\nwords = text.split()\nprint(len(words))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -159,7 +179,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-004",
@@ -196,7 +226,7 @@
       }
     ],
     "reference_solution": "text = input()\nwords = text.split()\nprint(' '.join(words[::-1]))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -213,7 +243,17 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "concepts": [
+      "program_reading"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-F01",
@@ -264,7 +304,7 @@
       }
     ],
     "reference_solution": "text = input()\nwords = text.split()\nprint('-'.join(words))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -281,7 +321,21 @@
         }
       ]
     },
-    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
+    "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "debugging",
+      "list_as_state"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception",
+      "list_state_change"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-P01",
@@ -302,7 +356,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -319,7 +373,18 @@
         }
       ]
     },
-    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
+    "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "concepts": [
+      "dict_as_state",
+      "predict"
+    ],
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   },
   {
     "id": "L5-005",
@@ -335,6 +400,7 @@
     ],
     "concepts": [
       "indexing",
+      "program_reading",
       "string"
     ],
     "difficulty": 1,
@@ -362,7 +428,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint(text[1])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -378,7 +444,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-006",
@@ -393,6 +466,7 @@
       "Riešenie: print(text[1:])"
     ],
     "concepts": [
+      "program_reading",
       "slicing"
     ],
     "difficulty": 2,
@@ -420,7 +494,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint(text[1:])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -436,7 +510,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-007",
@@ -451,6 +532,7 @@
       "Riešenie: print(text[:3])"
     ],
     "concepts": [
+      "program_reading",
       "slicing"
     ],
     "difficulty": 2,
@@ -478,7 +560,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint(text[:3])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -494,7 +576,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-008",
@@ -509,6 +598,7 @@
       "Riešenie: print(text[::2])"
     ],
     "concepts": [
+      "program_reading",
       "slicing step"
     ],
     "difficulty": 3,
@@ -536,7 +626,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint(text[::2])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -552,7 +642,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-009",
@@ -567,6 +664,7 @@
       "Riešenie: print(text[::-1])"
     ],
     "concepts": [
+      "program_reading",
       "slicing negative step"
     ],
     "difficulty": 3,
@@ -594,7 +692,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint(text[::-1])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -610,7 +708,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-010",
@@ -625,8 +730,9 @@
       "Každé slovo vypíš."
     ],
     "concepts": [
-      "split",
-      "for list"
+      "for list",
+      "program_reading",
+      "split"
     ],
     "difficulty": 2,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -648,7 +754,7 @@
       }
     ],
     "reference_solution": "veta = input()\nslova = veta.split()\nfor slovo in slova:\n    print(slovo)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -664,7 +770,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-011",
@@ -679,8 +792,9 @@
       "Riešenie: print(slova[0])"
     ],
     "concepts": [
-      "split",
-      "list indexing"
+      "list indexing",
+      "program_reading",
+      "split"
     ],
     "difficulty": 2,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -702,7 +816,7 @@
       }
     ],
     "reference_solution": "veta = input()\nslova = veta.split()\nprint(slova[0])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -718,7 +832,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-012",
@@ -734,6 +855,7 @@
     ],
     "concepts": [
       "negative index",
+      "program_reading",
       "split"
     ],
     "difficulty": 2,
@@ -756,7 +878,7 @@
       }
     ],
     "reference_solution": "veta = input()\nslova = veta.split()\nprint(slova[-1])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -772,7 +894,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-013",
@@ -787,8 +916,9 @@
       "Pozor: join voláme na oddeľovači."
     ],
     "concepts": [
-      "split",
-      "join"
+      "join",
+      "program_reading",
+      "split"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -815,7 +945,7 @@
       }
     ],
     "reference_solution": "veta = input()\nslova = veta.split()\nprint('-'.join(slova))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -831,7 +961,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-014",
@@ -846,9 +983,10 @@
       "Pridávaj do súčtu."
     ],
     "concepts": [
-      "split",
+      "accumulator",
       "int conversion",
-      "accumulator"
+      "list_as_state",
+      "split"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -875,7 +1013,7 @@
       }
     ],
     "reference_solution": "riadok = input()\ncasti = riadok.split()\ns = 0\nfor cast in casti:\n    s += int(cast)\nprint(s)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -889,6 +1027,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -906,8 +1072,9 @@
       "Alebo max(map(int, cisla))."
     ],
     "concepts": [
-      "split",
-      "maximum"
+      "list_as_state",
+      "maximum",
+      "split"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -934,7 +1101,7 @@
       }
     ],
     "reference_solution": "cisla = input().split()\nnaj = int(cisla[0])\nfor c in cisla:\n    x = int(c)\n    if x > naj:\n        naj = x\nprint(naj)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -948,6 +1115,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -965,8 +1160,9 @@
       "Na výpis použi \" \".join(slova)."
     ],
     "concepts": [
+      "join",
       "list mutation",
-      "join"
+      "list_as_state"
     ],
     "difficulty": 4,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -993,7 +1189,7 @@
       }
     ],
     "reference_solution": "slova = input().split()\nif len(slova) > 1:\n    slova[0], slova[-1] = slova[-1], slova[0]\nprint(' '.join(slova))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1007,6 +1203,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1024,8 +1248,9 @@
       "slova.append(nové)"
     ],
     "concepts": [
+      "join",
       "list append",
-      "join"
+      "program_reading"
     ],
     "difficulty": 2,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1047,7 +1272,7 @@
       }
     ],
     "reference_solution": "slova = input().split()\nnové = input()\nslova.append(nové)\nprint(' '.join(slova))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1061,6 +1286,32 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1078,8 +1329,9 @@
       "Nemeň znaky, ale slová."
     ],
     "concepts": [
+      "join",
       "list slicing",
-      "join"
+      "program_reading"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1101,7 +1353,7 @@
       }
     ],
     "reference_solution": "slova = input().split()\nslova.pop(0)\nprint(' '.join(slova))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1117,7 +1369,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-019",
@@ -1132,9 +1391,10 @@
       "Podmienka je len(slovo) > 3."
     ],
     "concepts": [
-      "split",
       "filter",
-      "len"
+      "len",
+      "program_reading",
+      "split"
     ],
     "difficulty": 3,
     "teacher_comment": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
@@ -1161,7 +1421,7 @@
       }
     ],
     "reference_solution": "slova = input().split()\nfor slovo in slova:\n    if len(slovo) > 3:\n        print(slovo)\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1177,7 +1437,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "basic_state_output",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-F02",
@@ -1228,7 +1495,7 @@
       }
     ],
     "reference_solution": "casti = input().split()\ncisla = [int(c) for c in casti]\nprint(max(cisla))\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1242,6 +1509,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
@@ -1296,7 +1591,7 @@
       }
     ],
     "reference_solution": "text = input()\nprint('X' + text[1:])\n",
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1312,7 +1607,16 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "debugging_misconception",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [
+      "debugging_misconception"
+    ],
+    "teacherNote": "Verzia v2: pôvodné tests sú prerobené na test_cases a doplnené o skryté prípady proti hardcodu výstupu."
   },
   {
     "id": "L5-P02",
@@ -1327,7 +1631,9 @@
       "text[1:4] obsahuje indexy 1,2,3."
     ],
     "concepts": [
+      "dict_as_state",
       "indexing",
+      "predict",
       "slicing",
       "trace"
     ],
@@ -1340,7 +1646,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1356,7 +1662,14 @@
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
         }
       ]
-    }
+    },
+    "phaseTags": [],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "free_practice"
+    ],
+    "failureKinds": [],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie."
   },
   {
     "id": "L5-P03",
@@ -1371,9 +1684,12 @@
       "join ich spojí pomlčkou."
     ],
     "concepts": [
-      "split",
       "append",
-      "join"
+      "dict_as_state",
+      "join",
+      "list_as_state",
+      "predict",
+      "split"
     ],
     "difficulty": 2,
     "teacher_comment": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
@@ -1384,7 +1700,7 @@
         "visible": true
       }
     ],
-    "schema_version": 2,
+    "schema_version": 3,
     "checks": {
       "forbiddenPatterns": [
         {
@@ -1398,6 +1714,34 @@
         {
           "pattern": "\\bexec\\s*\\(",
           "message": "Nepoužívaj exec(). Rieš úlohu bežným kódom."
+        }
+      ]
+    },
+    "phaseTags": [
+      "Y1_zoznamy_stav"
+    ],
+    "dramaturgyNode": "state_transform",
+    "routeRole": [
+      "core"
+    ],
+    "failureKinds": [
+      "list_state_change"
+    ],
+    "teacherNote": "Predict úloha: test_cases slúžia na overenie očakávaného výstupu po spustení, nie na viacvstupové testovanie.",
+    "microDefense": {
+      "prompt": "Čo bolo v zozname pred zmenou a čo po zmene?",
+      "selfCheckScale": [
+        {
+          "value": 1,
+          "label": "neviem vysvetliť"
+        },
+        {
+          "value": 2,
+          "label": "viem s pomocou"
+        },
+        {
+          "value": 3,
+          "label": "viem samostatne"
         }
       ]
     }
