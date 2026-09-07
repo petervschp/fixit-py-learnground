@@ -237,15 +237,27 @@ async function main() {
   ], { stdio: ["ignore", "pipe", "pipe"] });
 
   try {
-    const meta = await waitForJson(`http://127.0.0.1:${debugPort}/json/version`, 10000);
-    const ws = new WebSocket(meta.webSocketDebuggerUrl);
+    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`, 10000);
+    
+    const newTarget = await fetch(
+      `http://127.0.0.1:${debugPort}/json/new?about:blank`,
+      { method: "PUT" }
+    );
+    
+    const target = newTarget.ok
+      ? await newTarget.json()
+      : (await waitForJson(`http://127.0.0.1:${debugPort}/json`, 10000))[0];
+    
+    const ws = new WebSocket(target.webSocketDebuggerUrl);
+    
     await new Promise((resolve, reject) => {
       ws.addEventListener("open", resolve, { once: true });
       ws.addEventListener("error", reject, { once: true });
     });
+    
     const cdp = new CdpClient(ws);
-    await cdp.send("Runtime.enable");
     await cdp.send("Page.enable");
+    await cdp.send("Runtime.enable");
 
     const base = `http://127.0.0.1:${appPort}`;
     const configuredBase = `.${MOCK_BASE_PATH}`;
