@@ -1,0 +1,51 @@
+name: Build release ZIP
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-release-zip:
+    name: Build classroom release ZIP
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install package metadata
+        run: npm install --ignore-scripts
+
+      - name: Setup Chrome for browser smoke
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Validate before packaging
+        run: |
+          npm run validate
+          npm run audit
+          npm run smoke:modules
+          npm run smoke:browser
+          npm run smoke:local-pyodide
+          npm run release:check
+        env:
+          CHROMIUM_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+
+      - name: Build release ZIP
+        run: npm run release:zip
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixit-student-path-release
+          path: dist/*.zip
