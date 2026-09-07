@@ -46,6 +46,13 @@ jobs:
           npm run smoke:local-pyodide
         env:
           CHROMIUM_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+        
+      - name: Clean smoke-test temporary artifacts
+        if: always()
+        run: |
+          rm -rf .tmp-browser-smoke-profile
+          rm -rf .tmp-local-pyodide-runtime
+          rm -rf .tmp-local-pyodide-smoke-profile
 
       - name: Release package check
         run: npm run release:check
