@@ -1,7 +1,14 @@
 const PWA_STATUS_ID = "pwaStatus";
 let simplePwaMode = false;
+let lastPwaStatus = { message: "Pripravuje sa…", detail: "", state: "idle" };
+
+export function setPwaSimpleMode(simpleMode) {
+  simplePwaMode = Boolean(simpleMode);
+  setPwaStatus(lastPwaStatus.message, lastPwaStatus.detail, lastPwaStatus.state);
+}
 
 function setPwaStatus(message, detail = "", state = "idle") {
+  lastPwaStatus = { message: String(message ?? ""), detail: String(detail ?? ""), state: String(state ?? "idle") };
   if (typeof document === "undefined") return;
   const box = document.querySelector(`#${PWA_STATUS_ID}`);
   if (!box) return;

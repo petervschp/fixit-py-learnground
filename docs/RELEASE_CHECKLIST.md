@@ -1,4 +1,4 @@
-# Release checklist — FixIt Student Path v0.9
+# Release checklist — FixIt Student Path v0.10
 
 Pred vytvorením ZIPu alebo GitHub release prebehni tento minimálny checklist.
 
@@ -164,4 +164,4 @@ Pri tagu `v*` alebo ručnom spustení workflow `Build release ZIP` spúšťa aj 
 - [ ] `docs/vendor-pyodide/README.md` vysvetľuje rozdiel medzi hlavným ZIPom a voliteľným runtime balíkom.
 - [ ] `npm run vendor:check` je zdokumentovaný ako kontrola reálneho školského vendor balíka.
 - [ ] `npm run smoke:local-pyodide` overuje lokálnu `PYODIDE_BASE_URL` cestu cez dočasný mock runtime.
-- [ ] Manuálny smoke test v0.9 obsahuje CDN režim, lokálny runtime režim a zlú lokálnu cestu.
+- [ ] Manuálny smoke test v0.10 obsahuje výrazný assignment panel, simple/full prepínač, zachovanie režimu pri navigácii, CDN režim, lokálny runtime režim a zlú lokálnu cestu.

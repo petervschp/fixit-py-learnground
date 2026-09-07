@@ -15,6 +15,9 @@ import {
   setupPredictPanel
 } from "./predict-fix-panel.js";
 import { setupTestActionHandlers } from "./test-action-handlers.js";
+import { renderAssignmentPanelHtml } from "./assignment-panel.js";
+import { persistAndApplyViewMode } from "./view-mode.js";
+import { setPwaSimpleMode } from "./pwa-offline.js";
 import { renderRuntimeStatusPanelHtml, bindRuntimeStatusPanel } from "./runtime-status.js";
 import { createHintController } from "./diagnostic-hints.js";
 import { renderStatusBadge } from "./microdefense.js";
@@ -71,12 +74,16 @@ function renderActionPanelsHtml(simpleMode) {
 }
 
 function renderAuxiliaryPanelsHtml(simpleMode) {
-  return `
-    <section class="card">
+  const mapPanel = simpleMode ? "" : `
+    <section class="card auxiliary-map-panel">
       <h3 style="margin-top:0;">Mapa úloh</h3>
       <div class="small">Klikni na úlohu. Farby: zelená = testy prešli/vysvetlené, žltá = skúšané, sivá = nové.</div>
       <div id="mapBox" class="map"></div>
     </section>
+  `;
+
+  return `
+    ${mapPanel}
 
     ${simpleMode ? "" : `
       <section class="card">
@@ -85,14 +92,14 @@ function renderAuxiliaryPanelsHtml(simpleMode) {
       </section>
     `}
 
-    <section class="card">
+    <section class="card result-card">
       <h3>Output</h3>
       <pre id="out" class="output"></pre>
     </section>
 
-    <section class="card">
+    <section class="card result-card">
       <h3>Testy</h3>
-      <div class="small">Viditeľné testy ukazujú expected/got. Skryté testy ukazujú len OK/FAIL.</div>
+      ${simpleMode ? "" : `<div class="small">Viditeľné testy ukazujú expected/got. Skryté testy ukazujú len OK/FAIL.</div>`}
       <div id="tests"></div>
     </section>
   `;
@@ -174,26 +181,29 @@ export function render(problem, state, allProblems, currentLevel, context = {}) 
   const route = context.route ?? null;
   const routeTaskMetaById = context.routeTaskMetaById ?? {};
   const simpleMode = Boolean(context.simpleMode);
+  const viewMode = simpleMode ? "simple" : "full";
 
   const { entry, currentRouteTask, md, badgeHtml } = buildTaskPresentation({ problem, state, route, routeTaskMetaById });
-  const navHtml = renderProblemNavigationHtml({ problem, allProblems, currentLevel, route, routeTaskMetaById, simpleMode });
+  const navHtml = renderProblemNavigationHtml({ problem, allProblems, currentLevel, route, routeTaskMetaById, simpleMode, viewMode });
 
   app.innerHTML = `
     <section class="card">
-      ${renderTaskHeaderHtml({ problem, entry, badgeHtml, navHtml })}
-      ${renderRouteContextHtml({ route, currentRouteTask, md })}
-      ${renderTaskContextPanelHtml({ problem, entry, md })}
+      ${renderTaskHeaderHtml({ problem, entry, badgeHtml, navHtml, simpleMode })}
+      ${renderRouteContextHtml({ route, currentRouteTask, md, simpleMode })}
+      ${renderAssignmentPanelHtml({ problem, md, currentRouteTask, simpleMode })}
       ${renderPredictPanelHtml(problem)}
       ${renderFixPanelHtml({ isFix, buggyList })}
-      ${renderEditorPanelHtml()}
+      ${renderEditorPanelHtml({ simpleMode })}
       ${renderActionPanelsHtml(simpleMode)}
       ${renderRuntimeStatusPanelHtml({ simpleMode })}
       <div class="small" id="status"></div>
       <div id="hintBox" class="hint hidden"></div>
+      ${renderTaskContextPanelHtml({ entry, md })}
     </section>
     ${renderAuxiliaryPanelsHtml(simpleMode)}
   `;
 
+  setPwaSimpleMode(simpleMode);
   bindRuntimeStatusPanel({ simpleMode });
 
   const el = collectTaskElements();
@@ -224,6 +234,7 @@ export function render(problem, state, allProblems, currentLevel, context = {}) 
   }
 
   function renderMap() {
+    if (!el.mapBox) return;
     renderTaskMap({
       mapBox: el.mapBox,
       allProblems,
@@ -242,6 +253,15 @@ export function render(problem, state, allProblems, currentLevel, context = {}) 
     route,
     context,
     onRender: render
+  });
+
+  const modeToggle = document.querySelector("#btnViewModeToggle");
+  modeToggle?.addEventListener("click", () => {
+    const nextMode = simpleMode ? "full" : "simple";
+    persistAndApplyViewMode(nextMode, { updateUrl: true });
+    setPwaSimpleMode(nextMode === "simple");
+    const fresh = loadState();
+    render(problem, fresh, allProblems, currentLevel, { ...context, viewMode: nextMode, simpleMode: nextMode === "simple" });
   });
 
   const editorController = setupEditorPanel({

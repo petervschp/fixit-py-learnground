@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+build/
+*.log
+*.tmp
+coverage/
+.vscode/
+.idea/
+fixit-private-backup-*.json
+fixit-anonymous-summary-*.json
+.tmp-browser-smoke-profile/
+.tmp-local-pyodide-runtime/
+.tmp-local-pyodide-smoke-profile/
+vendor/pyodide/

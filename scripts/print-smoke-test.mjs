@@ -3,6 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const candidates = [
+  "MANUAL_SMOKE_TEST_FIXIT_V101.md",
+  "MANUAL_SMOKE_TEST_FIXIT_V10.md",
   "MANUAL_SMOKE_TEST_FIXIT_V09.md",
   "MANUAL_SMOKE_TEST_FIXIT_V08.md",
   "MANUAL_SMOKE_TEST_FIXIT_V07.md",

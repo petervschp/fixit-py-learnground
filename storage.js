@@ -2,7 +2,7 @@
 
 export const STORAGE_KEY = "fixit.student.v3";
 const LEGACY_STORAGE_KEYS = ["fixit.userState.v3", "fixit.userState.v2", "fixit.userState"];
-export const CONTENT_VERSION = "2026-06-17-student-path-v0.9-vendor-pyodide-deployment";
+export const CONTENT_VERSION = "2026-06-17-student-path-v0.10.1-student-ux-hotfix";
 
 function nowIso() {
   return new Date().toISOString();
