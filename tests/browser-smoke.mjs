@@ -215,7 +215,7 @@ async function testOfflineReloadAfterServiceWorkerCache(cdp, base) {
     if (!('serviceWorker' in navigator) || !('caches' in window)) return { ok: false, reason: 'missing_api' };
     await navigator.serviceWorker.ready;
     const names = await caches.keys();
-    const name = names.find(n => n.startsWith('fixit-student-path-v0.9-shell')) || names.find(n => n.startsWith('fixit-student-path-'));
+    const name = names.find(n => n.startsWith('fixit-student-path-v0.10.1-shell')) || names.find(n => n.startsWith('fixit-student-path-'));
     if (!name) return { ok: false, reason: 'missing_cache', names };
     const cache = await caches.open(name);
     const reqs = await cache.keys();
@@ -249,14 +249,69 @@ async function testRoutesHome(cdp, base) {
   await waitForCondition(cdp, `document.querySelector('.routes-home') && document.body.textContent.includes('Moje trasy')`, "routes home renders");
   await assertCondition(cdp, `document.querySelectorAll('.route-card').length >= 8`, "route cards are visible");
   await assertCondition(cdp, `document.body.textContent.includes('trasa nie je domáca úloha celá naraz')`, "classroom guidance is visible");
+
+  await cdp.eval(`localStorage.removeItem('fixit.viewMode')`);
+  await navigate(cdp, `${base}/index.html?simple=1`);
+  await waitForCondition(cdp, `document.querySelector('.routes-home') && document.body.classList.contains('mode-simple')`, "routes home simple=1 renders in simple mode");
+  await assertCondition(cdp, `document.querySelector('#btnRoutesViewModeToggle') && !document.querySelector('.teacher-card')`, "routes home simple mode hides teacher cards and shows mode toggle");
+  await cdp.eval(`document.querySelector('#btnRoutesViewModeToggle').click()`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-full') && localStorage.getItem('fixit.viewMode') === 'full' && new URL(location.href).searchParams.get('simple') === '0'`, "routes home toggle persists full mode and updates URL");
+  await assertCondition(cdp, `document.querySelector('.teacher-card')`, "routes home full mode shows teacher cards after toggle");
+  await navigate(cdp, `${base}/index.html`);
+  await waitForCondition(cdp, `document.querySelector('.routes-home') && document.body.classList.contains('mode-full')`, "routes home reload without simple param uses stored full mode");
+  await cdp.eval(`document.querySelector('#btnRoutesViewModeToggle').click()`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-simple') && localStorage.getItem('fixit.viewMode') === 'simple' && new URL(location.href).searchParams.get('simple') === '1'`, "routes home toggle persists simple mode and updates URL");
+  await navigate(cdp, `${base}/index.html`);
+  await waitForCondition(cdp, `document.querySelector('.routes-home') && document.body.classList.contains('mode-simple')`, "routes home reload without simple param uses stored simple mode");
 }
 
 async function testRouteMode(cdp, base) {
   await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026&simple=1`);
   await waitForCondition(cdp, `document.querySelector('#code') && document.querySelector('#btnRun') && document.body.textContent.includes('add_task')`, "route problem renders");
-  await assertCondition(cdp, `document.querySelector('#problemSelect') && document.querySelector('#problemSelect').value === 'L7-026'`, "route problem select is set");
+  await assertCondition(cdp, `document.body.classList.contains('mode-simple')`, "body has mode-simple class");
+  await assertCondition(cdp, `document.querySelector('#assignmentPanel') && document.querySelector('#assignmentPanel').textContent.includes('TVOJA ÚLOHA')`, "dominant assignment panel is visible");
+  await assertCondition(cdp, `document.querySelector('#assignmentPanel code')`, "assignment panel highlights code terms inline");
+  await assertCondition(cdp, `document.querySelector('.problem-nav-simple') && !document.querySelector('#problemSelect')`, "simple route mode uses simple navigation without problem select");
   await assertCondition(cdp, `!document.querySelector('#btnExport') && !document.querySelector('#btnBackup')`, "simple mode hides export and backup controls");
+  await assertCondition(cdp, `!document.querySelector('.auxiliary-map-panel')`, "simple mode hides advanced task map panel");
   await assertCondition(cdp, `document.body.textContent.includes('Jednoduchý režim')`, "simple mode note is visible");
+
+  await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026&simple=0`);
+  await waitForCondition(cdp, `document.querySelector('#problemSelect') && document.querySelector('#problemSelect').value === 'L7-026' && document.body.classList.contains('mode-full')`, "full route mode shows problem select and selected problem");
+}
+
+async function testViewModeResolverAndToggle(cdp, base) {
+  await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026&simple=0`);
+  await waitForCondition(cdp, `document.querySelector('#assignmentPanel') && document.body.classList.contains('mode-full')`, "simple=0 forces full mode");
+  await assertCondition(cdp, `document.querySelector('#btnExport') && document.querySelector('#btnBackup') && document.querySelector('.auxiliary-map-panel')`, "full mode shows export/backup and map");
+  await assertCondition(cdp, `document.querySelector('#assignmentPanel').textContent.includes('TVOJA ÚLOHA')`, "assignment panel remains visible in full mode");
+
+  await cdp.eval(`localStorage.setItem('fixit.viewMode', 'simple')`);
+  await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026&simple=0`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-full')`, "query parameter simple=0 overrides stored simple mode");
+
+  await cdp.eval(`document.querySelector('#btnViewModeToggle').click()`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-simple') && document.querySelector('#assignmentPanel') && !document.querySelector('#btnExport')`, "view mode toggle switches to simple without reload");
+  await assertCondition(cdp, `new URL(location.href).searchParams.get('simple') === '1'`, "toggle updates URL simple=1");
+  const storedSimple = await cdp.eval(`localStorage.getItem('fixit.viewMode')`);
+  if (storedSimple !== 'simple') throw new Error(`Expected stored view mode simple after toggle, got ${storedSimple}`);
+
+  await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-simple') && !document.querySelector('#problemSelect') && document.querySelector('#assignmentPanel')`, "task reload without simple param uses stored simple mode");
+
+  const firstTask = await cdp.eval(`document.querySelector('#assignmentPanel').textContent`);
+  if (!firstTask.includes('TVOJA ÚLOHA')) throw new Error('Assignment panel text missing after simple toggle');
+
+  const nextHref = await cdp.eval(`document.querySelector('.problem-nav-simple a[href*="problem="]')?.getAttribute('href') || ''`);
+  if (!nextHref.includes('simple=1')) throw new Error(`Simple-mode navigation did not preserve simple=1: ${nextHref}`);
+  await cdp.eval(`document.querySelector('.problem-nav-simple a[href*="problem="]').click()`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-simple') && new URL(location.href).searchParams.get('simple') === '1' && document.querySelector('#assignmentPanel')`, "navigation preserves simple mode");
+
+  await cdp.eval(`document.querySelector('#btnViewModeToggle').click()`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-full') && document.querySelector('#btnExport')`, "view mode toggle switches back to full without reload");
+  await assertCondition(cdp, `new URL(location.href).searchParams.get('simple') === '0'`, "toggle updates URL simple=0");
+  await navigate(cdp, `${base}/index.html?route=Y2_most_cli_dom&problem=L7-026`);
+  await waitForCondition(cdp, `document.body.classList.contains('mode-full') && document.querySelector('#problemSelect') && document.querySelector('#btnExport')`, "task reload without simple param uses stored full mode");
 }
 
 async function testFreePracticeMode(cdp, base) {
@@ -419,6 +474,7 @@ async function main() {
     await testOfflineReloadAfterServiceWorkerCache(cdp, base);
     await testRoutesHome(cdp, base);
     await testRouteMode(cdp, base);
+    await testViewModeResolverAndToggle(cdp, base);
     await testFreePracticeMode(cdp, base);
     await testPredictLockFlow(cdp, base);
     await testFixBuggySolutionFlow(cdp, base);
@@ -427,7 +483,7 @@ async function main() {
     await assertNoRuntimeExceptions(cdp);
 
     ws.close();
-    console.log("Browser smoke OK: PWA metadata/offline reload, routes home, route mode, free-practice mode, Predict lock, Fix buggy-solution, export/backup privacy and PASS microdefense flow passed without runtime exceptions.");
+    console.log("Browser smoke OK: PWA metadata/offline reload, routes home, route mode, simple/full view mode, free-practice mode, Predict lock, Fix buggy-solution, export/backup privacy and PASS microdefense flow passed without runtime exceptions.");
   } finally {
     chrome.kill("SIGTERM");
     server.close();

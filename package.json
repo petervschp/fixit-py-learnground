@@ -1,9 +1,9 @@
 {
   "name": "fixit-student-path",
-  "version": "0.9.0",
+  "version": "0.10.1",
   "private": false,
   "type": "module",
-  "description": "Standalone local classroom Python practice app with curated Y1/Y2 learning paths, anonymous summaries, browser smoke tests, PWA/offline shell hardening, configurable Pyodide runtime base URL, and documented optional local vendor Pyodide deployment.",
+  "description": "Standalone local classroom Python practice app with curated Y1/Y2 learning paths, stronger student-facing assignment UI, reliable simple/full view mode hotfix, browser smoke tests, PWA/offline shell, configurable Pyodide runtime base URL, and documented optional local vendor Pyodide deployment.",
   "scripts": {
     "audit": "node scripts/audit-level.mjs",
     "validate": "node scripts/validate-fixit-content.mjs && node --check app.js && node --check storage.js && node --check py-worker.js && find src -maxdepth 1 -name \"*.js\" -print0 | xargs -0 -n1 node --check && npm run pwa:check",

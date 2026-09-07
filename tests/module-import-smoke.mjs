@@ -13,6 +13,8 @@ const modules = [
   "../src/utils.js",
   "../src/problem-loader.js",
   "../src/pyodide-config.js",
+  "../src/view-mode.js",
+  "../src/assignment-panel.js",
   "../src/runtime-status.js",
   "../src/pwa-offline.js",
   "../src/runner-client.js",

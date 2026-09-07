@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.10.1 — student UX hotfix
+
+- Zachované správanie v0.10 bez didaktických zmien a bez zásahu do obsahu úloh.
+- Opravený `tests/browser-smoke.mjs`: simple mode už neočakáva `#problemSelect`; plný režim ho stále overuje.
+- Zjednotený prepínač režimu na obrazovke **Moje trasy** s task prepínačom: ukladá `localStorage`, aplikuje `body` class, aktualizuje URL a prerenderuje home.
+- Pridané browser smoke kroky pre root → simple/full, uložený režim po refreshe bez `simple` parametra a home toggle.
+- V simple mode je PWA/offline a runtime header vizuálne stíšenejší.
+- Assignment focus je obmedzený na najviac 2 body v simple mode a 3 body v plnom móde.
+- Názvy funkcií a kľúčové pojmy ako `tasks`, `input()`, `print()` a `return` sú v assignment paneli zvýraznené ako inline code.
+- Pridaný manuálny checklist `tests/MANUAL_SMOKE_TEST_FIXIT_V101.md`.
+- `CONTENT_VERSION` aktualizovaný na `2026-06-17-student-path-v0.10.1-student-ux-hotfix`.
+
+## 0.10.0 — student UX clarity after classroom pilot
+
+- Pridaný výrazný assignment panel `TVOJA ÚLOHA` nad editorom.
+- Zadanie úlohy je oddelené od route/context panelu a mikroobhajoby.
+- Pridaný `src/view-mode.js`: query parameter `simple=1/0` má prioritu pred `localStorage`; UI toggle ukladá režim a okamžite prerenderuje obrazovku.
+- `body` dostáva triedu `mode-simple` alebo `mode-full`.
+- Simple mode je výraznejší: skrýva exporty, backup/import/reset, mapu úloh, štatistiky a učiteľské detaily.
+- Navigácia úloh zachováva aktívny režim.
+- Browser smoke rozšírený o testy `simple=1`, `simple=0`, prepínač režimu a navigáciu bez straty režimu.
+- `CONTENT_VERSION` aktualizovaný na `2026-06-17-student-path-v0.10-student-ux-clarity`.
+
 ## 0.9.0 — vendor Pyodide deployment outside main ZIP
 
 - Zachované správanie v0.8; bez didaktických zmien a bez zmien obsahu úloh.

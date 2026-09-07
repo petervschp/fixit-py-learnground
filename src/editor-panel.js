@@ -7,12 +7,9 @@ import {
   recordEvent
 } from "../storage.js";
 
-export function renderEditorPanelHtml() {
-  return `
-    <label class="label">Kód</label>
-    <textarea id="code" class="code" rows="12"></textarea>
-
-    <div class="kv" style="grid-template-columns: 140px 1fr; margin-top:10px;">
+export function renderEditorPanelHtml({ simpleMode = false } = {}) {
+  const stdinPanel = `
+    <div class="kv stdin-panel" style="grid-template-columns: 140px 1fr; margin-top:10px;">
       <div class="small"><strong>Vstup pre Run</strong><br><span class="small">stdin</span></div>
       <div>
         <textarea id="runInput" class="code" rows="3" placeholder="Sem napíš, čo má input() čítať. Každý riadok = jeden input."></textarea>
@@ -20,11 +17,26 @@ export function renderEditorPanelHtml() {
           <button id="btnUseSample" class="btn secondary">Použi vzor z testu</button>
           <button id="btnClearInput" class="btn secondary">Vyčisti stdin</button>
         </div>
-        <div class="small" style="margin-top:6px;">
-          Tip: testy posielajú vstup automaticky. Tento box ovplyvňuje iba tlačidlo <strong>Run</strong>.
-        </div>
+        ${simpleMode ? "" : `
+          <div class="small" style="margin-top:6px;">
+            Tip: testy posielajú vstup automaticky. Tento box ovplyvňuje iba tlačidlo <strong>Run</strong>.
+          </div>
+        `}
       </div>
     </div>
+  `;
+
+  return `
+    <section class="editor-panel ${simpleMode ? "editor-panel-simple" : ""}" aria-label="Editor kódu">
+      <label class="label editor-label">Tvoj kód</label>
+      <textarea id="code" class="code" rows="${simpleMode ? 14 : 12}"></textarea>
+      ${simpleMode ? `
+        <details class="simple-stdin-details">
+          <summary>Vstup pre Run, ak úloha používa input()</summary>
+          ${stdinPanel}
+        </details>
+      ` : stdinPanel}
+    </section>
   `;
 }
 

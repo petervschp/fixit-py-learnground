@@ -12,22 +12,24 @@ FixIt slúži ako kurátorsky riadená podpora učenia: krátke trasy, Fix/Predi
 
 ## Stav projektu
 
-Aktuálna verzia: **0.9.0 — školský lokálny Pyodide deployment mimo hlavného ZIPu**.
+Aktuálna verzia: **0.10.1 — hotfix žiackej UX čitateľnosti a simple/full režimu**.
 
-V0.9 nemení didaktiku ani obsah úloh oproti v0.8. Dopĺňa školský deployment lokálneho Pyodide runtime mimo hlavného ZIPu:
+V0.10.1 nemení didaktiku ani obsah úloh oproti v0.10. Stabilizuje pilotnú UX zmenu: zadanie ostáva výrazné, simple/full režim sa prepína konzistentnejšie aj z obrazovky **Moje trasy** a browser smoke test už správne rozlišuje simple navigáciu bez `problemSelect` od plného režimu.
 
-- `manifest.webmanifest`,
-- `sw.js` service worker pre app shell, moduly, trasy a lokálne JSON úlohy,
-- runtime status panel pre Pyodide,
-- fallback správy pri zlyhaní Pyodide/CDN alebo lokálnej runtime cesty,
-- automatický browser smoke pre online first load → offline reload zo service worker cache,
-- `scripts/check-pwa-cache-manifest.mjs`, ktorý kontroluje, či service worker cacheuje všetky lokálne moduly a úlohy,
-- `PYODIDE_BASE_URL` prepínač: default CDN alebo školská lokálna kópia runtime mimo hlavného ZIPu,
-- dokumentáciu limitov: offline shell áno, plne offline Python runtime nie je súčasťou hlavného ZIPu,
-- v0.9 manuálny smoke checklist,
-- dokumentovaný `vendor/pyodide/v0.25.1/full/` postup,
-- `npm run vendor:check`,
-- `npm run smoke:local-pyodide` pre overenie lokálnej `PYODIDE_BASE_URL` cesty cez dočasný mock runtime.
+V0.10.1 obsahuje:
+
+- výrazný assignment panel **TVOJA ÚLOHA** nad editorom,
+- oddelenie zadania od route/context panelu,
+- tvrdší jednoduchý režim, ktorý skryje exporty, backup/import/reset, mapu úloh, štatistiky a učiteľské detaily,
+- spoľahlivý `src/view-mode.js` resolver: URL `simple=1/0` má prioritu pred `localStorage`,
+- `body` triedy `mode-simple` / `mode-full`,
+- prepínač režimu, ktorý okamžite prerenderuje obrazovku, zapisuje `localStorage` a aktualizuje URL aj na domovskej obrazovke,
+- navigáciu úloh, ktorá nestráca aktívny režim,
+- browser smoke testy pre `?simple=1`, `?simple=0`, home toggle, task toggle a navigáciu bez straty režimu,
+- stíšenejší PWA/runtime header v jednoduchom režime,
+- zvýraznenie názvov funkcií a kľúčových pojmov ako inline code v assignment paneli.
+
+V0.9 funkcie ostávajú zachované: PWA/offline shell, `PYODIDE_BASE_URL` prepínač, dokumentovaný `vendor/pyodide/v0.25.1/full/` postup, `npm run vendor:check` a `npm run smoke:local-pyodide`.
 
 ## Čo appka robí
 
@@ -82,7 +84,7 @@ Hlavný vstup pre žiaka. Učiteľ vyberá trasu podľa fázy hodiny. Trasa nie 
 
 ### Jednoduchý režim
 
-Pridaj `&simple=1` do URL. Režim skrýva odovzdanie, zálohy, import a pokročilé akcie. Je vhodný pre slabších žiakov alebo krátky riadený blok.
+Pridaj `&simple=1` do URL alebo použi prepínač v obrazovke úlohy. Režim výrazne zvýrazní panel **TVOJA ÚLOHA** a skrýva odovzdanie, zálohy, import, reset, mapu úloh, štatistiky a učiteľské detaily. Query parameter `simple=1` alebo `simple=0` má prioritu pred uloženým nastavením v prehliadači.
 
 ### Voľné precvičovanie
 
@@ -110,7 +112,7 @@ Alternatívne sa dá nastaviť `window.FIXIT_PYODIDE_BASE_URL` alebo `localStora
 Hlavný release ZIP a voliteľný školský Pyodide runtime sú zámerne oddelené:
 
 ```text
-fixit_student_path_v0_9_...zip          # appka, trasy, úlohy, service worker, testy
+fixit_student_path_v0_10_1_...zip        # appka, trasy, úlohy, service worker, testy
 vendor/pyodide/v0.25.1/full/           # voliteľný veľký runtime mimo hlavného ZIPu
 ```
 
@@ -210,9 +212,9 @@ npm run release:zip
 
 Výstup sa vytvorí v `dist/`.
 
-## Technická štruktúra v0.9
+## Technická štruktúra v0.10.1
 
-`app.js` je boot/orchestrátor. Od v0.4 je `src/task-renderer.js` rozdelený na menšie panely: task header/context, problem navigation, editor, Predict/Fix panel, Run/Test handlery, diagnostické hinty, microdefense, map UI a export/backup. V0.5 posilnilo browser smoke testy. V0.6 pridáva release štruktúru, CI workflow a dokumentovaný browser-test setup. V0.7 pridáva PWA/offline shell, runtime status panel a dokumentované Pyodide/CDN fallback správy. V0.8 pridáva PWA cache manifest check, automatický offline reload browser smoke, jednoduchšie žiacke fallback texty, oddelený reset progresu/cache a `PYODIDE_BASE_URL` prepínač. V0.9 dopĺňa školský vendor Pyodide deployment mimo hlavného ZIPu, kontrolu vendor štruktúry a lokálny runtime smoke cez dočasný mock runtime. Podrobnosti sú v `docs/MODULAR_ARCHITECTURE.md` a `docs/PWA_OFFLINE.md`.
+`app.js` je boot/orchestrátor. Od v0.4 je `src/task-renderer.js` rozdelený na menšie panely: task header/context, problem navigation, editor, Predict/Fix panel, Run/Test handlery, diagnostické hinty, microdefense, map UI a export/backup. V0.5 posilnilo browser smoke testy. V0.6 pridáva release štruktúru, CI workflow a dokumentovaný browser-test setup. V0.7 pridáva PWA/offline shell, runtime status panel a dokumentované Pyodide/CDN fallback správy. V0.8 pridáva PWA cache manifest check, automatický offline reload browser smoke, jednoduchšie žiacke fallback texty, oddelený reset progresu/cache a `PYODIDE_BASE_URL` prepínač. V0.9 dopĺňa školský vendor Pyodide deployment mimo hlavného ZIPu, kontrolu vendor štruktúry a lokálny runtime smoke cez dočasný mock runtime. V0.10 pridáva žiacky assignment panel, tvrdší simple mode a spoľahlivý view-mode resolver. Podrobnosti sú v `docs/MODULAR_ARCHITECTURE.md` a `docs/PWA_OFFLINE.md`.
 
 ## Školské technické riziká
 
@@ -221,4 +223,4 @@ Appka používa Pyodide cez CDN. Prvé načítanie potrebuje internet a školsk�
 
 ## PWA/offline shell
 
-V0.9 cacheuje app shell, JS/CSS, trasy, ikony a lokálne JSON úlohy cez service worker. Toto pomáha pri čítaní zadaní a práci so žiackym lokálnym stavom po prvom online načítaní. Offline shell však neznamená offline Python runtime: Run/Testy stále potrebujú Pyodide cez CDN alebo cez voliteľnú lokálnu `PYODIDE_BASE_URL` cestu. Detaily sú v `docs/PWA_OFFLINE.md` a `docs/PYODIDE_RUNTIME.md`.
+V0.10 cacheuje app shell, JS/CSS, trasy, ikony a lokálne JSON úlohy cez service worker. Toto pomáha pri čítaní zadaní a práci so žiackym lokálnym stavom po prvom online načítaní. Offline shell však neznamená offline Python runtime: Run/Testy stále potrebujú Pyodide cez CDN alebo cez voliteľnú lokálnu `PYODIDE_BASE_URL` cestu. Detaily sú v `docs/PWA_OFFLINE.md` a `docs/PYODIDE_RUNTIME.md`.

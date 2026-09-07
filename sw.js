@@ -1,6 +1,6 @@
 /* FixIt Student Path service worker: offline shell only.
    It intentionally does NOT bundle/cache the external Pyodide CDN runtime. */
-const CACHE_NAME = "fixit-student-path-v0.9-shell";
+const CACHE_NAME = "fixit-student-path-v0.10.1-shell";
 
 const APP_SHELL = [
   "./",
@@ -16,6 +16,8 @@ const APP_SHELL = [
   "./student_routes.json",
   "./src/utils.js",
   "./src/problem-loader.js",
+  "./src/assignment-panel.js",
+  "./src/view-mode.js",
   "./src/runner-client.js",
   "./src/test-engine.js",
   "./src/diagnostics.js",
@@ -68,7 +70,7 @@ self.addEventListener("fetch", event => {
 
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) {
-    // External resources such as Pyodide CDN are intentionally network-only unless PYODIDE_BASE_URL points to a same-origin/local runtime path in v0.9.
+    // External resources such as Pyodide CDN are intentionally network-only unless PYODIDE_BASE_URL points to a same-origin/local runtime path in v0.10.1.
     return;
   }
 

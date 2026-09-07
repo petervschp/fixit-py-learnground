@@ -1,0 +1,58 @@
+name: FixIt Student Path CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  validate-and-smoke:
+    name: Validate, audit and smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install package metadata
+        run: npm install --ignore-scripts
+
+      - name: Validate content and source syntax
+        run: npm run validate
+
+      - name: Audit task bank
+        run: npm run audit
+
+      - name: Module import smoke
+        run: npm run smoke:modules
+
+      - name: Setup Chrome for browser smoke
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Browser smoke via Chrome DevTools Protocol
+        run: |
+          npm run smoke:browser
+          npm run smoke:local-pyodide
+        env:
+          CHROMIUM_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+        
+      - name: Clean smoke-test temporary artifacts
+        if: always()
+        run: |
+          rm -rf .tmp-browser-smoke-profile
+          rm -rf .tmp-local-pyodide-runtime
+          rm -rf .tmp-local-pyodide-smoke-profile
+
+      - name: Release package check
+        run: npm run release:check

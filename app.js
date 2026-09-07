@@ -3,14 +3,19 @@ import { loadState, saveState, getUiPrefs, setCurrentRoute, setLastSelection } f
 import { loadLevel, loadStudentRoutes, loadProblemsForRoute, buildRouteTaskMeta } from "./src/problem-loader.js";
 import { render } from "./src/task-renderer.js";
 import { renderRoutesHome } from "./src/routes-renderer.js";
-import { setupPwaOfflineStatus } from "./src/pwa-offline.js";
+import { setupPwaOfflineStatus, setPwaSimpleMode } from "./src/pwa-offline.js";
+import { applyViewModeClass, isSimpleMode, resolveViewMode } from "./src/view-mode.js";
 
 const app = document.querySelector("#app");
 
 async function boot() {
   const params = new URLSearchParams(location.search);
-  const simpleMode = params.get("simple") === "1";
+  const viewMode = resolveViewMode(params);
+  const simpleMode = isSimpleMode(viewMode);
+  applyViewModeClass(viewMode);
   setupPwaOfflineStatus({ simpleMode });
+  setPwaSimpleMode(simpleMode);
+
   const state = loadState();
   saveState(state);
 
@@ -30,14 +35,23 @@ async function boot() {
       || problems.find(p => p.id === lastProblemId)
       || problems[0];
     setLastSelection(state, `route:${route.id}`, startProblem.id);
-    render(startProblem, state, problems, startProblem.level, { route, routeTaskMetaById: buildRouteTaskMeta(route), routes, simpleMode });
+    render(startProblem, state, problems, startProblem.level, { route, routeTaskMetaById: buildRouteTaskMeta(route), routes, viewMode, simpleMode });
     return;
   }
 
   const requestedLevel = Number(params.get("level"));
   const hasDirectProblem = params.has("level") || params.has("problem");
   if (!hasDirectProblem && routes.length > 0) {
-    renderRoutesHome(state, routes);
+    const renderHome = (mode, freshState = loadState()) => {
+      const isSimple = isSimpleMode(mode);
+      setPwaSimpleMode(isSimple);
+      renderRoutesHome(freshState, routes, {
+        viewMode: mode,
+        simpleMode: isSimple,
+        onViewModeChange: (nextMode) => renderHome(nextMode, loadState())
+      });
+    };
+    renderHome(viewMode, state);
     return;
   }
 
@@ -57,7 +71,7 @@ async function boot() {
     setLastSelection(state, level, startProblem.id);
   }
 
-  render(startProblem, state, problems, level, { routes, simpleMode });
+  render(startProblem, state, problems, level, { routes, viewMode, simpleMode });
 }
 
 boot().catch(err => {
